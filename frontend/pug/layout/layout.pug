@@ -1,0 +1,111 @@
+//- Variables
+- var $buildUrl = 'build/'
+- var $svgSprite = 'build/svg/sprite.defs.svg'
+- var $imgDir = 'assets/img/'
+
+//- Mixins
+include ../mixins/picture
+include ../mixins/sprite
+include ../mixins/views
+
+block variables
+
+doctype html
+html(lang='cs')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title #{title}
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap' rel='stylesheet')
+        link(href= $buildUrl + 'lib/fancybox/jquery.fancybox.min.css' rel='stylesheet')
+        link(href= $buildUrl + 'lib/owl.carousel/owl.carousel.css' rel='stylesheet')
+        link(href= $buildUrl + 'css/theme.min.css' rel='stylesheet')
+
+        //- Favicons
+        link(rel='apple-touch-icon' sizes='180x180' href='assets/favicons/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='assets/favicons/favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='assets/favicons/favicon-16x16.png')
+        link(rel='manifest' href='assets/favicons/site.webmanifest')
+        link(rel='mask-icon' href='assets/favicons/safari-pinned-tab.svg' color='#5bbad5')
+        link(rel='shortcut icon' href='assets/favicons/favicon.ico')
+        meta(name='msapplication-TileColor' content='#da532c')
+        meta(name='msapplication-config' content='assets/favicons/browserconfig.xml')
+        meta(name='theme-color' content='#ffffff')
+
+        script.
+            window.baseUrl = "../"
+
+        block scripts-header
+            //- Extend header scripts
+
+    body.has-sidemenu.has-fancynav-top.has-topbar.overflow-hidden-x
+
+        // Header
+        block header
+            include ./header
+
+        // Main
+        block main
+            div Extend main block
+
+        // Footer
+        block footer
+            footer
+                .top
+                    .container.py-6.border-top
+                        .row
+                            .col-12.col-md-7
+                                .logo.mb-3
+                                    +picture("logo-tm@1x.png", "logo-tm@2x.png")
+                                .logos
+                                    a(href="#" target="_blank"): +picture('footer-logo-1@1x.png', 'footer-logo-1@2x.png')
+                                    a(href="#" target="_blank"): +picture('footer-logo-2@1x.png', 'footer-logo-2@2x.png')
+                                    a(href="#" target="_blank"): +picture('footer-logo-3@1x.png', 'footer-logo-3@2x.png')
+                                p
+                                    | TM Technik s. r. o.<br>
+                                    | Dornych 54/47, Brno 617 00<br>
+                                    | IČO: 26889927<br>
+                                    | DIČ: CZ26889927
+                            .col-6.col-md-3
+                                .foot-links
+                                    p.mb-md-5 Rozcestník
+                                    ul.list-group.list-group-minimal
+                                        li.list-group-item.py-1: a(href="") Služby
+                                        li.list-group-item.py-1: a(href="") O společnosti
+                                        li.list-group-item.py-1: a(href="") Kontakt
+                            .col-6.col-md-2
+                                .foot-links
+                                    p.mb-md-5 Socialní Sítě
+                                    ul.list-group.list-group-minimal
+                                        li.list-group-item.py-1: a(href="") Facebook
+                                        li.list-group-item.py-1: a(href="") Instagram
+                                        li.list-group-item.py-1: a(href="") Linkedin
+
+                .bottom.bg-primary.text-dark.py-4
+                    .container
+                        .row
+                            .col-auto
+                                p 2021 &copy; TM Technik, všechna práva vyhrazena
+                            .col-auto.text-right
+                                a(href="https://orwin.cz" target="_blank"): img(src= $imgDir + 'logo-orwin.svg' alt="Orwin" height=40)
+
+
+        .mobile-nav-overlay
+
+
+        script(src= $buildUrl + 'js/jquery.min.js')
+        script(src= $buildUrl + '/js/popper.min.js')
+        script(src= $buildUrl + 'js/bootstrap.min.js')
+        script(src= $buildUrl + 'js/plugins.min.js')
+        script(src= $buildUrl + 'lib/is_js/is.min.js')
+        script(src= $buildUrl + 'lib/jtap/jquery.tap.js')
+        script(src= $buildUrl + 'js/rellax.min.js')
+        script(src= $buildUrl + 'lib/fancybox/jquery.fancybox.min.js')
+        script(src= $buildUrl + 'lib/owl.carousel/owl.carousel.js')
+        script(src= $buildUrl + 'lib/headroom/headroom.min.js')
+        script(src= $buildUrl + 'js/theme.min.js')
+
+        // Footer scripts
+        block scripts-footer

@@ -1,0 +1,22 @@
+.numbers.com {
+  .item {
+    @extend .p-4;
+  }
+  .ico {
+    color: theme-color('primary');
+    margin-bottom: 8px;
+  }
+  .num {
+    margin-bottom: 8px;
+    font-style: normal;
+    font-weight: $font-weight-bold;
+    font-size: rem-calc(54);
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    color: theme-color('primary');
+  }
+  .info {
+    color: #484c52;
+    line-height: 24px;
+  }
+}

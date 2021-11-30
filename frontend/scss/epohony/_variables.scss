@@ -1,0 +1,165 @@
+// User rewwrites
+$border-radius: 2px;
+
+// Grid
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1160px,
+) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 25px !default;
+
+// Fonts
+$font-size-base: 1rem !default;
+$small-font-size: 85% !default;
+
+$h1-font-size: $font-size-base * 4 !default;
+$h2-font-size: $font-size-base * 2.666 !default;
+$h3-font-size: $font-size-base * 2.222 !default;
+$h4-font-size: $font-size-base * 1.777 !default;
+$h5-font-size: $font-size-base * 1.333 !default;
+$h6-font-size: $font-size-base * 1.222 !default;
+
+$font-family-sans-serif: 'Titillium Web', sans-serif !default;
+$font-family-serif: 'Titillium Web', sans-serif !default;
+$font-family-base: $font-family-serif !default;
+$font-weight-semibold: 600 !default;
+$font-weight-thin: 300 !default;
+
+$line-height-base: 1.555;
+
+// Colors
+$blue: blue;
+$orange: #ff4e00;
+$blue-dark: #071529;
+$white: #fff !default;
+$black: #000 !default;
+$gray-100: #f9f9f9 !default;
+$gray-500: #9ea1a5;
+
+$primary: #106AB6;
+$secondary: #fdfaf5;
+
+// TODO
+$colors: (
+  'black': $black,
+) !default;
+
+// Headings
+$headings-color: $black !default;
+$headings-line-height: 1.22em;
+$headings-margin-bottom: 1.2rem;
+
+// Body
+$body-color: #595c60;
+$body-bg-color: $white;
+
+// Spacers
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  $spacers,
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.33333,
+      // 24px
+    ),
+    5: (
+      $spacer * 2.66666,
+      // 48px
+    ),
+    6: (
+      $spacer * 4,
+      // 72px
+    ),
+    7: (
+      $spacer * 5.33333,
+      // 96px
+    ),
+    8: (
+      $spacer * 6.66666,
+      // 120px
+    ),
+    9: (
+      $spacer * 8.888,
+      // 160px
+    ),
+    10: (
+      $spacer * 13.333,
+      // 240px
+    ),
+    11: (
+      $spacer * 15,
+      // 270px
+    ),
+  )
+);
+
+// Buttons & controlls
+$input-btn-padding-y: 0.6rem !default;
+$btn-padding-x: 2.666rem !default;
+$btn-font-size: 13px !default;
+
+// Navbar
+$navbar-bg: transparent;
+$navbar-height: 104px;
+$navbar-height-mobile: 90px;
+$navbar-padding-x: 40px;
+$navbar-padding-y: 1rem !default;
+$navbar-light-color: $black;
+$navbar-light-hover-color: $orange;
+$navbar-nav-link-padding-x: 1.2rem !default;
+
+// Topnavbar
+$topnavbar-height: 32px;
+$topnavbar-font-size: rem-calc(15);
+
+// Cards
+$card-columns-count: 2 !default;
+$card-border-width: 0 !default;
+
+// Breadcrumb
+$breadcrumb-divider: quote('>');
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-bg: transparent;
+$breadcrumb-active-color: $black;
+$breadcrumb-divider-color: $black;
+
+// Fancy nav
+$fancynav-width: 4.375rem !default;
+$fancynav-breakpoint-up: lg !default;
+$fancynav-breakpoint-down: md !default;
+$fancynavHeight: 3rem !default;
+$fancynav-collapse-bg: $primary !default;
+$fancynav-color: $white !default;
+$fancynav-link-color: $white !default;
+$fancynav-link-hover: $black !default;
+$fancynav-sublink-color: rgba($fancynav-link-color, 0.9);
+$fancynav-opacity: 1;
+$fancynav-side-stripe-bg1: $primary;
+$fancynav-side-stripe-bg2: rgba($primary, 0);
+
+// Z indexes
+$z-index-fancybar-close: 104;
+$z-index-fancybar-collapse: 103;
+$z-index-fancybar: 102;
+
+$z-index-nav-overlay: 101;
+$z-index-box-list-overlay: 11;
+$z-index-gmapbox: 10;
+$z-index-video-box-play: 4;
+$z-index-video-box-overlay: 3;
+$z-index-teaser-in: 3;
+$z-index-teaser: 2;

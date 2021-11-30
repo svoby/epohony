@@ -1,0 +1,34 @@
+include ../mixins/picture
+
+form(action="#" method="post")
+    .form-contact.com.--type-1.shadow-secondary
+        .bg-white.p-4.p-md-6
+            h4.mb-0.text-primary Potřebujete poradit s výběrem?
+            h5 Pošlete nám váš kontakt, ozveme se obratem
+
+            .spacer.pt-5
+
+            .alert.alert-danger(role="alert") This is a danger alert—check it out!
+            .alert.alert-success(role="alert") This is a success alert—check it out!
+
+            .form-row
+                .col-md-6.mb-3
+                    label(for="card-form-15") Jméno a příjmení
+                    input(type="text" value="Jan Černý").form-control
+                .col-md-6.mb-3
+                    label(for="card-form-16") Email
+                    input(type="email" value="hello@companyx.cz").form-control
+            .form-row
+                .col-md-6.mb-3
+                    label(for="card-form-17") Telefon
+                    input(type="text" value="+420 123 456 789").form-control
+                .col-md-6.mb-3
+                    label(for="card-form-18") Jméno firmy
+                    input(type="email" value="Company X").form-control
+            .form-group
+                label(for="card-form-19") Zpráva
+                textarea#card-form-14(name="" cols="30" rows="5").form-control
+                    | Dorbý den,
+                    | rád bych se zeptal, zda je možné...
+            p.text-center.pt-3
+                input(type="submit" value="ODESLAT").btn.btn-primary

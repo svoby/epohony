@@ -1,0 +1,17 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+.owl-carousel.owl-theme.owl-nav-outer.owl-dot-round#owl-sluzby(data-options='{ "margin": 25, "nav": true, "autoplay": false, "loop": true, "dots": false, "autoWidth": "true", "responsive": { "0": { "items":1, "nav": false, "dots": true }, "576": { "items": 2.5, "nav": false, "dots": true }, "992": { "items": 3.5 }}}')
+    - var i = 0
+    while i < 15
+        .item
+            a(href="./detail.html").card.card-product.com.--type-1.shadow-primary
+                +placeholder(264, 328, "w-100")
+                .card-body
+                    h2.h6.card-title Souřadnicový měřící CNC stroj Azimuth 1200-1600
+                    .card-text.small
+                        ul
+                            li Rozsah 1 200 - 1 600 nm
+                            li Rozlišení 0,5 nm
+                            li Rozsah provozních teplot 0-45°C
+            - i++

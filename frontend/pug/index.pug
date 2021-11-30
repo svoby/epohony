@@ -1,0 +1,43 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Rozcestník stránek'
+
+block header
+    include ./layout/header
+
+block main
+    main.main
+
+        .teaser.com
+            .container
+                .in.d-flex.align-items-center.py-6
+                    h1 ePohony <i>šablony</i>
+
+        .container.py-3.py-md-7
+
+            .row
+                .col-md-6
+                    ul.pt-3.pb-6
+                        li: a(href="./components.html"): h5 00. Komponenty
+                        li: a(href="./homepage.html"): h5 01. Homepage
+                        li: a(href="./prodej.html"): h5 02. Prodej měřících strojů
+                        li: a(href="./prodej2.html"): h5 03. Prodej komunálních měřidel
+                        li: a(href="./katalog.html"): h5 04. Katalog
+                        li: a(href="./detail.html"): h5 05. Detail produktu
+                        li: a(href="./znacky.html"): h5 06. Značky měřidel
+                        li: a(href="./sluzba1.html"): h5 07. Služba 1 Zakázkové měření
+                        li: a(href="./sluzba2.html"): h5 08. Služba 2 Kalibrační laboratoř
+                        li: a(href="./servis.html"): h5 09. Instalace a servis strojů
+                        li: a(href="./spolecnost1.html"): h5 10. Společnost A
+                        li: a(href="./spolecnost2.html"): h5 11. Společnost B
+                        li: a(href="./team1.html"): h5 12. Team 1
+                        li: a(href="./team2.html"): h5 13. Team 2
+                        li: a(href="./kontakt.html"): h5 14. Kontakt
+                        li: a(href="./aktuality.html"): h5 15. Aktuality
+                        li: a(href="./aktualita.html"): h5 16. Detail aktuality
+                        li: a(href="./download.html"): h5 17. Ke stažení
+                        li: a(href= $buildUrl + "svg/sprite.defs.html"): h5 Ikonky
+                .col-md-6
+                    .d-none.d-md-block
+                        img(src= $imgDir + "qr-tm.png")

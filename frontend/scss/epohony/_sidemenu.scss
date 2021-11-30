@@ -1,0 +1,52 @@
+.sidemenu.com {
+  font-size: 15px;
+  > ul {
+    > li {
+      > a {
+        color: #423e38;
+      }
+      ul > li > a {
+        background: rgba(200, 73, 17, 0.03);
+        color: $primary;
+        border: 1px solid #faf3e9;
+        padding-left: 32px;
+        margin-top: -1px;
+      }
+    }
+  }
+  a {
+    display: block;
+    padding: 15px 30px 15px 8px;
+    position: relative;
+    &:before {
+      content: ' ';
+      position: absolute;
+      right: 15px;
+      top: rem-calc(23);
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      border-right: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+      transform: translateY(-50%) rotate(-45deg);
+      transition: transform 0.25s ease-in-out 0s;
+    }
+    &[aria-expanded='true']:before {
+      transform: rotate(45deg);
+    }
+  }
+  li {
+    border: 0;
+    border-top: 1px solid #faf3e9;
+    padding: 0;
+  }
+  @include media-breakpoint-down(md) {
+    > ul {
+      > li {
+        ul > li > a {
+          //spadding-left: 20px;
+        }
+      }
+    }
+  }
+}

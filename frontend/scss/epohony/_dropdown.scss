@@ -1,0 +1,23 @@
+.dropdown-menu {
+  padding: 10px;
+  &.--slim {
+    min-width: 0;
+    padding: 5px;
+    border: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    .dropdown-item {
+      border-radius: 2px;
+    }
+  }
+}
+
+.dropdown-item {
+  font-size: 0.8em;
+  transition: all 0.5s;
+  &.active {
+    color: white !important;
+  }
+  &:focus {
+    background-color: $secondary !important;
+  }
+}

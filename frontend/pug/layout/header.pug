@@ -1,0 +1,145 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+//- Header
+header.header.com.--sticky
+
+    //-- Top bar
+    .topbar.com
+        .container
+            .left
+                ul
+                    li
+                        a(href="#!")
+                            +sprite("shopping-cart", "s-16")
+                            | E-shop
+                    li
+                        a(href="#!")
+                            +sprite("lock-open", "s-16")
+                            | Klientská zóna
+                    li
+                        a(href="#!")
+                            +sprite("briefcase", "s-16")
+                            | Kariéra
+            .right
+                ul
+                    li
+                        a(href="#!")
+                            +sprite("youtube", "s-16")
+                            | Youtube
+                    li
+                        a(href="#!")
+                            +sprite("facebook", "s-16")
+                            | Facebook
+                    li.dropdown
+                        a.dropdown-toggle(href="#!" type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            +sprite("globe", "s-16")
+                            | CZ
+                        .dropdown-menu.dropdown-menu-right.--slim
+                            a.dropdown-item.active(href='#') CZ
+                            a.dropdown-item(href='#') EN
+
+    //- Navbar
+    nav#top.navbar.navbar-expand-lg.fancynavbar.fancynavbar-top
+        .container
+
+            //- Logo
+            a.navbar-brand(href='./' data-config-id='brand')
+                +picture("logo-tm@1x.png", "logo-tm@2x.png")
+
+            //- Main nav
+            .collapse.navbar-collapse
+                ul.navbar-nav.mx-auto
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                            | Služby
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='./sluzba1.html') Služba 1
+                            .dropdown-divider
+                            a.dropdown-item(href='./sluzba2.html') Služba 2
+                            .dropdown-divider
+                            a.dropdown-item(href='./servis.html') Servis
+                    li.nav-item
+                        a.nav-link(href='./znacky.html') Značky výrobců
+                    li.nav-item
+                        a.nav-link(href='./spolecnost1.html') O společnosti
+                    li.nav-item
+                        a.nav-link(href='./team1.html') Náš tým
+                    li.nav-item
+                        a.nav-link(href='./kontakt.html') Kontakt
+
+            //- Search
+            .search.d-none.d-lg-block
+                form(action="#")
+                    input.form-control(type="text" placeholder="Vyhledat")
+
+            //- Hamburger - toggler
+            .fancynavbar-togglerbar.fancynavbar-toggler.d-flex.d-lg-none
+                button.btn.btn-sm
+                    svg(width='48' height='24' viewbox='0 0 48 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        rect(width='48' height='4' fill='currentColor')
+                        rect(y='10' width='48' height='4' fill='currentColor')
+                        rect(y='20' width='48' height='4' fill='currentColor')
+                button.btn.btn-sm
+                    svg(width='28' height='29' viewBox='0 0 28 29' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        rect(y='25.9507' width='36.0907' height='3.38356' transform='rotate(-45 0 25.9507)' fill='currentColor')
+                        rect(x='25.5205' y='28.3433' width='36.0907' height='3.38356' transform='rotate(-135 25.5205 28.3433)' fill='currentColor')
+
+            //- Hamburger - menu
+            .fancynavbar-collapse
+                .top
+
+                    //- Languages
+                    ul.nav.fancynavbar-languages
+                        li: a(href="#!").btn.btn-lg.btn-secondary Česky
+                        li: a(href="#!").btn.btn-lg.btn-outline-secondary English
+
+                    //- Mobile nav
+                    ul.fancynavbar-nav
+                        li.fancynav-item.fancy-dropdown
+                            a(href="javascript:void(0)").fancynav-link.fancy-dropdown-toggle
+                                .fancynav-link-content Služby
+                            .fancy-dropdown-menu
+                                .row.py-2
+                                    .col-auto
+                                        a(href="#!").fancy-dropdown-item Třídění a kontrola kvality
+                                        a(href="#!").fancy-dropdown-item Montáže a drobné opracování dílů
+                                        a(href="#!").fancy-dropdown-item 3D měření a programování
+                                        a(href="#!").fancy-dropdown-item Technická čistota
+                                        a(href="#!").fancy-dropdown-item Konzultace, školení audity
+                        li.fancynav-item
+                            a(href="./dilna.html").fancynav-link Chráněná dílna
+                        li.fancynav-item
+                            a(href="./o-nas.html").fancynav-link O společnosti
+                        li.fancynav-item
+                            a(href="./kontakt.html").fancynav-link Kontakt
+
+                    //- Service links
+                    .fancynav-item.my-2
+                        a(href="#!").fancynav-link
+                            +sprite("lock-open", "s-24")
+                            | Klientská zóna
+                    .fancynav-item.my-2
+                        a(href="#!").fancynav-link
+                            +sprite("briefcase", "s-24")
+                            | Kariéra
+
+                .bottom
+                    .fancy-socials
+                        .row
+                            .col-6
+                                a(href="#!" target="_blank").fancynav-link
+                                    +sprite("youtube", "s-24")
+                                    | Youtube
+                            .col-6
+                                a(href="#!" target="_blank").fancynav-link
+                                    +sprite("linkedin", "s-24")
+                                    | Linkedin
+                            .col-6
+                                a(href="#!" target="_blank").fancynav-link
+                                    +sprite("facebook", "s-24")
+                                    | Facebook
+                            .col-6
+                                a(href="#!" target="_blank").fancynav-link
+                                    +sprite("twitter", "s-24")
+                                    | Twitter

@@ -1,0 +1,59 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Prodej měřících strojů'
+
+block header
+    include ./layout/header
+
+block main
+
+    main.main
+
+        section.teaser.com
+            .container
+                .in.d-flex.align-items-center.flex-column.pb-8
+                    include ./partials/breadcrumbs
+                    h1.text-center Prodej <i>měřících strojů</i>
+        section
+            .container
+                include ./partials/teaser-icons.pug
+
+        .spacer.pt-2
+
+        section
+            .container
+                .box-list.com.--type-3
+                    .row
+
+                        each val, index in ["Souřadnicové měřící stroje", "Optické měřící přístroje"]
+                            .col-md-6
+                                a(href="./katalog.html").item.bg-gray-down
+                                    .cell.p-5
+                                        .d-flex.align-items-center
+                                            h4.title= val
+                                        +sprite("arrow-narrow-right", "s-40")
+                                    .cell
+                                        +picture("prodej/prod2.png")
+
+                        each val, index in ["Profilprojektory", "Měřící ramena", "Přístroje pro kontrolu těsnosti"]
+                            .col-md-6.col-lg-4
+                                a(href="./katalog.html").item.bg-gray-down
+                                    .cell.py-5.px-4
+                                        .d-flex.align-items-center
+                                            h4.title= val
+                                        +sprite("arrow-narrow-right", "s-40")
+                                    .cell
+                                        +picture("prodej/prod2.png")
+
+                        each val, index in ["Kruhoměry", "Konturografy", "Drsnoměry", "Optické 3D scannery"]
+                            .col-md-6.col-lg-3
+                                a(href="./katalog.html").item.--small-height.bg-gray-down
+                                    .cell.py-5.px-4
+                                        .d-flex.align-items-center
+                                            h5.title= val
+                                        +sprite("arrow-narrow-right", "s-40")
+                                    .cell
+                                        +picture("prodej/prod2.png")
+
+        .spacer.pt-7

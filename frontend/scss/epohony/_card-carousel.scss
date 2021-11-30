@@ -1,0 +1,48 @@
+.card-carousel.com {
+  background: $blue-dark;
+  width: 360px;
+  min-height: 480px;
+  overflow: hidden;
+  position: relative;
+  border-radius: $border-radius;
+  &:hover img {
+    opacity: 0.05;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.65;
+    transition: opacity 0.5s;
+  }
+  a {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    right: 50px;
+    z-index: 2;
+    height: 100%;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    &:hover {
+      text-decoration: none;
+      > * {
+        opacity: 0.5;
+      }
+    }
+  }
+  .title {
+    color: white;
+  }
+  img {
+    object-fit: cover;
+  }
+}

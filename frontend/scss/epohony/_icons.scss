@@ -1,0 +1,21 @@
+.ico {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  &svg {
+    background: none;
+  }
+}
+
+.icon-box.com {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  &.--abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

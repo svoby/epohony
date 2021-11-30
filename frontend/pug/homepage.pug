@@ -1,0 +1,101 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Homepage'
+
+block header
+    include ./layout/header
+
+block main
+
+        section.teaser-hp.com
+
+            .spacer.py-6
+
+            .container
+                .in
+                    h1 Měříme, kalibrujeme, servisujeme.
+                    .perex.com.h4.font-weight-light
+                        p Vše na jednom místě,<br>vždy přesně.
+                    .text-center
+                        a(href="#content" data-fancyscroll="true").btn-circle.mx-auto.s-56.shadow-primary
+                            +sprite('arrow-narrow-right', 's-18 rotate-r-90')
+
+            //- div(data-zanim-xs='{"animation": "default", "delay": 0}' data-zanim-trigger="scroll")
+            //-     .image-showcase.com
+            //-         +picture("homepage/teaser4@1x.png", "homepage/teaser4@2x.png")
+            //-         +picture("homepage/teaser2@1x.png", "homepage/teaser2@2x.png")
+            //-         +picture("homepage/teaser1@1x.png", "homepage/teaser1@2x.png")
+            //-         +picture("homepage/teaser3@1x.png", "homepage/teaser3@2x.png")
+            //-         +picture("homepage/teaser5@1x.png", "homepage/teaser5@2x.png")
+
+            .spacer.pt-4
+
+        section.vertical-stripes#content
+            .container
+                .in
+                    h2.text-center.text-sm-left.mb-4.mb-md-0: span.highlight Nabídka služeb
+
+        section
+            .container
+                .box-list.com.--type-1
+                    .row
+                        .col-md-6.d-none.d-md-block
+                            .item
+                                // empty cell
+                        each val, index in ['Akreditovaná kalibrační laboratoř', 'Prodej ručních měřidel', 'Prodej měřících strojů', 'Instalace a servis měřící techniky', 'Zakázkové měření']
+                            .col-md-6
+                                a(href="./prodej.html").item.shadow-primary
+                                    .cell
+                                        h4.font-weight-light.title= val
+                                        span.btn-circle.s-40.shadow-secondary
+                                            +sprite('arrow-narrow-right', 's-18')
+                                    .cell
+                                        +picture("homepage/cat1@1x.png", "homepage/cat1@2x.png")
+                                    .overlay
+
+        .spacer.pt-7
+
+        section
+            .container
+                include partials/numbers
+
+        .spacer.pt-7
+
+        section
+            .container
+                include partials/logo-partners
+
+        .spacer.pt-7
+
+        section
+            .container
+                h3 Klienti nás mají rádi
+
+        .spacer.pt-2
+
+        section
+            .container
+                include ./partials/slider-quote-box
+
+        .spacer.pt-7
+
+        section
+            .container
+                h3 Aktuality
+
+        .spacer.pt-4
+
+        section
+            .container
+                .row.justify-content-center
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box("Title na řádek")
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box("O moc delší title, který je na více řádků")
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box()
+                .text-center.my-4
+                    a(href="aktuality.html").btn.btn-primary Více aktualit
+
+        .spacer.pt-7

@@ -1,0 +1,222 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Služba 2'
+
+block header
+    include ./layout/header
+
+block main
+
+    main.main
+
+        .teaser-hp.com
+
+            .spacer.py-6
+
+            .container
+                .in
+                    h1 Kalibrační <i>laboratoř</i>
+                    .perex.com
+                        p Postaráme se o vaše měřidla od A do Z
+                    .text-center
+                        a(href="#content" data-fancyscroll="true").btn-circle.mx-auto.s-56.shadow-primary
+                            +sprite('arrow-narrow-right', 's-18 rotate-r-90')
+
+            .spacer.pt-4
+
+        section.vertical-stripes#content
+            .container
+                .in
+                    h2.text-center.text-sm-left.mb-4.mb-md-0: span.highlight Obory kde pomáháme
+
+        section
+            .container
+                .box-list.com.--type-1
+                    .row
+                        .col-md-6.d-none.d-md-block
+                            .item
+                                // empty cell
+                        each val, index in ['Délka', 'Rovinný úhel', 'Moment síly', 'Tlak', 'Průtok']
+                            .col-md-6
+                                .item.shadow-primary.pr-md-7(href="./prodej.html" style="background-image: url(" + $imgDir + "/sluzby/sluzba1.png)")
+                                    .cell.flex-row.align-items-center
+                                        span.btn-circle.s-64.h5.mb-0.mr-4.shadow-secondary.text-primary.font-weight-semi-bold= index + 1
+                                        h3.h4.font-weight-semi-bold.title= val
+                                    .overlay.--edge-start 
+
+        .spacer.pt-7
+
+        section
+            .container
+                a(href= $imgDir + '/sluzby/cert1.png' data-fancybox="cert-1").d-block.text-decoration-none.bg-white.text-body.shadow-primary.rounded
+                    .row.align-items-stretch
+                        .col-md-7
+                            .px-6.p-4.py-md-5
+                                +sprite("badge-check", "s-80 text-primary mb-4")
+                                h2 Certifikovaná laboratoř
+                                p Kalibrační laboratoř je akreditovaná Českým institutem pro akreditaci dle ČSN EN ISO/IEC 17025 a je oprávněna používat při své činnosti v daném rozsahu označení „Akreditovaná kalibrační laboratoř č. 2322.“
+                        .col-md-5(style="background: url(" + $imgDir + "/sluzby/cert1.png) no-repeat 50% 0")
+                            .d-flex.align-items-center.justify-content-center.h-md-100.min-vh-25
+                                .btn.d-flex.align-items-center.justify-content-center.btn-primary.rounded-circle.p-0.s-48
+                                    +sprite("search", "s-22")
+
+        .spacer.pt-7
+
+        section
+            .container
+                h3 Kde provádíme kalibraci
+
+        .spacer.pt-4
+
+        section
+            .container
+                .row
+                    each val, index in ["V naší akreditované laboratoři", "V laboratořích se kterými spolupracujeme", "Na místě u zákazníka"]
+                        .col-md-6.col-lg-4.mb-4
+                            .bg-white.shadow-primary
+                                .row.no-gutters
+                                    .col-4
+                                        .equal-1-1
+                                            figure.bg-holder(style="background-image: url(https://via.placeholder.com/120x120.png)")
+                                            .icon-box.com.--abs-center.rounded-circle.border.border-3.border-light.s-64.h5.mb-0.text-white.font-weight-semi-bold= index + 1
+                                    .col-8
+                                        .d-flex.align-items-center.rounded.h-100.py-2.px-4
+                                            h4.h6.card-title= val
+
+        .spacer.pt-7
+
+        section
+            .container
+                .d-block.bg-white.text-body.shadow-primary.rounded
+                    .row.no-gutters.align-items-stretch
+                        .col-md-5
+                            .d-md-flex.align-items-center.px-5.pt-5.pb-md-5.h-100
+                                +placeholder(360, 280, "", "w-100")
+                        .col-md-7
+                            .p-5.pt-md-6.pl-md-0
+                                +sprite("badge-check", "s-80 text-primary mb-2 mb-md-3")
+                                h2.h3.mb-2 Outsourcing metrologie
+                                p Zajištujeme oustourcing metrologie. Odvezeme Vaše měřidla k nám a postaráme se aby fungovala jak mají. KOMPLEXNÍ PÉČI O VAŠE MĚŘIDLA
+
+        .spacer.pt-8
+
+        section
+            .container
+                .row
+                    .col-md-4
+                        .d-flex.h-100.flex-column
+                            .icon-box.com.rounded-circle.border-dashed.border.s-56.mb-3.d-none.d-md-flex
+                                +sprite("thumb-up", "s-32 text-primary")
+                            h2.h3.mb-3 Mimo kalibraci nabízíme také
+                    .col-md-8
+                        .row.no-gutters
+                            each val, index in ["Svoz měřidel", "Kalibrace měřidel pro stavebnictví", "Servis měřidel", "Poradenství v metrologii", "Čištění všech typů zařízení", "Kalibrace měřidel pro stavebnictví"]
+                                .col-6.mb-4
+                                    .d-flex.align-items-center.rounded.shadow-primary.mx-2.p-3.h-100
+                                        +sprite("check", "s-24 text-primary mr-3")
+                                        = val
+
+        section.bg-stripes-down
+
+            .spacer.pt-7
+
+            .container
+                .row.no-gutters
+                    .col-md-5.mb-4
+                        +placeholder(496, 600, "", "w-100 rounded")
+                    .col-md-1
+                    .col-md-6
+                        h2.mb-4 Co vše zahrnuje cena kalibrace
+
+                        #faq.accordion
+                            each val, index in ["Základní údržba", "Kalibrační známka", "Evidenční označení", "Kalibrační list", "Konec scanování - kalibrační list"]
+                                .card.border-bottom
+                                    .card-header.bg-white
+                                        a(href="#!" data-toggle='collapse' aria-expanded="false" data-target='#faq' + index).text-dark.d-flex.justify-content-between
+                                            = val
+                                            +sprite("plus-circle", "s-32")
+                                            +sprite("minus-circle", "s-32")
+                                    .collapse(data-parent='#faq' id="faq" + index)
+                                        .card-body.small.pt-0
+                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec turpis sit enim proin semper amet vestibulum lectus. Consequat, egestas pulvinar enim egestas donec ac. Morbi fermentum mi scelerisque hendrerit lacus.
+
+            .spacer.pt-7
+
+        .spacer.pt-7
+
+        section
+            .container
+                .row.small
+                    .col-md-8.mb-3.mb-md-5
+                        h2.h4.mb-3.mb-md-5 Jaká měřidla kalibrujeme
+                        .row
+                            .col-6
+                                ul
+                                    li
+                                        a(href="#!") Posuvná měřidla (digitální/analogová)
+                                    li
+                                        a(href="#!") Výškoměry (digitální/analogová)
+                                    li
+                                        a(href="#!") Mirkometrická měřidla (digitální/analogová)
+                                    li
+                                        a(href="#!") Nastavení měřidla
+                                    li
+                                        a(href="#!") Číselníková měřidla
+                                    li
+                                        a(href="#!") Měřidla tvaru
+                                    li
+                                        a(href="#!") Speciální měřidla s číselníkem
+                                    li
+                                        a(href="#!") Mikroskopy, profilprojektory, 3D stroje
+                                    li
+                                        a(href="#!") Šablony, měrky
+                            .col-6
+                                ul
+                                    li
+                                        a(href="#!") Posuvná měřidla (digitální/analogová)
+                                    li
+                                        a(href="#!") Výškoměry (digitální/analogová)
+                                    li
+                                        a(href="#!") Mirkometrická měřidla (digitální/analogová)
+                                    li
+                                        a(href="#!") Nastavení měřidla
+                                    li
+                                        a(href="#!") Číselníková měřidla
+                                    li
+                                        a(href="#!") Měřidla tvaru
+                                    li
+                                        a(href="#!") Speciální měřidla s číselníkem
+                                    li
+                                        a(href="#!") Mikroskopy, profilprojektory, 3D stroje
+                                    li
+                                        a(href="#!") Šablony, měrky
+                    .col-md-4.mb-md-5
+                        h2.h4.mb-3.mb-md-5 V kooperaci také
+                        ul
+                            li
+                                a(href="#!") Siloměrů
+                            li
+                                a(href="#!") Píměrných desek
+                            li
+                                a(href="#!") Stopek (digitálních/analogových)
+                            li
+                                a(href="#!") Mechanických a elektronických vah
+                            li
+                                a(href="#!") Měřidel teploty a tlaku
+
+        .spacer.pt-7
+
+        section
+            .container
+                h2.h4 Ozvěte se nám, cenu pošleme na vyžádání
+
+        .spacer.pt-3
+
+        section
+            .container
+                .row
+                    .col-12.col-md-6.col-lg-12.mb-4.mb-lg-5
+                        +avatar-contact-1
+
+        .spacer.pt-7

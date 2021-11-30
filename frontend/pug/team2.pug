@@ -1,0 +1,90 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Tým 2'
+
+block header
+    include ./layout/header
+
+block main
+
+    main.main
+
+        section.teaser.com
+            .container
+                .in.d-flex.align-items-center.flex-column.pb-8
+                    include ./partials/breadcrumbs
+                    h1.text-center <i>Tým TM</i> technik
+
+        section
+            .container
+                include ./partials/teaser-icons.pug
+
+        .spacer.pt-4
+
+        section
+            .container
+                h2.h4 Náš servisní tým je připraven
+
+        .spacer.pt-3
+
+        section
+            .container
+                .row
+                    each val in [1, 2, 3]
+                        .col-12.col-md-6.col-lg-4.mb-4.mb-lg-5
+                            +avatar-contact-2
+
+        .spacer.pt-4
+
+        section
+            .container
+                h2.h4 Servisní oddělení
+
+        .spacer.pt-3
+
+        section
+            .container
+                .row
+                    each val in [1, 2]
+                        .col-12.col-md-6.col-lg-4.mb-4.mb-lg-5
+                            +avatar-contact-2
+
+        .spacer.pt-4
+
+        section
+            .container
+                h2.h4 Marketingové oddělení
+
+        .spacer.pt-3
+
+        section
+            .container
+                .row
+                    .col-12.col-md-6.col-lg-4.mb-4.mb-lg-5
+                        +avatar-contact-2
+
+        .spacer.pt-4
+
+        section
+            .container
+                h2.h4 Kalibrační laboratoř
+
+        .spacer.pt-3
+
+        section
+            .container
+                .row
+                    .col-12.col-md-6.col-lg-4.mb-4.mb-lg-5
+                        +avatar-contact-2
+
+        .spacer.pt-7
+
+        section.bg-stripes-down
+
+            .spacer.pt-7
+
+            .container
+                include ./forms/form-contact
+
+            .spacer.pt-7

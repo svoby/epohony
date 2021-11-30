@@ -1,0 +1,27 @@
+.teaser-hp.com {
+  min-height: 430px;
+  background-color: $secondary;
+  background-position: 50% 0;
+  background-image: url(../../assets/img/bg-ellipse.svg);
+  background-repeat: no-repeat;
+  color: $black;
+  position: relative;
+  h1 {
+    color: $black;
+    letter-spacing: -0.02em;
+    position: relative;
+    text-align: center;
+  }
+  .perex.com {
+    max-width: 600px;
+    //font-size: rem-calc(32);
+    color: rgba(90, 87, 83, 1);
+    margin-bottom: 2em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    & + p {
+      margin-top: 2.2rem;
+    }
+  }
+}

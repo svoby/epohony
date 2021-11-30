@@ -1,0 +1,57 @@
+.quote-list-box.com {
+  .item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 290px;
+    padding: 20px;
+    margin: 0 $grid-gutter-width / 4;
+    border-radius: $border-radius;
+    background: rgba(255, 255, 255, 0.85);
+    // box-shadow: 0px 15.1376px 18.922px rgba(0, 0, 0, 0.05),
+    //   0px 7.56881px 7.56881px rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 2;
+    @include media-breakpoint-up(md) {
+      width: rem-calc(500);
+      height: rem-calc(336);
+      padding: rem-calc(40);
+      margin: 0 $grid-gutter-width / 2;
+    }
+  }
+  .top {
+    margin-bottom: rem-calc(40);
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+  }
+  picture {
+    max-width: 112px;
+    max-height: 112px;
+    margin-right: 24px;
+  }
+  h6 {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  img {
+    border: $border-radius;
+    width: auto; // OWL rewrite
+  }
+  // OWL rewrites
+  .owl-item:last-child .item h3::before {
+    display: none;
+  }
+  .owl-stage-outer {
+    margin: 0 -10px;
+    padding: 0 0 40px;
+    @include media-breakpoint-down(md) {
+      padding: 0 10px 30px;
+      margin: 0 -15px;
+    }
+  }
+  .owl-nav {
+    top: -40px;
+  }
+}

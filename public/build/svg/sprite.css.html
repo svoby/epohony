@@ -1,0 +1,3330 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG CSS sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		<style>i{text-indent:200%;white-space:nowrap;overflow:hidden;display:inline-block;background-size:386px 361px!important}</style>
+
+<!--
+
+Sprite CSS
+====================================================================================================
+This is an all-in-one inline version of the CSS necessary to use the SVG sprite.
+
+-->
+
+<style type="text/css">
+.svg-academic-cap {
+	background: url("sprite.css.svg") 13.812154696132596% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-adjustments {
+	background: url("sprite.css.svg") 13.812154696132596% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-annotation {
+	background: url("sprite.css.svg") 0 14.540059347181009% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-archive {
+	background: url("sprite.css.svg") 6.629834254143646% 14.540059347181009% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-circle-down {
+	background: url("sprite.css.svg") 13.259668508287293% 14.540059347181009% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-circle-left {
+	background: url("sprite.css.svg") 20.441988950276244% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-circle-right {
+	background: url("sprite.css.svg") 20.441988950276244% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-circle-up {
+	background: url("sprite.css.svg") 20.441988950276244% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-down {
+	background: url("sprite.css.svg") 0 21.661721068249257% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-left {
+	background: url("sprite.css.svg") 6.629834254143646% 21.661721068249257% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-narrow-down {
+	background: url("sprite.css.svg") 13.259668508287293% 21.661721068249257% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-narrow-left {
+	background: url("sprite.css.svg") 19.88950276243094% 21.661721068249257% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-narrow-right {
+	background: url("sprite.css.svg") 27.07182320441989% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-narrow-up {
+	background: url("sprite.css.svg") 27.07182320441989% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-right {
+	background: url("sprite.css.svg") 27.07182320441989% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-sm-down {
+	background: url("sprite.css.svg") 27.07182320441989% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-sm-left {
+	background: url("sprite.css.svg") 0 28.783382789317507% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-sm-right {
+	background: url("sprite.css.svg") 6.629834254143646% 28.783382789317507% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-sm-up {
+	background: url("sprite.css.svg") 13.259668508287293% 28.783382789317507% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrow-up {
+	background: url("sprite.css.svg") 19.88950276243094% 28.783382789317507% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-arrows-expand {
+	background: url("sprite.css.svg") 26.519337016574585% 28.783382789317507% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-at-symbol {
+	background: url("sprite.css.svg") 33.70165745856354% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-backspace {
+	background: url("sprite.css.svg") 33.70165745856354% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-badge-check {
+	background: url("sprite.css.svg") 33.70165745856354% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-ban {
+	background: url("sprite.css.svg") 33.70165745856354% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-beaker {
+	background: url("sprite.css.svg") 33.70165745856354% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-bell {
+	background: url("sprite.css.svg") 0 35.90504451038576% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-book-open {
+	background: url("sprite.css.svg") 6.629834254143646% 35.90504451038576% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-bookmark {
+	background: url("sprite.css.svg") 13.259668508287293% 35.90504451038576% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-bookmark-alt {
+	background: url("sprite.css.svg") 19.88950276243094% 35.90504451038576% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-briefcase {
+	background: url("sprite.css.svg") 26.519337016574585% 35.90504451038576% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cake {
+	background: url("sprite.css.svg") 33.149171270718234% 35.90504451038576% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-calculator {
+	background: url("sprite.css.svg") 40.331491712707184% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-calendar {
+	background: url("sprite.css.svg") 40.331491712707184% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-camera {
+	background: url("sprite.css.svg") 40.331491712707184% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cash {
+	background: url("sprite.css.svg") 40.331491712707184% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chart-bar {
+	background: url("sprite.css.svg") 40.331491712707184% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chart-pie {
+	background: url("sprite.css.svg") 40.331491712707184% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chart-square-bar {
+	background: url("sprite.css.svg") 0 43.02670623145401% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chat {
+	background: url("sprite.css.svg") 6.629834254143646% 43.02670623145401% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chat-alt {
+	background: url("sprite.css.svg") 13.259668508287293% 43.02670623145401% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chat-alt-2 {
+	background: url("sprite.css.svg") 19.88950276243094% 43.02670623145401% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-check {
+	background: url("sprite.css.svg") 26.519337016574585% 43.02670623145401% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-check-circle {
+	background: url("sprite.css.svg") 33.149171270718234% 43.02670623145401% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-double-down {
+	background: url("sprite.css.svg") 39.77900552486188% 43.02670623145401% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-double-left {
+	background: url("sprite.css.svg") 46.96132596685083% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-double-right {
+	background: url("sprite.css.svg") 46.96132596685083% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-double-up {
+	background: url("sprite.css.svg") 46.96132596685083% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-down {
+	background: url("sprite.css.svg") 46.96132596685083% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-left {
+	background: url("sprite.css.svg") 46.96132596685083% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-right {
+	background: url("sprite.css.svg") 46.96132596685083% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chevron-up {
+	background: url("sprite.css.svg") 46.96132596685083% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-chip {
+	background: url("sprite.css.svg") 0 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-clipboard {
+	background: url("sprite.css.svg") 6.629834254143646% 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-clipboard-check {
+	background: url("sprite.css.svg") 13.259668508287293% 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-clipboard-copy {
+	background: url("sprite.css.svg") 19.88950276243094% 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-clipboard-list {
+	background: url("sprite.css.svg") 26.519337016574585% 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-clock {
+	background: url("sprite.css.svg") 33.149171270718234% 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cloud {
+	background: url("sprite.css.svg") 39.77900552486188% 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cloud-download {
+	background: url("sprite.css.svg") 46.408839779005525% 50.14836795252226% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cloud-upload {
+	background: url("sprite.css.svg") 53.591160220994475% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-code {
+	background: url("sprite.css.svg") 53.591160220994475% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cog {
+	background: url("sprite.css.svg") 53.591160220994475% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-collection {
+	background: url("sprite.css.svg") 53.591160220994475% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-color-swatch {
+	background: url("sprite.css.svg") 53.591160220994475% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-credit-card {
+	background: url("sprite.css.svg") 53.591160220994475% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cube {
+	background: url("sprite.css.svg") 53.591160220994475% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cube-transparent {
+	background: url("sprite.css.svg") 53.591160220994475% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-currency-bangladeshi {
+	background: url("sprite.css.svg") 0 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-currency-dollar {
+	background: url("sprite.css.svg") 6.629834254143646% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-currency-euro {
+	background: url("sprite.css.svg") 13.259668508287293% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-currency-pound {
+	background: url("sprite.css.svg") 19.88950276243094% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-currency-rupee {
+	background: url("sprite.css.svg") 26.519337016574585% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-currency-yen {
+	background: url("sprite.css.svg") 33.149171270718234% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-cursor-click {
+	background: url("sprite.css.svg") 39.77900552486188% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-database {
+	background: url("sprite.css.svg") 46.408839779005525% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-desktop-computer {
+	background: url("sprite.css.svg") 53.03867403314917% 57.27002967359051% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-device-mobile {
+	background: url("sprite.css.svg") 60.22099447513812% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-device-tablet {
+	background: url("sprite.css.svg") 60.22099447513812% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document {
+	background: url("sprite.css.svg") 60.22099447513812% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document-add {
+	background: url("sprite.css.svg") 60.22099447513812% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document-download {
+	background: url("sprite.css.svg") 60.22099447513812% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document-duplicate {
+	background: url("sprite.css.svg") 60.22099447513812% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document-remove {
+	background: url("sprite.css.svg") 60.22099447513812% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document-report {
+	background: url("sprite.css.svg") 60.22099447513812% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document-search {
+	background: url("sprite.css.svg") 60.22099447513812% 56.97329376854599% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-document-text {
+	background: url("sprite.css.svg") 0 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-dots-circle-horizontal {
+	background: url("sprite.css.svg") 6.629834254143646% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-dots-horizontal {
+	background: url("sprite.css.svg") 13.259668508287293% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-dots-vertical {
+	background: url("sprite.css.svg") 19.88950276243094% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-download {
+	background: url("sprite.css.svg") 26.519337016574585% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-duplicate {
+	background: url("sprite.css.svg") 33.149171270718234% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-emoji-happy {
+	background: url("sprite.css.svg") 39.77900552486188% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-emoji-sad {
+	background: url("sprite.css.svg") 46.408839779005525% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-exclamation {
+	background: url("sprite.css.svg") 53.03867403314917% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-exclamation-circle {
+	background: url("sprite.css.svg") 59.668508287292816% 64.39169139465875% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-external-link {
+	background: url("sprite.css.svg") 66.85082872928177% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-eye {
+	background: url("sprite.css.svg") 66.85082872928177% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-eye-off {
+	background: url("sprite.css.svg") 66.85082872928177% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-facebook {
+	background: url("sprite.css.svg") 0 0 no-repeat;
+	width: 25px;
+	height: 25px;
+}
+.svg-fast-forward {
+	background: url("sprite.css.svg") 66.85082872928177% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-film {
+	background: url("sprite.css.svg") 66.85082872928177% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-filter {
+	background: url("sprite.css.svg") 66.85082872928177% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-finger-print {
+	background: url("sprite.css.svg") 66.85082872928177% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-fire {
+	background: url("sprite.css.svg") 66.85082872928177% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-flag {
+	background: url("sprite.css.svg") 66.85082872928177% 56.97329376854599% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-folder {
+	background: url("sprite.css.svg") 66.85082872928177% 64.09495548961425% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-folder-add {
+	background: url("sprite.css.svg") 0 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-folder-download {
+	background: url("sprite.css.svg") 6.629834254143646% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-folder-open {
+	background: url("sprite.css.svg") 13.259668508287293% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-folder-remove {
+	background: url("sprite.css.svg") 19.88950276243094% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-gift {
+	background: url("sprite.css.svg") 26.519337016574585% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-globe {
+	background: url("sprite.css.svg") 33.149171270718234% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-globe-alt {
+	background: url("sprite.css.svg") 39.77900552486188% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-hand {
+	background: url("sprite.css.svg") 46.408839779005525% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-hashtag {
+	background: url("sprite.css.svg") 53.03867403314917% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-heart {
+	background: url("sprite.css.svg") 59.668508287292816% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-home {
+	background: url("sprite.css.svg") 66.29834254143647% 71.513353115727% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-identification {
+	background: url("sprite.css.svg") 73.48066298342542% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-inbox {
+	background: url("sprite.css.svg") 73.48066298342542% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-inbox-in {
+	background: url("sprite.css.svg") 73.48066298342542% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-information-circle {
+	background: url("sprite.css.svg") 73.48066298342542% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-key {
+	background: url("sprite.css.svg") 73.48066298342542% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-library {
+	background: url("sprite.css.svg") 73.48066298342542% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-light-bulb {
+	background: url("sprite.css.svg") 73.48066298342542% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-lightning-bolt {
+	background: url("sprite.css.svg") 73.48066298342542% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-link {
+	background: url("sprite.css.svg") 73.48066298342542% 56.97329376854599% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-linkedin {
+	background: url("sprite.css.svg") 6.925207756232687% 0 no-repeat;
+	width: 25px;
+	height: 24px;
+}
+.svg-location-marker {
+	background: url("sprite.css.svg") 73.48066298342542% 64.09495548961425% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-lock-closed {
+	background: url("sprite.css.svg") 73.48066298342542% 71.21661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-lock-open {
+	background: url("sprite.css.svg") 0 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-login {
+	background: url("sprite.css.svg") 6.629834254143646% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-logout {
+	background: url("sprite.css.svg") 13.259668508287293% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-mail {
+	background: url("sprite.css.svg") 19.88950276243094% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-mail-open {
+	background: url("sprite.css.svg") 26.519337016574585% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-map {
+	background: url("sprite.css.svg") 33.149171270718234% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-menu {
+	background: url("sprite.css.svg") 39.77900552486188% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-menu-alt-1 {
+	background: url("sprite.css.svg") 46.408839779005525% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-menu-alt-2 {
+	background: url("sprite.css.svg") 53.03867403314917% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-menu-alt-3 {
+	background: url("sprite.css.svg") 59.668508287292816% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-menu-alt-4 {
+	background: url("sprite.css.svg") 66.29834254143647% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-microphone {
+	background: url("sprite.css.svg") 72.92817679558011% 78.63501483679525% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-minus {
+	background: url("sprite.css.svg") 80.11049723756906% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-minus-circle {
+	background: url("sprite.css.svg") 80.11049723756906% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-minus-sm {
+	background: url("sprite.css.svg") 80.11049723756906% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-moon {
+	background: url("sprite.css.svg") 80.11049723756906% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-music-note {
+	background: url("sprite.css.svg") 80.11049723756906% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-newspaper {
+	background: url("sprite.css.svg") 80.11049723756906% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-office-building {
+	background: url("sprite.css.svg") 80.11049723756906% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-paper-airplane {
+	background: url("sprite.css.svg") 80.11049723756906% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-paper-clip {
+	background: url("sprite.css.svg") 80.11049723756906% 56.97329376854599% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-pause {
+	background: url("sprite.css.svg") 80.11049723756906% 64.09495548961425% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-pencil {
+	background: url("sprite.css.svg") 80.11049723756906% 71.21661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-pencil-alt {
+	background: url("sprite.css.svg") 80.11049723756906% 78.33827893175074% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-phone {
+	background: url("sprite.css.svg") 0 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-phone-incoming {
+	background: url("sprite.css.svg") 6.629834254143646% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-phone-missed-call {
+	background: url("sprite.css.svg") 13.259668508287293% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-phone-outgoing {
+	background: url("sprite.css.svg") 19.88950276243094% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-photograph {
+	background: url("sprite.css.svg") 26.519337016574585% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-play {
+	background: url("sprite.css.svg") 33.149171270718234% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-plus {
+	background: url("sprite.css.svg") 39.77900552486188% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-plus-circle {
+	background: url("sprite.css.svg") 46.408839779005525% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-plus-sm {
+	background: url("sprite.css.svg") 53.03867403314917% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-presentation-chart-bar {
+	background: url("sprite.css.svg") 59.668508287292816% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-presentation-chart-line {
+	background: url("sprite.css.svg") 66.29834254143647% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-printer {
+	background: url("sprite.css.svg") 72.92817679558011% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-puzzle {
+	background: url("sprite.css.svg") 79.55801104972376% 85.7566765578635% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-qrcode {
+	background: url("sprite.css.svg") 86.74033149171271% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-question-mark-circle {
+	background: url("sprite.css.svg") 86.74033149171271% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-receipt-refund {
+	background: url("sprite.css.svg") 86.74033149171271% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-receipt-tax {
+	background: url("sprite.css.svg") 86.74033149171271% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-refresh {
+	background: url("sprite.css.svg") 86.74033149171271% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-reply {
+	background: url("sprite.css.svg") 86.74033149171271% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-rewind {
+	background: url("sprite.css.svg") 86.74033149171271% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-rss {
+	background: url("sprite.css.svg") 86.74033149171271% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-save {
+	background: url("sprite.css.svg") 86.74033149171271% 56.97329376854599% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-save-as {
+	background: url("sprite.css.svg") 86.74033149171271% 64.09495548961425% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-scale {
+	background: url("sprite.css.svg") 86.74033149171271% 71.21661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-scissors {
+	background: url("sprite.css.svg") 86.74033149171271% 78.33827893175074% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-search {
+	background: url("sprite.css.svg") 86.74033149171271% 85.45994065281899% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-search-circle {
+	background: url("sprite.css.svg") 0 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-selector {
+	background: url("sprite.css.svg") 6.629834254143646% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-server {
+	background: url("sprite.css.svg") 13.259668508287293% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-share {
+	background: url("sprite.css.svg") 19.88950276243094% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-shield-check {
+	background: url("sprite.css.svg") 26.519337016574585% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-shield-exclamation {
+	background: url("sprite.css.svg") 33.149171270718234% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-shopping-bag {
+	background: url("sprite.css.svg") 39.77900552486188% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-shopping-cart {
+	background: url("sprite.css.svg") 46.408839779005525% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-sort-ascending {
+	background: url("sprite.css.svg") 53.03867403314917% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-sort-descending {
+	background: url("sprite.css.svg") 59.668508287292816% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-sparkles {
+	background: url("sprite.css.svg") 66.29834254143647% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-speakerphone {
+	background: url("sprite.css.svg") 72.92817679558011% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-star {
+	background: url("sprite.css.svg") 79.55801104972376% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-status-offline {
+	background: url("sprite.css.svg") 86.1878453038674% 92.87833827893175% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-status-online {
+	background: url("sprite.css.svg") 93.37016574585635% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-stop {
+	background: url("sprite.css.svg") 93.37016574585635% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-sun {
+	background: url("sprite.css.svg") 93.37016574585635% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-support {
+	background: url("sprite.css.svg") 93.37016574585635% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-switch-horizontal {
+	background: url("sprite.css.svg") 93.37016574585635% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-switch-vertical {
+	background: url("sprite.css.svg") 93.37016574585635% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-table {
+	background: url("sprite.css.svg") 93.37016574585635% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-tag {
+	background: url("sprite.css.svg") 93.37016574585635% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-template {
+	background: url("sprite.css.svg") 93.37016574585635% 56.97329376854599% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-terminal {
+	background: url("sprite.css.svg") 93.37016574585635% 64.09495548961425% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-thumb-down {
+	background: url("sprite.css.svg") 93.37016574585635% 71.21661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-thumb-up {
+	background: url("sprite.css.svg") 93.37016574585635% 78.33827893175074% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-ticket {
+	background: url("sprite.css.svg") 93.37016574585635% 85.45994065281899% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-translate {
+	background: url("sprite.css.svg") 93.37016574585635% 92.58160237388724% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-trash {
+	background: url("sprite.css.svg") 0 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-trending-down {
+	background: url("sprite.css.svg") 6.629834254143646% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-trending-up {
+	background: url("sprite.css.svg") 13.259668508287293% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-truck {
+	background: url("sprite.css.svg") 19.88950276243094% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-twitter {
+	background: url("sprite.css.svg") 0 7.4183976261127595% no-repeat;
+	width: 25px;
+	height: 24px;
+}
+.svg-upload {
+	background: url("sprite.css.svg") 26.519337016574585% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-user {
+	background: url("sprite.css.svg") 33.149171270718234% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-user-add {
+	background: url("sprite.css.svg") 39.77900552486188% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-user-circle {
+	background: url("sprite.css.svg") 46.408839779005525% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-user-group {
+	background: url("sprite.css.svg") 53.03867403314917% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-user-remove {
+	background: url("sprite.css.svg") 59.668508287292816% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-users {
+	background: url("sprite.css.svg") 66.29834254143647% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-variable {
+	background: url("sprite.css.svg") 72.92817679558011% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-video-camera {
+	background: url("sprite.css.svg") 79.55801104972376% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-view-boards {
+	background: url("sprite.css.svg") 86.1878453038674% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-view-grid {
+	background: url("sprite.css.svg") 92.81767955801105% 100% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-view-grid-add {
+	background: url("sprite.css.svg") 100% 0 no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-view-list {
+	background: url("sprite.css.svg") 100% 7.121661721068249% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-volume-off {
+	background: url("sprite.css.svg") 100% 14.243323442136498% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-volume-up {
+	background: url("sprite.css.svg") 100% 21.364985163204746% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-wifi {
+	background: url("sprite.css.svg") 100% 28.486646884272997% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-x {
+	background: url("sprite.css.svg") 100% 35.60830860534124% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-x-circle {
+	background: url("sprite.css.svg") 100% 42.72997032640949% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-youtube {
+	background: url("sprite.css.svg") 6.925207756232687% 7.4183976261127595% no-repeat;
+	width: 25px;
+	height: 24px;
+}
+.svg-zoom-in {
+	background: url("sprite.css.svg") 100% 49.85163204747774% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.svg-zoom-out {
+	background: url("sprite.css.svg") 100% 56.97329376854599% no-repeat;
+	width: 24px;
+	height: 24px;
+}
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG CSS sprite preview</h1>
+			<p>This preview features the generated SVG file as a conventional CSS sprite. The shapes are displayed as background images of several <code>&lt;i&gt;</code> elements.</p>
+		</header>
+		<section>
+
+<!--
+
+Conventional CSS sprite
+====================================================================================================
+This technique uses CSS classes to display portions of the sprite as background image of
+appropriately sized elements.
+
+-->
+
+			<ul>
+				<li title="academic-cap">
+					<div class="icon-box">
+
+						<!-- academic-cap -->
+						<i class="svg-academic-cap">academic-cap</i>
+
+					</div>
+					<h2>academic-cap</h2>
+				</li>
+				<li title="adjustments">
+					<div class="icon-box">
+
+						<!-- adjustments -->
+						<i class="svg-adjustments">adjustments</i>
+
+					</div>
+					<h2>adjustments</h2>
+				</li>
+				<li title="annotation">
+					<div class="icon-box">
+
+						<!-- annotation -->
+						<i class="svg-annotation">annotation</i>
+
+					</div>
+					<h2>annotation</h2>
+				</li>
+				<li title="archive">
+					<div class="icon-box">
+
+						<!-- archive -->
+						<i class="svg-archive">archive</i>
+
+					</div>
+					<h2>archive</h2>
+				</li>
+				<li title="arrow-circle-down">
+					<div class="icon-box">
+
+						<!-- arrow-circle-down -->
+						<i class="svg-arrow-circle-down">arrow-circle-down</i>
+
+					</div>
+					<h2>arrow-circle-down</h2>
+				</li>
+				<li title="arrow-circle-left">
+					<div class="icon-box">
+
+						<!-- arrow-circle-left -->
+						<i class="svg-arrow-circle-left">arrow-circle-left</i>
+
+					</div>
+					<h2>arrow-circle-left</h2>
+				</li>
+				<li title="arrow-circle-right">
+					<div class="icon-box">
+
+						<!-- arrow-circle-right -->
+						<i class="svg-arrow-circle-right">arrow-circle-right</i>
+
+					</div>
+					<h2>arrow-circle-right</h2>
+				</li>
+				<li title="arrow-circle-up">
+					<div class="icon-box">
+
+						<!-- arrow-circle-up -->
+						<i class="svg-arrow-circle-up">arrow-circle-up</i>
+
+					</div>
+					<h2>arrow-circle-up</h2>
+				</li>
+				<li title="arrow-down">
+					<div class="icon-box">
+
+						<!-- arrow-down -->
+						<i class="svg-arrow-down">arrow-down</i>
+
+					</div>
+					<h2>arrow-down</h2>
+				</li>
+				<li title="arrow-left">
+					<div class="icon-box">
+
+						<!-- arrow-left -->
+						<i class="svg-arrow-left">arrow-left</i>
+
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-narrow-down">
+					<div class="icon-box">
+
+						<!-- arrow-narrow-down -->
+						<i class="svg-arrow-narrow-down">arrow-narrow-down</i>
+
+					</div>
+					<h2>arrow-narrow-down</h2>
+				</li>
+				<li title="arrow-narrow-left">
+					<div class="icon-box">
+
+						<!-- arrow-narrow-left -->
+						<i class="svg-arrow-narrow-left">arrow-narrow-left</i>
+
+					</div>
+					<h2>arrow-narrow-left</h2>
+				</li>
+				<li title="arrow-narrow-right">
+					<div class="icon-box">
+
+						<!-- arrow-narrow-right -->
+						<i class="svg-arrow-narrow-right">arrow-narrow-right</i>
+
+					</div>
+					<h2>arrow-narrow-right</h2>
+				</li>
+				<li title="arrow-narrow-up">
+					<div class="icon-box">
+
+						<!-- arrow-narrow-up -->
+						<i class="svg-arrow-narrow-up">arrow-narrow-up</i>
+
+					</div>
+					<h2>arrow-narrow-up</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+
+						<!-- arrow-right -->
+						<i class="svg-arrow-right">arrow-right</i>
+
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="arrow-sm-down">
+					<div class="icon-box">
+
+						<!-- arrow-sm-down -->
+						<i class="svg-arrow-sm-down">arrow-sm-down</i>
+
+					</div>
+					<h2>arrow-sm-down</h2>
+				</li>
+				<li title="arrow-sm-left">
+					<div class="icon-box">
+
+						<!-- arrow-sm-left -->
+						<i class="svg-arrow-sm-left">arrow-sm-left</i>
+
+					</div>
+					<h2>arrow-sm-left</h2>
+				</li>
+				<li title="arrow-sm-right">
+					<div class="icon-box">
+
+						<!-- arrow-sm-right -->
+						<i class="svg-arrow-sm-right">arrow-sm-right</i>
+
+					</div>
+					<h2>arrow-sm-right</h2>
+				</li>
+				<li title="arrow-sm-up">
+					<div class="icon-box">
+
+						<!-- arrow-sm-up -->
+						<i class="svg-arrow-sm-up">arrow-sm-up</i>
+
+					</div>
+					<h2>arrow-sm-up</h2>
+				</li>
+				<li title="arrow-up">
+					<div class="icon-box">
+
+						<!-- arrow-up -->
+						<i class="svg-arrow-up">arrow-up</i>
+
+					</div>
+					<h2>arrow-up</h2>
+				</li>
+				<li title="arrows-expand">
+					<div class="icon-box">
+
+						<!-- arrows-expand -->
+						<i class="svg-arrows-expand">arrows-expand</i>
+
+					</div>
+					<h2>arrows-expand</h2>
+				</li>
+				<li title="at-symbol">
+					<div class="icon-box">
+
+						<!-- at-symbol -->
+						<i class="svg-at-symbol">at-symbol</i>
+
+					</div>
+					<h2>at-symbol</h2>
+				</li>
+				<li title="backspace">
+					<div class="icon-box">
+
+						<!-- backspace -->
+						<i class="svg-backspace">backspace</i>
+
+					</div>
+					<h2>backspace</h2>
+				</li>
+				<li title="badge-check">
+					<div class="icon-box">
+
+						<!-- badge-check -->
+						<i class="svg-badge-check">badge-check</i>
+
+					</div>
+					<h2>badge-check</h2>
+				</li>
+				<li title="ban">
+					<div class="icon-box">
+
+						<!-- ban -->
+						<i class="svg-ban">ban</i>
+
+					</div>
+					<h2>ban</h2>
+				</li>
+				<li title="beaker">
+					<div class="icon-box">
+
+						<!-- beaker -->
+						<i class="svg-beaker">beaker</i>
+
+					</div>
+					<h2>beaker</h2>
+				</li>
+				<li title="bell">
+					<div class="icon-box">
+
+						<!-- bell -->
+						<i class="svg-bell">bell</i>
+
+					</div>
+					<h2>bell</h2>
+				</li>
+				<li title="book-open">
+					<div class="icon-box">
+
+						<!-- book-open -->
+						<i class="svg-book-open">book-open</i>
+
+					</div>
+					<h2>book-open</h2>
+				</li>
+				<li title="bookmark">
+					<div class="icon-box">
+
+						<!-- bookmark -->
+						<i class="svg-bookmark">bookmark</i>
+
+					</div>
+					<h2>bookmark</h2>
+				</li>
+				<li title="bookmark-alt">
+					<div class="icon-box">
+
+						<!-- bookmark-alt -->
+						<i class="svg-bookmark-alt">bookmark-alt</i>
+
+					</div>
+					<h2>bookmark-alt</h2>
+				</li>
+				<li title="briefcase">
+					<div class="icon-box">
+
+						<!-- briefcase -->
+						<i class="svg-briefcase">briefcase</i>
+
+					</div>
+					<h2>briefcase</h2>
+				</li>
+				<li title="cake">
+					<div class="icon-box">
+
+						<!-- cake -->
+						<i class="svg-cake">cake</i>
+
+					</div>
+					<h2>cake</h2>
+				</li>
+				<li title="calculator">
+					<div class="icon-box">
+
+						<!-- calculator -->
+						<i class="svg-calculator">calculator</i>
+
+					</div>
+					<h2>calculator</h2>
+				</li>
+				<li title="calendar">
+					<div class="icon-box">
+
+						<!-- calendar -->
+						<i class="svg-calendar">calendar</i>
+
+					</div>
+					<h2>calendar</h2>
+				</li>
+				<li title="camera">
+					<div class="icon-box">
+
+						<!-- camera -->
+						<i class="svg-camera">camera</i>
+
+					</div>
+					<h2>camera</h2>
+				</li>
+				<li title="cash">
+					<div class="icon-box">
+
+						<!-- cash -->
+						<i class="svg-cash">cash</i>
+
+					</div>
+					<h2>cash</h2>
+				</li>
+				<li title="chart-bar">
+					<div class="icon-box">
+
+						<!-- chart-bar -->
+						<i class="svg-chart-bar">chart-bar</i>
+
+					</div>
+					<h2>chart-bar</h2>
+				</li>
+				<li title="chart-pie">
+					<div class="icon-box">
+
+						<!-- chart-pie -->
+						<i class="svg-chart-pie">chart-pie</i>
+
+					</div>
+					<h2>chart-pie</h2>
+				</li>
+				<li title="chart-square-bar">
+					<div class="icon-box">
+
+						<!-- chart-square-bar -->
+						<i class="svg-chart-square-bar">chart-square-bar</i>
+
+					</div>
+					<h2>chart-square-bar</h2>
+				</li>
+				<li title="chat">
+					<div class="icon-box">
+
+						<!-- chat -->
+						<i class="svg-chat">chat</i>
+
+					</div>
+					<h2>chat</h2>
+				</li>
+				<li title="chat-alt">
+					<div class="icon-box">
+
+						<!-- chat-alt -->
+						<i class="svg-chat-alt">chat-alt</i>
+
+					</div>
+					<h2>chat-alt</h2>
+				</li>
+				<li title="chat-alt-2">
+					<div class="icon-box">
+
+						<!-- chat-alt-2 -->
+						<i class="svg-chat-alt-2">chat-alt-2</i>
+
+					</div>
+					<h2>chat-alt-2</h2>
+				</li>
+				<li title="check">
+					<div class="icon-box">
+
+						<!-- check -->
+						<i class="svg-check">check</i>
+
+					</div>
+					<h2>check</h2>
+				</li>
+				<li title="check-circle">
+					<div class="icon-box">
+
+						<!-- check-circle -->
+						<i class="svg-check-circle">check-circle</i>
+
+					</div>
+					<h2>check-circle</h2>
+				</li>
+				<li title="chevron-double-down">
+					<div class="icon-box">
+
+						<!-- chevron-double-down -->
+						<i class="svg-chevron-double-down">chevron-double-down</i>
+
+					</div>
+					<h2>chevron-double-down</h2>
+				</li>
+				<li title="chevron-double-left">
+					<div class="icon-box">
+
+						<!-- chevron-double-left -->
+						<i class="svg-chevron-double-left">chevron-double-left</i>
+
+					</div>
+					<h2>chevron-double-left</h2>
+				</li>
+				<li title="chevron-double-right">
+					<div class="icon-box">
+
+						<!-- chevron-double-right -->
+						<i class="svg-chevron-double-right">chevron-double-right</i>
+
+					</div>
+					<h2>chevron-double-right</h2>
+				</li>
+				<li title="chevron-double-up">
+					<div class="icon-box">
+
+						<!-- chevron-double-up -->
+						<i class="svg-chevron-double-up">chevron-double-up</i>
+
+					</div>
+					<h2>chevron-double-up</h2>
+				</li>
+				<li title="chevron-down">
+					<div class="icon-box">
+
+						<!-- chevron-down -->
+						<i class="svg-chevron-down">chevron-down</i>
+
+					</div>
+					<h2>chevron-down</h2>
+				</li>
+				<li title="chevron-left">
+					<div class="icon-box">
+
+						<!-- chevron-left -->
+						<i class="svg-chevron-left">chevron-left</i>
+
+					</div>
+					<h2>chevron-left</h2>
+				</li>
+				<li title="chevron-right">
+					<div class="icon-box">
+
+						<!-- chevron-right -->
+						<i class="svg-chevron-right">chevron-right</i>
+
+					</div>
+					<h2>chevron-right</h2>
+				</li>
+				<li title="chevron-up">
+					<div class="icon-box">
+
+						<!-- chevron-up -->
+						<i class="svg-chevron-up">chevron-up</i>
+
+					</div>
+					<h2>chevron-up</h2>
+				</li>
+				<li title="chip">
+					<div class="icon-box">
+
+						<!-- chip -->
+						<i class="svg-chip">chip</i>
+
+					</div>
+					<h2>chip</h2>
+				</li>
+				<li title="clipboard">
+					<div class="icon-box">
+
+						<!-- clipboard -->
+						<i class="svg-clipboard">clipboard</i>
+
+					</div>
+					<h2>clipboard</h2>
+				</li>
+				<li title="clipboard-check">
+					<div class="icon-box">
+
+						<!-- clipboard-check -->
+						<i class="svg-clipboard-check">clipboard-check</i>
+
+					</div>
+					<h2>clipboard-check</h2>
+				</li>
+				<li title="clipboard-copy">
+					<div class="icon-box">
+
+						<!-- clipboard-copy -->
+						<i class="svg-clipboard-copy">clipboard-copy</i>
+
+					</div>
+					<h2>clipboard-copy</h2>
+				</li>
+				<li title="clipboard-list">
+					<div class="icon-box">
+
+						<!-- clipboard-list -->
+						<i class="svg-clipboard-list">clipboard-list</i>
+
+					</div>
+					<h2>clipboard-list</h2>
+				</li>
+				<li title="clock">
+					<div class="icon-box">
+
+						<!-- clock -->
+						<i class="svg-clock">clock</i>
+
+					</div>
+					<h2>clock</h2>
+				</li>
+				<li title="cloud">
+					<div class="icon-box">
+
+						<!-- cloud -->
+						<i class="svg-cloud">cloud</i>
+
+					</div>
+					<h2>cloud</h2>
+				</li>
+				<li title="cloud-download">
+					<div class="icon-box">
+
+						<!-- cloud-download -->
+						<i class="svg-cloud-download">cloud-download</i>
+
+					</div>
+					<h2>cloud-download</h2>
+				</li>
+				<li title="cloud-upload">
+					<div class="icon-box">
+
+						<!-- cloud-upload -->
+						<i class="svg-cloud-upload">cloud-upload</i>
+
+					</div>
+					<h2>cloud-upload</h2>
+				</li>
+				<li title="code">
+					<div class="icon-box">
+
+						<!-- code -->
+						<i class="svg-code">code</i>
+
+					</div>
+					<h2>code</h2>
+				</li>
+				<li title="cog">
+					<div class="icon-box">
+
+						<!-- cog -->
+						<i class="svg-cog">cog</i>
+
+					</div>
+					<h2>cog</h2>
+				</li>
+				<li title="collection">
+					<div class="icon-box">
+
+						<!-- collection -->
+						<i class="svg-collection">collection</i>
+
+					</div>
+					<h2>collection</h2>
+				</li>
+				<li title="color-swatch">
+					<div class="icon-box">
+
+						<!-- color-swatch -->
+						<i class="svg-color-swatch">color-swatch</i>
+
+					</div>
+					<h2>color-swatch</h2>
+				</li>
+				<li title="credit-card">
+					<div class="icon-box">
+
+						<!-- credit-card -->
+						<i class="svg-credit-card">credit-card</i>
+
+					</div>
+					<h2>credit-card</h2>
+				</li>
+				<li title="cube">
+					<div class="icon-box">
+
+						<!-- cube -->
+						<i class="svg-cube">cube</i>
+
+					</div>
+					<h2>cube</h2>
+				</li>
+				<li title="cube-transparent">
+					<div class="icon-box">
+
+						<!-- cube-transparent -->
+						<i class="svg-cube-transparent">cube-transparent</i>
+
+					</div>
+					<h2>cube-transparent</h2>
+				</li>
+				<li title="currency-bangladeshi">
+					<div class="icon-box">
+
+						<!-- currency-bangladeshi -->
+						<i class="svg-currency-bangladeshi">currency-bangladeshi</i>
+
+					</div>
+					<h2>currency-bangladeshi</h2>
+				</li>
+				<li title="currency-dollar">
+					<div class="icon-box">
+
+						<!-- currency-dollar -->
+						<i class="svg-currency-dollar">currency-dollar</i>
+
+					</div>
+					<h2>currency-dollar</h2>
+				</li>
+				<li title="currency-euro">
+					<div class="icon-box">
+
+						<!-- currency-euro -->
+						<i class="svg-currency-euro">currency-euro</i>
+
+					</div>
+					<h2>currency-euro</h2>
+				</li>
+				<li title="currency-pound">
+					<div class="icon-box">
+
+						<!-- currency-pound -->
+						<i class="svg-currency-pound">currency-pound</i>
+
+					</div>
+					<h2>currency-pound</h2>
+				</li>
+				<li title="currency-rupee">
+					<div class="icon-box">
+
+						<!-- currency-rupee -->
+						<i class="svg-currency-rupee">currency-rupee</i>
+
+					</div>
+					<h2>currency-rupee</h2>
+				</li>
+				<li title="currency-yen">
+					<div class="icon-box">
+
+						<!-- currency-yen -->
+						<i class="svg-currency-yen">currency-yen</i>
+
+					</div>
+					<h2>currency-yen</h2>
+				</li>
+				<li title="cursor-click">
+					<div class="icon-box">
+
+						<!-- cursor-click -->
+						<i class="svg-cursor-click">cursor-click</i>
+
+					</div>
+					<h2>cursor-click</h2>
+				</li>
+				<li title="database">
+					<div class="icon-box">
+
+						<!-- database -->
+						<i class="svg-database">database</i>
+
+					</div>
+					<h2>database</h2>
+				</li>
+				<li title="desktop-computer">
+					<div class="icon-box">
+
+						<!-- desktop-computer -->
+						<i class="svg-desktop-computer">desktop-computer</i>
+
+					</div>
+					<h2>desktop-computer</h2>
+				</li>
+				<li title="device-mobile">
+					<div class="icon-box">
+
+						<!-- device-mobile -->
+						<i class="svg-device-mobile">device-mobile</i>
+
+					</div>
+					<h2>device-mobile</h2>
+				</li>
+				<li title="device-tablet">
+					<div class="icon-box">
+
+						<!-- device-tablet -->
+						<i class="svg-device-tablet">device-tablet</i>
+
+					</div>
+					<h2>device-tablet</h2>
+				</li>
+				<li title="document">
+					<div class="icon-box">
+
+						<!-- document -->
+						<i class="svg-document">document</i>
+
+					</div>
+					<h2>document</h2>
+				</li>
+				<li title="document-add">
+					<div class="icon-box">
+
+						<!-- document-add -->
+						<i class="svg-document-add">document-add</i>
+
+					</div>
+					<h2>document-add</h2>
+				</li>
+				<li title="document-download">
+					<div class="icon-box">
+
+						<!-- document-download -->
+						<i class="svg-document-download">document-download</i>
+
+					</div>
+					<h2>document-download</h2>
+				</li>
+				<li title="document-duplicate">
+					<div class="icon-box">
+
+						<!-- document-duplicate -->
+						<i class="svg-document-duplicate">document-duplicate</i>
+
+					</div>
+					<h2>document-duplicate</h2>
+				</li>
+				<li title="document-remove">
+					<div class="icon-box">
+
+						<!-- document-remove -->
+						<i class="svg-document-remove">document-remove</i>
+
+					</div>
+					<h2>document-remove</h2>
+				</li>
+				<li title="document-report">
+					<div class="icon-box">
+
+						<!-- document-report -->
+						<i class="svg-document-report">document-report</i>
+
+					</div>
+					<h2>document-report</h2>
+				</li>
+				<li title="document-search">
+					<div class="icon-box">
+
+						<!-- document-search -->
+						<i class="svg-document-search">document-search</i>
+
+					</div>
+					<h2>document-search</h2>
+				</li>
+				<li title="document-text">
+					<div class="icon-box">
+
+						<!-- document-text -->
+						<i class="svg-document-text">document-text</i>
+
+					</div>
+					<h2>document-text</h2>
+				</li>
+				<li title="dots-circle-horizontal">
+					<div class="icon-box">
+
+						<!-- dots-circle-horizontal -->
+						<i class="svg-dots-circle-horizontal">dots-circle-horizontal</i>
+
+					</div>
+					<h2>dots-circle-horizontal</h2>
+				</li>
+				<li title="dots-horizontal">
+					<div class="icon-box">
+
+						<!-- dots-horizontal -->
+						<i class="svg-dots-horizontal">dots-horizontal</i>
+
+					</div>
+					<h2>dots-horizontal</h2>
+				</li>
+				<li title="dots-vertical">
+					<div class="icon-box">
+
+						<!-- dots-vertical -->
+						<i class="svg-dots-vertical">dots-vertical</i>
+
+					</div>
+					<h2>dots-vertical</h2>
+				</li>
+				<li title="download">
+					<div class="icon-box">
+
+						<!-- download -->
+						<i class="svg-download">download</i>
+
+					</div>
+					<h2>download</h2>
+				</li>
+				<li title="duplicate">
+					<div class="icon-box">
+
+						<!-- duplicate -->
+						<i class="svg-duplicate">duplicate</i>
+
+					</div>
+					<h2>duplicate</h2>
+				</li>
+				<li title="emoji-happy">
+					<div class="icon-box">
+
+						<!-- emoji-happy -->
+						<i class="svg-emoji-happy">emoji-happy</i>
+
+					</div>
+					<h2>emoji-happy</h2>
+				</li>
+				<li title="emoji-sad">
+					<div class="icon-box">
+
+						<!-- emoji-sad -->
+						<i class="svg-emoji-sad">emoji-sad</i>
+
+					</div>
+					<h2>emoji-sad</h2>
+				</li>
+				<li title="exclamation">
+					<div class="icon-box">
+
+						<!-- exclamation -->
+						<i class="svg-exclamation">exclamation</i>
+
+					</div>
+					<h2>exclamation</h2>
+				</li>
+				<li title="exclamation-circle">
+					<div class="icon-box">
+
+						<!-- exclamation-circle -->
+						<i class="svg-exclamation-circle">exclamation-circle</i>
+
+					</div>
+					<h2>exclamation-circle</h2>
+				</li>
+				<li title="external-link">
+					<div class="icon-box">
+
+						<!-- external-link -->
+						<i class="svg-external-link">external-link</i>
+
+					</div>
+					<h2>external-link</h2>
+				</li>
+				<li title="eye">
+					<div class="icon-box">
+
+						<!-- eye -->
+						<i class="svg-eye">eye</i>
+
+					</div>
+					<h2>eye</h2>
+				</li>
+				<li title="eye-off">
+					<div class="icon-box">
+
+						<!-- eye-off -->
+						<i class="svg-eye-off">eye-off</i>
+
+					</div>
+					<h2>eye-off</h2>
+				</li>
+				<li title="facebook">
+					<div class="icon-box">
+
+						<!-- facebook -->
+						<i class="svg-facebook">facebook</i>
+
+					</div>
+					<h2>facebook</h2>
+				</li>
+				<li title="fast-forward">
+					<div class="icon-box">
+
+						<!-- fast-forward -->
+						<i class="svg-fast-forward">fast-forward</i>
+
+					</div>
+					<h2>fast-forward</h2>
+				</li>
+				<li title="film">
+					<div class="icon-box">
+
+						<!-- film -->
+						<i class="svg-film">film</i>
+
+					</div>
+					<h2>film</h2>
+				</li>
+				<li title="filter">
+					<div class="icon-box">
+
+						<!-- filter -->
+						<i class="svg-filter">filter</i>
+
+					</div>
+					<h2>filter</h2>
+				</li>
+				<li title="finger-print">
+					<div class="icon-box">
+
+						<!-- finger-print -->
+						<i class="svg-finger-print">finger-print</i>
+
+					</div>
+					<h2>finger-print</h2>
+				</li>
+				<li title="fire">
+					<div class="icon-box">
+
+						<!-- fire -->
+						<i class="svg-fire">fire</i>
+
+					</div>
+					<h2>fire</h2>
+				</li>
+				<li title="flag">
+					<div class="icon-box">
+
+						<!-- flag -->
+						<i class="svg-flag">flag</i>
+
+					</div>
+					<h2>flag</h2>
+				</li>
+				<li title="folder">
+					<div class="icon-box">
+
+						<!-- folder -->
+						<i class="svg-folder">folder</i>
+
+					</div>
+					<h2>folder</h2>
+				</li>
+				<li title="folder-add">
+					<div class="icon-box">
+
+						<!-- folder-add -->
+						<i class="svg-folder-add">folder-add</i>
+
+					</div>
+					<h2>folder-add</h2>
+				</li>
+				<li title="folder-download">
+					<div class="icon-box">
+
+						<!-- folder-download -->
+						<i class="svg-folder-download">folder-download</i>
+
+					</div>
+					<h2>folder-download</h2>
+				</li>
+				<li title="folder-open">
+					<div class="icon-box">
+
+						<!-- folder-open -->
+						<i class="svg-folder-open">folder-open</i>
+
+					</div>
+					<h2>folder-open</h2>
+				</li>
+				<li title="folder-remove">
+					<div class="icon-box">
+
+						<!-- folder-remove -->
+						<i class="svg-folder-remove">folder-remove</i>
+
+					</div>
+					<h2>folder-remove</h2>
+				</li>
+				<li title="gift">
+					<div class="icon-box">
+
+						<!-- gift -->
+						<i class="svg-gift">gift</i>
+
+					</div>
+					<h2>gift</h2>
+				</li>
+				<li title="globe">
+					<div class="icon-box">
+
+						<!-- globe -->
+						<i class="svg-globe">globe</i>
+
+					</div>
+					<h2>globe</h2>
+				</li>
+				<li title="globe-alt">
+					<div class="icon-box">
+
+						<!-- globe-alt -->
+						<i class="svg-globe-alt">globe-alt</i>
+
+					</div>
+					<h2>globe-alt</h2>
+				</li>
+				<li title="hand">
+					<div class="icon-box">
+
+						<!-- hand -->
+						<i class="svg-hand">hand</i>
+
+					</div>
+					<h2>hand</h2>
+				</li>
+				<li title="hashtag">
+					<div class="icon-box">
+
+						<!-- hashtag -->
+						<i class="svg-hashtag">hashtag</i>
+
+					</div>
+					<h2>hashtag</h2>
+				</li>
+				<li title="heart">
+					<div class="icon-box">
+
+						<!-- heart -->
+						<i class="svg-heart">heart</i>
+
+					</div>
+					<h2>heart</h2>
+				</li>
+				<li title="home">
+					<div class="icon-box">
+
+						<!-- home -->
+						<i class="svg-home">home</i>
+
+					</div>
+					<h2>home</h2>
+				</li>
+				<li title="identification">
+					<div class="icon-box">
+
+						<!-- identification -->
+						<i class="svg-identification">identification</i>
+
+					</div>
+					<h2>identification</h2>
+				</li>
+				<li title="inbox">
+					<div class="icon-box">
+
+						<!-- inbox -->
+						<i class="svg-inbox">inbox</i>
+
+					</div>
+					<h2>inbox</h2>
+				</li>
+				<li title="inbox-in">
+					<div class="icon-box">
+
+						<!-- inbox-in -->
+						<i class="svg-inbox-in">inbox-in</i>
+
+					</div>
+					<h2>inbox-in</h2>
+				</li>
+				<li title="information-circle">
+					<div class="icon-box">
+
+						<!-- information-circle -->
+						<i class="svg-information-circle">information-circle</i>
+
+					</div>
+					<h2>information-circle</h2>
+				</li>
+				<li title="key">
+					<div class="icon-box">
+
+						<!-- key -->
+						<i class="svg-key">key</i>
+
+					</div>
+					<h2>key</h2>
+				</li>
+				<li title="library">
+					<div class="icon-box">
+
+						<!-- library -->
+						<i class="svg-library">library</i>
+
+					</div>
+					<h2>library</h2>
+				</li>
+				<li title="light-bulb">
+					<div class="icon-box">
+
+						<!-- light-bulb -->
+						<i class="svg-light-bulb">light-bulb</i>
+
+					</div>
+					<h2>light-bulb</h2>
+				</li>
+				<li title="lightning-bolt">
+					<div class="icon-box">
+
+						<!-- lightning-bolt -->
+						<i class="svg-lightning-bolt">lightning-bolt</i>
+
+					</div>
+					<h2>lightning-bolt</h2>
+				</li>
+				<li title="link">
+					<div class="icon-box">
+
+						<!-- link -->
+						<i class="svg-link">link</i>
+
+					</div>
+					<h2>link</h2>
+				</li>
+				<li title="linkedin">
+					<div class="icon-box">
+
+						<!-- linkedin -->
+						<i class="svg-linkedin">linkedin</i>
+
+					</div>
+					<h2>linkedin</h2>
+				</li>
+				<li title="location-marker">
+					<div class="icon-box">
+
+						<!-- location-marker -->
+						<i class="svg-location-marker">location-marker</i>
+
+					</div>
+					<h2>location-marker</h2>
+				</li>
+				<li title="lock-closed">
+					<div class="icon-box">
+
+						<!-- lock-closed -->
+						<i class="svg-lock-closed">lock-closed</i>
+
+					</div>
+					<h2>lock-closed</h2>
+				</li>
+				<li title="lock-open">
+					<div class="icon-box">
+
+						<!-- lock-open -->
+						<i class="svg-lock-open">lock-open</i>
+
+					</div>
+					<h2>lock-open</h2>
+				</li>
+				<li title="login">
+					<div class="icon-box">
+
+						<!-- login -->
+						<i class="svg-login">login</i>
+
+					</div>
+					<h2>login</h2>
+				</li>
+				<li title="logout">
+					<div class="icon-box">
+
+						<!-- logout -->
+						<i class="svg-logout">logout</i>
+
+					</div>
+					<h2>logout</h2>
+				</li>
+				<li title="mail">
+					<div class="icon-box">
+
+						<!-- mail -->
+						<i class="svg-mail">mail</i>
+
+					</div>
+					<h2>mail</h2>
+				</li>
+				<li title="mail-open">
+					<div class="icon-box">
+
+						<!-- mail-open -->
+						<i class="svg-mail-open">mail-open</i>
+
+					</div>
+					<h2>mail-open</h2>
+				</li>
+				<li title="map">
+					<div class="icon-box">
+
+						<!-- map -->
+						<i class="svg-map">map</i>
+
+					</div>
+					<h2>map</h2>
+				</li>
+				<li title="menu">
+					<div class="icon-box">
+
+						<!-- menu -->
+						<i class="svg-menu">menu</i>
+
+					</div>
+					<h2>menu</h2>
+				</li>
+				<li title="menu-alt-1">
+					<div class="icon-box">
+
+						<!-- menu-alt-1 -->
+						<i class="svg-menu-alt-1">menu-alt-1</i>
+
+					</div>
+					<h2>menu-alt-1</h2>
+				</li>
+				<li title="menu-alt-2">
+					<div class="icon-box">
+
+						<!-- menu-alt-2 -->
+						<i class="svg-menu-alt-2">menu-alt-2</i>
+
+					</div>
+					<h2>menu-alt-2</h2>
+				</li>
+				<li title="menu-alt-3">
+					<div class="icon-box">
+
+						<!-- menu-alt-3 -->
+						<i class="svg-menu-alt-3">menu-alt-3</i>
+
+					</div>
+					<h2>menu-alt-3</h2>
+				</li>
+				<li title="menu-alt-4">
+					<div class="icon-box">
+
+						<!-- menu-alt-4 -->
+						<i class="svg-menu-alt-4">menu-alt-4</i>
+
+					</div>
+					<h2>menu-alt-4</h2>
+				</li>
+				<li title="microphone">
+					<div class="icon-box">
+
+						<!-- microphone -->
+						<i class="svg-microphone">microphone</i>
+
+					</div>
+					<h2>microphone</h2>
+				</li>
+				<li title="minus">
+					<div class="icon-box">
+
+						<!-- minus -->
+						<i class="svg-minus">minus</i>
+
+					</div>
+					<h2>minus</h2>
+				</li>
+				<li title="minus-circle">
+					<div class="icon-box">
+
+						<!-- minus-circle -->
+						<i class="svg-minus-circle">minus-circle</i>
+
+					</div>
+					<h2>minus-circle</h2>
+				</li>
+				<li title="minus-sm">
+					<div class="icon-box">
+
+						<!-- minus-sm -->
+						<i class="svg-minus-sm">minus-sm</i>
+
+					</div>
+					<h2>minus-sm</h2>
+				</li>
+				<li title="moon">
+					<div class="icon-box">
+
+						<!-- moon -->
+						<i class="svg-moon">moon</i>
+
+					</div>
+					<h2>moon</h2>
+				</li>
+				<li title="music-note">
+					<div class="icon-box">
+
+						<!-- music-note -->
+						<i class="svg-music-note">music-note</i>
+
+					</div>
+					<h2>music-note</h2>
+				</li>
+				<li title="newspaper">
+					<div class="icon-box">
+
+						<!-- newspaper -->
+						<i class="svg-newspaper">newspaper</i>
+
+					</div>
+					<h2>newspaper</h2>
+				</li>
+				<li title="office-building">
+					<div class="icon-box">
+
+						<!-- office-building -->
+						<i class="svg-office-building">office-building</i>
+
+					</div>
+					<h2>office-building</h2>
+				</li>
+				<li title="paper-airplane">
+					<div class="icon-box">
+
+						<!-- paper-airplane -->
+						<i class="svg-paper-airplane">paper-airplane</i>
+
+					</div>
+					<h2>paper-airplane</h2>
+				</li>
+				<li title="paper-clip">
+					<div class="icon-box">
+
+						<!-- paper-clip -->
+						<i class="svg-paper-clip">paper-clip</i>
+
+					</div>
+					<h2>paper-clip</h2>
+				</li>
+				<li title="pause">
+					<div class="icon-box">
+
+						<!-- pause -->
+						<i class="svg-pause">pause</i>
+
+					</div>
+					<h2>pause</h2>
+				</li>
+				<li title="pencil">
+					<div class="icon-box">
+
+						<!-- pencil -->
+						<i class="svg-pencil">pencil</i>
+
+					</div>
+					<h2>pencil</h2>
+				</li>
+				<li title="pencil-alt">
+					<div class="icon-box">
+
+						<!-- pencil-alt -->
+						<i class="svg-pencil-alt">pencil-alt</i>
+
+					</div>
+					<h2>pencil-alt</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+
+						<!-- phone -->
+						<i class="svg-phone">phone</i>
+
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="phone-incoming">
+					<div class="icon-box">
+
+						<!-- phone-incoming -->
+						<i class="svg-phone-incoming">phone-incoming</i>
+
+					</div>
+					<h2>phone-incoming</h2>
+				</li>
+				<li title="phone-missed-call">
+					<div class="icon-box">
+
+						<!-- phone-missed-call -->
+						<i class="svg-phone-missed-call">phone-missed-call</i>
+
+					</div>
+					<h2>phone-missed-call</h2>
+				</li>
+				<li title="phone-outgoing">
+					<div class="icon-box">
+
+						<!-- phone-outgoing -->
+						<i class="svg-phone-outgoing">phone-outgoing</i>
+
+					</div>
+					<h2>phone-outgoing</h2>
+				</li>
+				<li title="photograph">
+					<div class="icon-box">
+
+						<!-- photograph -->
+						<i class="svg-photograph">photograph</i>
+
+					</div>
+					<h2>photograph</h2>
+				</li>
+				<li title="play">
+					<div class="icon-box">
+
+						<!-- play -->
+						<i class="svg-play">play</i>
+
+					</div>
+					<h2>play</h2>
+				</li>
+				<li title="plus">
+					<div class="icon-box">
+
+						<!-- plus -->
+						<i class="svg-plus">plus</i>
+
+					</div>
+					<h2>plus</h2>
+				</li>
+				<li title="plus-circle">
+					<div class="icon-box">
+
+						<!-- plus-circle -->
+						<i class="svg-plus-circle">plus-circle</i>
+
+					</div>
+					<h2>plus-circle</h2>
+				</li>
+				<li title="plus-sm">
+					<div class="icon-box">
+
+						<!-- plus-sm -->
+						<i class="svg-plus-sm">plus-sm</i>
+
+					</div>
+					<h2>plus-sm</h2>
+				</li>
+				<li title="presentation-chart-bar">
+					<div class="icon-box">
+
+						<!-- presentation-chart-bar -->
+						<i class="svg-presentation-chart-bar">presentation-chart-bar</i>
+
+					</div>
+					<h2>presentation-chart-bar</h2>
+				</li>
+				<li title="presentation-chart-line">
+					<div class="icon-box">
+
+						<!-- presentation-chart-line -->
+						<i class="svg-presentation-chart-line">presentation-chart-line</i>
+
+					</div>
+					<h2>presentation-chart-line</h2>
+				</li>
+				<li title="printer">
+					<div class="icon-box">
+
+						<!-- printer -->
+						<i class="svg-printer">printer</i>
+
+					</div>
+					<h2>printer</h2>
+				</li>
+				<li title="puzzle">
+					<div class="icon-box">
+
+						<!-- puzzle -->
+						<i class="svg-puzzle">puzzle</i>
+
+					</div>
+					<h2>puzzle</h2>
+				</li>
+				<li title="qrcode">
+					<div class="icon-box">
+
+						<!-- qrcode -->
+						<i class="svg-qrcode">qrcode</i>
+
+					</div>
+					<h2>qrcode</h2>
+				</li>
+				<li title="question-mark-circle">
+					<div class="icon-box">
+
+						<!-- question-mark-circle -->
+						<i class="svg-question-mark-circle">question-mark-circle</i>
+
+					</div>
+					<h2>question-mark-circle</h2>
+				</li>
+				<li title="receipt-refund">
+					<div class="icon-box">
+
+						<!-- receipt-refund -->
+						<i class="svg-receipt-refund">receipt-refund</i>
+
+					</div>
+					<h2>receipt-refund</h2>
+				</li>
+				<li title="receipt-tax">
+					<div class="icon-box">
+
+						<!-- receipt-tax -->
+						<i class="svg-receipt-tax">receipt-tax</i>
+
+					</div>
+					<h2>receipt-tax</h2>
+				</li>
+				<li title="refresh">
+					<div class="icon-box">
+
+						<!-- refresh -->
+						<i class="svg-refresh">refresh</i>
+
+					</div>
+					<h2>refresh</h2>
+				</li>
+				<li title="reply">
+					<div class="icon-box">
+
+						<!-- reply -->
+						<i class="svg-reply">reply</i>
+
+					</div>
+					<h2>reply</h2>
+				</li>
+				<li title="rewind">
+					<div class="icon-box">
+
+						<!-- rewind -->
+						<i class="svg-rewind">rewind</i>
+
+					</div>
+					<h2>rewind</h2>
+				</li>
+				<li title="rss">
+					<div class="icon-box">
+
+						<!-- rss -->
+						<i class="svg-rss">rss</i>
+
+					</div>
+					<h2>rss</h2>
+				</li>
+				<li title="save">
+					<div class="icon-box">
+
+						<!-- save -->
+						<i class="svg-save">save</i>
+
+					</div>
+					<h2>save</h2>
+				</li>
+				<li title="save-as">
+					<div class="icon-box">
+
+						<!-- save-as -->
+						<i class="svg-save-as">save-as</i>
+
+					</div>
+					<h2>save-as</h2>
+				</li>
+				<li title="scale">
+					<div class="icon-box">
+
+						<!-- scale -->
+						<i class="svg-scale">scale</i>
+
+					</div>
+					<h2>scale</h2>
+				</li>
+				<li title="scissors">
+					<div class="icon-box">
+
+						<!-- scissors -->
+						<i class="svg-scissors">scissors</i>
+
+					</div>
+					<h2>scissors</h2>
+				</li>
+				<li title="search">
+					<div class="icon-box">
+
+						<!-- search -->
+						<i class="svg-search">search</i>
+
+					</div>
+					<h2>search</h2>
+				</li>
+				<li title="search-circle">
+					<div class="icon-box">
+
+						<!-- search-circle -->
+						<i class="svg-search-circle">search-circle</i>
+
+					</div>
+					<h2>search-circle</h2>
+				</li>
+				<li title="selector">
+					<div class="icon-box">
+
+						<!-- selector -->
+						<i class="svg-selector">selector</i>
+
+					</div>
+					<h2>selector</h2>
+				</li>
+				<li title="server">
+					<div class="icon-box">
+
+						<!-- server -->
+						<i class="svg-server">server</i>
+
+					</div>
+					<h2>server</h2>
+				</li>
+				<li title="share">
+					<div class="icon-box">
+
+						<!-- share -->
+						<i class="svg-share">share</i>
+
+					</div>
+					<h2>share</h2>
+				</li>
+				<li title="shield-check">
+					<div class="icon-box">
+
+						<!-- shield-check -->
+						<i class="svg-shield-check">shield-check</i>
+
+					</div>
+					<h2>shield-check</h2>
+				</li>
+				<li title="shield-exclamation">
+					<div class="icon-box">
+
+						<!-- shield-exclamation -->
+						<i class="svg-shield-exclamation">shield-exclamation</i>
+
+					</div>
+					<h2>shield-exclamation</h2>
+				</li>
+				<li title="shopping-bag">
+					<div class="icon-box">
+
+						<!-- shopping-bag -->
+						<i class="svg-shopping-bag">shopping-bag</i>
+
+					</div>
+					<h2>shopping-bag</h2>
+				</li>
+				<li title="shopping-cart">
+					<div class="icon-box">
+
+						<!-- shopping-cart -->
+						<i class="svg-shopping-cart">shopping-cart</i>
+
+					</div>
+					<h2>shopping-cart</h2>
+				</li>
+				<li title="sort-ascending">
+					<div class="icon-box">
+
+						<!-- sort-ascending -->
+						<i class="svg-sort-ascending">sort-ascending</i>
+
+					</div>
+					<h2>sort-ascending</h2>
+				</li>
+				<li title="sort-descending">
+					<div class="icon-box">
+
+						<!-- sort-descending -->
+						<i class="svg-sort-descending">sort-descending</i>
+
+					</div>
+					<h2>sort-descending</h2>
+				</li>
+				<li title="sparkles">
+					<div class="icon-box">
+
+						<!-- sparkles -->
+						<i class="svg-sparkles">sparkles</i>
+
+					</div>
+					<h2>sparkles</h2>
+				</li>
+				<li title="speakerphone">
+					<div class="icon-box">
+
+						<!-- speakerphone -->
+						<i class="svg-speakerphone">speakerphone</i>
+
+					</div>
+					<h2>speakerphone</h2>
+				</li>
+				<li title="star">
+					<div class="icon-box">
+
+						<!-- star -->
+						<i class="svg-star">star</i>
+
+					</div>
+					<h2>star</h2>
+				</li>
+				<li title="status-offline">
+					<div class="icon-box">
+
+						<!-- status-offline -->
+						<i class="svg-status-offline">status-offline</i>
+
+					</div>
+					<h2>status-offline</h2>
+				</li>
+				<li title="status-online">
+					<div class="icon-box">
+
+						<!-- status-online -->
+						<i class="svg-status-online">status-online</i>
+
+					</div>
+					<h2>status-online</h2>
+				</li>
+				<li title="stop">
+					<div class="icon-box">
+
+						<!-- stop -->
+						<i class="svg-stop">stop</i>
+
+					</div>
+					<h2>stop</h2>
+				</li>
+				<li title="sun">
+					<div class="icon-box">
+
+						<!-- sun -->
+						<i class="svg-sun">sun</i>
+
+					</div>
+					<h2>sun</h2>
+				</li>
+				<li title="support">
+					<div class="icon-box">
+
+						<!-- support -->
+						<i class="svg-support">support</i>
+
+					</div>
+					<h2>support</h2>
+				</li>
+				<li title="switch-horizontal">
+					<div class="icon-box">
+
+						<!-- switch-horizontal -->
+						<i class="svg-switch-horizontal">switch-horizontal</i>
+
+					</div>
+					<h2>switch-horizontal</h2>
+				</li>
+				<li title="switch-vertical">
+					<div class="icon-box">
+
+						<!-- switch-vertical -->
+						<i class="svg-switch-vertical">switch-vertical</i>
+
+					</div>
+					<h2>switch-vertical</h2>
+				</li>
+				<li title="table">
+					<div class="icon-box">
+
+						<!-- table -->
+						<i class="svg-table">table</i>
+
+					</div>
+					<h2>table</h2>
+				</li>
+				<li title="tag">
+					<div class="icon-box">
+
+						<!-- tag -->
+						<i class="svg-tag">tag</i>
+
+					</div>
+					<h2>tag</h2>
+				</li>
+				<li title="template">
+					<div class="icon-box">
+
+						<!-- template -->
+						<i class="svg-template">template</i>
+
+					</div>
+					<h2>template</h2>
+				</li>
+				<li title="terminal">
+					<div class="icon-box">
+
+						<!-- terminal -->
+						<i class="svg-terminal">terminal</i>
+
+					</div>
+					<h2>terminal</h2>
+				</li>
+				<li title="thumb-down">
+					<div class="icon-box">
+
+						<!-- thumb-down -->
+						<i class="svg-thumb-down">thumb-down</i>
+
+					</div>
+					<h2>thumb-down</h2>
+				</li>
+				<li title="thumb-up">
+					<div class="icon-box">
+
+						<!-- thumb-up -->
+						<i class="svg-thumb-up">thumb-up</i>
+
+					</div>
+					<h2>thumb-up</h2>
+				</li>
+				<li title="ticket">
+					<div class="icon-box">
+
+						<!-- ticket -->
+						<i class="svg-ticket">ticket</i>
+
+					</div>
+					<h2>ticket</h2>
+				</li>
+				<li title="translate">
+					<div class="icon-box">
+
+						<!-- translate -->
+						<i class="svg-translate">translate</i>
+
+					</div>
+					<h2>translate</h2>
+				</li>
+				<li title="trash">
+					<div class="icon-box">
+
+						<!-- trash -->
+						<i class="svg-trash">trash</i>
+
+					</div>
+					<h2>trash</h2>
+				</li>
+				<li title="trending-down">
+					<div class="icon-box">
+
+						<!-- trending-down -->
+						<i class="svg-trending-down">trending-down</i>
+
+					</div>
+					<h2>trending-down</h2>
+				</li>
+				<li title="trending-up">
+					<div class="icon-box">
+
+						<!-- trending-up -->
+						<i class="svg-trending-up">trending-up</i>
+
+					</div>
+					<h2>trending-up</h2>
+				</li>
+				<li title="truck">
+					<div class="icon-box">
+
+						<!-- truck -->
+						<i class="svg-truck">truck</i>
+
+					</div>
+					<h2>truck</h2>
+				</li>
+				<li title="twitter">
+					<div class="icon-box">
+
+						<!-- twitter -->
+						<i class="svg-twitter">twitter</i>
+
+					</div>
+					<h2>twitter</h2>
+				</li>
+				<li title="upload">
+					<div class="icon-box">
+
+						<!-- upload -->
+						<i class="svg-upload">upload</i>
+
+					</div>
+					<h2>upload</h2>
+				</li>
+				<li title="user">
+					<div class="icon-box">
+
+						<!-- user -->
+						<i class="svg-user">user</i>
+
+					</div>
+					<h2>user</h2>
+				</li>
+				<li title="user-add">
+					<div class="icon-box">
+
+						<!-- user-add -->
+						<i class="svg-user-add">user-add</i>
+
+					</div>
+					<h2>user-add</h2>
+				</li>
+				<li title="user-circle">
+					<div class="icon-box">
+
+						<!-- user-circle -->
+						<i class="svg-user-circle">user-circle</i>
+
+					</div>
+					<h2>user-circle</h2>
+				</li>
+				<li title="user-group">
+					<div class="icon-box">
+
+						<!-- user-group -->
+						<i class="svg-user-group">user-group</i>
+
+					</div>
+					<h2>user-group</h2>
+				</li>
+				<li title="user-remove">
+					<div class="icon-box">
+
+						<!-- user-remove -->
+						<i class="svg-user-remove">user-remove</i>
+
+					</div>
+					<h2>user-remove</h2>
+				</li>
+				<li title="users">
+					<div class="icon-box">
+
+						<!-- users -->
+						<i class="svg-users">users</i>
+
+					</div>
+					<h2>users</h2>
+				</li>
+				<li title="variable">
+					<div class="icon-box">
+
+						<!-- variable -->
+						<i class="svg-variable">variable</i>
+
+					</div>
+					<h2>variable</h2>
+				</li>
+				<li title="video-camera">
+					<div class="icon-box">
+
+						<!-- video-camera -->
+						<i class="svg-video-camera">video-camera</i>
+
+					</div>
+					<h2>video-camera</h2>
+				</li>
+				<li title="view-boards">
+					<div class="icon-box">
+
+						<!-- view-boards -->
+						<i class="svg-view-boards">view-boards</i>
+
+					</div>
+					<h2>view-boards</h2>
+				</li>
+				<li title="view-grid">
+					<div class="icon-box">
+
+						<!-- view-grid -->
+						<i class="svg-view-grid">view-grid</i>
+
+					</div>
+					<h2>view-grid</h2>
+				</li>
+				<li title="view-grid-add">
+					<div class="icon-box">
+
+						<!-- view-grid-add -->
+						<i class="svg-view-grid-add">view-grid-add</i>
+
+					</div>
+					<h2>view-grid-add</h2>
+				</li>
+				<li title="view-list">
+					<div class="icon-box">
+
+						<!-- view-list -->
+						<i class="svg-view-list">view-list</i>
+
+					</div>
+					<h2>view-list</h2>
+				</li>
+				<li title="volume-off">
+					<div class="icon-box">
+
+						<!-- volume-off -->
+						<i class="svg-volume-off">volume-off</i>
+
+					</div>
+					<h2>volume-off</h2>
+				</li>
+				<li title="volume-up">
+					<div class="icon-box">
+
+						<!-- volume-up -->
+						<i class="svg-volume-up">volume-up</i>
+
+					</div>
+					<h2>volume-up</h2>
+				</li>
+				<li title="wifi">
+					<div class="icon-box">
+
+						<!-- wifi -->
+						<i class="svg-wifi">wifi</i>
+
+					</div>
+					<h2>wifi</h2>
+				</li>
+				<li title="x">
+					<div class="icon-box">
+
+						<!-- x -->
+						<i class="svg-x">x</i>
+
+					</div>
+					<h2>x</h2>
+				</li>
+				<li title="x-circle">
+					<div class="icon-box">
+
+						<!-- x-circle -->
+						<i class="svg-x-circle">x-circle</i>
+
+					</div>
+					<h2>x-circle</h2>
+				</li>
+				<li title="youtube">
+					<div class="icon-box">
+
+						<!-- youtube -->
+						<i class="svg-youtube">youtube</i>
+
+					</div>
+					<h2>youtube</h2>
+				</li>
+				<li title="zoom-in">
+					<div class="icon-box">
+
+						<!-- zoom-in -->
+						<i class="svg-zoom-in">zoom-in</i>
+
+					</div>
+					<h2>zoom-in</h2>
+				</li>
+				<li title="zoom-out">
+					<div class="icon-box">
+
+						<!-- zoom-out -->
+						<i class="svg-zoom-out">zoom-out</i>
+
+					</div>
+					<h2>zoom-out</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Tue, 30 Nov 2021 12:10:09 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

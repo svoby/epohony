@@ -1,0 +1,42 @@
+.card-product.com {
+  color: $body-color;
+  &.--type-1 {
+    max-width: 264px;
+  }
+  .card-title {
+    text-decoration: underline;
+    transition: color 0.2s;
+    color: $black;
+  }
+  &:hover {
+    .card-title {
+      color: $primary;
+    }
+    text-decoration: none;
+  }
+  .img-wrap {
+    min-width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $gray-200;
+  }
+}
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.accordion {
+  [aria-expanded='false'] {
+    .ico:last-of-type {
+      display: none;
+    }
+  }
+  [aria-expanded='true'] {
+    .ico:first-of-type {
+      display: none;
+    }
+  }
+}

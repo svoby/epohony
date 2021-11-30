@@ -1,0 +1,62 @@
+footer {
+  background: white;
+  font-size: 16px;
+  line-height: 24px;
+  .logos {
+    @extend .py-4;
+    margin-left: -20px;
+    font-size: 0;
+    a {
+      display: inline-block;
+      transition: 0.5s all;
+      &:hover img {
+        opacity: 1;
+      }
+    }
+    img {
+      max-width: 100%;
+      opacity: 0.5;
+    }
+    @include media-breakpoint-down(sm) {
+      //margin-left: 0;
+      a,
+      picture {
+        width: 21%;
+        margin: 0 2%;
+      }
+      a > picture {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+  .foot-links {
+    font-size: 16px;
+    @extend .my-4;
+    a {
+      color: $gray-500;
+      &:hover {
+        color: theme-color('primary');
+      }
+    }
+  }
+  .bottom {
+    font-size: 15px;
+    line-height: 16px;
+    .row {
+      justify-content: space-between;
+      align-items: center;
+      img {
+        margin-left: 10px;
+      }
+    }
+    .col-4 {
+      text-align: right;
+    }
+    @include media-breakpoint-down(sm) {
+      .made-by {
+        display: none;
+      }
+    }
+  }
+}

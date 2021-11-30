@@ -1,0 +1,17 @@
+.image-showcase.com {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  overflow: hidden;
+  picture {
+    flex: auto 0 0;
+    margin: 0 10px;
+  }
+  @include media-breakpoint-down(md) {
+    picture {
+      flex: auto 0 1;
+      max-width: 100px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.history-list-box.com {
+  .item {
+    width: 360px;
+    padding: rem-calc(64);
+    padding-top: 0;
+    //margin: 0 $grid-gutter-width / 2;
+    position: relative;
+    z-index: 2;
+    &:before {
+      content: ' ';
+      position: absolute;
+      height: 20px;
+      left: 174px;
+      right: 0;
+      top: 34px;
+      z-index: 3;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 8px,
+        $black 8px,
+        $black 9px
+      );
+    }
+  }
+  h4 {
+    margin-top: rem-calc(64);
+    color: theme-color('secondary');
+  }
+  img {
+    border: $border-radius;
+  }
+  // OWL rewrites
+  .owl-item:last-child .item h3::before {
+    display: none;
+  }
+  // .owl-stage-outer {
+  //   padding: 40px 0;
+  // }
+}

@@ -1,0 +1,2 @@
+mixin sprite(name, subClass = '', href = $svgSprite)
+    svg(class="ico " + name + " " + subClass): use(xlink:href= href + '#' + name)

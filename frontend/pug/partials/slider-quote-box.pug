@@ -1,0 +1,18 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+div(data-zanim-xs='{"animation": "slide-left", "delay": 0 }' data-zanim-trigger="scroll")
+    .quote-list-box.com.owl-carousel.owl-theme(data-options='{"autoHeight": false, "autoWidth":true, "center": false, "margin": 0, "nav": false, "autoplay":false,"loop":false,"dots":false,"responsive":{"0":{"items":1.5, "nav": false, "dots": true},"576":{"items":2, "nav": false, "dots": true},"992":{"items": 2.5}}}')
+        - var n = 0
+        while n < 6
+            .item.shadow-secondary
+                .top
+                    p <span class="text-primary font-weight-bold">"</span> Spolupráce s firmou TM technik je postavena na vzájemné důvěře a podpoře. Veškeré činnosti jsou zajišťovány v oboru automotive a splňují veškeré standardy. Jedná se o naši jedinou externí firmu z tohoto oboru.“
+                .bottom
+                    +placeholder(80, 80)
+                    .in
+                        p
+                            strong Kateřina Brodecká
+                            br
+                            small Quality manager, CTS Czech Republic s.r.o.
+            - n++

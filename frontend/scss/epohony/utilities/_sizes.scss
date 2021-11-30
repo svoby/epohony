@@ -1,0 +1,79 @@
+$square-sizes: (8, 16, 18, 20, 22, 24, 32, 40, 48, 56, 64, 80, 88, 120);
+
+@each $breakpoint in map_keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $size in $square-sizes {
+      .sx#{$infix}-#{$size} {
+        width: $size + px !important;
+        height: $size + px !important;
+      }
+    }
+  }
+}
+
+.s-120 {
+  width: rem-calc(120);
+  height: rem-calc(120);
+}
+
+.s-96 {
+  width: rem-calc(88);
+  height: rem-calc(88);
+}
+
+.s-88 {
+  width: rem-calc(88);
+  height: rem-calc(88);
+}
+
+.s-80 {
+  width: rem-calc(80);
+  height: rem-calc(80);
+}
+
+.s-64 {
+  width: rem-calc(64);
+  height: rem-calc(64);
+}
+
+.s-56 {
+  width: rem-calc(56);
+  height: rem-calc(56);
+}
+
+.s-48 {
+  width: rem-calc(48);
+  height: rem-calc(48);
+}
+
+.s-40 {
+  width: rem-calc(40);
+  height: rem-calc(40);
+}
+
+.s-32 {
+  width: rem-calc(32);
+  height: rem-calc(32);
+}
+
+.s-24 {
+  width: rem-calc(32);
+  height: rem-calc(32);
+}
+
+.s-22 {
+  width: rem-calc(22);
+  height: rem-calc(22);
+}
+
+.s-18 {
+  width: rem-calc(18);
+  height: rem-calc(18);
+}
+
+.s-16 {
+  width: rem-calc(16);
+  height: rem-calc(16);
+}

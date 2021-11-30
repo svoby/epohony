@@ -1,0 +1,35 @@
+.map.com {
+  height: 700px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  background-size: cover;
+  background-position: 50%;
+  @include media-breakpoint-down(sm) {
+    height: 380px;
+  }
+}
+
+.map-box.com {
+  width: 280px;
+  position: absolute;
+  top: -320px;
+  left: 0;
+  z-index: $z-index-gmapbox;
+  background: white;
+  transform: translateY(-50%);
+  overflow: hidden;
+  border-radius: $border-radius;
+  img {
+    width: 100%;
+  }
+  .bottom {
+    padding: 24px 24px;
+  }
+  @include media-breakpoint-down(sm) {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: -100px;
+  }
+}

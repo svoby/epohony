@@ -1,0 +1,39 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Aktuality'
+
+block header
+    include ./layout/header
+
+block main
+
+    main.main
+
+        section.teaser.com
+            .container
+                .in.d-flex.align-items-center.flex-column.pb-8
+                    include ./partials/breadcrumbs
+                    h1.text-center <i>Aktuality</i>
+
+        .spacer.pt-7
+
+        section
+            .container
+                .row.justify-content-center
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box("Title na řádek")
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box("O moc delší title, který je na více řádků")
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box()
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box()
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box()
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box()
+                .text-center.my-4
+                    a(href="aktuality.html").btn.btn-primary Více aktualit
+
+        .spacer.pt-7

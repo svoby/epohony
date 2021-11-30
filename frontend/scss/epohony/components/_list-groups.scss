@@ -1,0 +1,9 @@
+.list-group-minimal {
+  .list-group-item {
+    border: 0;
+    padding: 0;
+    &:before {
+      display: none;
+    }
+  }
+}

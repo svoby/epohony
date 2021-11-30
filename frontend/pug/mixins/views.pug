@@ -1,0 +1,50 @@
+mixin avatar-contact-1()
+    div(data-zanim-xs='{"animation": "default", "delay": 0}' data-zanim-trigger="scroll")
+        .p-5.bg-white.shadow-secondary.rounded
+            .row.align-items-center
+                .col-12.col-lg-auto.mb-4.mb-lg-0
+                    +placeholder(96, 96, "", "rounded-circle overflow-hidden")
+                .col-lg-3
+                    h2.h6 Kristýna Pietropaolo
+                .col-lg-2.mb-4.mb-lg-0.small
+                    p Kalibrační laboratoř
+                .col-md-6.col-lg-2
+                    p
+                        | +420 733 208 132<br>
+                        | +420 515 500 715
+                .col-lg-3.small
+                    a(href="mailto:lsobolova@tm-technik.cz") lsobolova@tm-technik.cz
+
+mixin avatar-contact-2()
+    div(data-zanim-xs='{"animation": "default", "delay": 0}' data-zanim-trigger="scroll")
+        .p-5.bg-white.shadow-secondary.rounded
+            .row.align-items-center
+                .col-12.mb-4
+                    +placeholder(96, 96, "", "rounded-circle overflow-hidden")
+                .col-12
+                    h2.h6 Kristýna Pietropaolo
+                .col-12.mb-4.small
+                    p Kalibrační laboratoř
+                .col-12
+                    p
+                        | +420 733 208 132<br>
+                        | +420 515 500 715
+                .col-12.small
+                    a(href="mailto:lsobolova@tm-technik.cz") lsobolova@tm-technik.cz
+
+mixin news-box(title = "News title")
+    a(href="aktualita.html").d-block.text-dark.text-decoration-none.bg-white.shadow-secondary.rounded.h-100.hover-zoom
+        .equal-16-10
+            +placeholder(362, 226, '', 'h-100')
+        .p-4
+            date.text-dark.text-muted: small 21. 04. 2021
+            h3.h6.hover-color-primary= title
+
+mixin download-box(title = "File download title")
+    a(href="#!" target="_blank").d-block.text-dark.text-decoration-none.bg-white.shadow-secondary.rounded.h-100.hover-zoom.hover-color-primary
+        .equal-3-4
+            +placeholder(265, 353, '', 'h-100')
+        .p-3
+            .d-flex
+                +sprite("document-download", "s-24 mr-2 text-primary")
+                = title

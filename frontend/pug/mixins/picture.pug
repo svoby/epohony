@@ -1,0 +1,9 @@
+mixin picture(src1x, src2x = false, class1 = '', class2 = '')
+    picture(class= class1)
+        if (src2x != false)
+            source(srcset= $imgDir + src1x + ' 1x, ' + $imgDir + src2x +' 2x')
+        img(src= $imgDir + src1x, alt= alt, class= class2).img-fluid
+
+mixin placeholder(x, y, class1 = '', class2 = '', color = '')
+    picture(class= class1)
+        img(src= 'https://via.placeholder.com/' + x + 'x' + y + '.png' + color, class= class2)

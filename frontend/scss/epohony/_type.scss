@@ -1,0 +1,89 @@
+html {
+  font-size: 18px;
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+table {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: $font-weight-semibold;
+}
+
+h1 i {
+  font-style: normal;
+  position: relative;
+  text-decoration: underline;
+  text-decoration-color: $primary;
+  text-underline-offset: 0.4rem;
+  text-decoration-thickness: 8px;
+}
+
+ul {
+  list-style: square;
+  padding-left: 1.3em;
+  li::marker {
+    color: theme-color('primary');
+  }
+  &.check {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+    li {
+      padding-top: map_get($spacers, 1);
+      padding-bottom: map_get($spacers, 1);
+      padding-left: 35px;
+      background: url('../../assets-rework/img/check-circle.svg') no-repeat 0
+        0.3rem;
+    }
+  }
+}
+
+ol {
+  li::marker {
+    color: theme-color('primary');
+    margin-right: 1rem;
+  }
+}
+
+p {
+  letter-spacing: -0.035em;
+}
+
+label {
+  font-size: $small-font-size;
+  line-height: 24px;
+}
+
+picture {
+  display: block;
+}
+
+a {
+  transition: color 0.5s;
+}

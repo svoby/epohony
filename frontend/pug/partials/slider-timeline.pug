@@ -1,0 +1,25 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+div(data-zanim-xs='{"animation":"slide-left","delay":0 }' data-zanim-trigger="scroll")
+    .history-list-box.com.owl-carousel.owl-theme.owl-nav-outer.owl-dot-round(data-options='{"autoHeight": false, "autoWidth": true, "center": false, "margin": 0, "nav":false, "autoplay":false, "loop":false, "dots": false,"responsive":{"0":{"items":1, "dots": true},"576":{"items":2 },"992":{"items": 2.5}}}')
+        .item
+            .icon-box.com.s-88.border.rounded-circle.h5.mb-md-5 1.
+            +sprite("truck", "s-40 mb-4 text-primary")
+            p.h5 Stroj přivezeme<br>a nainstalujeme
+        .item
+            .icon-box.com.s-88.border.rounded-circle.h5.mb-md-5 2.
+            +sprite("adjustments", "s-40 mb-4 text-primary")
+            p.h5 Kompletně<br>zkalibrujeme
+        .item
+            .icon-box.com.s-88.border.rounded-circle.h5.mb-md-5 3.
+            +sprite("academic-cap", "s-40 mb-4 text-primary")
+            p.h5 Zaškolíme obsluhu<br>měřících strojů
+        .item
+            .icon-box.com.s-88.border.rounded-circle.h5.mb-md-5 4.
+            +sprite("badge-check", "s-40 mb-4 text-primary")
+            p.h5 Stroj přivezeme<br>a nainstalujeme
+        .item
+            .icon-box.com.s-88.border.rounded-circle.h5.mb-md-5 5.
+            +sprite("chat", "s-40 mb-4 text-primary")
+            p.h5 Stroj přivezeme<br>a nainstalujeme

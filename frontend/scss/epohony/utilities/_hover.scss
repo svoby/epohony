@@ -1,0 +1,20 @@
+@each $color, $value in $theme-colors {
+  [class][class][class].hover-color-#{$color}:hover {
+    color: $value !important;
+  }
+
+  [class][class][class].hover-border-#{$color}:hover {
+    border-color: $value !important;
+  }
+
+  [class][class][class].hover-bg-#{$color}:hover {
+    background-color: $value !important;
+  }
+}
+
+.hover-zoom {
+  transition: all 0.1s;
+  &:hover {
+    transform: scale(1.02);
+  }
+}

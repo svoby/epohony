@@ -1,0 +1,48 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+div(data-zanim-xs='{"animation": "zoom-out", "delay": 0}' data-zanim-trigger="scroll")
+    form(action="#" method="post")
+        .form-contact.com.shadow-secondary
+            .row.no-gutters
+                .col-12.col-md-4
+                    .bg.--bg1
+                .col-12.col-md-8
+                    .bg-white.p-4.p-md-6
+                        h4.mb-0 Pošlete nám svůj kontakt<br>Nebo se nám ozvěte
+
+                        .spacer.pt-5
+
+                        .row
+                            .col-6
+                                .icon-box.com.d-inline-flex.border.rounded-circle.sx-40.mr-2
+                                    +sprite("phone", "sx-20")
+                                small +420 123 456 789
+                            .col-6
+                                .icon-box.com.d-inline-flex.border.rounded-circle.sx-40.mr-2
+                                    +sprite("mail", "sx-20")
+                                small <a href="mailto:info@email.com">info@email.com</a>
+
+                        .spacer.pt-5
+
+                        .form-row
+                            .col-md-6.mb-3
+                                label(for="card-form-10") Jméno a příjmení
+                                input(type="text" value="Jan Černý").form-control
+                            .col-md-6.mb-3
+                                label(for="card-form-11") Email
+                                input(type="email" value="hello@companyx.cz").form-control
+                        .form-row
+                            .col-md-6.mb-3
+                                label(for="card-form-12") Telefon
+                                input(type="text" value="+420 123 456 789").form-control
+                            .col-md-6.mb-3
+                                label(for="card-form-13") Jméno firmy
+                                input(type="email" value="Company X").form-control
+                        .form-group
+                            label(for="card-form-14") Zpráva
+                            textarea#card-form-14(name="" cols="30" rows="5").form-control
+                                | Dorbý den,
+                                | rád bych se zeptal, zda je možné...
+                        p.text-center.pt-3
+                            input(type="submit" value="ODESLAT").btn.btn-outline-primary.w-100

@@ -1,0 +1,18 @@
+.showcase.com {
+  @include media-breakpoint-up(md) {
+    .row {
+      align-items: center;
+    }
+    &.--reverse {
+      [class^='col'] {
+        order: 1;
+        &:last-child {
+          order: 0;
+        }
+        &:first-child {
+          order: 3;
+        }
+      }
+    }
+  }
+}

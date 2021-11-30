@@ -1,0 +1,59 @@
+.has-topbar {
+  main.main {
+    padding-top: $topnavbar-height;
+    @include media-breakpoint-down($fancynav-breakpoint-down) {
+      padding-top: $navbar-height-mobile;
+      padding-top: 0;
+    }
+  }
+}
+
+.topbar.com {
+  background: $primary;
+  color: $black;
+  font-size: $topnavbar-font-size;
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
+    display: none;
+  }
+  .container {
+    height: $topnavbar-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      display: inline-block;
+    }
+    li + li {
+      padding-left: 20px;
+      margin-left: 10px;
+      position: relative;
+      &:before {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 0.5em;
+        background: #fff8;
+      }
+    }
+  }
+  a {
+    color: $black;
+  }
+  .ico {
+    margin-right: rem-calc(10);
+    transform: translateY(-2px);
+  }
+
+  // Dropdown
+  .dropdown-toggle[aria-expanded='true'] {
+    color: white;
+  }
+}

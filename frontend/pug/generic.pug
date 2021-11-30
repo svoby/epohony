@@ -1,0 +1,367 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Generická stránka - Rework (záloha)'
+
+block header
+    include ./layout/header
+
+block main
+    main.main
+
+        .container
+
+            .spacer.pt-6
+
+            h1 Generická stránka (záloha z Reworku)
+
+            .perex.com
+                p
+                    | Perex: Nulla tincidunt malesuada mauris dui a tristique etiam nisl
+                    | sed. Curabitur sit egestas nibh adipiscing. Feugiat massa etiam
+                    | feugiat diam neque tempor aliquet ac mauris. Sagittis, facilisis
+                    | quis nibh vitae curabitur venenatis euismod leo. Ultricies vitae
+                    | ullamcorper sed morbi fringilla et lectus mauris purus. Feugiat
+                    | massa etiam feugiat diam neque tempor aliquet ac mauris. Sagittis,
+                    | facilisis quis nibh vitae curabitur venenatis euismod leo.
+
+            // Dva sloupce
+            h4 Z&aacute;kladn&iacute; text dva sloupce
+            .row
+                .col-12.col-md-6
+                    p
+                        | Laculis ac consectetur integer viverra elit. Vehicula commodo
+                        | augue malesuada ultricies maecenas quis id nam commodo. Eleifend
+                        | vulputate eget porttitor volutpat aenean eros, nisl justo amet.
+                        | Vel egestas eget odio phasellus.
+                .col-12.col-md-6
+                    p
+                        | Laculis ac consectetur integer viverra elit. Vehicula commodo
+                        | augue malesuada ultricies maecenas quis id nam commodo. Eleifend
+                        | vulputate eget porttitor volutpat aenean eros, nisl justo amet.
+                        | Vel egestas eget odio phasellus.
+
+            // Tři sloupce
+            .spacer.pt-6.spacer.pt-6
+            h4 Z&aacute;kladn&iacute; text t&rcaron;i sloupce
+            .row
+                .col-12.col-md-4
+                    p
+                        | Laculis ac consectetur integer viverra elit. Vehicula commodo
+                        | augue malesuada ultricies maecenas quis id nam commodo.
+                .col-12.col-md-4
+                    p
+                        | Laculis ac consectetur integer viverra elit. Vehicula commodo
+                        | augue malesuada ultricies maecenas quis id nam commodo.
+                .col-12.col-md-4
+                    p
+                        | Laculis ac consectetur integer viverra elit. Vehicula commodo
+                        | augue malesuada ultricies maecenas quis id nam commodo.
+
+            // 2/3 sloupce
+            .spacer.pt-6
+            h4 Z&aacute;kladn&iacute; text, jeden sloupec 2/3 gridu
+            .row
+                .col-12.col-md-8
+                    p
+                        | Libero curabitur in id cras aliquet lobortis sed commodo dis. At
+                        | purus elit, eu, nulla purus pulvinar suspendisse leo ac. Vel
+                        | consequat tincidunt tellus est etiam diam tincidunt. Sit eget
+                        | metus lorem sapien, urna habitant fames eget diam. Vitae bibendum
+                        | nulla tincidunt duis morbi felis, nulla. Enim quis dolor, est
+                        | tellus tristique cursus. Ultrices metus scelerisque sem fames.
+                        | Venenatis sed a feugiat fringilla id varius tortor, dictum.
+                    p
+                        | Tellus mi et ac diam id. Rhoncus scelerisque cursus habitant
+                        | maecenas habitant ipsum, ut mauris. Gravida elit sit interdum ut
+                        | elementum libero. Felis lorem risus a ultricies justo. Lacus augue
+                        | massa cursus sit id lacus tincidunt.
+
+            // Zvýraznění / hypertext
+            .spacer.pt-6
+            h4 Zv&yacute;razn&ecaron;n&iacute; textu a hypertext
+            .row
+                .col-12.col-md-8
+                    p
+                        | Libero curabitur in id cras aliquet lobortis sed commodo dis. At
+                        | purus elit, eu, nulla purus pulvinar suspendisse leo ac.
+                        strong Vel consequat tincidunt tellus
+                        |                         est etiam diam tincidunt. Sit eget metus lorem sapien, urna
+                        |                         habitant fames eget diam.
+                    p
+                        | Tellus mi et ac diam id. Rhoncus scelerisque cursus habitant
+                        | maecenas habitant ipsum, ut mauris. Felis lorem risus a ultricies
+                        | justo.
+                        a(href='#')
+                            strong Lacus augue mass
+
+            // Seznamy
+            .spacer.pt-6
+            .row
+                .col-12.col-md-6
+                    h4 Ne&ccaron;&iacute;slovan&yacute; seznam
+                    ul
+                        li Laculis ac consectetur
+                        li Integer viverra elit
+                        li Vehicula commodo augue
+                        li Malesuada ultricies maecenas quis
+                        li Eleifend vulputate eget porttitor volutpat
+                        li Aenean eros, nisl justo amet
+                        li Vel egestas eget odio phasellus
+                .col-12.col-md-6
+                    h4 &Ccaron;&iacute;slovan&yacute; seznam
+                    ol
+                        li Laculis ac consectetur
+                        li Integer viverra elit
+                        li Vehicula commodo augue
+                        li Malesuada ultricies maecenas quis
+                        li Eleifend vulputate eget porttitor volutpat
+                        li Aenean eros, nisl justo amet
+                        li Vel egestas eget odio phasellus
+
+            // Seznamy (2)
+            .spacer.pt-6
+            .row
+                .col-12.col-md-5
+                    .row.row-check-ico-header
+                        p Seznam s check ikonou
+                        +sprite("clipboard-list", "s-24")
+                    ul.check
+                        li 30+ pracovn&iacute;k&uring;
+                        li Vizu&aacute;ln&iacute; kontrola d&iacute;l&uring; i pod mikroskopem lupou
+                        li Vlastn&iacute; prostory Kontroln&iacute;ho m&ecaron;rov&eacute;ho st&rcaron;ediska (100m2)
+                        li Mont&aacute;&zcaron;e a opracov&aacute;n&iacute; d&iacute;l&uring; &ndash; reference: Erreka Olomouc
+                        li Celkov&aacute; plocha provozu 190m2
+                .col-12.col-md-1
+                // Gutters?
+                .col-12.col-md-5
+                    .row.row-check-ico-header
+                        p Seznam s check ikonou
+                        +sprite("clipboard-list", "s-24")
+                    ul.check
+                        li 30+ pracovn&iacute;k&uring;
+                        li Vizu&aacute;ln&iacute; kontrola d&iacute;l&uring; i pod mikroskopem lupou
+                        li Vlastn&iacute; prostory Kontroln&iacute;ho m&ecaron;rov&eacute;ho st&rcaron;ediska (100m2)
+                        li Mont&aacute;&zcaron;e a opracov&aacute;n&iacute; d&iacute;l&uring; &ndash; reference: Erreka Olomouc
+                        li Celkov&aacute; plocha provozu 190m2
+            .spacer.pt-6
+            // 2. Pictures and videos
+            h1 2. Pictures and videos
+
+        .container
+            h5 Photo - Full Viewport width (16:10)
+            .spacer.pt-5
+
+        img.w-100.img-fluid(src='assets-rework/img/samples/aurelien-romain-DB_q6rPFnBM-unsplash 1.jpg' alt='Sample')
+
+        .container
+            .spacer.pt-5
+            h5 Photo full grid
+            img.w-100.img-fluid(src='assets-rework/img/samples/aurelien-romain-DB_q6rPFnBM-unsplash 1.jpg' alt='Sample')
+
+        .container
+            .spacer.pt-5
+            h5 Gallery 2 Photos
+            .gallery.com
+                .row
+                    .col-12.col-md-6
+                        img.w-100.img-fluid(src='assets-rework/img/samples/pic1.png' alt='Sample')
+                    .col-12.col-md-6
+                        img.w-100.img-fluid(src='assets-rework/img/samples/aurelien-romain-DB_q6rPFnBM-unsplash 2.jpg' alt='Sample')
+        .container
+            .spacer.pt-5
+            h5 Gallery 3 Photos
+            .gallery.com
+                .row
+                    .col-12.col-md-4
+                        img.w-100.img-fluid(src='assets-rework/img/samples/pic1.png' alt='Sample')
+                    .col-12.col-md-4
+                        img.w-100.img-fluid(src='assets-rework/img/samples/aurelien-romain-DB_q6rPFnBM-unsplash 2.jpg' alt='Sample')
+                    .col-12.col-md-4
+                        img.w-100.img-fluid(src='assets-rework/img/samples/pic1.png' alt='Sample')
+        .container
+            .spacer.pt-5
+
+            h5 Lightbox example
+
+            .gallery.com
+                .row
+                    - var n = 0;
+                    while n < 6
+                        .col-6.col-md-2
+                            a(href= $imgDir + "samples/aurelien-romain-DB_q6rPFnBM-unsplash 1.jpg" data-fancybox="gallery-1")
+                                +picture("samples/pic1.png")
+                        .col-6.col-md-2
+                            a(href= $imgDir + "samples/aurelien-romain-DB_q6rPFnBM-unsplash 1.jpg" data-fancybox="gallery-1")
+                                +picture("samples/aurelien-romain-DB_q6rPFnBM-unsplash 2.jpg")
+                        -n++
+
+        .spacer.pt-5
+
+        .container
+            | Buttony: 
+            a.btn.btn-primary(href='#') Button
+            a.btn.btn-secondary(href='#') Button
+            a.btn.btn-outline-primary(href='#') Button
+            a.btn.btn-outline-secondary(href='#') Button
+
+        // 3. Layout Photo and Text
+        .spacer.pt-8
+
+        .container
+            h1 3. Layout Photo and Text
+
+
+        include ./partials/layout-photo-text
+
+
+        .container.my-5.my-md-7
+            .row
+                .col-md-7.mb-4
+                    h3 Headline
+                    p Libero curabitur in id cras aliquet lobortis sed commodo dis. At purus elit, eu, nulla purus pulvinar suspendisse leo ac. Vel consequat tincidunt tellus est etiam diam tincidunt. 
+                    p Sit eget metus lorem sapien, urna habitant fames eget diam. Vitae bibendum nulla tincidunt duis morbi felis, nulla. Enim quis dolor, est tellus tristique cursus. Ultrices metus scelerisque sem fames. Venenatis sed a feugiat fringilla id varius tortor, dictum.
+                    p Libero curabitur in id cras aliquet lobortis sed commodo dis. At purus elit, eu, nulla purus pulvinar suspendisse leo ac. Vel consequat tincidunt tellus est etiam diam tincidunt. Sit eget metus lorem sapien, urna habitant fames 
+                .col-md-1
+                .col-md-4
+                    .border.border-secondary.box-secondary
+                        h4.text-secondary Libero curabitur 
+                        p Libero curabitur in id cras aliquet lobortis sed commodo dis. At purus elit, eu, nulla purus pulvinar suspendisse leo ac. Vel consequat tincidunt tellus est etiam diam tincidunt. 
+                        p Sit eget metus lorem sapien, urna habitant fames eget diam. Vitae bibendum nulla tincidunt duis morbi felis, nulla. Enim quis dolor, est tellus tristique cursus.
+
+        .spacer.pt-8
+
+        .container
+            h1 4. Other Modules
+
+        .spacer.pt-8
+
+        .container
+            h4 Slider
+            p Jsme odborníky v oblasti kontroly kvality, školení, auditů a měřících služeb dle Vašich požadavků.
+
+            include ./partials/slider-sluzby
+
+        .spacer.pt-8
+
+        //- Partnerská loga
+        .container
+            h4 Animovaný Slider - Partnerská loga
+
+        include ./partials/logo-partners
+
+        .container
+            h4 Partnerská loga/ocenění
+
+        .container
+            include ./partials/box-list-type-1
+
+        .spacer.pt-8
+
+        .container
+            h4 Numbers - Statistika
+            include ./partials/numbers.pug
+
+        .spacer.pt-8
+
+        .container
+            h4 Taby
+            .fancy-tab
+                .nav-bar
+                    .nav-bar-item.active Tab Selected
+                    .nav-bar-item Tab Default
+                    .nav-bar-item Tab Default
+                .tab-contents
+                    .tab-content.active
+                        p Duis ac facilisis mauris. Pellentesque leo tortor, maximus sed gravida dapibus, suscipit non nisi. Duis ultrices diam a maximus imperdiet. Nam eu purus a erat tristique ornare. Donec condimentum tristique diam eu congue.
+                    .tab-content
+                        p ....
+                    .tab-content
+                        p ....
+
+        .spacer.pt-8
+
+        .container
+            h4 Kompozice s ikonami
+            include ./partials/box-list-type-2
+
+        .spacer.pt-8
+
+        .container
+            include ./partials/box-list-type-3
+
+        .spacer.pt-8
+
+        .container
+            .box-list.com.--type-1
+                .row
+                    - var n = 0;
+                    while n < 4
+                        .col-6.col-md
+                            .item
+                                .num 0#{n}
+                                h6 Nemáte nutnost zaměstnávat vlastní OZP
+                                +sprite('check-circle', "s-64 text-primary")
+                        -n++
+
+                .spacer.pt-8
+
+        .container
+            .box-list.com.--type-4
+                .row
+                    - var n = 0;
+                    while n < 4
+                        .col-6.col-md-3
+                            .item
+                                .top
+                                    +sprite('check-circle', "s-48 text-primary")
+                                .bottom
+                                    h6  Nemáte nutnost zaměstnávat vlastní OZP
+                        -n++
+
+        .spacer.pt-8
+
+        .container
+            include ./partials/box-list-type-5
+
+        .spacer.pt-8
+
+        .container
+            //include ./partials/slider-history-box
+
+        .spacer.pt-8
+
+        .container
+            h4 Download buttons
+            .row
+                .col-12.col-md-4.mb-2
+                    a(href="#").btn.btn-outline-primary.w-100
+                        strong
+                            +sprite("document-download", "s-24 mr-1 ")
+                            | Stáhnout PDF
+                .col-12.col-md-4.mb-2
+                    a(href="#").btn.btn-outline-primary.w-100
+                        strong
+                            +sprite("document-download", "s-24 mr-1 ")
+                            | Stáhnout PDF
+                .col-12.col-md-4.mb-2
+                    a(href="#").btn.btn-outline-primary.w-100
+                        strong
+                            +sprite("document-download", "s-24 mr-1 ")
+                            | Stáhnout PDF
+
+        .spacer.pt-8
+
+        include ./partials/google-map-box
+
+        .spacer.pt-8
+
+        .container
+            include ./forms/form-contact
+
+        .spacer.pt-8
+
+        .container
+            include ./forms/form-contact-small
+
+        .spacer.pt-8

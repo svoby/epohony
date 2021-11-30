@@ -1,0 +1,390 @@
+/*-----------------------------------------------
+|   Fancynav
+-----------------------------------------------*/
+// Fancynavbar togglebar style for fancynav-top and responsive
+@mixin fancynav-top-togglebar {
+  align-items: center;
+  height: $fancynavHeight;
+}
+
+// Fancynavbar toggler style for fancynavbar-top and responsive
+@mixin fancynav-top-toggler {
+  order: 1;
+}
+
+// Fancynavbar collapse style for fancynavbar-top and responsive
+@mixin fancynav-top-collapse {
+  top: 0;
+  right: 0;
+  height: calc(100vh);
+}
+
+.fancynavbar {
+  //position: fixed; // Headroom fix
+  position: relative;
+  z-index: $z-index-fancybar;
+  width: 100%;
+}
+
+/*-----------------------------------------------
+|   Fancy Navbar
+-----------------------------------------------*/
+.fancynavbar-togglerbar {
+  display: flex;
+  justify-content: space-between;
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
+    @include fancynav-top-togglebar;
+  }
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
+    height: 100%;
+    text-align: center;
+    flex-direction: column;
+    padding-top: map_get($spacers, 2);
+    padding-bottom: map_get($spacers, 2);
+  }
+}
+
+/*-----------------------------------------------
+|   Fancy Navbar Toggler
+-----------------------------------------------*/
+.fancynavbar-toggler {
+  cursor: pointer;
+  width: $fancynav-width;
+  height: $fancynav-width;
+  opacity: 1 !important;
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
+    @include fancynav-top-toggler;
+  }
+  button {
+    width: 68px;
+    &:last-child {
+      display: none;
+    }
+  }
+  &.collapsed {
+    button:first-child {
+      display: none;
+    }
+    button:last-child {
+      display: inline-block;
+      z-index: $z-index-fancybar-close;
+      color: $fancynav-link-color;
+    }
+  }
+}
+
+/*-----------------------------------------------
+|   Fancy Navbar Collapse
+-----------------------------------------------*/
+.fancynavbar-collapse {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  position: fixed;
+  text-align: left;
+  width: calc(50vw - #{$fancynav-width / 2});
+  right: calc(50% + #{$fancynav-width / 2});
+  transform: translateX(100%);
+  top: 0;
+  padding: 0 30px 0 40px;
+  z-index: $z-index-fancybar-collapse;
+  background-color: $fancynav-collapse-bg;
+  color: $fancynav-color;
+  opacity: $fancynav-opacity;
+  h4 {
+    font-size: rem-calc(20);
+    color: $white;
+  }
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 16px;
+    background: linear-gradient(
+      $fancynav-side-stripe-bg1,
+      $fancynav-side-stripe-bg2
+    );
+  }
+
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
+    width: 100vw;
+    justify-content: flex-start;
+    @include fancynav-top-collapse;
+  }
+
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
+    padding-left: $fancynav-width;
+    padding-right: 50px;
+  }
+}
+
+.fancynavbar-left .fancynavbar-collapse {
+  left: calc(50% + #{$fancynav-width / 2});
+  right: auto;
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
+    left: 0;
+  }
+}
+
+/*-----------------------------------------------
+|   Fancy Navbar Nav
+-----------------------------------------------*/
+.fancynavbar-nav {
+  height: auto;
+  width: 100%;
+  list-style-type: none;
+  list-style-image: none;
+  align-self: flex-start;
+  padding-top: map_get($spacers, 4);
+  padding-bottom: map_get($spacers, 4);
+  padding-left: map_get($spacers, 2);
+  padding-right: map_get($spacers, 3);
+  margin: ($navbar-height - 1px) 0 map_get($spacers, 4);
+  border-bottom: 1px solid rgba($fancynav-link-color, 0.3);
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
+    margin-top: $navbar-height-mobile;
+  }
+}
+
+/*-----------------------------------------------
+|   Fancy Navbar Link
+-----------------------------------------------*/
+.fancynav-link {
+  position: relative;
+  display: block;
+  font-size: rem-calc(20);
+  font-weight: $font-weight-semibold;
+  color: $fancynav-link-color;
+  &:hover {
+    color: $fancynav-link-hover;
+  }
+  &.fancy-dropdown-toggle .fancynav-link-content {
+    padding-right: map_get($spacers, 5);
+    &:after {
+      position: absolute;
+      left: calc(100% - #{$fancynav-width / 2});
+      top: 50%;
+      transform: translateY(-50%);
+      content: ' ';
+      background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='currentColor' fill='none'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'></path></svg>");
+      text-align: center;
+      color: $white;
+      width: 16px;
+      height: 16px;
+      background-color: transparent;
+      z-index: 99;
+    }
+  }
+  &.show {
+    .fancynav-link-content:after {
+      background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='currentColor' fill='none'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l7-7 7 7'></path></svg>");
+    }
+  }
+  .ico {
+    margin-right: rem-calc(15);
+    margin-top: rem-calc(-5);
+    opacity: 0.8;
+  }
+}
+
+/*-----------------------------------------------
+|   Fancy Navbar Link Content
+-----------------------------------------------*/
+.fancynav-link-content {
+  display: inline-block;
+  padding-right: map_get($spacers, 3);
+  position: relative;
+  z-index: 1;
+}
+
+/*-----------------------------------------------
+|   Fancy Navbar Item
+-----------------------------------------------*/
+.fancynav-item {
+  overflow: hidden;
+  transition: height 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  margin: rem-calc(10) 0;
+  height: 27px;
+  @include media-breakpoint-between(sm, $fancynav-breakpoint-down) {
+    height: 33px;
+  }
+  @include media-breakpoint-up(xl) {
+    height: 33px;
+  }
+  .fancynav-link {
+    @include hover-focus {
+      .fancynav-link-content {
+        text-decoration: none;
+        color: $fancynav-link-color;
+      }
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*-----------------------------------------------
+|   Fancy Dropdown
+-----------------------------------------------*/
+.fancy-dropdown-menu {
+  transition: height 0.2s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+/*-----------------------------------------------
+|   Fancy Dropdown Item
+-----------------------------------------------*/
+.fancy-dropdown-item {
+  color: $fancynav-sublink-color;
+  display: block;
+  transition: $transition-base;
+  position: relative;
+  padding-left: rem-calc(42);
+  font-size: rem-calc(20);
+  margin: 0.5rem 0;
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 1rem * $line-height-base / 2;
+    margin-top: 1px;
+    width: rem-calc(32);
+    height: 2px;
+    background: $fancynav-sublink-color;
+  }
+  @include hover-focus {
+    color: $fancynav-link-hover;
+    &:before {
+      background-color: $fancynav-link-hover;
+    }
+  }
+}
+
+/*-----------------------------------------------
+|   Adjusting the page Layout
+-----------------------------------------------*/
+.has-sidemenu:not(.has-fancynav-top) {
+  .main {
+    @include media-breakpoint-up($fancynav-breakpoint-up) {
+      width: calc(100% - (#{$fancynav-width} - 0.0625rem));
+    }
+  }
+
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
+    .footer {
+      width: calc(100% - #{$fancynav-width});
+    }
+    .remodal {
+      right: #{$fancynav-width / 2};
+    }
+  }
+}
+.has-sidemenu-left {
+  .main,
+  .footer {
+    @include media-breakpoint-up($fancynav-breakpoint-up) {
+      margin-left: $fancynav-width;
+    }
+  }
+}
+
+/*-----------------------------------------------
+|   IE Fix
+-----------------------------------------------*/
+// .ie {
+//   .fancynav {
+//     .fancynavbar {
+//       height: 100vh;
+//       @include media-breakpoint-down($fancynav-breakpoint-down) {
+//         height: calc(100vh - #{$fancynavHeight});
+//       }
+
+//       .fancynavbar-content {
+//         height: 100vh;
+//         @include media-breakpoint-down($fancynav-breakpoint-down) {
+//           height: calc(100vh - #{$fancynavHeight});
+//         }
+//       }
+//     }
+//   }
+// }
+
+/*-----------------------------------------------
+|   Fancynav Socials
+-----------------------------------------------*/
+.fancy-socials {
+  margin: 40px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 66px;
+  position: relative;
+  .row {
+    margin-left: -8px;
+    margin-right: -8px;
+    [class^='col'] {
+      padding: 8px;
+    }
+  }
+  .fancynav-link {
+    display: inline-block;
+    border: 1px solid rgba($fancynav-link-color, 0.3);
+    border-radius: $border-radius;
+    padding: rem-calc(16);
+    width: 100%;
+    min-width: 133px;
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: $secondary;
+      border-color: $secondary;
+      color: $fancynav-link-hover;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .row [class^='col'] {
+      padding: 1px;
+    }
+  }
+}
+
+/*-----------------------------------------------
+|   Fancynav Top
+-----------------------------------------------*/
+.fancynavbar-top {
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
+    .fancynavbar-collapse {
+      width: 512px;
+      @include fancynav-top-collapse;
+    }
+    .fancynavbar-togglerbar {
+      @include fancynav-top-togglebar;
+      flex-direction: row;
+      padding: 0;
+      display: none;
+    }
+    .fancynavbar-toggler {
+      @include fancynav-top-toggler;
+    }
+  }
+}
+
+/*-----------------------------------------------
+|   Languages
+-----------------------------------------------*/
+.fancynavbar-languages {
+  height: $fancynav-width;
+  margin-top: $navbar-padding-y;
+  align-items: center;
+  li + li {
+    margin-left: 0.5em;
+  }
+}

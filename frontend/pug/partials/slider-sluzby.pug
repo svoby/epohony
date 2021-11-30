@@ -1,0 +1,13 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+div(data-zanim-xs='{"animation":"slide-left","delay":0 }' data-zanim-trigger="scroll")
+    .owl-carousel.owl-theme.owl-nav-outer.owl-dot-round#owl-sluzby(data-options='{ "margin": 25, "nav": true, "autoplay": false, "loop": false, "dots": false, "autoWidth": "fals", "responsive": { "0": { "items":1, "nav": false, "dots": true }, "576": { "items": 2.5, "nav": false, "dots": true }, "992": { "items": 3.5 }}}')
+        - var i = 0
+        while i < 6
+            .item
+                .card-carousel.com
+                    +placeholder(360, 480)
+                    a(href="#!" data-fancybox="instalace")
+                        .icon-box.com.--abs-center.rounded-circle.border.border-3.border-light.s-64.h5.mb-0.text-white.font-weight-semi-bold= i + 1
+                - i++

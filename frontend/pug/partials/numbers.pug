@@ -1,0 +1,27 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+//- div(data-zanim-xs='{"animation": "default", "delay": 0}' data-zanim-trigger="scroll")
+.numbers.com.shadow-primary
+    .row.no-gutters
+        .col-6.col-lg-3
+            .item.align-center
+                h3 Stat rosa pristina nomine
+        .col-6.col-lg-3.border-left
+            .item
+                +sprite("truck", "s-40")
+                .num
+                    span(data-countup="500") 175
+                .info Lorem<br>ipsum dolor
+        .col-6.col-lg-3.border-lg-left.border-top.border-lg-top-0
+            .item
+                +sprite("shopping-bag", "s-40")
+                .num
+                    span(data-countup="21000") 73 000
+                .info Lorem<br>ipsum dolor
+        .col-6.col-lg-3.border-left.border-top.border-lg-top-0
+            .item
+                +sprite("adjustments", "s-40")
+                .num
+                    span(data-countup="700") 224 000
+                .info Lorem<br>ipsum dolor

@@ -1,0 +1,40 @@
+.teaser.com {
+  color: white;
+  margin-top: $navbar-height;
+  background: linear-gradient(90deg, $white, $orange);
+  position: relative;
+  &:before {
+    content: ' ';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: $z-index-teaser;
+    background: repeating-linear-gradient(
+      90deg,
+      $secondary,
+      $secondary 8px,
+      transparent 8px,
+      transparent 9px
+    );
+  }
+  .in {
+    position: relative;
+    z-index: $z-index-teaser-in;
+  }
+  h1 {
+    letter-spacing: -0.02em;
+    text-shadow: 0 5px 10px white;
+  }
+  .perex.com {
+    max-width: 600px;
+    color: #f0f0f0;
+    opacity: 0.8;
+    font-size: rem-calc(22);
+    margin-bottom: 0;
+  }
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
+    margin-top: $navbar-height-mobile;
+  }
+}

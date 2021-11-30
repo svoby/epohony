@@ -1,0 +1,94 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'O Společnosti TM technik'
+
+block header
+    include ./layout/header
+
+block main
+
+    main.main
+
+        .teaser-hp.com
+
+            .spacer.py-6
+
+            .container
+                .in
+                    h1 <i>O Společnosti</i> TM technik
+                    .perex.com
+                        p Jsme obchodně technická firma zaměřující se na moderní délkové měřicí přístroje a technologie ve strojírenství.
+
+            .spacer.pt-4
+
+        section
+            .container
+                include ./partials/teaser-icons.pug
+
+        section.bg-img-cover(style="background-image: url(" + $imgDir + "/bg-about-1.jpg)")
+            .container
+
+                .row.pb-6.py-md-9
+                    .col-md-4.mb-4.mb-md-0
+                        h2.h3 Krátké povídání o&nbsp;společnosti 
+                    .col-md-4
+                        p Působíme na trhu <strong>od roku 2002</strong> jako obchodně technická firma zaměřující se na moderní délkové měřicí přístroje a technologie ve strojírenství.
+                        p Spolupracujeme s mnoha předními průmyslovými podniky, s jejich výrobními a vývojovými provozy a laboratořemi. TM Technik chce seznamovat své zákazníky i s moderními zahraničními technologiemi, našla si proto své <strong>partnery</strong> ve Velké Británii, Německu, Itálii a Francii a začala je zastupovat v České republice a na Slovensku.
+                        p Zároveň proběhlo rozšíření servisní skupiny, která zajišťuje metodickou a technickou podporu dodávaných produktů, služby preventivní údržby a instalace a opravy měřicích strojů včetně dodávky originálních náhradních dílů.
+                    .col-md-4
+                        p Provádíme specializované <strong>odborné činnosti</strong>, jako jsou školení uživatelů měřidel, poradenství v oblasti kalibrací a metrologie, či zakázkové měřicí služby, a to jak přímo u zákazníků, tak ve vlastních prostorách. 
+                        p Pro tyto účely má vybudované vlastní komfortní <strong>měrové středisko</strong>, které je vybavené špičkovými souřadnicovými měřicími stroji pro dotykové i bezkontaktní měření. 
+                        p Společnost TM Technik je součástí holdingového uspořádání, které tvoří firmy, jež zajištují produkty pro kvalitu, měření a také pracoviště chráněné dílny. Holding celkem zaměstnává více jak <strong>500 kmenových zaměstnanců</strong> různých profesních odborností.
+
+        .spacer.pt-7
+
+        section
+            .container
+                include partials/numbers
+
+        .spacer.pt-7
+
+        section
+            .container
+                h3 Partneři, se kterými se rádi pochlubíme
+
+        .spacer.pt-2
+
+        section
+            .container
+                include partials/logo-partners
+
+        .spacer.pt-7
+
+        section
+            .container
+                h3 Klienti nás mají rádi
+
+        .spacer.pt-2
+
+        section
+            .container
+                include ./partials/slider-quote-box
+
+        .spacer.pt-7
+
+        section
+            .container
+                h3.text-center Aktuality
+
+        .spacer.pt-5
+
+        section
+            .container
+                .row.justify-content-center
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box("Title na řádek")
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box("O moc delší title, který je na více řádků")
+                    .col-12.col-sm-6.col-lg-4.mb-4
+                        +news-box()
+                .text-center.my-4
+                    a(href="aktuality.html").btn.btn-primary Více aktualit
+
+        .spacer.pt-7
