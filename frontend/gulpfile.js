@@ -397,12 +397,12 @@ function pugify() {
 }
 
 /*-----------------------------------------------
-|   SASS (Dart)
+|   SASS - Dart (test)
 -----------------------------------------------*/
 function scssDart() {
   return sassDart.renderSync({
     file: Paths.SCSS.THEME,
-    outFile: Paths.CSS,
+    outFile: 'test.css',
   });
 }
 

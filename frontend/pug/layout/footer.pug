@@ -1,1 +1,32 @@
-footer Footer
+footer
+    .top
+        .container.py-6.border-top
+            .row
+                .col-12.col-md-7
+                    p
+                        | TM Technik s. r. o.<br>
+                        | Dornych 54/47, Brno 617 00<br>
+                        | IČO: 26889927<br>
+                        | DIČ: CZ26889927
+                .col-6.col-md-3
+                    .foot-links
+                        p.mb-md-5 Rozcestník
+                        ul.list-group.list-group-minimal
+                            li.list-group-item.py-1: a(href="") Služby
+                            li.list-group-item.py-1: a(href="") O společnosti
+                            li.list-group-item.py-1: a(href="") Kontakt
+                .col-6.col-md-2
+                    .foot-links
+                        p.mb-md-5 Socialní Sítě
+                        ul.list-group.list-group-minimal
+                            li.list-group-item.py-1: a(href="") Facebook
+                            li.list-group-item.py-1: a(href="") Instagram
+                            li.list-group-item.py-1: a(href="") Linkedin
+
+    .bottom.bg-primary.text-dark.py-4
+        .container
+            .row
+                .col-auto
+                    p 2021 &copy; TM Technik, všechna práva vyhrazena
+                .col-auto.text-right
+                    a(href="https://orwin.cz" target="_blank"): img(src= $imgDir + 'logo-orwin.svg' alt="Orwin" height=40)
