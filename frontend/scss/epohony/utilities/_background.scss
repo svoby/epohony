@@ -102,6 +102,12 @@
   background: linear-gradient(to right, #064f8d 5%, #2377bf 85%);
 }
 
-.bg-gradient-test {
+.bg-gradient-secondary {
   background: linear-gradient(135deg, #4294cc 0%, rgba(66, 148, 204, 0) 60.18%);
+}
+
+.bg-linear-down-light {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%),
+    linear-gradient(0deg, #f2f3f7, #f2f3f7), #f2f3f7;
+  background-blend-mode: normal, multiply, normal;
 }

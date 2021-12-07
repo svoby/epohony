@@ -1,9 +1,13 @@
-.header.com {
+header.main {
   user-select: none;
   position: static;
   width: 100%;
   z-index: 1050;
-  background: transparent;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &.--sticky {
     background: white;
     position: fixed;
@@ -25,9 +29,5 @@
   }
   &.headroom--unpinned {
     transform: translateY(-100%);
-  }
-  @include media-breakpoint-down(sm) {
-    padding-left: $grid-gutter-width / 2;
-    padding-right: $grid-gutter-width / 2;
   }
 }

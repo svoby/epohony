@@ -1,24 +1,12 @@
 .navbar {
   height: $navbar-height;
   justify-content: space-between;
-  padding: 0;
-  a.nav-link {
-    color: $black;
-    &:hover {
-      color: $primary;
-    }
+  .nav-link {
+    font-size: $navbar-font-size;
   }
-  .search {
-    input[type='text'] {
-      border-color: rgba(210, 77, 18, 0.25);
-      padding-left: 42px;
-      width: 120px;
-      font-size: rem-calc(17);
-      transition: width 0.5s;
-      background: url('../../assets/img/ico-search.svg') no-repeat 15px 50%;
-      &:focus {
-        width: 200px;
-      }
+  .nav-item:last-child {
+    .nav-link {
+      padding-right: 0;
     }
   }
   @include media-breakpoint-down($fancynav-breakpoint-down) {
@@ -27,7 +15,4 @@
       max-width: 80%;
     }
   }
-}
-.navbar-nav .nav-link {
-  font-size: rem-calc(17);
 }

@@ -7,21 +7,63 @@ block main
 
         .spacer.pt-7
 
-        .container
-            h1 Headline 1<br>The quick brown fox jumps over a lazy dog
+        section#breadcrumbs
+            .container
+                h2.h4 Breadcrumbs
+                include  ./partials/breadcrumbs
 
-            h2 Headline 2<br>The quick brown fox jumps over a lazy dog
+        section.bg-linear-down-light#category-list
+            .spacer.py-5
+            .container
+                h2.h4.text-uppercase Category list
+                .row
+                    - $category = ['Pohony bran a vrat', 'Automatické závory']
+                    each $key, $name in $category
+                        .col-md-4
+                            .card
+                                .card-header= $name
+                            = $key
 
-            h3 Headline 3<br>The quick brown fox jumps over a lazy dog
+            .spacer.py-5
 
-            h4 Headline 4<br>The quick brown fox jumps over a lazy dog
+        .spacer.pt-5.border-top
 
-            h5 Headline 5<br>The quick brown fox jumps over a lazy dog
+        section#spacers
+            .container
+                h2.h4 Spacers
+                button.btn.btn-primary.mb-5(data-toggle="collapse", data-target="#collapseSpacers") Show spacers
+                #collapseSpacers.collapse
+                    .row
+                        .col-6
+                            - var n = 0
+                            while n <= 10
+                                .border(class= "p-" + n) .p-#{n}
+                                -n++
+                        .col-6
+                            - var n = 0
+                            while n <= 10
+                                .border(class= "pt-" + n) .pt-#{n}
+                                -n++
 
-            h6 Headline 6<br>The quick brown fox jumps over a lazy dog
+        .spacer.pt-5.border-top
 
-            p.font-weight-rebular Body Text Normal<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
-            p.font-weight-bold Body Text Bold<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
+        section#stylesheet
+
+            .container
+                h1 Headline 1<br>The quick brown fox jumps over a lazy dog
+
+                h2 Headline 2<br>The quick brown fox jumps over a lazy dog
+
+                h3 Headline 3<br>The quick brown fox jumps over a lazy dog
+
+                h4 Headline 4<br>The quick brown fox jumps over a lazy dog
+
+                h5 Headline 5<br>The quick brown fox jumps over a lazy dog
+
+                h6 Headline 6<br>The quick brown fox jumps over a lazy dog
+
+                p.font-weight-rebular Body Text Normal<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
+                p.font-weight-bold Body Text Bold<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
 
         .spacer.pt-7
 

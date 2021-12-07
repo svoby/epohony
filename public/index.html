@@ -15,109 +15,60 @@
   </head>
   <body class="has-sidemenu has-fancynav-top has-topbar overflow-hidden-x">
     <!-- Header-->
-    <header class="header com">
-      <header class="navbar navbar-expand-lg bg-gradient-primary py-3 text-white">
-        <div class="container"><a class="navbar-band" href="/"><img src="assets/images/logo-site.svg" alt="ePohony" width="145"></a>
-          <div style="font-size: 24px">Pohony bran, vrat a parkovací zábrany</div>
-          <div>
-            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+    <header class="main bg-gradient-primary py-3 text-white">
+      <div class="container"><a href="/"><img src="assets/images/logo-site.svg" alt="ePohony" width="145"></a>
+        <div class="d-none d-lg-block h5 font-weight-normal text-white mb-0">Pohony bran, vrat a parkovací zábrany</div>
+        <div><a class="d-inline-flex align-items-center text-white text-micro hover-secondary" href="#!"><span class="btn-primary btn-circle bg-gradient-secondary border-0 sx-40 mr-2">
                   <svg class="ico user sx-24">
                     <use xlink:href="build/svg/sprite.defs.svg#user"></use>
-                  </svg>
-            </button>
-            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-              <shoppingcarticon class="sx-24"></shoppingcarticon>
+                  </svg></span><span class="d-none d-md-block"><span class="fotn-weight-bold d-block">Přihlásit se</span>Můj účet</span></a><a class="d-inline-flex align-items-center text-white text-micro ml-1 ml-lg-4 hover-secondary" href="#!"><span class="btn-primary btn-circle bg-gradient-secondary border-0 sx-40 mr-2">
                   <svg class="ico shopping-cart sx-24">
                     <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
-                  </svg>
-            </button>
-            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                  </svg></span><span class="d-none d-md-block"><span class="font-weight-bold d-block">23 456 Kč</span>Košík</span></a><a class="d-inline-flex d-lg-none align-items-center text-white ml-1 ml-lg-4" href="#!"><span class="btn-primary btn-circle bg-gradient-secondary border-0 sx-40">
                   <svg class="ico menu sx-24">
                     <use xlink:href="build/svg/sprite.defs.svg#menu"></use>
+                  </svg></span></a></div>
+      </div>
+    </header>
+    <section class="bg-100 py-4">
+      <div class="container">
+        <div class="d-flex"><a class="d-none d-md-inline-flex align-items-center justify-content-between border rounded bg-white shadow-secondary text-decoration-none text-dark hover-secondary hover-border-secondary" href="#!" style="min-width: 150px">
+            <div class="d-inline-block px-4">Produkty</div>
+            <div class="border-left px-2">
+                  <svg class="ico chevron-down sx-16">
+                    <use xlink:href="build/svg/sprite.defs.svg#chevron-down"></use>
                   </svg>
-            </button>
-          </div>
-        </div>
-      </header>
-      <nav class="navbar navbar-expand-lg fancynavbar fancynavbar-top" id="top">
-        <div class="container">
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item"><a class="nav-link" href="./znacky.html">Montáž</a></li>
-              <li class="nav-item"><a class="nav-link" href="./spolecnost1.html">Garážová vrata</a></li>
-              <li class="nav-item"><a class="nav-link" href="./team1.html">B2B spolupráce</a></li>
-              <li class="nav-item"><a class="nav-link" href="./kontakt.html">Kontakt</a></li>
-            </ul>
-          </div>
-          <div class="fancynavbar-togglerbar fancynavbar-toggler d-flex d-lg-none">
-            <button class="btn btn-sm">
-              <svg width="48" height="24" viewbox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="48" height="4" fill="currentColor"></rect>
-                <rect y="10" width="48" height="4" fill="currentColor"></rect>
-                <rect y="20" width="48" height="4" fill="currentColor"></rect>
-              </svg>
-            </button>
-            <button class="btn btn-sm">
-              <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect y="25.9507" width="36.0907" height="3.38356" transform="rotate(-45 0 25.9507)" fill="currentColor"></rect>
-                <rect x="25.5205" y="28.3433" width="36.0907" height="3.38356" transform="rotate(-135 25.5205 28.3433)" fill="currentColor"></rect>
-              </svg>
-            </button>
-          </div>
-          <div class="fancynavbar-collapse">
-            <div class="top">
-              <ul class="nav fancynavbar-languages">
-                <li><a class="btn btn-lg btn-secondary" href="#!">Česky</a></li>
-                <li><a class="btn btn-lg btn-outline-secondary" href="#!">English</a></li>
-              </ul>
-              <ul class="fancynavbar-nav">
-                <li class="fancynav-item fancy-dropdown"><a class="fancynav-link fancy-dropdown-toggle" href="javascript:void(0)">
-                    <div class="fancynav-link-content">Služby</div></a>
-                  <div class="fancy-dropdown-menu">
-                    <div class="row py-2">
-                      <div class="col-auto"><a class="fancy-dropdown-item" href="#!">Třídění a kontrola kvality</a><a class="fancy-dropdown-item" href="#!">Montáže a drobné opracování dílů</a><a class="fancy-dropdown-item" href="#!">3D měření a programování</a><a class="fancy-dropdown-item" href="#!">Technická čistota</a><a class="fancy-dropdown-item" href="#!">Konzultace, školení audity</a></div>
-                    </div>
-                  </div>
-                </li>
-                <li class="fancynav-item"><a class="fancynav-link" href="./dilna.html">Chráněná dílna</a></li>
-                <li class="fancynav-item"><a class="fancynav-link" href="./o-nas.html">O společnosti</a></li>
-                <li class="fancynav-item"><a class="fancynav-link" href="./kontakt.html">Kontakt</a></li>
-              </ul>
-              <div class="fancynav-item my-2"><a class="fancynav-link" href="#!">
-                      <svg class="ico lock-open s-24">
-                        <use xlink:href="build/svg/sprite.defs.svg#lock-open"></use>
-                      </svg>Klientská zóna</a></div>
-              <div class="fancynav-item my-2"><a class="fancynav-link" href="#!">
-                      <svg class="ico briefcase s-24">
-                        <use xlink:href="build/svg/sprite.defs.svg#briefcase"></use>
-                      </svg>Kariéra</a></div>
-            </div>
-            <div class="bottom">
-              <div class="fancy-socials">
-                <div class="row">
-                  <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                          <svg class="ico youtube s-24">
-                            <use xlink:href="build/svg/sprite.defs.svg#youtube"></use>
-                          </svg>Youtube</a></div>
-                  <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                          <svg class="ico linkedin s-24">
-                            <use xlink:href="build/svg/sprite.defs.svg#linkedin"></use>
-                          </svg>Linkedin</a></div>
-                  <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                          <svg class="ico facebook s-24">
-                            <use xlink:href="build/svg/sprite.defs.svg#facebook"></use>
-                          </svg>Facebook</a></div>
-                  <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                          <svg class="ico twitter s-24">
-                            <use xlink:href="build/svg/sprite.defs.svg#twitter"></use>
-                          </svg>Twitter</a></div>
+            </div></a>
+          <div class="flex-grow-1 ml-md-5 mr-lg-5">
+            <form action="#" method="get">
+              <div class="input-group">
+                <input class="form-control" type="text" name="q" placeholder="Vyhledat zboží…">
+                <select class="form-control border-right-0 text-500" name="cat">
+                  <option>Kategorie</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary px-3 py-0" type="submit">
+                        <svg class="ico search sx-24">
+                          <use xlink:href="build/svg/sprite.defs.svg#search"></use>
+                        </svg>
+                  </button>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
+          <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block align-self-center">
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="./znacky.html">Montáž</a></li>
+                <li class="nav-item"><a class="nav-link" href="./spolecnost1.html">Garážová vrata</a></li>
+                <li class="nav-item"><a class="nav-link" href="./team1.html">B2B spolupráce</a></li>
+                <li class="nav-item"><a class="nav-link" href="./kontakt.html">Kontakt</a></li>
+              </ul>
+            </div>
+          </nav>
         </div>
-      </nav>
-    </header>
+      </div>
+    </section>
     <!-- Main-->
     <main class="main">
       <div class="teaser com">
@@ -225,6 +176,8 @@
       </div>
     </footer>
     <div class="mobile-nav-overlay"></div>
+    <script src="build/js/jquery.min.js"></script>
+    <script src="build/js/bootstrap.min.js"></script>
     <!-- Footer scripts-->
   </body>
 </html>

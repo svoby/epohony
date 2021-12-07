@@ -16,16 +16,18 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 25px !default;
 
 // Colors
-$blue: blue;
+$gray-100: #f2f3f7;
+$blue: #106ab6;
 $orange: #ff4e00;
+$yellow: #fbc521;
 $blue-dark: #071529;
 $white: #fff !default;
 $black: #000 !default;
 $gray-100: #f9f9f9 !default;
 $gray-500: #9ea1a5;
 
-$primary: #106ab6;
-$secondary: #fdfaf5;
+$primary: $blue;
+$secondary: $yellow;
 
 // Body
 $body-color: $black;
@@ -35,6 +37,8 @@ $rfs-rem-value: 18 !default;
 
 $font-size-base: 1rem !default;
 $small-font-size: 85% !default;
+$micro-font-size: rem-calc(15);
+$micro-font-line-height: 1.06;
 
 $h1-font-size: 60px !default;
 $h2-font-size: 56px !default;
@@ -65,7 +69,7 @@ $h5-line-height: 1.333;
 $h6-line-height: 1.6;
 
 // Spacers
-$spacer: 1rem !default;
+$spacer: 0.88888rem !default;
 $spacers: () !default;
 $spacers: map-merge(
   $spacers,
@@ -79,36 +83,32 @@ $spacers: map-merge(
     ),
     3: $spacer,
     4: (
-      $spacer * 1.33333,
+      $spacer * 1.5,
       // 24px
     ),
     5: (
-      $spacer * 2.66666,
+      $spacer * 3,
       // 48px
     ),
     6: (
-      $spacer * 4,
+      $spacer * 4.5,
       // 72px
     ),
     7: (
-      $spacer * 5.33333,
+      $spacer * 6,
       // 96px
     ),
     8: (
-      $spacer * 6.66666,
+      $spacer * 7.5,
       // 120px
     ),
     9: (
-      $spacer * 8.888,
+      $spacer * 10,
       // 160px
     ),
     10: (
-      $spacer * 13.333,
-      // 240px
-    ),
-    11: (
       $spacer * 15,
-      // 270px
+      // 240px
     ),
   )
 );
@@ -120,13 +120,14 @@ $btn-font-size: 13px !default;
 
 // Navbar
 $navbar-bg: transparent;
-$navbar-height: 80px;
+$navbar-height: auto;
 $navbar-height-mobile: 80px;
-$navbar-padding-x: 40px;
-$navbar-padding-y: 1rem !default;
+$navbar-padding-x: 0 !default;
+$navbar-padding-y: 0 !default;
 $navbar-light-color: $black;
-$navbar-light-hover-color: $orange;
-$navbar-nav-link-padding-x: 1.2rem !default;
+$navbar-light-hover-color: $yellow;
+$navbar-nav-link-padding-x: 10px !default;
+$navbar-font-size: rem-calc(15);
 
 // Topnavbar
 $topnavbar-height: 32px;
@@ -137,12 +138,14 @@ $card-columns-count: 2 !default;
 $card-border-width: 0 !default;
 
 // Breadcrumb
-$breadcrumb-divider: quote('>');
+$breadcrumb-divider: quote('/');
+$breadcrumb-margin-bottom: 0;
 $breadcrumb-padding-y: 0;
 $breadcrumb-padding-x: 0;
 $breadcrumb-bg: transparent;
 $breadcrumb-active-color: $black;
 $breadcrumb-divider-color: $black;
+$breadcrumb-font-size: 14px;
 
 // Fancy nav
 $fancynav-width: 4.375rem !default;

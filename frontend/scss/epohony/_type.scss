@@ -102,3 +102,8 @@ picture {
 a {
   transition: color 0.5s;
 }
+
+.text-micro {
+  font-size: $micro-font-size;
+  line-height: $micro-font-line-height;
+}
