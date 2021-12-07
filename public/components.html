@@ -15,68 +15,39 @@
   </head>
   <body class="has-sidemenu has-fancynav-top has-topbar overflow-hidden-x">
     <!-- Header-->
-    <header class="header com --sticky">
-      <div class="topbar com">
-        <div class="container">
-          <div class="left">
-            <ul>
-              <li><a href="#!">
-                      <svg class="ico shopping-cart s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
-                      </svg>E-shop</a></li>
-              <li><a href="#!">
-                      <svg class="ico lock-open s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#lock-open"></use>
-                      </svg>Klientská zóna</a></li>
-              <li><a href="#!">
-                      <svg class="ico briefcase s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#briefcase"></use>
-                      </svg>Kariéra</a></li>
-            </ul>
-          </div>
-          <div class="right">
-            <ul>
-              <li><a href="#!">
-                      <svg class="ico youtube s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#youtube"></use>
-                      </svg>Youtube</a></li>
-              <li><a href="#!">
-                      <svg class="ico facebook s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#facebook"></use>
-                      </svg>Facebook</a></li>
-              <li class="dropdown"><a class="dropdown-toggle" href="#!" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg class="ico globe s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#globe"></use>
-                      </svg>CZ</a>
-                <div class="dropdown-menu dropdown-menu-right --slim"><a class="dropdown-item active" href="#">CZ</a><a class="dropdown-item" href="#">EN</a></div>
-              </li>
-            </ul>
+    <header class="header com">
+      <header class="navbar navbar-expand-lg bg-gradient-primary py-3 text-white">
+        <div class="container"><a class="navbar-band" href="/"><img src="assets/images/logo-site.svg" alt="ePohony" width="145"></a>
+          <div style="font-size: 24px">Pohony bran, vrat a parkovací zábrany</div>
+          <div>
+            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                  <svg class="ico user sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#user"></use>
+                  </svg>
+            </button>
+            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+              <shoppingcarticon class="sx-24"></shoppingcarticon>
+                  <svg class="ico shopping-cart sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
+                  </svg>
+            </button>
+            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                  <svg class="ico menu sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#menu"></use>
+                  </svg>
+            </button>
           </div>
         </div>
-      </div>
+      </header>
       <nav class="navbar navbar-expand-lg fancynavbar fancynavbar-top" id="top">
-        <div class="container"><a class="navbar-brand" href="./" data-config-id="brand">
-                <picture>
-                  <source srcset="assets/img/logo-tm@1x.png 1x, assets/img/logo-tm@2x.png 2x"><img class="img-fluid" src="assets/img/logo-tm@1x.png">
-                </picture></a>
+        <div class="container">
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Služby</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="./sluzba1.html">Služba 1</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="./sluzba2.html">Služba 2</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="./servis.html">Servis</a>
-                </div>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="./znacky.html">Značky výrobců</a></li>
-              <li class="nav-item"><a class="nav-link" href="./spolecnost1.html">O společnosti</a></li>
-              <li class="nav-item"><a class="nav-link" href="./team1.html">Náš tým</a></li>
+              <li class="nav-item"><a class="nav-link" href="./znacky.html">Montáž</a></li>
+              <li class="nav-item"><a class="nav-link" href="./spolecnost1.html">Garážová vrata</a></li>
+              <li class="nav-item"><a class="nav-link" href="./team1.html">B2B spolupráce</a></li>
               <li class="nav-item"><a class="nav-link" href="./kontakt.html">Kontakt</a></li>
             </ul>
-          </div>
-          <div class="search d-none d-lg-block">
-            <form action="#">
-              <input class="form-control" type="text" placeholder="Vyhledat">
-            </form>
           </div>
           <div class="fancynavbar-togglerbar fancynavbar-toggler d-flex d-lg-none">
             <button class="btn btn-sm">
@@ -148,6 +119,17 @@
       </nav>
     </header>
     <!-- Main-->
+    <div class="spacer pt-7"></div>
+    <div class="container">
+      <h1>Headline 1<br>The quick brown fox jumps over a lazy dog</h1>
+      <h2>Headline 2<br>The quick brown fox jumps over a lazy dog</h2>
+      <h3>Headline 3<br>The quick brown fox jumps over a lazy dog</h3>
+      <h4>Headline 4<br>The quick brown fox jumps over a lazy dog</h4>
+      <h5>Headline 5<br>The quick brown fox jumps over a lazy dog</h5>
+      <h6>Headline 6<br>The quick brown fox jumps over a lazy dog</h6>
+      <p class="font-weight-rebular">Body Text Normal<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. </p>
+      <p class="font-weight-bold">Body Text Bold<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. </p>
+    </div>
     <div class="spacer pt-7"></div>
     <section>
       <div class="container">
@@ -315,87 +297,6 @@
     <div class="spacer pt-7"></div>
     <section>
       <div class="container">
-        <h3>Klienti nás mají rádi</h3>
-      </div>
-    </section>
-    <div class="spacer pt-2"></div>
-    <section>
-      <div class="container">
-        <div data-zanim-xs="{&quot;animation&quot;: &quot;slide-left&quot;, &quot;delay&quot;: 0 }" data-zanim-trigger="scroll">
-          <div class="quote-list-box com owl-carousel owl-theme" data-options="{&quot;autoHeight&quot;: false, &quot;autoWidth&quot;:true, &quot;center&quot;: false, &quot;margin&quot;: 0, &quot;nav&quot;: false, &quot;autoplay&quot;:false,&quot;loop&quot;:false,&quot;dots&quot;:false,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1.5, &quot;nav&quot;: false, &quot;dots&quot;: true},&quot;576&quot;:{&quot;items&quot;:2, &quot;nav&quot;: false, &quot;dots&quot;: true},&quot;992&quot;:{&quot;items&quot;: 2.5}}}">
-            <div class="item shadow-secondary">
-              <div class="top">
-                <p><span class="text-primary font-weight-bold">"</span> Spolupráce s firmou TM technik je postavena na vzájemné důvěře a podpoře. Veškeré činnosti jsou zajišťovány v oboru automotive a splňují veškeré standardy. Jedná se o naši jedinou externí firmu z tohoto oboru.“</p>
-              </div>
-              <div class="bottom">
-                        <picture><img src="https://via.placeholder.com/80x80.png"></picture>
-                <div class="in">
-                  <p><strong>Kateřina Brodecká</strong><br><small>Quality manager, CTS Czech Republic s.r.o.</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="item shadow-secondary">
-              <div class="top">
-                <p><span class="text-primary font-weight-bold">"</span> Spolupráce s firmou TM technik je postavena na vzájemné důvěře a podpoře. Veškeré činnosti jsou zajišťovány v oboru automotive a splňují veškeré standardy. Jedná se o naši jedinou externí firmu z tohoto oboru.“</p>
-              </div>
-              <div class="bottom">
-                        <picture><img src="https://via.placeholder.com/80x80.png"></picture>
-                <div class="in">
-                  <p><strong>Kateřina Brodecká</strong><br><small>Quality manager, CTS Czech Republic s.r.o.</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="item shadow-secondary">
-              <div class="top">
-                <p><span class="text-primary font-weight-bold">"</span> Spolupráce s firmou TM technik je postavena na vzájemné důvěře a podpoře. Veškeré činnosti jsou zajišťovány v oboru automotive a splňují veškeré standardy. Jedná se o naši jedinou externí firmu z tohoto oboru.“</p>
-              </div>
-              <div class="bottom">
-                        <picture><img src="https://via.placeholder.com/80x80.png"></picture>
-                <div class="in">
-                  <p><strong>Kateřina Brodecká</strong><br><small>Quality manager, CTS Czech Republic s.r.o.</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="item shadow-secondary">
-              <div class="top">
-                <p><span class="text-primary font-weight-bold">"</span> Spolupráce s firmou TM technik je postavena na vzájemné důvěře a podpoře. Veškeré činnosti jsou zajišťovány v oboru automotive a splňují veškeré standardy. Jedná se o naši jedinou externí firmu z tohoto oboru.“</p>
-              </div>
-              <div class="bottom">
-                        <picture><img src="https://via.placeholder.com/80x80.png"></picture>
-                <div class="in">
-                  <p><strong>Kateřina Brodecká</strong><br><small>Quality manager, CTS Czech Republic s.r.o.</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="item shadow-secondary">
-              <div class="top">
-                <p><span class="text-primary font-weight-bold">"</span> Spolupráce s firmou TM technik je postavena na vzájemné důvěře a podpoře. Veškeré činnosti jsou zajišťovány v oboru automotive a splňují veškeré standardy. Jedná se o naši jedinou externí firmu z tohoto oboru.“</p>
-              </div>
-              <div class="bottom">
-                        <picture><img src="https://via.placeholder.com/80x80.png"></picture>
-                <div class="in">
-                  <p><strong>Kateřina Brodecká</strong><br><small>Quality manager, CTS Czech Republic s.r.o.</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="item shadow-secondary">
-              <div class="top">
-                <p><span class="text-primary font-weight-bold">"</span> Spolupráce s firmou TM technik je postavena na vzájemné důvěře a podpoře. Veškeré činnosti jsou zajišťovány v oboru automotive a splňují veškeré standardy. Jedná se o naši jedinou externí firmu z tohoto oboru.“</p>
-              </div>
-              <div class="bottom">
-                        <picture><img src="https://via.placeholder.com/80x80.png"></picture>
-                <div class="in">
-                  <p><strong>Kateřina Brodecká</strong><br><small>Quality manager, CTS Czech Republic s.r.o.</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="spacer pt-7"></div>
-    <section>
-      <div class="container">
         <h3>Aktuality</h3>
       </div>
     </section>
@@ -477,7 +378,7 @@
             <div class="col-auto">
               <p>2021 &copy; TM Technik, všechna práva vyhrazena</p>
             </div>
-            <div class="col-auto text-right"><a href="https://orwin.cz" target="_blank"><img src="assets/img/logo-orwin.svg" alt="Orwin" height="40"></a></div>
+            <div class="col-auto text-right"><a href="https://orwin.cz" target="_blank"><img src="assets/images/logo-orwin.svg" alt="Orwin" height="40"></a></div>
           </div>
         </div>
       </div>

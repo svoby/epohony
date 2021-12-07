@@ -1,0 +1,19 @@
+body.mobile-nav-open {
+  overflow: hidden;
+  .mobile-nav-overlay {
+    display: block;
+  }
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: $z-index-nav-overlay;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}

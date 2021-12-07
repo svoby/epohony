@@ -1,5 +1,4 @@
-// Custom Functions
 @function rem-calc($size) {
-  $remSize: $size / 18;
+  $remSize: $size / $rfs-rem-value;
   @return #{$remSize}rem;
 }

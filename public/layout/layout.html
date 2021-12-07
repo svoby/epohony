@@ -15,68 +15,39 @@
   </head>
   <body class="has-sidemenu has-fancynav-top has-topbar overflow-hidden-x">
     <!-- Header-->
-    <header class="header com --sticky">
-      <div class="topbar com">
-        <div class="container">
-          <div class="left">
-            <ul>
-              <li><a href="#!">
-                      <svg class="ico shopping-cart s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
-                      </svg>E-shop</a></li>
-              <li><a href="#!">
-                      <svg class="ico lock-open s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#lock-open"></use>
-                      </svg>Klientská zóna</a></li>
-              <li><a href="#!">
-                      <svg class="ico briefcase s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#briefcase"></use>
-                      </svg>Kariéra</a></li>
-            </ul>
-          </div>
-          <div class="right">
-            <ul>
-              <li><a href="#!">
-                      <svg class="ico youtube s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#youtube"></use>
-                      </svg>Youtube</a></li>
-              <li><a href="#!">
-                      <svg class="ico facebook s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#facebook"></use>
-                      </svg>Facebook</a></li>
-              <li class="dropdown"><a class="dropdown-toggle" href="#!" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg class="ico globe s-16">
-                        <use xlink:href="build/svg/sprite.defs.svg#globe"></use>
-                      </svg>CZ</a>
-                <div class="dropdown-menu dropdown-menu-right --slim"><a class="dropdown-item active" href="#">CZ</a><a class="dropdown-item" href="#">EN</a></div>
-              </li>
-            </ul>
+    <header class="header com">
+      <header class="navbar navbar-expand-lg bg-gradient-primary py-3 text-white">
+        <div class="container"><a class="navbar-band" href="/"><img src="assets/images/logo-site.svg" alt="ePohony" width="145"></a>
+          <div style="font-size: 24px">Pohony bran, vrat a parkovací zábrany</div>
+          <div>
+            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                  <svg class="ico user sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#user"></use>
+                  </svg>
+            </button>
+            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+              <shoppingcarticon class="sx-24"></shoppingcarticon>
+                  <svg class="ico shopping-cart sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
+                  </svg>
+            </button>
+            <button class="btn btn-primary bg-gradient-test border-0 sx-40 p-0 rounded-circle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                  <svg class="ico menu sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#menu"></use>
+                  </svg>
+            </button>
           </div>
         </div>
-      </div>
+      </header>
       <nav class="navbar navbar-expand-lg fancynavbar fancynavbar-top" id="top">
-        <div class="container"><a class="navbar-brand" href="./" data-config-id="brand">
-                <picture>
-                  <source srcset="assets/img/logo-tm@1x.png 1x, assets/img/logo-tm@2x.png 2x"><img class="img-fluid" src="assets/img/logo-tm@1x.png">
-                </picture></a>
+        <div class="container">
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Služby</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="./sluzba1.html">Služba 1</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="./sluzba2.html">Služba 2</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="./servis.html">Servis</a>
-                </div>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="./znacky.html">Značky výrobců</a></li>
-              <li class="nav-item"><a class="nav-link" href="./spolecnost1.html">O společnosti</a></li>
-              <li class="nav-item"><a class="nav-link" href="./team1.html">Náš tým</a></li>
+              <li class="nav-item"><a class="nav-link" href="./znacky.html">Montáž</a></li>
+              <li class="nav-item"><a class="nav-link" href="./spolecnost1.html">Garážová vrata</a></li>
+              <li class="nav-item"><a class="nav-link" href="./team1.html">B2B spolupráce</a></li>
               <li class="nav-item"><a class="nav-link" href="./kontakt.html">Kontakt</a></li>
             </ul>
-          </div>
-          <div class="search d-none d-lg-block">
-            <form action="#">
-              <input class="form-control" type="text" placeholder="Vyhledat">
-            </form>
           </div>
           <div class="fancynavbar-togglerbar fancynavbar-toggler d-flex d-lg-none">
             <button class="btn btn-sm">
@@ -191,7 +162,7 @@
             <div class="col-auto">
               <p>2021 &copy; TM Technik, všechna práva vyhrazena</p>
             </div>
-            <div class="col-auto text-right"><a href="https://orwin.cz" target="_blank"><img src="assets/img/logo-orwin.svg" alt="Orwin" height="40"></a></div>
+            <div class="col-auto text-right"><a href="https://orwin.cz" target="_blank"><img src="assets/images/logo-orwin.svg" alt="Orwin" height="40"></a></div>
           </div>
         </div>
       </div>

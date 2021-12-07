@@ -34,8 +34,7 @@ const Paths = {
     HTML: '../public/tpl/**/*.html', // Not used?
   },
   PUG: {
-    //FROM: [__dirname + '/pug/*.pug', __dirname + '/pug/layout/*.pug'],
-    FROM: [__dirname + '/pug/**/*.pug'],
+    FROM: [__dirname + '/pug/**/*.pug', '!' + __dirname + '/pug/_old/**'],
     TO: __dirname + '/../public/'
   },
   SVG: {

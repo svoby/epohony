@@ -2,76 +2,43 @@ include ../mixins/picture
 include ../mixins/sprite
 
 //- Header
-header.header.com.--sticky
+header.header.com
 
-    //-- Top bar
-    .topbar.com
+    header.navbar.navbar-expand-lg.bg-gradient-primary.py-3.text-white
         .container
-            .left
-                ul
-                    li
-                        a(href="#!")
-                            +sprite("shopping-cart", "s-16")
-                            | E-shop
-                    li
-                        a(href="#!")
-                            +sprite("lock-open", "s-16")
-                            | Klientská zóna
-                    li
-                        a(href="#!")
-                            +sprite("briefcase", "s-16")
-                            | Kariéra
-            .right
-                ul
-                    li
-                        a(href="#!")
-                            +sprite("youtube", "s-16")
-                            | Youtube
-                    li
-                        a(href="#!")
-                            +sprite("facebook", "s-16")
-                            | Facebook
-                    li.dropdown
-                        a.dropdown-toggle(href="#!" type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                            +sprite("globe", "s-16")
-                            | CZ
-                        .dropdown-menu.dropdown-menu-right.--slim
-                            a.dropdown-item.active(href='#') CZ
-                            a.dropdown-item(href='#') EN
+            a.navbar-band(href='/')
+                img(src= $imgDir + "logo-site.svg" alt='ePohony' width='145')
+            div(style="font-size: 24px") Pohony bran, vrat a parkovací zábrany
+            div
+                button.btn.btn-primary.bg-gradient-test.border-0.sx-40.p-0.rounded-circle.me-2(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasRight')
+                    +sprite("user", "sx-24")
+                button.btn.btn-primary.bg-gradient-test.border-0.sx-40.p-0.rounded-circle.me-2(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasRight')
+                    shoppingcarticon.sx-24
+                    +sprite("shopping-cart", "sx-24")
+                button.btn.btn-primary.bg-gradient-test.border-0.sx-40.p-0.rounded-circle(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasRight')
+                    +sprite("menu", "sx-24")
+
 
     //- Navbar
     nav#top.navbar.navbar-expand-lg.fancynavbar.fancynavbar-top
         .container
 
-            //- Logo
-            a.navbar-brand(href='./' data-config-id='brand')
-                +picture("logo-tm@1x.png", "logo-tm@2x.png")
-
             //- Main nav
             .collapse.navbar-collapse
                 ul.navbar-nav.mx-auto
-                    li.nav-item.dropdown
-                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                            | Služby
-                        .dropdown-menu(aria-labelledby='navbarDropdown')
-                            a.dropdown-item(href='./sluzba1.html') Služba 1
-                            .dropdown-divider
-                            a.dropdown-item(href='./sluzba2.html') Služba 2
-                            .dropdown-divider
-                            a.dropdown-item(href='./servis.html') Servis
                     li.nav-item
-                        a.nav-link(href='./znacky.html') Značky výrobců
+                        a.nav-link(href='./znacky.html') Montáž
                     li.nav-item
-                        a.nav-link(href='./spolecnost1.html') O společnosti
+                        a.nav-link(href='./spolecnost1.html') Garážová vrata
                     li.nav-item
-                        a.nav-link(href='./team1.html') Náš tým
+                        a.nav-link(href='./team1.html') B2B spolupráce
                     li.nav-item
                         a.nav-link(href='./kontakt.html') Kontakt
 
             //- Search
-            .search.d-none.d-lg-block
-                form(action="#")
-                    input.form-control(type="text" placeholder="Vyhledat")
+            //- .search.d-none.d-lg-block
+            //-     form(action="#")
+            //-         input.form-control(type="text" placeholder="Vyhledat")
 
             //- Hamburger - toggler
             .fancynavbar-togglerbar.fancynavbar-toggler.d-flex.d-lg-none

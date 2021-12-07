@@ -1,3 +1,6 @@
+// Font import
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
+
 // User rewwrites
 $border-radius: 2px;
 
@@ -12,25 +15,6 @@ $container-max-widths: (
 $grid-columns: 12 !default;
 $grid-gutter-width: 25px !default;
 
-// Fonts
-$font-size-base: 1rem !default;
-$small-font-size: 85% !default;
-
-$h1-font-size: $font-size-base * 4 !default;
-$h2-font-size: $font-size-base * 2.666 !default;
-$h3-font-size: $font-size-base * 2.222 !default;
-$h4-font-size: $font-size-base * 1.777 !default;
-$h5-font-size: $font-size-base * 1.333 !default;
-$h6-font-size: $font-size-base * 1.222 !default;
-
-$font-family-sans-serif: 'Titillium Web', sans-serif !default;
-$font-family-serif: 'Titillium Web', sans-serif !default;
-$font-family-base: $font-family-serif !default;
-$font-weight-semibold: 600 !default;
-$font-weight-thin: 300 !default;
-
-$line-height-base: 1.555;
-
 // Colors
 $blue: blue;
 $orange: #ff4e00;
@@ -40,22 +24,45 @@ $black: #000 !default;
 $gray-100: #f9f9f9 !default;
 $gray-500: #9ea1a5;
 
-$primary: #106AB6;
+$primary: #106ab6;
 $secondary: #fdfaf5;
 
-// TODO
-$colors: (
-  'black': $black,
-) !default;
+// Body
+$body-color: $black;
+
+// Fonts
+$rfs-rem-value: 18 !default;
+
+$font-size-base: 1rem !default;
+$small-font-size: 85% !default;
+
+$h1-font-size: 60px !default;
+$h2-font-size: 56px !default;
+$h3-font-size: 40px !default;
+$h4-font-size: 32px !default;
+$h5-font-size: 24px !default;
+$h6-font-size: 20px !default;
+
+$font-family-sans-serif: 'Bai Jamjuree', sans-serif !default;
+$font-family-serif: 'Bai Jamjuree', sans-serif !default;
+$font-family-base: $font-family-serif !default;
+$font-weight-bold: 700 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-reguler: 400 !default;
+$font-weight-thin: 300 !default;
+
+$line-height-base: 1.555;
 
 // Headings
 $headings-color: $black !default;
-$headings-line-height: 1.22em;
 $headings-margin-bottom: 1.2rem;
-
-// Body
-$body-color: #595c60;
-$body-bg-color: $white;
+$headings-font-weight: $font-weight-bold;
+$h1-line-height: 1.2;
+$h2-line-height: 1;
+$h3-line-height: 1.2;
+$h4-line-height: 1.25;
+$h5-line-height: 1.333;
+$h6-line-height: 1.6;
 
 // Spacers
 $spacer: 1rem !default;
@@ -113,8 +120,8 @@ $btn-font-size: 13px !default;
 
 // Navbar
 $navbar-bg: transparent;
-$navbar-height: 104px;
-$navbar-height-mobile: 90px;
+$navbar-height: 80px;
+$navbar-height-mobile: 80px;
 $navbar-padding-x: 40px;
 $navbar-padding-y: 1rem !default;
 $navbar-light-color: $black;

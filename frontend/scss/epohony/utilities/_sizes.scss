@@ -1,4 +1,5 @@
 $square-sizes: (8, 16, 18, 20, 22, 24, 32, 40, 48, 56, 64, 80, 88, 120);
+//$square-sizes: (8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120);
 
 @each $breakpoint in map_keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {

@@ -97,3 +97,11 @@
 @each $key, $value in $grays {
   @include bg-variant('.bg-#{$key}', $value, true);
 }
+
+.bg-gradient-primary {
+  background: linear-gradient(to right, #064f8d 5%, #2377bf 85%);
+}
+
+.bg-gradient-test {
+  background: linear-gradient(135deg, #4294cc 0%, rgba(66, 148, 204, 0) 60.18%);
+}
