@@ -9,6 +9,41 @@ block main
             .container
                 include  ./partials/breadcrumbs
 
+        section.border-top#catagory-top
+            .spacer.pt-5
+            .container
+                h2 Headline h2
+                h5 Headline h5
+                .small.line-h-150
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare sed massa est orci bibendum magnis sagittis eget. Euismod ac ultrices vestibulum in sed volutpat ut. Fusce aenean eget condimentum bibendum faucibus sit. Purus varius velit massa diam. Tristique diam sed nunc nibh turpis id aliquet. Diam amet pretium urna, ante tristique. Odio varius interdum iaculis etiam mauris, velit amet elit.
+
+        section
+            .spacer.pt-5
+            .container
+                .row.no-gutters
+                    - var $i = 0
+                    while $i < 14
+                        .col-md-6.col-lg-4
+                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.rounded-lg.pr-2.m-1
+                                span.d-inline-flex.align-items-center.m-1
+                                    +placeholder(40, 40, "mr-2")
+                                    | Category item #{$i}
+                                +sprite("chevron-right", "sx-16 ml-4")
+                        -$i++
+
+        section
+            .spacer.pt-5
+            .container
+                p
+                    button.btn.btn-lg.btn-primary.text-uppercase Large
+                    button.btn.btn-primary Normal
+                    button.btn.btn-sm.btn-primary Small
+                div
+                    button.btn.btn-sm.btn-black Nejprodávanější
+                    button.btn.btn-sm.hover-primary Doprava zdarma
+                    button.btn.btn-sm.hover-primary Novinky
+            .spacer.pt-5
+
         section.bg-gradient-primary.h6.line-h-120.mb-0.pt-4.font-weight-normal.text-white#bar-1
             .container
                 .row
@@ -32,22 +67,25 @@ block main
             .spacer.py-5
             .container
                 h2.h4.text-uppercase Category list
-                .row
+                .row.no-gutters
                     - $category = ['Pohony bran<br>a&nbsp; vrat', 'Automatické<br>závory', 'Dálkové ovládání', 'Přístupové systémy', 'Příslušenství pohonů', 'Náhradní díly', 'Kování pro brány, vrata', 'Konstrukce pro brány']
                     each $name, $key in $category
                         .col-md-4.col-lg-3.mb-4.mb-md-5
-                            .card
+                            .card.m-1
                                 .card-header.d-flex.justify-content-between.align-items-center.bg-gradient-primary.min-h-lg-96
                                     h3.h6.mb-0.text-uppercase.line-h-120.text-white !{$name}
                                     +sprite("cube", "text-white sx-32 ml-4")
                                 .card-body.bg-white.py-3.px-4
                                     ul.nav.small
                                         - var $i = 0
-                                        while $i < 3
+                                        while $i < 4
                                             li.w-100
-                                                a(href="#!").d-flex.justify-content-between.align-items-center.py-2
-                                                    | Category item #{$i}
-                                                    +sprite("chevron-right", "sx-8 ml-4")
+                                                if $i < 3
+                                                    a(href="#!").d-flex.justify-content-between.align-items-center.text-dark.py-2 Category item #{$i}
+                                                        +sprite("chevron-right", "sx-8 ml-4")
+                                                else 
+                                                    a(href="#!").d-flex.justify-content-between.align-items-center.py-2.text-primary.text-uppercase.font-weight-bold All in category
+                                                        +sprite("chevron-right", "sx-8 ml-4")
                                             -$i++
 
             .spacer.py-5

@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
 
 // Border
-$border-radius: 2px;
+$border-radius: 4px;
+$border-radius-lg: 4px;
+$border-radius-sm: 4px;
 
 // Grid
 $container-max-widths: (
@@ -31,6 +33,7 @@ $secondary: $yellow;
 
 $theme-colors: (
   'white': $white,
+  'black': $black,
 );
 
 // Body
@@ -73,7 +76,7 @@ $h5-line-height: 1.333;
 $h6-line-height: 1.6;
 
 // Line heights (%)
-$line-heights: (100, 120, 140, 160);
+$line-heights: (100, 120, 140, 150, 160);
 
 // Transparency levels (%)
 $transparency-levels: (20, 25, 40, 50, 60, 75, 80);
@@ -124,9 +127,17 @@ $spacers: map-merge(
 );
 
 // Buttons & controlls
-$input-btn-padding-y: 0.6rem !default;
-$btn-padding-x: 2.666rem !default;
-$btn-font-size: 13px !default;
+$input-btn-font-size: 1rem !default;
+$input-btn-padding-x: 1rem !default;
+$input-btn-padding-y: 0.4rem !default;
+
+$input-btn-font-size-lg: 1rem !default;
+$input-btn-padding-x-lg: 1rem !default;
+$input-btn-padding-y-lg: 0.6rem !default;
+
+$input-btn-font-size-sm: 0.8888rem;
+$input-btn-padding-x-sm: 1rem !default;
+$input-btn-padding-y-sm: 0.4rem !default;
 
 // Navbar
 $navbar-bg: transparent;
