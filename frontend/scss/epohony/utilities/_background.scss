@@ -99,11 +99,11 @@
 }
 
 .bg-gradient-primary {
-  background: linear-gradient(to right, #064f8d 5%, #2377bf 85%);
+  background: $gradient-primary;
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(135deg, #4294cc 0%, rgba(66, 148, 204, 0) 60.18%);
+  background: $gradient-secondary;
 }
 
 .bg-linear-down-light {

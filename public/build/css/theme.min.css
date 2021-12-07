@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap");
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -15139,7 +15139,7 @@ button.bg-900:focus {
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(135deg, #4294cc 0%, rgba(66, 148, 204, 0) 60.18%);
+  background: linear-gradient(135deg, #4294cc 0%, rgba(66, 148, 204, 0) 60%);
 }
 
 .bg-linear-down-light {
@@ -16527,10 +16527,10 @@ footer .bottom .col-4 {
   position: relative;
   flex-flow: row wrap;
   position: relative;
-  border-bottom: 2px solid #f2f3f7;
 }
 
 .fancy-tab .nav-bar .tab-indicator {
+  display: none;
   content: '';
   position: absolute;
   display: block;
@@ -16559,21 +16559,24 @@ footer .bottom .col-4 {
   line-height: 1rem;
   font-family: "Bai Jamjuree", sans-serif;
   display: inline-block;
+  font-weight: 600;
   margin-bottom: 0;
   text-align: center;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-bottom: 0.125rem solid #ddd;
 }
 
 .fancy-tab .nav-bar .nav-bar-item.active {
-  color: #106ab6;
-  border-bottom: 0;
-  background: #fbc521;
+  color: #fff;
+  background: linear-gradient(to right, #064f8d 5%, #2377bf 85%);
+}
+
+@media (max-width: 991.98px) {
+  .fancy-tab .nav-bar .nav-bar-item {
+    width: 100%;
+  }
 }
 
 .fancy-tab .tab-contents {
-  margin-top: 1.875rem;
   position: relative;
 }
 

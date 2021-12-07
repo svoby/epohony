@@ -1,10 +1,18 @@
 // Font import
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap');
 
 // Border
 $border-radius: 4px;
 $border-radius-lg: 4px;
 $border-radius-sm: 4px;
+
+// Gradients
+$gradient-primary: linear-gradient(to right, #064f8d 5%, #2377bf 85%);
+$gradient-secondary: linear-gradient(
+  135deg,
+  #4294cc 0%,
+  rgba(66, 148, 204, 0) 60%
+);
 
 // Grid
 $container-max-widths: (
