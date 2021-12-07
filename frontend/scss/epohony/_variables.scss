@@ -1,7 +1,7 @@
 // Font import
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
 
-// User rewwrites
+// User rewrites
 $border-radius: 2px;
 
 // Grid
@@ -36,7 +36,7 @@ $body-color: $black;
 $rfs-rem-value: 18 !default;
 
 $font-size-base: 1rem !default;
-$small-font-size: 85% !default;
+$small-font-size: 88.9% !default;
 $micro-font-size: rem-calc(15);
 $micro-font-line-height: 1.06;
 
@@ -146,6 +146,9 @@ $breadcrumb-bg: transparent;
 $breadcrumb-active-color: $black;
 $breadcrumb-divider-color: $black;
 $breadcrumb-font-size: 14px;
+
+// Square size (.sx- ) & min-height sizes
+$square-sizes: (8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120);
 
 // Fancy nav
 $fancynav-width: 4.375rem !default;

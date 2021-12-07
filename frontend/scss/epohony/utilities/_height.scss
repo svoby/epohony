@@ -1,5 +1,5 @@
 /*-----------------------------------------------
-|   Height
+|   Height (viewport & min-heights)
 -----------------------------------------------*/
 @each $breakpoint in map_keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
@@ -12,6 +12,7 @@
         }
       }
     }
+
     .min-vh#{$infix}-100 {
       min-height: 100vh;
     }
@@ -47,6 +48,17 @@
     }
     .vh#{$infix}-25 {
       height: 25vh;
+    }
+  }
+}
+
+@each $breakpoint in map_keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $size in $square-sizes {
+      .min-h#{$infix}-#{$size} {
+        min-height: $size + px !important;
+      }
     }
   }
 }
