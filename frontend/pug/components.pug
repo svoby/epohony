@@ -5,11 +5,8 @@ block variables
 
 block main
 
-        .spacer.pt-7
-
         section#breadcrumbs
             .container
-                h2.h4 Breadcrumbs
                 include  ./partials/breadcrumbs
 
         section.bg-linear-down-light#category-list
@@ -17,12 +14,22 @@ block main
             .container
                 h2.h4.text-uppercase Category list
                 .row
-                    - $category = ['Pohony bran a vrat', 'Automatické závory']
-                    each $key, $name in $category
-                        .col-md-4
+                    - $category = ['Pohony bran<br>a&nbsp; vrat', 'Automatické<br>závory', 'Dálkové ovládání', 'Přístupové systémy', 'Příslušenství pohonů', 'Náhradní díly', 'Kování pro brány, vrata', 'Konstrukce pro brány']
+                    each $name, $key in $category
+                        .col-md-4.col-lg-3.mb-4.mb-md-5
                             .card
-                                .card-header= $name
-                            = $key
+                                .card-header.d-flex.justify-content-between.align-items-center.bg-gradient-primary.min-h-lg-96
+                                    h3.h6.mb-0.text-uppercase.text-white !{$name}
+                                    +sprite("cube", "text-white sx-32 ml-4")
+                                .card-body.bg-white.py-3.px-4
+                                    ul.nav.small
+                                        - var $i = 0
+                                        while $i < 3
+                                            li.w-100
+                                                a(href="#!").d-flex.justify-content-between.align-items-center.py-2
+                                                    | Category item #{$i}
+                                                    +sprite("chevron-right", "sx-8 ml-4")
+                                            -$i++
 
             .spacer.py-5
 
@@ -81,8 +88,8 @@ block main
                                 a(href="#!").item.shadow-primary
                                     .cell
                                         h4.font-weight-light.title= val
-                                        span.btn-circle.s-40.shadow-secondary
-                                            +sprite('arrow-narrow-right', 's-18')
+                                        span.btn-circle.sx-40.shadow-secondary
+                                            +sprite('arrow-narrow-right', 'sx-16')
                                     .cell
                                         +placeholder(120, 200)
                                     .overlay
