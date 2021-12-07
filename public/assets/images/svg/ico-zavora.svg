@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_4_276479" fill="white">
+<path d="M27 9C29.2091 9 31 10.7909 31 13C31 15.2091 29.2091 17 27 17L4 17C3.44771 17 3 16.5523 3 16L3 10C3 9.44771 3.44772 9 4 9L27 9Z"/>
+</mask>
+<path d="M27 9C29.2091 9 31 10.7909 31 13C31 15.2091 29.2091 17 27 17L4 17C3.44771 17 3 16.5523 3 16L3 10C3 9.44771 3.44772 9 4 9L27 9Z" fill="white" stroke="#02213C" stroke-width="3" mask="url(#path-1-inside-1_4_276479)"/>
+<path d="M16 10L19.5 16.5" stroke="#02213C" stroke-width="2"/>
+<path d="M23 10L26.5 16.5" stroke="#02213C" stroke-width="2"/>
+<path d="M9 10L12.5 16.5" stroke="#02213C" stroke-width="2"/>
+<path d="M18 10L21.5 16.5" stroke="#02213C" stroke-width="2"/>
+<path d="M25 10L28.5 16.5" stroke="#02213C" stroke-width="2"/>
+<path d="M11 10L14.5 16.5" stroke="#02213C" stroke-width="2"/>
+<path d="M2.75 11C2.75 8.65279 4.65279 6.75 7 6.75C9.34721 6.75 11.25 8.65279 11.25 11V26.25H2.75V11Z" fill="#F4F5F9" stroke="#02213C" stroke-width="1.5"/>
+<rect x="5" y="11" width="4" height="4" rx="2" fill="#02213C"/>
+<rect y="25" width="32" height="2" rx="1" fill="#02213C"/>
+</svg>
