@@ -3,6 +3,7 @@
   justify-content: space-between;
   .nav-link {
     font-size: $navbar-font-size;
+    white-space: nowrap;
   }
   .nav-item:last-child {
     .nav-link {

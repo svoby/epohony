@@ -4,8 +4,17 @@
   text-decoration-skip: ink;
 }
 
+.text-none,
+.text-none:hover {
+  text-decoration: none;
+}
+
 .text-smallcaps {
   font-variant: small-caps;
+}
+
+.font-weight-semibold {
+  font-weight: $font-weight-semibold;
 }
 
 /*-----------------------------------------------

@@ -9,15 +9,35 @@ block main
             .container
                 include  ./partials/breadcrumbs
 
+        section.border-top#carousel-sale
+            .container
+                .spacer.pt-6
+
+                .bg-secondary-alpha-10.p-2.border-radius-lg
+                    .row
+                        .col-md-3
+                            h2.h4.text-red.text-uppercase Zvýhodněné produkty
+                        .col
+                            .row
+                                .col-md-4
+                                    a(href="#!").d-inline-block.p-4.pt-5.bg-white.text-black.border.border-white.border-radius-lg.rounded.text-none.hover-bg-white.hover-border-secondary.hover-up.transition-primary
+                                        +placeholder(192, 132, "mb-2", "w-100")
+                                        p.mb-3.font-weight-semibold.line-h-133.line-clamp.line-clamp__3 BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag
+                                        div
+                                            span.h5 8&nbsp;990&nbsp;Kč 
+                                            | s&nbsp;DPH
+
+                .spacer.pt-6
+
         section.border-top#product-detail
-            .spacer.pt-5
+            .spacer.pt-6
             .container
                 h2.h4 Product detail
                 include ./components/product-detail
-            .spacer.pt-5
+            .spacer.pt-6
 
         section.border-top#tabs
-            .spacer.pt-5
+            .spacer.pt-6
             .container
                 h2.h4 Tabs
                 .fancy-tab
@@ -28,27 +48,26 @@ block main
                         .nav-bar-item.rounded Ask question
                     .tab-contents
                         .tab-content.py-4.active
+                            p Umami lo-fi bushwick swag. Microdosing health goth narwhal chicharrones cred occupy. Skateboard yuccie pok pok, cray selvage cred marfa shoreditch migas humblebrag. umblr hammock edison bulb portland fanny pack artisan air plant thundercats.
+                            h4 Letterpress echo park street
                             ul
-                                li Made in GB
-                                li Přesnost: TP20 (2,4+0,4L/100) µm, TP200 (2,3+0,4L/100) µm, SP25M (2,1+0,4L/100) µm
-                                li Rozlišení: 0,5µm - Optimální teplota: 18-22°C
-                                li Rozsah provozních teplot: 0-45°C
-                                li Stůl: Voštinová hliníkovo-granitová deska nebo plný granit
-                                li Nosnost stolu: 300 kg (voštinová deska), 500 kg (plný granit)
-                                li Max.vektorová rychlost: 600 mm/sec (CNC)
-                                li Max.vektorové zrychlení: 600 mm/sec2 (CNC)
-                                li Spotřeba vzduchu: 50 l/min
-                                li Požadovaný tlak vzduchu: 4 bar
+                                li Poke woke farm-to-table try-hard
+                                li Yr cliche hell of vexillologist.
+                                li Air plant tumblr 8-bit, authentic kombucha salvia vice blog shoreditch migas gentrify green juice.
+                                li Four dollar toast banjo stumptown gochujang.
+                                li Knausgaard franzen artisan beard sartorial mumblecore
+                            h5 Letterpress echo park street
+                            p Health goth butcher activated charcoal portland next level pitchfork mumblecore man braid iPhone plaid mlkshk. Prism intelligentsia forage poutine.
                         .tab-content.py-4
                             p ...
                         .tab-content.py-4
                             p ...
                         .tab-content.py-4
                             p ...
-            .spacer.pt-5
+            .spacer.pt-6
 
         section.border-top#catagory-top
-            .spacer.pt-5
+            .spacer.pt-6
             .container
                 h2 Category top
                 h5 Headline h5
@@ -62,7 +81,7 @@ block main
                     - var $i = 0
                     each $item in $CategorySubcategories
                         .col-6.col-lg-3.mb-1
-                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.rounded-lg.pr-2
+                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
                                 span.d-inline-flex.align-items-center.m-1
                                     +placeholder(40, 40, "mr-2")
                                     = $item
