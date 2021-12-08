@@ -68,6 +68,9 @@
         color: $white;
         background: $gradient-primary;
       }
+      &:hover:not(.active) {
+        color: $primary;
+      }
     }
 
     @include media-breakpoint-down(md) {

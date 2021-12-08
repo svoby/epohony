@@ -7,7 +7,9 @@
 @import 'utilities/text';
 @import 'utilities/equals';
 @import 'utilities/hover';
+@import 'utilities/translates';
 @import 'components/list-groups';
+@import 'grid';
 @import 'type';
 @import 'header';
 @import 'navbar';
@@ -42,16 +44,3 @@
 @import 'plugins/owl.carousel';
 @import 'map';
 @import 'dropdown';
-
-// Utils (TODO - separate)
-.border-dashed {
-  border: 2px dashed #ffb59566 !important;
-}
-
-.translate-y-middle {
-  transform: translateY(-50%);
-}
-
-.z-index-4 {
-  z-index: 4;
-}

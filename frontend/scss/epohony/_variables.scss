@@ -15,26 +15,17 @@ $gradient-secondary: linear-gradient(
 );
 
 // Grid
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1160px,
-) !default;
-
-$grid-columns: 12 !default;
-$grid-gutter-width: 25px !default;
+$grid-gutter-width: 25px;
+$grid-gutter-width-sm: 4px;
 
 // Colors
-$gray-100: #f2f3f7;
+$white: #fff;
+$black: #000;
 $blue: #106ab6;
 $orange: #ff4e00;
 $yellow: #fbc521;
 $blue-dark: #071529;
-$white: #fff !default;
-$black: #000 !default;
-$gray-100: #f9f9f9 !default;
-$gray-500: #9ea1a5;
+$gray-100: #f2f3f7;
 
 $primary: $blue;
 $secondary: $yellow;
@@ -87,7 +78,7 @@ $h6-line-height: 1.6;
 $line-heights: (100, 120, 140, 150, 160);
 
 // Transparency levels (%)
-$transparency-levels: (20, 25, 40, 50, 60, 75, 80);
+$transparency-levels: (10, 20, 25, 40, 50, 60, 75, 80);
 
 // Spacers
 $spacer: 0.88888rem !default;

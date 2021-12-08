@@ -9,8 +9,17 @@ block main
             .container
                 include  ./partials/breadcrumbs
 
-        section
+        section.border-top#product-detail
+            .spacer.pt-5
             .container
+                h2.h4 Product detail
+                include ./components/product-detail
+            .spacer.pt-5
+
+        section.border-top#tabs
+            .spacer.pt-5
+            .container
+                h2.h4 Tabs
                 .fancy-tab
                     .nav-bar.border.rounded.p-2
                         .nav-bar-item.rounded.active Description
@@ -41,7 +50,7 @@ block main
         section.border-top#catagory-top
             .spacer.pt-5
             .container
-                h2 Headline h2
+                h2 Category top
                 h5 Headline h5
                 .small.line-h-150
                     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare sed massa est orci bibendum magnis sagittis eget. Euismod ac ultrices vestibulum in sed volutpat ut. Fusce aenean eget condimentum bibendum faucibus sit. Purus varius velit massa diam. Tristique diam sed nunc nibh turpis id aliquet. Diam amet pretium urna, ante tristique. Odio varius interdum iaculis etiam mauris, velit amet elit.
@@ -49,16 +58,15 @@ block main
         section
             .spacer.pt-5
             .container
-                .row.no-gutters
+                .row.gutters-sm
                     - var $i = 0
-                    while $i < 14
-                        .col-6.col-lg-3
-                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.rounded-lg.pr-2.m-1
+                    each $item in $CategorySubcategories
+                        .col-6.col-lg-3.mb-1
+                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.rounded-lg.pr-2
                                 span.d-inline-flex.align-items-center.m-1
                                     +placeholder(40, 40, "mr-2")
-                                    | Category item #{$i}
+                                    = $item
                                 +sprite("chevron-right", "sx-16 ml-4")
-                        -$i++
 
         section
             .spacer.pt-5
