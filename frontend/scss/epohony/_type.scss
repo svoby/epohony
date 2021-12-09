@@ -21,6 +21,21 @@ table {
 }
 
 h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+.h6,
+.h6 {
+  letter-spacing: $headings-letter-spacing;
+}
+
+h1,
 .h1 {
   line-height: $h1-line-height;
 }
@@ -106,4 +121,8 @@ a {
 .text-micro {
   font-size: $micro-font-size;
   line-height: $micro-font-line-height;
+}
+
+.letter-spacing-sm {
+  letter-spacing: $letter-spacing-sm !important;
 }

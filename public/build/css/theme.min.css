@@ -15840,6 +15840,10 @@ a.text-900:hover, a.text-900:focus {
   line-height: 100% !important;
 }
 
+.line-h-115 {
+  line-height: 115% !important;
+}
+
 .line-h-120 {
   line-height: 120% !important;
 }
@@ -17203,6 +17207,21 @@ table:last-child {
   margin-bottom: 0;
 }
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+.h6,
+.h6 {
+  letter-spacing: -0.035em;
+}
+
 h1, .h1 {
   line-height: 1.2;
 }
@@ -17283,6 +17302,10 @@ a {
 .text-micro {
   font-size: 0.83333rem;
   line-height: 1.06;
+}
+
+.letter-spacing-sm {
+  letter-spacing: -0.035em !important;
 }
 
 header.main {

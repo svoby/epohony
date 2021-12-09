@@ -14,18 +14,23 @@ block main
                 .spacer.pt-6
 
                 .bg-secondary-alpha-10.p-2.border-radius-lg
-                    .row
+                    .row.gutters-sm
                         .col-md-3
-                            h2.h4.text-red.text-uppercase Zvýhodněné produkty
+                            .p-3
+                                h2.h4.mb-0.text-red.text-uppercase.line-h-115 Zvýhodněné produkty
+                                p.small.font-weight-bold.text-uppercase K TOMUTO ZBOŽÍ
                         .col
-                            .row
-                                .col-md-4
-                                    a(href="#!").d-inline-block.p-4.pt-5.bg-white.text-black.border.border-white.border-radius-lg.rounded.text-none.hover-bg-white.hover-border-secondary.hover-up.transition-primary
-                                        +placeholder(192, 132, "mb-2", "w-100")
-                                        p.mb-3.font-weight-semibold.line-h-133.line-clamp.line-clamp__3 BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag
-                                        div
-                                            span.h5 8&nbsp;990&nbsp;Kč 
-                                            | s&nbsp;DPH
+                            .row.gutters-sm
+                                -var i = 0
+                                while i < 4
+                                    .col
+                                        a(href="#!").d-inline-block.p-4.pt-5.bg-white.text-black.border.border-white.border-radius-lg.rounded.text-none.hover-bg-white.hover-border-secondary.hover-up.transition-primary
+                                            +placeholder(192, 132, "mb-2", "w-100")
+                                            p.mb-3.font-weight-semibold.line-h-133.line-clamp.line-clamp__3 BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag
+                                            div.letter-spacing-sm
+                                                span.h5 8&nbsp;990&nbsp;Kč 
+                                                | s&nbsp;DPH
+                                    -i++
 
                 .spacer.pt-6
 
