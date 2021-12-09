@@ -35,9 +35,13 @@ block main
                 .bg-secondary-alpha-10.p-2.border-radius-lg
                     .row.gutters-sm
                         .col-md-3
-                            .p-3
-                                h2.h4.mb-0.text-red.text-uppercase.line-h-115 Zvýhodněné produkty
-                                p.small.font-weight-bold.text-uppercase K TOMUTO ZBOŽÍ
+                            .d-flex.h-100.p-3.justify-content-between.flex-column
+                                div
+                                    h2.h4.mb-0.text-red.text-uppercase.line-h-115 Zvýhodněné produkty
+                                    p.small.font-weight-bold.text-uppercase K TOMUTO ZBOŽÍ
+                                div.d-none.d-md-inline-block.sx-104.text-uppercase.text-white.text-micro.position-relative
+                                    .bg-holder.d-flex.align-items-center.justify-content-center(style="background-image: url(" + $imgDir + "/svg/bg-hedgehog.svg)") Výhodně
+
                         .col
                             .row.gutters-sm
                                 -var i = 0
