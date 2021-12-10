@@ -9,35 +9,59 @@ block main
             .container
                 include  ./partials/breadcrumbs
 
+        section.border-top#products-cards-big
+            .container
+                .spacer.pt-6
+                h2.h4 Product cards (big)
+                .row.gutters-md
+                    each $item in $ProductAlternatives[1]
+                        .col-md-6.col-lg-3.mb-4.mb-lg-0
+                            .card.h-100.bg-100
+                                a(href="#!")
+                                    +placeholder($ProductAlternatives[0][0], $ProductAlternatives[0][1], "d-flex align-items-end p-2 pt-md-5 w-100 hover-up transition-primary", "w-100", $ProductAlternatives[0][2])
+                                .d-flex.flex-column.justify-content-between.h-100.px-4.pt-3.pb-4
+                                    .card-title
+                                        .card__tags
+                                            ul.card__tags__list
+                                                li.tag.tag-shipping.text-uppercase.small Doprava zdarma
+                                                li.tag.tag-instock.text-uppercase.small Skladem
+                                            .card__tags__sale
+                                                .d-flex.align-items-center.justify-content-center.rounded-circle.sx-64.bg-sale -15%
+                                        .card__rating.mb-3
+                                            .card__rating__rate(style="width: 50%")
+                                        a(href="#!").hover-border-secondary.hover-up.transition-primary
+                                            .font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $item[0]
+                                    .letter-spacing-sm
+                                        span.h5.mb-4 8&nbsp;990&nbsp;Kč
+                                        | s&nbsp;DPH
+                                        s.text-muted.ml-2 1.780 Kč
+                                        a(href="#!").btn.btn-outline-primary.d-inline-flex.justify-content-between.w-100.mt-3
+                                            | Vložit do košíku
+                                            +sprite("arrow-right", "sx-24")
+                .spacer.pt-6
+
         section.border-top#products-alt
             .container
                 .spacer.pt-6
-                h2.h4 Product alternatives
+                h2.h4 Product alternative cards
                 .row
                     each $item in $ProductAlternatives[1]
                         .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            a(href="#!").card.h-100.bg-100.border.border-white.text-black.text-none.hover-bg-white.hover-border-secondary.hover-up.transition-primary
+                            a(href="#!").card.h-100.bg-100.border.border-white.text-black.text-none.hover-bg-100.hover-border-secondary.hover-up.transition-primary
                                 +placeholder($ProductAlternatives[0][0], $ProductAlternatives[0][1], "d-flex align-items-end p-2 pt-md-5 w-100", "w-100", $ProductAlternatives[0][2])
                                 .d-flex.flex-column.justify-content-between.h-100.px-4.pt-3.pb-4
                                     .card-title.font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $item[0]
                                     .letter-spacing-sm
                                         span.h5 8&nbsp;990&nbsp;Kč 
                                         | s&nbsp;DPH
-                            //- a(href="#!").d-inline-block.h-100.bg-100.text-black.border.border-white.border-radius-lg.rounded.text-none.hover-bg-white.hover-border-secondary.hover-up.transition-primary
-                            //-     +placeholder($ProductAlternatives[0][0], $ProductAlternatives[0][1], "d-flex align-items-end p-2 pt-md-5 w-100", "w-100", $ProductAlternatives[0][2])
-                            //-     .px-4.pt-3.pb-4
-                            //-         p.mb-3.font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $item[0]
-                            //-         div.letter-spacing-sm
-                            //-             span.h5 8&nbsp;990&nbsp;Kč 
-                            //-             | s&nbsp;DPH
                 .spacer.pt-6
 
         section.border-top#related-sales
             .container
                 .spacer.pt-6
-                h2.h4 Related sales
-                .bg-secondary-alpha-10.p-2.border-radius-lg
-                    .row.gutters-sm
+                h2.h4 Product sale cards
+                .bg-secondary-alpha-20.p-2.border-radius-lg
+                    .row.gutters-md
                         .col-md-3
                             .d-flex.h-100.p-3.justify-content-between.flex-column
                                 div
@@ -130,33 +154,14 @@ block main
                     button.btn.btn-sm.hover-primary Novinky
             .spacer.pt-5
 
-        section.bg-gradient-primary.h6.line-h-120.mb-0.pt-4.font-weight-normal.text-white#bar-1
-            .container
-                .row
-                    .col-md-4.mb-4
-                        .d-flex.align-items-center
-                            span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
-                                +sprite("thumb-up", "sx-32")
-                            | Prodloužená záruka při montáži od nás
-                    .col-md-4.mb-4
-                        .d-flex.align-items-center
-                            span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
-                                +sprite("chat-alt", "sx-32")
-                            | Nevíte si rady? Využijte náš zákaznický servis
-                    .col-md-4.mb-4
-                        .d-flex.align-items-center
-                            span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
-                                +sprite("cog", "sx-32")
-                            | V případě zájmu zajistíme<br>odbornou montáž
-
         section.bg-linear-down-light#category-list
             .spacer.py-5
             .container
                 h2.h4.text-uppercase Category list
-                .row.no-gutters
+                .row.gutters-md
                     each $item, $key in $ProductCategories
                         .col-md-4.col-lg-3.mb-4.mb-md-5
-                            .card.m-1
+                            .card
                                 .card-header.d-flex.justify-content-between.align-items-center.bg-gradient-primary.min-h-md-96
                                     h3.h6.mb-0.text-uppercase.line-h-120.text-white !{$item[0]}
                                     img(width="32" src= $imgDir + $item[1]).ml-4
@@ -293,3 +298,22 @@ block main
                     a(href="aktuality.html").btn.btn-primary Více aktualit
 
         .spacer.pt-7
+
+        section.bg-gradient-primary.h6.line-h-120.mb-0.pt-4.font-weight-normal.text-white#bar-1
+            .container
+                .row
+                    .col-md-4.mb-4
+                        .d-flex.align-items-center
+                            span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
+                                +sprite("thumb-up", "sx-32")
+                            | Prodloužená záruka při montáži od nás
+                    .col-md-4.mb-4
+                        .d-flex.align-items-center
+                            span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
+                                +sprite("chat-alt", "sx-32")
+                            | Nevíte si rady? Využijte náš zákaznický servis
+                    .col-md-4.mb-4
+                        .d-flex.align-items-center
+                            span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
+                                +sprite("cog", "sx-32")
+                            | V případě zájmu zajistíme<br>odbornou montáž

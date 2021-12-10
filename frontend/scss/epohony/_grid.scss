@@ -6,3 +6,12 @@
     padding-left: $grid-gutter-width-sm * 0.5;
   }
 }
+
+.row.gutters-md {
+  margin-right: -$grid-gutter-width-md * 0.5;
+  margin-left: -$grid-gutter-width-md * 0.5;
+  [class^='col'] {
+    padding-right: $grid-gutter-width-md * 0.5;
+    padding-left: $grid-gutter-width-md * 0.5;
+  }
+}

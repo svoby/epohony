@@ -25,6 +25,7 @@ $gradient-secondary: linear-gradient(
 // Grid
 $grid-gutter-width: 24px;
 $grid-gutter-width-sm: 4px;
+$grid-gutter-width-md: 8px;
 
 // Colors
 $white: #fff;
@@ -43,6 +44,9 @@ $theme-colors: (
   'white': $white,
   'black': $black,
   'red': $red,
+  'shipping': #c4eb84,
+  'instock': #b1cbf2,
+  'sale': $yellow,
 );
 
 // Body
@@ -68,7 +72,7 @@ $font-family-serif: 'Bai Jamjuree', sans-serif !default;
 $font-family-base: $font-family-serif !default;
 $font-weight-bold: 700 !default;
 $font-weight-semibold: 600 !default;
-$font-weight-reguler: 400 !default;
+$font-weight-regular: 400 !default;
 $font-weight-thin: 300 !default;
 
 $line-height-base: 1.555;
@@ -97,6 +101,54 @@ $transparency-levels: (10, 20, 25, 40, 50, 60, 75, 80);
 $transition-primary: transform 0.15s, color 0.15s ease-in-out,
   background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
+
+// Buttons & controlls
+$input-btn-font-size: 1rem !default;
+$input-btn-padding-x: 1rem !default;
+$input-btn-padding-y: 0.4rem !default;
+
+$input-btn-font-size-lg: 1rem !default;
+$input-btn-padding-x-lg: 1rem !default;
+$input-btn-padding-y-lg: 0.6rem !default;
+
+$input-btn-font-size-sm: 0.8888rem;
+$input-btn-padding-x-sm: 1rem !default;
+$input-btn-padding-y-sm: 0.4rem !default;
+
+// Tags
+$tag-padding-y: 0.25em;
+$tag-padding-x: 0.5em;
+$tag-border-radius: $border-radius-lg;
+$tag-font-weight: $font-weight-regular;
+
+// Navbar
+$navbar-bg: transparent;
+$navbar-height: auto;
+$navbar-height-mobile: 80px;
+$navbar-padding-x: 0 !default;
+$navbar-padding-y: 0 !default;
+$navbar-light-color: $black;
+$navbar-light-hover-color: $yellow;
+$navbar-nav-link-padding-x: 10px !default;
+$navbar-font-size: rem-calc(15);
+
+// Topnavbar
+$topnavbar-height: 32px;
+$topnavbar-font-size: rem-calc(15);
+
+// Cards
+$card-columns-count: 2 !default;
+$card-border-width: 0 !default;
+
+// Breadcrumb
+$breadcrumb-divider: quote('/');
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-bg: transparent;
+$breadcrumb-active-color: $black;
+$breadcrumb-divider-color: $black;
+$breadcrumb-font-size: 14px;
 
 // Spacers
 $spacer: 0.88888rem !default;
@@ -142,48 +194,6 @@ $spacers: map-merge(
     ),
   )
 );
-
-// Buttons & controlls
-$input-btn-font-size: 1rem !default;
-$input-btn-padding-x: 1rem !default;
-$input-btn-padding-y: 0.4rem !default;
-
-$input-btn-font-size-lg: 1rem !default;
-$input-btn-padding-x-lg: 1rem !default;
-$input-btn-padding-y-lg: 0.6rem !default;
-
-$input-btn-font-size-sm: 0.8888rem;
-$input-btn-padding-x-sm: 1rem !default;
-$input-btn-padding-y-sm: 0.4rem !default;
-
-// Navbar
-$navbar-bg: transparent;
-$navbar-height: auto;
-$navbar-height-mobile: 80px;
-$navbar-padding-x: 0 !default;
-$navbar-padding-y: 0 !default;
-$navbar-light-color: $black;
-$navbar-light-hover-color: $yellow;
-$navbar-nav-link-padding-x: 10px !default;
-$navbar-font-size: rem-calc(15);
-
-// Topnavbar
-$topnavbar-height: 32px;
-$topnavbar-font-size: rem-calc(15);
-
-// Cards
-$card-columns-count: 2 !default;
-$card-border-width: 0 !default;
-
-// Breadcrumb
-$breadcrumb-divider: quote('/');
-$breadcrumb-margin-bottom: 0;
-$breadcrumb-padding-y: 0;
-$breadcrumb-padding-x: 0;
-$breadcrumb-bg: transparent;
-$breadcrumb-active-color: $black;
-$breadcrumb-divider-color: $black;
-$breadcrumb-font-size: 14px;
 
 // Square size (.sx- ) & min-height sizes
 $square-sizes: (

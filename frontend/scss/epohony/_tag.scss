@@ -1,0 +1,19 @@
+.tag {
+  display: inline-block;
+  padding: $tag-padding-y $tag-padding-x;
+  font-weight: $tag-font-weight;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius($tag-border-radius);
+  @at-root a#{&} {
+    text-decoration: none;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .tag-#{$color} {
+    @include badge-variant($value);
+  }
+}
