@@ -16,6 +16,7 @@ const browserSync = require('browser-sync');
 const svgSprite = require('gulp-svg-sprite');
 const pug = require('gulp-pug');
 const fs = require('fs');
+const prettier = require('gulp-prettier');
 
 const { reload } = browserSync;
 const Promise = require('promise');
@@ -402,6 +403,10 @@ function pugify() {
     .pipe(pug({
       pretty: true,
       data: data
+    }))
+    .pipe(prettier({
+      printWidth: 1000,
+      tabWidth: 4
     }))
     .pipe(dest(Paths.PUG.TO))
 }
