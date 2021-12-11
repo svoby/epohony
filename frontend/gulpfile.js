@@ -15,10 +15,13 @@ const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync');
 const svgSprite = require('gulp-svg-sprite');
 const pug = require('gulp-pug');
+const fs = require('fs');
 
 const { reload } = browserSync;
 const Promise = require('promise');
 const { src, dest } = require('gulp');
+const { Path } = require('progressbar.js');
+const { Callbacks } = require('jquery');
 
 
 /*-----------------------------------------------
@@ -35,7 +38,8 @@ const Paths = {
   },
   PUG: {
     FROM: [__dirname + '/pug/**/*.pug', '!' + __dirname + '/pug/_old/**'],
-    TO: __dirname + '/../public/'
+    TO: __dirname + '/../public/',
+    DATA: __dirname + "/data/site.json"
   },
   SVG: {
     FROM: './svg/*.svg',
@@ -389,9 +393,16 @@ function sprites() {
 |   PUG
 -----------------------------------------------*/
 function pugify() {
+
+  const data = JSON.parse(fs.readFileSync(Paths.PUG.DATA, 'utf8'));
+  console.log(`Pug external data file loaded: "${Paths.PUG.DATA}"`);
+
   return src(Paths.PUG.FROM)
     .pipe(plumber())
-    .pipe(pug({ pretty: true }))
+    .pipe(pug({
+      pretty: true,
+      data: data
+    }))
     .pipe(dest(Paths.PUG.TO))
 }
 

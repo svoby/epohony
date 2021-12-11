@@ -2,12 +2,7 @@
 - var $buildUrl = 'build/'
 - var $svgSprite = 'build/svg/sprite.defs.svg'
 - var $imgDir = 'assets/images/'
-- var $ProductCategories = [["Pohony bran a&nbsp;vrat", 'svg/ico-kridlo.svg'], ["Automatické závory", 'svg/ico-zavora.svg'], ['Dálkové ovládání', 'svg/ico-ovladac.svg'], ['Přístupové systémy', 'svg/ico-gsm.svg'], ['Příslušenství pohonů', 'svg/ico-clog.svg'], ['Náhradní díly', 'svg/ico-dily.svg'], ['Kování pro brány, vrata', 'svg/ico-brany-kovani.svg'], ['Konstrukce pro brány', 'svg/ico-brany-konstrukce.svg']]
-- var $CategorySubcategories = ['Pohony bran do 400 kg', 'Pohony bran do 600 kg', 'Pohony bran do 800 kg', 'Pohony bran nad 800 kg', 'Kompletní řešení', 'Sestavy posuvných bran', 'Konstrukční prvky bran', 'Ozubené hřebeny', 'Řídící jednotky pohonů', 'Sady pohonů', 'Sady pohonů s hřebeny', 'Nesené brány', 'Pohony samostatné', 'Šíny - C profily', 'Šíny pro závěsná vrata']
-- var $Products = [[296, 288, '/f2f3f7'], [['BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag'], ['BH30/803 - ROGER Brushless'], ['BH30/803 - ROGER Brushless'], ['BH30/803 - ROGER Brushless']]]
-- var $ProductAlternatives = [[296, 288, '/f2f3f7'], [['BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag'], ['BH30/803 - ROGER Brushless'], ['BH30/803 - ROGER Brushless'], ['BH30/803 - ROGER Brushless']]]
-- var $ProductSales = [[192, 132, '/f2f3f7'], [['BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag'], ['BH30/803 - ROGER Brushless'], ['BH30/803 - ROGER Brushless'], ['BH30/803 - ROGER Brushless']]]
-
+ 
 //- Mixins
 include ../mixins/picture
 include ../mixins/sprite
@@ -25,7 +20,7 @@ html(lang='cs')
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1')
-        title #{title}
+        title #{title} | #{$Data.site.title}
         link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
         link(href='https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap' rel='stylesheet')
         //- link(href= $buildUrl + 'lib/fancybox/jquery.fancybox.min.css' rel='stylesheet')

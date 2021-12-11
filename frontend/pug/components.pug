@@ -14,9 +14,9 @@ block main
                 .spacer.pt-6
                 h2.h4 Product cards
                 .row.gutters-md
-                    each $item in $Products[1]
-                        .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            +card-product($item, $Products[0])
+                    each $item in $Data.products[1]
+                        .col-md-6.col-lg-3.mb-2
+                            +card-product($item, $Data.products[0])
                 .spacer.pt-6
 
         section.border-top#products-cards-big
@@ -24,9 +24,9 @@ block main
                 .spacer.pt-6
                 h2.h4 Product cards (big)
                 .row.gutters-md
-                    each $item in $ProductAlternatives[1]
+                    each $item in $Data.productsAlternatives[1]
                         .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            +card-product-big($item, $ProductAlternatives[0])
+                            +card-product-big($item, $Data.productsAlternatives[0])
                             //- .card.h-100.bg-100
                             //-     a(href="#!")
                             //-         +placeholder($ProductAlternatives[0][0], $ProductAlternatives[0][1], "d-flex align-items-end p-2 pt-md-5 w-100 hover-up transition-primary", "w-100", $ProductAlternatives[0][2])
@@ -56,10 +56,10 @@ block main
                 .spacer.pt-6
                 h2.h4 Product alternative cards
                 .row
-                    each $item in $ProductAlternatives[1]
+                    each $item in $Data.productsAlternatives[1]
                         .col-md-6.col-lg-3.mb-4.mb-lg-0
                             a(href="#!").card.h-100.bg-100.border.border-white.text-black.text-none.hover-bg-100.hover-border-secondary.hover-up.transition-primary
-                                +placeholder($ProductAlternatives[0][0], $ProductAlternatives[0][1], "d-flex align-items-end p-2 pt-md-5 w-100", "w-100", $ProductAlternatives[0][2])
+                                +placeholder($Data.productsAlternatives[0][0], $Data.productsAlternatives[0][1], "d-flex align-items-end p-2 pt-md-5 w-100", "w-100", $Data.productsAlternatives[0][2])
                                 .d-flex.flex-column.justify-content-between.h-100.px-4.pt-3.pb-4
                                     .card-title.font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $item[0]
                                     .letter-spacing-sm
@@ -83,10 +83,10 @@ block main
 
                         .col
                             .row.gutters-sm
-                                each $item in $ProductSales[1]
+                                each $item in $Data.productsSales[1]
                                     .col
                                         a(href="#!").card.h-100.bg-white.text-black.border.border-white.text-none.hover-bg-white.hover-border-secondary.hover-up.transition-primary
-                                            +placeholder($ProductSales[0][0], $ProductSales[0][1], "d-flex align-items-end p-2 pt-5 w-100", "w-100")
+                                            +placeholder($Data.productsSales[0][0], $Data.productsSales[0][1], "d-flex align-items-end p-2 pt-5 w-100", "w-100", $Data.productsSales[0][2])
                                             .d-flex.flex-column.justify-content-between.h-100.px-4.pt-3.pb-4
                                                 .card-title.font-weight-semibold.line-h-133.line-clamp.line-clamp__3= $item[0]
                                                 div.letter-spacing-sm
@@ -144,7 +144,7 @@ block main
             .container
                 .row.gutters-sm
                     - var $i = 0
-                    each $item in $CategorySubcategories
+                    each $item in $Data.productCategorySubcategories
                         .col-6.col-lg-3.mb-1
                             a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
                                 span.d-inline-flex.align-items-center.m-1
@@ -170,7 +170,7 @@ block main
             .container
                 h2.h4.text-uppercase Category list
                 .row.gutters-md
-                    each $item, $key in $ProductCategories
+                    each $item, $key in $Data.productCategories
                         .col-md-4.col-lg-3.mb-4.mb-md-5
                             .card
                                 .card-header.d-flex.justify-content-between.align-items-center.bg-gradient-primary.min-h-md-96

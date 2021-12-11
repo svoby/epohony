@@ -13,7 +13,7 @@ mixin card-product($item = ['Product name'], $image = [300, 200, "#DDDDDD"])
                 .card__rating.mb-3
                     .card__rating__rate(style="width: 50%")
                 a(href="#!").hover-border-secondary.hover-up.transition-primary
-                    .font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $name
+                    .font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $item[0]
             .letter-spacing-sm
                 span.h5.mb-4 8&nbsp;990&nbsp;Kč 
                 | s&nbsp;DPH
