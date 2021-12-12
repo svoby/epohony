@@ -16384,6 +16384,14 @@ a.text-action:hover, a.text-action:focus {
   border-width: 3px !important;
 }
 
+.border-capsule {
+  border-radius: 500px;
+}
+
+.border-current {
+  border-color: currentColor !important;
+}
+
 /*-----------------------------------------------
 |   Backgrounds
 -----------------------------------------------*/
@@ -21069,6 +21077,7 @@ a.tag-action:focus, a.tag-action.focus {
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .icon-box.--abs-center,
@@ -21084,6 +21093,7 @@ a.tag-action:focus, a.tag-action.focus {
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
 @media (min-width: 1200px) {

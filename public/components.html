@@ -92,6 +92,92 @@
         <section class="border-top" id="card-step">
             <div class="container">
                 <div class="spacer pt-6">
+                    <h2 class="h4">Cart steps</h2>
+                    <!-- Cart steps - Desktop-->
+                    <div class="bg-white shadow-primary border-capsule p-2 d-none d-md-block">
+                        <div class="row gutters-md">
+                            <div class="col-4">
+                                <a class="d-flex h-100 align-items-center py-3 px-3 text-none border-capsule bg-gradient-primary text-white" href="#!">
+                                    <div class="icon-box-inline sx-40 rounded-circle border border-current mr-3">
+                                        <svg class="ico shopping-cart sx-24">
+                                            <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="line-h-100">1. Cart</div>
+                                    <div class="d-inline-block sx-32 ml-auto">
+                                        <svg class="ico chevron-right sx-32">
+                                            <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                                        </svg></div
+                                ></a>
+                            </div>
+                            <div class="col-4">
+                                <a class="d-flex h-100 align-items-center py-2 px-3 text-none border-capsule hover-bg-primary-alpha-20" href="#!">
+                                    <div class="icon-box-inline sx-40 rounded-circle border border-current mr-3">
+                                        <svg class="ico truck sx-24">
+                                            <use xlink:href="build/svg/sprite.defs.svg#truck"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="line-h-100">2. Shipping / Payment</div>
+                                    <div class="d-inline-block sx-32 ml-auto">
+                                        <svg class="ico chevron-right sx-32">
+                                            <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                                        </svg></div
+                                ></a>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex h-100 align-items-center py-2 px-3 text-none border-capsule text-500">
+                                    <div class="icon-box-inline sx-40 rounded-circle border border-current mr-3">
+                                        <svg class="ico identification sx-24">
+                                            <use xlink:href="build/svg/sprite.defs.svg#identification"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="line-h-100">3. Delivery</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cart steps - Mobile-->
+                    <div class="d-md-none bg-white shadow-primary p-2 text-center">
+                        <div class="row gutters-sm">
+                            <div class="col-4">
+                                <a class="d-block h-100 py-4 px-3 text-none rounded bg-gradient-primary text-white" href="#!">
+                                    <div class="icon-box-inline sx-40 border border-current rounded-circle mb-3">
+                                        <svg class="ico shopping-cart sx-24">
+                                            <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="line-h-100">1. Cart</div></a
+                                >
+                            </div>
+                            <div class="col-4">
+                                <a class="d-block h-100 py-4 px-3 text-none rounded hover-bg-primary-alpha-20" href="#!">
+                                    <div class="icon-box-inline sx-40 border border-current rounded-circle mb-3">
+                                        <svg class="ico truck sx-24">
+                                            <use xlink:href="build/svg/sprite.defs.svg#truck"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="line-h-100">2. Shipping</div></a
+                                >
+                            </div>
+                            <div class="col-4">
+                                <div class="d-block h-100 py-4 px-3 text-none border-capsule text-500">
+                                    <div class="icon-box-inline sx-40 border border-current rounded-circle mb-3">
+                                        <svg class="ico identification sx-24">
+                                            <use xlink:href="build/svg/sprite.defs.svg#identification"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="line-h-100">3. Delivery</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer pt-6"></div>
+            </div>
+        </section>
+        <section class="border-top" id="card-step">
+            <div class="container">
+                <div class="spacer pt-6">
                     <h2 class="h4">Shipping steps</h2>
                     <div class="d-flex justify-content-center flex-column flex-md-row">
                         <div class="d-inline-block align-top">
@@ -232,13 +318,13 @@
                                         <td class="align-middle"><span class="badge badge-danger">Not paid</span></td>
                                         <td class="align-middle"><span class="text-nowrap">121 000 Kč</span></td>
                                         <td class="text-nowrap">
-                                            <a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40" href="#!" title="Refresh">
+                                            <a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40" href="#!" title="Refresh">
                                                 <svg class="ico refresh sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#refresh"></use></svg></a
-                                            ><a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
+                                            ><a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
                                                 <svg class="ico pencil sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#pencil"></use></svg></a
-                                            ><a class="btn btn-sm text-danger icon-box-inline p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
+                                            ><a class="btn btn-sm text-danger icon-box-inline rounded-circle p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
                                                 <svg class="ico trash sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#trash"></use></svg
                                             ></a>
@@ -251,13 +337,13 @@
                                         <td class="align-middle"><span class="badge badge-danger">Not paid</span></td>
                                         <td class="align-middle"><span class="text-nowrap">121 000 Kč</span></td>
                                         <td class="text-nowrap">
-                                            <a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40" href="#!" title="Refresh">
+                                            <a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40" href="#!" title="Refresh">
                                                 <svg class="ico refresh sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#refresh"></use></svg></a
-                                            ><a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
+                                            ><a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
                                                 <svg class="ico pencil sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#pencil"></use></svg></a
-                                            ><a class="btn btn-sm text-danger icon-box-inline p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
+                                            ><a class="btn btn-sm text-danger icon-box-inline rounded-circle p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
                                                 <svg class="ico trash sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#trash"></use></svg
                                             ></a>
@@ -270,13 +356,13 @@
                                         <td class="align-middle"><span class="badge badge-danger">Not paid</span></td>
                                         <td class="align-middle"><span class="text-nowrap">121 000 Kč</span></td>
                                         <td class="text-nowrap">
-                                            <a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40" href="#!" title="Refresh">
+                                            <a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40" href="#!" title="Refresh">
                                                 <svg class="ico refresh sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#refresh"></use></svg></a
-                                            ><a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
+                                            ><a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
                                                 <svg class="ico pencil sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#pencil"></use></svg></a
-                                            ><a class="btn btn-sm text-danger icon-box-inline p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
+                                            ><a class="btn btn-sm text-danger icon-box-inline rounded-circle p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
                                                 <svg class="ico trash sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#trash"></use></svg
                                             ></a>
@@ -289,13 +375,13 @@
                                         <td class="align-middle"><span class="badge badge-danger">Not paid</span></td>
                                         <td class="align-middle"><span class="text-nowrap">121 000 Kč</span></td>
                                         <td class="text-nowrap">
-                                            <a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40" href="#!" title="Refresh">
+                                            <a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40" href="#!" title="Refresh">
                                                 <svg class="ico refresh sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#refresh"></use></svg></a
-                                            ><a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
+                                            ><a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
                                                 <svg class="ico pencil sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#pencil"></use></svg></a
-                                            ><a class="btn btn-sm text-danger icon-box-inline p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
+                                            ><a class="btn btn-sm text-danger icon-box-inline rounded-circle p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
                                                 <svg class="ico trash sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#trash"></use></svg
                                             ></a>
@@ -308,13 +394,13 @@
                                         <td class="align-middle"><span class="badge badge-danger">Not paid</span></td>
                                         <td class="align-middle"><span class="text-nowrap">121 000 Kč</span></td>
                                         <td class="text-nowrap">
-                                            <a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40" href="#!" title="Refresh">
+                                            <a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40" href="#!" title="Refresh">
                                                 <svg class="ico refresh sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#refresh"></use></svg></a
-                                            ><a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
+                                            ><a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
                                                 <svg class="ico pencil sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#pencil"></use></svg></a
-                                            ><a class="btn btn-sm text-danger icon-box-inline p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
+                                            ><a class="btn btn-sm text-danger icon-box-inline rounded-circle p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
                                                 <svg class="ico trash sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#trash"></use></svg
                                             ></a>
@@ -327,13 +413,13 @@
                                         <td class="align-middle"><span class="badge badge-danger">Not paid</span></td>
                                         <td class="align-middle"><span class="text-nowrap">121 000 Kč</span></td>
                                         <td class="text-nowrap">
-                                            <a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40" href="#!" title="Refresh">
+                                            <a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40" href="#!" title="Refresh">
                                                 <svg class="ico refresh sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#refresh"></use></svg></a
-                                            ><a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
+                                            ><a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
                                                 <svg class="ico pencil sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#pencil"></use></svg></a
-                                            ><a class="btn btn-sm text-danger icon-box-inline p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
+                                            ><a class="btn btn-sm text-danger icon-box-inline rounded-circle p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
                                                 <svg class="ico trash sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#trash"></use></svg
                                             ></a>
@@ -346,13 +432,13 @@
                                         <td class="align-middle"><span class="badge badge-danger">Not paid</span></td>
                                         <td class="align-middle"><span class="text-nowrap">121 000 Kč</span></td>
                                         <td class="text-nowrap">
-                                            <a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40" href="#!" title="Refresh">
+                                            <a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40" href="#!" title="Refresh">
                                                 <svg class="ico refresh sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#refresh"></use></svg></a
-                                            ><a class="btn btn-sm btn-outline-primary icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
+                                            ><a class="btn btn-sm btn-outline-primary rounded-circle icon-box-inline p-0 sx-40 ml-2" href="#!" title="Edit item">
                                                 <svg class="ico pencil sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#pencil"></use></svg></a
-                                            ><a class="btn btn-sm text-danger icon-box-inline p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
+                                            ><a class="btn btn-sm text-danger icon-box-inline rounded-circle p-0 sx-40 ml-2 hover-bg-red-alpha-10" href="#!" title="Delete item">
                                                 <svg class="ico trash sx-24">
                                                     <use xlink:href="build/svg/sprite.defs.svg#trash"></use></svg
                                             ></a>

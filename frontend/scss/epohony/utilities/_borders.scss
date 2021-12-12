@@ -142,3 +142,11 @@
 .border-3 {
   border-width: 3px !important;
 }
+
+.border-capsule {
+  border-radius: 500px;
+}
+
+.border-current {
+  border-color: currentColor !important;
+}
