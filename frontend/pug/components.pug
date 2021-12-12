@@ -17,29 +17,29 @@ block main
                     .bg-white.border.border-capsule.p-2.d-none.d-md-block
                         .row.gutters-md
                             .col-4
-                                a(href="#!").d-flex.h-100.align-items-center.py-3.px-3.text-none.border-capsule.bg-gradient-primary.text-white
+                                .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.bg-gradient-primary.text-white
                                     .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
                                         +sprite("shopping-cart", "sx-24")
                                     .line-h-100 1. Cart
                                     .d-inline-block.sx-32.ml-auto
                                         +sprite("chevron-right", "sx-32")
                             .col-4
-                                a(href="#!").d-flex.h-100.align-items-center.py-2.px-3.text-none.border-capsule.hover-bg-primary-alpha-20
+                                a(href="#!").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
                                     .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
                                         +sprite("truck", "sx-24")
                                     .line-h-100 2. Shipping / Payment
                                     .d-inline-block.sx-32.ml-auto
                                         +sprite("chevron-right", "sx-32")
                             .col-4
-                                .d-flex.h-100.align-items-center.py-2.px-3.text-none.border-capsule.text-500
+                                .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.text-500
                                     .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
                                         +sprite("identification", "sx-24")
                                     .line-h-100 3. Delivery
                     // Cart steps - Mobile
-                    .d-md-none.bg-white.shadow-primary.p-2.text-center
+                    .d-md-none.bg-white.border.rounded.p-2.text-center
                         .row.gutters-sm
                             .col-4
-                                a(href="#!").d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
+                                .d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
                                     .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
                                         +sprite("shopping-cart", "sx-24")
                                     .line-h-100 1. Cart
@@ -49,7 +49,7 @@ block main
                                         +sprite("truck", "sx-24")
                                     .line-h-100 2. Shipping
                             .col-4
-                                .d-block.h-100.py-4.px-3.text-none.border-capsule.text-500
+                                .d-block.h-100.py-4.px-3.text-none.rounded.border-capsule.text-500
                                     .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
                                         +sprite("identification", "sx-24")
                                     .line-h-100 3. Delivery
