@@ -1940,7 +1940,7 @@ pre code {
 
 .table .thead-light th {
   color: #495057;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
   border-color: #dee2e6;
 }
 
@@ -2068,7 +2068,7 @@ pre code {
 }
 
 .form-control:disabled, .form-control[readonly] {
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
   opacity: 1;
 }
 
@@ -3990,7 +3990,7 @@ input[type="button"].btn-block {
   height: 0;
   margin: 0.44444rem 0;
   overflow: hidden;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #C4C8E0;
 }
 
 .dropdown-item {
@@ -4009,7 +4009,7 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -4290,7 +4290,7 @@ input[type="button"].btn-block {
   color: #000;
   text-align: center;
   white-space: nowrap;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
   border: 1px solid #ABB6E4;
   border-radius: 4px;
 }
@@ -4409,7 +4409,7 @@ input[type="button"].btn-block {
 }
 
 .custom-control-input[disabled] ~ .custom-control-label::before, .custom-control-input:disabled ~ .custom-control-label::before {
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
 }
 
 .custom-control-label {
@@ -4550,7 +4550,7 @@ input[type="button"].btn-block {
 
 .custom-select:disabled {
   color: #6c757d;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
 }
 
 .custom-select::-ms-expand {
@@ -4603,7 +4603,7 @@ input[type="button"].btn-block {
 
 .custom-file-input[disabled] ~ .custom-file-label,
 .custom-file-input:disabled ~ .custom-file-label {
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
 }
 
 .custom-file-input:lang(en) ~ .custom-file-label::after {
@@ -4643,7 +4643,7 @@ input[type="button"].btn-block {
   line-height: 1.555;
   color: #000;
   content: "Browse";
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
   border-left: inherit;
   border-radius: 0 4px 4px 0;
 }
@@ -4850,7 +4850,7 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
-  border-color: #e9ecef #e9ecef #dee2e6;
+  border-color: #C4C8E0 #C4C8E0 #dee2e6;
 }
 
 .nav-tabs .nav-link.disabled {
@@ -5572,7 +5572,7 @@ input[type="button"].btn-block {
   z-index: 2;
   color: #0a4170;
   text-decoration: none;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
   border-color: #dee2e6;
 }
 
@@ -5936,7 +5936,7 @@ a.badge-action:focus, a.badge-action.focus {
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
   border-radius: 4px;
 }
 
@@ -6234,7 +6234,7 @@ a.badge-action:focus, a.badge-action.focus {
   overflow: hidden;
   line-height: 0;
   font-size: 0.75rem;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
   border-radius: 4px;
 }
 
@@ -6303,7 +6303,7 @@ a.badge-action:focus, a.badge-action.focus {
 
 .list-group-item-action:active {
   color: #000;
-  background-color: #e9ecef;
+  background-color: #C4C8E0;
 }
 
 .list-group-item {
@@ -16345,7 +16345,7 @@ a.text-action:hover, a.text-action:focus {
 }
 
 .border-200 {
-  border-color: #e9ecef !important;
+  border-color: #C4C8E0 !important;
 }
 
 .border-300 {
@@ -16495,13 +16495,13 @@ button.bg-100:focus {
 }
 
 .bg-200 {
-  background-color: #e9ecef !important;
+  background-color: #C4C8E0 !important;
 }
 
 a.bg-200:hover, a.bg-200:focus,
 button.bg-200:hover,
 button.bg-200:focus {
-  background-color: #cbd3da !important;
+  background-color: #a3a9ce !important;
 }
 
 .bg-300 {
@@ -17173,11 +17173,11 @@ a.text-100:hover, a.text-100:focus {
 }
 
 .text-200 {
-  color: #e9ecef !important;
+  color: #C4C8E0 !important;
 }
 
 a.text-200:hover, a.text-200:focus {
-  color: #bdc6cf !important;
+  color: #9299c6 !important;
 }
 
 .text-300 {
@@ -18789,7 +18789,7 @@ a.text-900:hover, a.text-900:focus {
 }
 
 [class][class][class].hover-bg-200:hover {
-  background-color: #e9ecef !important;
+  background-color: #C4C8E0 !important;
 }
 
 [class][class][class].hover-bg-300:hover {
@@ -20884,7 +20884,7 @@ a.tag-action:focus, a.tag-action.focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e9ecef;
+  background: #C4C8E0;
 }
 
 .card-horizontal {
