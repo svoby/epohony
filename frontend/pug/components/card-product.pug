@@ -15,9 +15,12 @@ mixin card-product($item = ['Product name'], $image = [300, 200, "#DDDDDD"])
                 a(href="#!").hover-border-secondary.hover-up.transition-primary
                     .font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $item[0]
             .letter-spacing-sm
-                span.h5.mb-4 8&nbsp;990&nbsp;Kč 
-                | s&nbsp;DPH
-                s.text-muted.ml-2 1.780 Kč
+                .d-flex.justify-content-between
+                    div
+                        span.h5.mb-0 8&nbsp;990&nbsp;Kč 
+                        | s&nbsp;DPH
+                        .d-block.text-micro 2&nbsp;000 bez&nbsp;DPH
+                    s.text-muted.mt-1 1.780 Kč
             a(href="#!").btn.btn-secondary.d-inline-flex.justify-content-between.w-100.text-uppercase.mt-3
                 | Vložit do košíku
                 +sprite("arrow-right", "sx-24")
