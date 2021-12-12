@@ -6,10 +6,12 @@ mixin card-product($item = ['Product name'], $image = [300, 200, "#DDDDDD"])
             .card-title
                 .card__tags
                     ul.card__tags__list
-                        li.tag.tag-shipping.text-uppercase.small Doprava zdarma
-                        li.tag.tag-instock.text-uppercase.small Skladem
+                        li.tag.tag-success.small Skladem
+                        li.tag.tag-tip.small Tip
+                        li.tag.tag-action.small Akce
+                        li.tag.tag-new.small Novinka
                     .card__tags__sale
-                        .d-flex.align-items-center.justify-content-center.rounded-circle.sx-64.bg-sale -15%
+                        .d-flex.align-items-center.justify-content-center.rounded-circle.sx-64.bg-sale -25%
                 .card__rating.mb-3
                     .card__rating__rate(style="width: 50%")
                 a(href="#!").hover-border-secondary.hover-up.transition-primary

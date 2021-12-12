@@ -12,7 +12,7 @@ $container-max-widths: (
 // Border
 $border-radius: 4px;
 $border-radius-lg: 4px;
-$border-radius-sm: 4px;
+$border-radius-sm: 2px;
 
 // Gradients
 $gradient-primary: linear-gradient(to right, #064f8d 5%, #2377bf 85%);
@@ -31,6 +31,8 @@ $grid-gutter-width-md: 8px;
 $white: #fff;
 $black: #000;
 $blue: #106ab6;
+$blueLight: #3FAEBD;
+$purlpe: #6E4EB0;
 $red: #bc0f0f;
 $orange: #ff4e00;
 $yellow: #fbc521;
@@ -47,9 +49,13 @@ $theme-colors: (
   'shipping': #c4eb84,
   'instock': #b1cbf2,
   'sale': $yellow,
+  'tip': $blueLight,
+  'new': $red,
+  'action': $purlpe
 );
 
 // Body
+$body-bg: #F9F9F9;
 $body-color: $black;
 
 // Fonts
@@ -115,6 +121,10 @@ $input-btn-font-size-sm: 0.8888rem;
 $input-btn-padding-x-sm: 1rem !default;
 $input-btn-padding-y-sm: 0.4rem !default;
 
+$input-color: $black;
+$input-placeholder-color: #ddd;
+$input-border-color: #ABB6E4;
+
 // Tags
 $tag-padding-y: 0.25em;
 $tag-padding-x: 0.5em;
@@ -139,6 +149,11 @@ $topnavbar-font-size: rem-calc(15);
 // Cards
 $card-columns-count: 2 !default;
 $card-border-width: 0 !default;
+
+// Tables
+$table-th-font-weight: $font-weight-semibold;
+$table-accent-bg: $gray-100;
+$table-hover-bg: #fdea3f1f;
 
 // Breadcrumb
 $breadcrumb-divider: quote('/');

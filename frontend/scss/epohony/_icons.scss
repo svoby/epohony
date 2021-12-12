@@ -20,3 +20,10 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.icon-box-inline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}

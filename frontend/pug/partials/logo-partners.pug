@@ -1,11 +1,10 @@
 include ../mixins/picture
 include ../mixins/sprite
 
-.logo-partners-wrapper.com(data-zanim-xs='{"animation": "blur-in", "delay": 0}' data-zanim-trigger="scroll")
-    .row.align-items-center
-        - var n = 0;
-        while n < 10
-            .col-2.col-md-3.col-lg-2
-                .logo-partners.com
-                    +placeholder(120, 60)
-            -n++;
+.row.align-items-center
+    - var n = 0;
+    while n < 6
+        .col-2.col-md-3.col-lg-2
+            .p-1.p-md-4.bg-white.border.rounded
+                +placeholder(176, 96, "", "w-100")
+        -n++;
