@@ -16423,6 +16423,10 @@ a.text-action:hover, a.text-action:focus {
   right: 0;
 }
 
+.bg-holder.overlay-gradient:before {
+  background: linear-gradient(to bottom, #0000, #0007);
+}
+
 .bg-holder.overlay-primary:before {
   background: rgba(16, 106, 182, 0.4);
 }
@@ -17273,6 +17277,10 @@ a.text-900:hover, a.text-900:focus {
 
 .line-h-160 {
   line-height: 160% !important;
+}
+
+.text-current {
+  color: currentColor !important;
 }
 
 .equal-16-9 {

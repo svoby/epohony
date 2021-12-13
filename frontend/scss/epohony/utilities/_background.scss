@@ -29,6 +29,10 @@
     right: 0;
   }
 
+  &.overlay-gradient:before {
+    background: linear-gradient(to bottom,#0000, #0007);
+  }
+
   &.overlay-primary:before {
     background: rgba($primary, 0.4);
   }

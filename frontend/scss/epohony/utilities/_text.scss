@@ -40,3 +40,7 @@
     line-height: percentage($line-height / 100) !important;
   }
 }
+
+.text-current {
+  color: currentColor !important;
+}
