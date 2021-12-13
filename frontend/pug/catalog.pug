@@ -1,0 +1,15 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Homepage'
+
+block main
+
+        section
+            .spacer.pt-6
+            .container
+                .row
+                    .col-md-3
+                        include ./partials/sidemenu-category
+                    .col-9
+            .spacer.pt-6
