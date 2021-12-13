@@ -431,7 +431,8 @@ hr {
 }
 
 small,
-.small {
+.small,
+footer .foot-links {
   font-size: 88.9%;
   font-weight: 400;
 }

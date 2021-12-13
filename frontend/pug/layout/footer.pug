@@ -1,19 +1,21 @@
+include ../mixins/sprite
+
 footer
     .container.py-6
         .row
             .col-12.col-md-3.col-lg-6
                 .d-flex.h-100.justify-content-between.flex-column
-                    .text-micro.line-h-120.mb-4
-                        img(src= $imgDir + "logo-site.svg" alt='ePohony' width='165').img-fluid.mb-3
+                    .small.line-h-120.mb-4
+                        img(src= $imgDir + "logo-site.svg" alt='ePohony' width='165').img-fluid.mb-4
                         p 2021 &copy; Epohony.cz<br>Všechna práva vyhrazena
                     .mb-4.mb-md-0
-                        a(href="#!").icon-box-inline.sx-40.text-500
+                        a(href="#!" title="Youtube" target="_blank").icon-box-inline.sx-40.text-500
                             +sprite("youtube", "sx-24")
-                        a(href="#!").icon-box-inline.sx-40.text-500
+                        a(href="#!" title="Facebook" target="_blank").icon-box-inline.sx-40.text-500
                             +sprite("facebook", "sx-24")
-                        a(href="#!").icon-box-inline.sx-40.text-500
+                        a(href="#!" title="Twitter" target="_blank").icon-box-inline.sx-40.text-500
                             +sprite("twitter", "sx-24")
-                        a(href="#!").icon-box-inline.sx-40.text-500
+                        a(href="#!" title="LinkedIn" target="_blank").icon-box-inline.sx-40.text-500
                             +sprite("linkedin", "sx-24")
             .col-12.col-md-3.col-lg-2
                 .foot-links

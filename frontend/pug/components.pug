@@ -441,68 +441,60 @@ block main
                 p.font-weight-rebular Body Text Normal<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
                 p.font-weight-bold Body Text Bold<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
 
-        .spacer.pt-7
+        .spacer.pt-6
 
 
-        section
+        //- section
+        //-     .container
+        //-         h2.mb-4.text-muted Box list
+
+        //- section
+        //-     .container
+        //-         .box-list.com.--type-1
+        //-             .row
+        //-                 each val, index in ['Title', 'Title']
+        //-                     .col-md-6
+        //-                         a(href="#!").item.shadow-primary
+        //-                             .cell
+        //-                                 h4.font-weight-light.title= val
+        //-                                 span.btn-circle.sx-40.shadow-secondary
+        //-                                     +sprite('arrow-narrow-right', 'sx-16')
+        //-                             .cell
+        //-                                 +placeholder(120, 200)
+        //-                             .overlay
+
+        //- .spacer.pt-8
+
+        section.border-top#numbers
+            .spacer.pt-6
             .container
-                h2.mb-4.text-muted Box list
-
-        section
-            .container
-                .box-list.com.--type-1
-                    .row
-                        each val, index in ['Title', 'Title']
-                            .col-md-6
-                                a(href="#!").item.shadow-primary
-                                    .cell
-                                        h4.font-weight-light.title= val
-                                        span.btn-circle.sx-40.shadow-secondary
-                                            +sprite('arrow-narrow-right', 'sx-16')
-                                    .cell
-                                        +placeholder(120, 200)
-                                    .overlay
-
-        .spacer.pt-8
-
-        section
-            .container
-                h2.mb-4.text-muted Numbers
-
-        section
-            .container
+                h2.h4  Numbers
                 include partials/numbers
+            .spacer.pt-6
 
-        .spacer.pt-8
+        //- section
+        //-     .container
+        //-         h2.mb-4.text-muted Quote-list-box
 
-        section
+        //- section
+        //-     .container
+        //-         .quote-list-box.com
+        //-             .item.shadow-secondary
+        //-                 .top
+        //-                     p <span class="text-primary font-weight-bold">"</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque tincidunt scelerisque libero. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at dui.
+        //-                 .bottom
+        //-                     +placeholder(80, 80)
+        //-                     .in
+        //-                         p
+        //-                             strong John Doe
+        //-                             br
+        //-                             small Quality manager, Company s.r.o.
+
+
+        section.border-top#news
+            .spacer.pt-6
             .container
-                h2.mb-4.text-muted Quote-list-box
-
-        section
-            .container
-                .quote-list-box.com
-                    .item.shadow-secondary
-                        .top
-                            p <span class="text-primary font-weight-bold">"</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque tincidunt scelerisque libero. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at dui.
-                        .bottom
-                            +placeholder(80, 80)
-                            .in
-                                p
-                                    strong John Doe
-                                    br
-                                    small Quality manager, Company s.r.o.
-
-        .spacer.pt-7
-
-        section
-            .container
-                h3 Aktuality
-
-        .spacer.pt-4
-
-        section
-            .container
+                h2.h4 News
                 .row.justify-content-center
                     .col-12.col-sm-6.col-lg-4.mb-4
                         +news-box("Title na řádek")
@@ -511,9 +503,9 @@ block main
                     .col-12.col-sm-6.col-lg-4.mb-4
                         +news-box()
                 .text-center.my-4
-                    a(href="aktuality.html").btn.btn-primary Více aktualit
+                    a(href="aktuality.html").btn.btn-secondary More news
 
-        .spacer.pt-7
+            .spacer.pt-6
 
         section.bg-gradient-primary.h6.line-h-120.mb-0.pt-4.font-weight-normal.text-white#bar-1
             .container
