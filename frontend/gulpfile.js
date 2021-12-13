@@ -178,39 +178,6 @@ function scss() {
     .pipe(browserSync.stream());
 }
 
-// gulp.task('scss', () => gulp.src(Paths.SCSS.THEME)
-//   .pipe(plumber())
-//   .pipe(sourcemaps.init())
-//   .pipe(sass({
-//     outputStyle: 'expanded',
-//   }).on('error', sass.logError))
-//   .pipe(autoprefixer({
-//     browsers: ['last 5 versions'],
-//     cascade: false,
-//   }))
-//   .pipe(sourcemaps.write('.'))
-//   .pipe(plumber.stop())
-//   .pipe(gulp.dest(Paths.CSS))
-//   .pipe(browserSync.stream()));
-
-// gulp.task('scss:min', () => gulp.src(Paths.SCSS.THEME)
-//   .pipe(plumber())
-//   .pipe(sourcemaps.init())
-//   .pipe(sass({
-//     outputStyle: 'expanded',
-//   }).on('error', sass.logError))
-//   .pipe(autoprefixer({
-//     browsers: ['last 5 versions'],
-//     cascade: false,
-//   }))
-//   .pipe(cleanCSS({ compatibility: 'ie9' }))
-//   .pipe(rename({ suffix: '.min' }))
-//   .pipe(sourcemaps.write('.'))
-//   .pipe(plumber.stop())
-//   .pipe(gulp.dest(Paths.CSS))
-//   .pipe(browserSync.stream()));
-
-
 /*-----------------------------------------------
 |   JavaScript
 -----------------------------------------------*/

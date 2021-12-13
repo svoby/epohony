@@ -9,6 +9,69 @@ block main
             .container
                 include  ./partials/breadcrumbs
 
+        section.border-top#teaser
+            .container
+                .spacer.pt-6
+                    h2.h4 Teaser
+                    .teaser
+                        .row
+                            .col-md-6
+                                .d-flex.flex-column.h-100
+                                    div
+                                        h1.text-uppercase Pohon pro posuvnou bránu do 600kg
+                                        .d-inline-block.align-center.bg-red.p-4.rounded.text-white.mb-4
+                                            h4.d-inline.font-weight-semibold.text-current
+                                                | 6&nbsp;416
+                                            span.small Kč
+                                        .d-inline-block.align-center.text-600.text-micro.line-h-120.ml-4
+                                            | 9 686 Kč<br>Původní cena
+                                    a(href="#!").btn.btn-secondary.text-uppercase.d-inline-flex.align-items-center.align-self-start.mt-auto
+                                        | Detail akce
+                                        +sprite("arrow-right", "sx-16 ml-2")
+                            .col-md-6.d-none.d-md-block
+                                .d-flex.align-items-end.h-100.position-relative
+                                    +picture("1.jpg")
+                                    .teaser__decoration-1.teaser__decoration-1--orange
+                                    .teaser__decoration-1.teaser__decoration-1--blue
+                        .row.pt-5
+                            .col-md-3
+                                .teaser__indicator
+                                    .teaser__indicator__in(style="width: 60%")
+                                .py-3.px-2
+                                    .d-flex.justify-content-between
+                                        .h5.mb-2.font-weight-semibold.text-current 30 % SLEVA
+                                        .font-weight-semibold| 01.
+                                    .small
+                                        p Na všechny produkty<br>značky Roger
+                            .col-md-3.d-none.d-md-block
+                                .teaser__indicator
+                                    .teaser__indicator__in(style="width: 0%")
+                                .py-3.px-2
+                                    .d-flex.justify-content-between
+                                        .h5.mb-2.font-weight-semibold.text-current 15 % SLEVA
+                                        .font-weight-semibold| 02.
+                                    .small
+                                        p Na všechny produkty<br>značky Roger
+                            .col-md-3.d-none.d-md-block
+                                .teaser__indicator
+                                    .teaser__indicator__in(style="width: 0%")
+                                .py-3.px-2
+                                    .d-flex.justify-content-between
+                                        .h5.mb-2.font-weight-semibold.text-current 30 % SLEVA
+                                        .font-weight-semibold| 03.
+                                    .small
+                                        p Na všechny produkty<br>značky Roger
+                            .col-md-3.d-none.d-md-block
+                                .teaser__indicator
+                                    .teaser__indicator__in(style="width: 0%")
+                                .py-3.px-2
+                                    .d-flex.justify-content-between
+                                        .h5.mb-2.font-weight-semibold.text-current 30 % SLEVA
+                                        .font-weight-semibold| 04.
+                                    .small
+                                        p Na všechny produkty<br>značky Roger
+                .spacer.pt-6
+
         section.border-top#video-box
             .container
                 .spacer.pt-6
@@ -309,7 +372,7 @@ block main
                         .col
                             .row.gutters-sm
                                 each $item in $Data.productsSales[1]
-                                    .col
+                                    .col.mb-2.mb-md-0
                                         a(href="#!").card.h-100.bg-white.text-black.border.border-white.text-none.hover-bg-white.hover-border-secondary.hover-up.transition-primary
                                             +placeholder($Data.productsSales[0][0], $Data.productsSales[0][1], "d-flex align-items-end p-2 pt-5 w-100", "w-100", $Data.productsSales[0][2])
                                             .d-flex.flex-column.justify-content-between.h-100.px-4.pt-3.pb-4
@@ -456,53 +519,12 @@ block main
 
         .spacer.pt-6
 
-
-        //- section
-        //-     .container
-        //-         h2.mb-4.text-muted Box list
-
-        //- section
-        //-     .container
-        //-         .box-list.com.--type-1
-        //-             .row
-        //-                 each val, index in ['Title', 'Title']
-        //-                     .col-md-6
-        //-                         a(href="#!").item.shadow-primary
-        //-                             .cell
-        //-                                 h4.font-weight-light.title= val
-        //-                                 span.btn-circle.sx-40.shadow-secondary
-        //-                                     +sprite('arrow-narrow-right', 'sx-16')
-        //-                             .cell
-        //-                                 +placeholder(120, 200)
-        //-                             .overlay
-
-        //- .spacer.pt-8
-
         section.border-top#numbers
             .spacer.pt-6
             .container
                 h2.h4  Numbers
                 include partials/numbers
             .spacer.pt-6
-
-        //- section
-        //-     .container
-        //-         h2.mb-4.text-muted Quote-list-box
-
-        //- section
-        //-     .container
-        //-         .quote-list-box.com
-        //-             .item.shadow-secondary
-        //-                 .top
-        //-                     p <span class="text-primary font-weight-bold">"</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque tincidunt scelerisque libero. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at dui.
-        //-                 .bottom
-        //-                     +placeholder(80, 80)
-        //-                     .in
-        //-                         p
-        //-                             strong John Doe
-        //-                             br
-        //-                             small Quality manager, Company s.r.o.
-
 
         section.border-top#news
             .spacer.pt-6

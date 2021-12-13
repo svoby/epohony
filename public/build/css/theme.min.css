@@ -19410,46 +19410,46 @@ footer .foot-links a:hover {
   animation: fadeInLeft 0.5s ease forwards;
 }
 
-.teaser.com {
-  color: white;
-  margin-top: auto;
-  background: linear-gradient(90deg, #fff, #ff4e00);
-  position: relative;
+.teaser picture {
+  padding: 16px 16px 16px 0;
 }
 
-.teaser.com:before {
-  content: ' ';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  z-index: 2;
-  background: repeating-linear-gradient(90deg, #fbc521, #fbc521 8px, transparent 8px, transparent 9px);
-}
-
-.teaser.com .in {
+.teaser img {
   position: relative;
   z-index: 3;
 }
 
-.teaser.com h1 {
-  letter-spacing: -0.02em;
-  text-shadow: 0 5px 10px white;
+.teaser__indicator {
+  background: #ced4da;
+  height: 2px;
 }
 
-.teaser.com .perex.com {
-  max-width: 600px;
-  color: #f0f0f0;
-  opacity: 0.8;
-  font-size: 1.22222rem;
-  margin-bottom: 0;
+.teaser__indicator__in {
+  background: #106ab6;
+  height: 100%;
 }
 
-@media (max-width: 991.98px) {
-  .teaser.com {
-    margin-top: 80px;
-  }
+.teaser__decoration-1 {
+  border-radius: 4px;
+  position: absolute;
+}
+
+.teaser__decoration-1--orange {
+  background: #FBC521;
+  top: 0;
+  right: 0;
+  left: 104px;
+  bottom: 0;
+  z-index: 2;
+}
+
+.teaser__decoration-1--blue {
+  background: linear-gradient(55deg, #19ACDE 11%, #BCD7E1 80%);
+  top: 78px;
+  right: 0;
+  left: 32px;
+  bottom: 0;
+  z-index: 2;
 }
 
 .teaser-hp.com {
