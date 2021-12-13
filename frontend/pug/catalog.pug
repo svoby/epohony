@@ -5,47 +5,115 @@ block variables
 
 block main
 
-        section
-            .spacer.pt-6
+        .spacer.pt-6
+
+        .container
+            .row
+                //-- Left column
+                .col-md-3
+                    include ./partials/sidemenu-category
+                //-- Right column
+                .col-md-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-5
+
+                        h1 Category top
+                        h5 Headline h5
+                        .small.line-h-150
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare sed massa est orci bibendum magnis sagittis eget. Euismod ac ultrices vestibulum in sed volutpat ut. Fusce aenean eget condimentum bibendum faucibus sit. Purus varius velit massa diam. Tristique diam sed nunc nibh turpis id aliquet. Diam amet pretium urna, ante tristique. Odio varius interdum iaculis etiam mauris, velit amet elit.
+
+                    section
+                        .spacer.pt-5
+                        .row.gutters-sm
+                            each $item in $Data.productCategorySubcategories
+                                .col-6.col-lg-3.mb-1
+                                    a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
+                                        span.d-inline-flex.align-items-center.m-1
+                                            +placeholder(40, 40, "mr-2")
+                                            = $item
+                                        +sprite("chevron-right", "sx-16 ml-4")
+
+                    section
+                        .spacer.pt-5
+                        .d-flex
+                            button.btn.btn-sm.btn-black.line-h-115 Nejprodávanější
+                            button.btn.btn-sm.hover-primary.line-h-115 Doprava zdarma
+                            button.btn.btn-sm.hover-primary.line-h-115 Novinky
+                            button.btn.btn-sm.btn-outline-primary.ml-auto
+                                | Filtrovat
+                                +sprite("adjustments", "sx-24 ml-3 d-none d-md-inline-block")
+
+                    section
+                        .spacer.pt-4
+                        .row.gutters-md
+                            each $item in $Data.productsInCatalog[1]
+                                .col-md-6.col-lg-4.mb-2
+                                    +card-product($item, $Data.productsInCatalog[0])
+                        .spacer.pt-4
+
+                    section
+                        .d-flex.justify-content-between
+                            a(href="#!").btn.btn-primary.d-flex.align-items-center
+                                | Načíst další
+                                +sprite("arrow-down", "sx-24 ml-2")
+                            nav.nav
+                                ul.pagination.mb-0
+                                    li.page-item
+                                        a.page-link(href='#!')
+                                            +sprite("chevron-left", "sx-16")
+                                    li.page-item.active
+                                        a.page-link(href='#!') 1
+                                    li.page-item
+                                        a.page-link(href='#!') 2
+                                    li.page-item
+                                        a.page-link(href='#!') 3
+                                    li.page-item
+                                        a.page-link(href='#!') …
+                                    li.page-item
+                                        a.page-link(href='#!')
+                                            +sprite("chevron-right", "sx-16")
+
+        .spacer.pt-6
+
+        section.border-top
+            .spacer.pt-5
             .container
-                .row
-                    //-- Left column
-                    .col-md-3
-                        include ./partials/sidemenu-category
-                    //-- Right column
-                    .col-md-9
+                h2.h3.text-uppercase Pohony<br>posuvných bran
 
-                        section
-                            include  ./partials/breadcrumbs
+        section
+            .spacer.pt-5
+            .container
+                .row.gutters-sm
+                    each $item in $Data.productCategorySubcategories
+                        .col-6.col-lg-3.mb-1
+                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
+                                span.d-inline-flex.align-items-center.m-1
+                                    +placeholder(40, 40, "mr-2")
+                                    = $item
+                                +sprite("chevron-right", "sx-16 ml-4")
+            .spacer.pt-5
 
-                        section
-                            .spacer.pt-5
+        section
+            .container
+                .d-flex
+                    button.btn.btn-sm.btn-black.line-h-115.border-capsule Akce
+                    button.btn.btn-sm.hover-primary.line-h-115 Doprava zdarma
+                    button.btn.btn-sm.hover-primary.line-h-115 Novinky
+            .spacer.pt-2
 
-                            h1 Category top
-                            h5 Headline h5
-                            .small.line-h-150
-                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare sed massa est orci bibendum magnis sagittis eget. Euismod ac ultrices vestibulum in sed volutpat ut. Fusce aenean eget condimentum bibendum faucibus sit. Purus varius velit massa diam. Tristique diam sed nunc nibh turpis id aliquet. Diam amet pretium urna, ante tristique. Odio varius interdum iaculis etiam mauris, velit amet elit.
+        section
+            .container
+                .row.gutters-md
+                    each $item in $Data.productsAlternatives[1]
+                        .col-md-6.col-lg-3.mb-4.mb-lg-0
+                            +card-product-big($item, $Data.productsAlternatives[0])
 
-                        section
-                            .spacer.pt-5
-                            .row.gutters-sm
-                                each $item in $Data.productCategorySubcategories
-                                    .col-6.col-lg-3.mb-1
-                                        a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
-                                            span.d-inline-flex.align-items-center.m-1
-                                                +placeholder(40, 40, "mr-2")
-                                                = $item
-                                            +sprite("chevron-right", "sx-16 ml-4")
-
-                        section
-                            .spacer.pt-5
-                            .d-flex
-                                button.btn.btn-sm.btn-black.line-h-115 Nejprodávanější
-                                button.btn.btn-sm.hover-primary.line-h-115 Doprava zdarma
-                                button.btn.btn-sm.hover-primary.line-h-115 Novinky
-                                button.btn.btn-sm.btn-outline-primary.ml-auto
-                                    | Filtrovat
-                                    +sprite("adjustments", "sx-24 ml-3 d-none d-md-inline-block")
-                            .spacer.pt-5
-
-            .spacer.pt-6
+        section
+            .spacer.pt-5
+            .container
+                p Pohony bran, pohony vrat pro samonosné a pojezdové posuvné brány, šíny, vozíky, kladky a veškeré konstrukční prvky pro zhotovení posuvné brany. Kvalitní pohony bran pro všechny typy posuvných bran nabízené i v kompletních řešeních včetně konstrukčních prvků.  Pro pomoc s výběrem vhodného pohonu či řešení nás neváhejte kontaktovat na telefonní lince <a href="#">+420 511 440 278.</a>
+            .spacer.pt-5
