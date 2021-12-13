@@ -9,7 +9,43 @@ block main
             .spacer.pt-6
             .container
                 .row
+                    //-- Left column
                     .col-md-3
                         include ./partials/sidemenu-category
-                    .col-9
+                    //-- Right column
+                    .col-md-9
+
+                        section
+                            include  ./partials/breadcrumbs
+
+                        section
+                            .spacer.pt-5
+
+                            h1 Category top
+                            h5 Headline h5
+                            .small.line-h-150
+                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare sed massa est orci bibendum magnis sagittis eget. Euismod ac ultrices vestibulum in sed volutpat ut. Fusce aenean eget condimentum bibendum faucibus sit. Purus varius velit massa diam. Tristique diam sed nunc nibh turpis id aliquet. Diam amet pretium urna, ante tristique. Odio varius interdum iaculis etiam mauris, velit amet elit.
+
+                        section
+                            .spacer.pt-5
+                            .row.gutters-sm
+                                each $item in $Data.productCategorySubcategories
+                                    .col-6.col-lg-3.mb-1
+                                        a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
+                                            span.d-inline-flex.align-items-center.m-1
+                                                +placeholder(40, 40, "mr-2")
+                                                = $item
+                                            +sprite("chevron-right", "sx-16 ml-4")
+
+                        section
+                            .spacer.pt-5
+                            .d-flex
+                                button.btn.btn-sm.btn-black.line-h-115 Nejprodávanější
+                                button.btn.btn-sm.hover-primary.line-h-115 Doprava zdarma
+                                button.btn.btn-sm.hover-primary.line-h-115 Novinky
+                                button.btn.btn-sm.btn-outline-primary.ml-auto
+                                    | Filtrovat
+                                    +sprite("adjustments", "sx-24 ml-3 d-none d-md-inline-block")
+                            .spacer.pt-5
+
             .spacer.pt-6

@@ -368,13 +368,13 @@ function pugify() {
   return src(Paths.PUG.FROM)
     .pipe(plumber())
     .pipe(pug({
-      pretty: true,
+      pretty: false,
       data: data
     }))
-    .pipe(prettier({
-      printWidth: 1000,
-      tabWidth: 4
-    }))
+    // .pipe(prettier({
+    //   printWidth: 1000,
+    //   tabWidth: 4
+    // }))
     .pipe(dest(Paths.PUG.TO))
 }
 

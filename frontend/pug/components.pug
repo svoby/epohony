@@ -6,8 +6,10 @@ block variables
 block main
 
         section#breadcrumbs.bg-white
+            .spacer.pt-5
             .container
                 include  ./partials/breadcrumbs
+            .spacer.pt-5
 
         section.border-top#teaser
             .container
@@ -375,7 +377,6 @@ block main
             .spacer.pt-5
             .container
                 .row.gutters-sm
-                    - var $i = 0
                     each $item in $Data.productCategorySubcategories
                         .col-6.col-lg-3.mb-1
                             a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
@@ -387,10 +388,6 @@ block main
         section
             .spacer.pt-5
             .container
-                p
-                    button.btn.btn-lg.btn-primary.text-uppercase Large
-                    button.btn.btn-primary Normal
-                    button.btn.btn-sm.btn-primary Small
                 div
                     button.btn.btn-sm.btn-black Nejprodávanější
                     button.btn.btn-sm.hover-primary Doprava zdarma

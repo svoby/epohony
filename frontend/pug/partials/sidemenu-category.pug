@@ -1,11 +1,11 @@
 
-.text-micro.text-uppercase.text-200.border-bottom.border-200.pb-3.mb-3 Kategorie
-
-nav
-    ul.nav.flex-column
-        each $item in $Data.productCategories
-            li.d-flex
-                a(href="#!").d-flex.px-2.mr-2.py-2.mb-1.flex-grow-1.align-items-center.rounded.text-none.text-black.hover-primary.hover-bg-secondary-alpha-10
-                    img(width="32" src= $imgDir + $item[1]).mr-3
-                    span.mr-2 !{$item[0]}
-                    span.text-micro.text-none.text-200.ml-auto 99
+.pr-md-4
+    .text-micro.text-uppercase.text-200.border-bottom.border-200.pb-3.mb-3 Kategorie
+    nav
+        ul.nav.flex-column
+            each $item in $Data.productCategories
+                li.d-flex
+                    a(href="#!").d-flex.px-2.mr-2.py-2.mb-1.flex-grow-1.align-items-center.rounded.text-none.text-black.hover-primary.hover-bg-secondary-alpha-10
+                        img(width="32" src= $imgDir + $item[1]).mr-3
+                        span.mr-2 !{$item[0]}
+                        span.text-micro.text-none.text-200.ml-auto 99
