@@ -1,0 +1,60 @@
+include ../mixins/picture
+include ../mixins/sprite
+
+.teaser
+    .row
+        .col-md-6
+            .d-flex.flex-column.h-100
+                div
+                    h1.text-uppercase Pohon pro posuvnou bránu do 600kg
+                    .d-inline-block.align-center.bg-red.p-4.rounded.text-white.mb-4
+                        h4.d-inline.font-weight-semibold.text-current
+                            | 6&nbsp;416
+                        span.small Kč
+                    .d-inline-block.align-center.text-600.text-micro.line-h-120.ml-4
+                        | 9 686 Kč<br>Původní cena
+                a(href="#!").btn.btn-secondary.text-uppercase.d-inline-flex.align-items-center.align-self-start.mt-auto
+                    | Detail akce
+                    +sprite("arrow-right", "sx-16 ml-2")
+        .col-md-6.d-none.d-md-block
+            .d-flex.align-items-end.h-100.position-relative
+                +picture("1.jpg")
+                .teaser__decoration-1.teaser__decoration-1--orange
+                .teaser__decoration-1.teaser__decoration-1--blue
+    .row.pt-5
+        .col-md-3
+            .teaser__indicator
+                .teaser__indicator__in(style="width: 60%")
+            .py-3.px-2
+                .d-flex.justify-content-between
+                    .h5.mb-2.font-weight-semibold.text-primary 30 % SLEVA
+                    .font-weight-semibold| 01.
+                .small
+                    p Na všechny produkty<br>značky Roger
+        .col-md-3.d-none.d-md-block
+            .teaser__indicator
+                .teaser__indicator__in(style="width: 0%")
+            .py-3.px-2
+                .d-flex.justify-content-between
+                    .h5.mb-2.font-weight-semibold.text-current 15 % SLEVA
+                    .font-weight-semibold| 02.
+                .small
+                    p Na všechny produkty<br>značky Roger
+        .col-md-3.d-none.d-md-block
+            .teaser__indicator
+                .teaser__indicator__in(style="width: 0%")
+            .py-3.px-2
+                .d-flex.justify-content-between
+                    .h5.mb-2.font-weight-semibold.text-current 30 % SLEVA
+                    .font-weight-semibold| 03.
+                .small
+                    p Na všechny produkty<br>značky Roger
+        .col-md-3.d-none.d-md-block
+            .teaser__indicator
+                .teaser__indicator__in(style="width: 0%")
+            .py-3.px-2
+                .d-flex.justify-content-between
+                    .h5.mb-2.font-weight-semibold.text-current 30 % SLEVA
+                    .font-weight-semibold| 04.
+                .small
+                    p Na všechny produkty<br>značky Roger
