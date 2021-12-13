@@ -1,7 +1,6 @@
 footer {
-  background: white;
-  font-size: 16px;
-  line-height: 24px;
+  background: #02111E;
+  color: #EDEEF0;
   .logos {
     @extend .py-4;
     margin-left: -20px;
@@ -31,31 +30,89 @@ footer {
     }
   }
   .foot-links {
-    font-size: 16px;
-    @extend .my-4;
+    p:first-child {
+      color: #A4A4A4;
+      @extend .text-micro;
+      @extend .mb-2;
+    }
+    label {
+      @extend .mb-2;
+      color: #A4A4A4;
+      font-weight: $font-weight-normal;
+    }
+    input {
+      display: none;
+    }
+    ul {
+      @extend .nav;
+      display: block;
+    }
     a {
-      color: $gray-500;
+      display: block;
+      padding: 0.5em 0;
+      color: $gray-100;
       &:hover {
         color: theme-color('primary');
       }
     }
-  }
-  .bottom {
-    font-size: 15px;
-    line-height: 16px;
-    .row {
-      justify-content: space-between;
-      align-items: center;
-      img {
-        margin-left: 10px;
-      }
-    }
-    .col-4 {
-      text-align: right;
-    }
     @include media-breakpoint-down(sm) {
-      .made-by {
-        display: none;
+      margin: 0 0 -1px !important;
+      label {
+          margin: 0 !important;
+          padding: 15px $grid-gutter-width / 2;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          display: block;
+          position: relative;
+          cursor: pointer;
+          font-weight: $font-weight-bold;
+          &:hover {
+            color: $secondary;
+            &:after {
+              background-color: $primary;
+            }
+            &:before {
+              border-color: white;
+            }
+        }
+        &::after {
+            content: ' ';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            z-index: 1;
+            width: 20px;
+            height: 20px;
+            border: 1px solid $primary;
+            border-radius: 50%;
+            transform: translateY(-50%);
+          }
+          &::before {
+            content: ' ';
+            position: absolute;
+            top: 50%;
+            right: 17px;
+            z-index: 2;
+            width: 6px;
+            height: 6px;
+            border-right: 2px solid $secondary;
+            border-bottom: 2px solid $secondary;
+            transform: translateY(-50%) rotate(45deg);
+          }
+      }
+      input:checked + nav > ul {
+        background: rgba(255, 255, 255, 0.05);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-height: 1000px;
+        opacity: 1;
+      }
+      ul {
+        padding: 0 $grid-gutter-width /2;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.75s;
+        position: relative;
       }
     }
   }
