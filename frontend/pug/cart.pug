@@ -12,6 +12,50 @@ block main
                 include  ./partials/breadcrumbs
 
         section
+            .spacer.pt-5
+            .container
+                .row
+                    .col-lg-6.mb-4.mb-lg-0
+                        .p-0.pr-lg-4
+                            .d-flex.align-items-center.mb-4
+                                .icon-box-inline.bg-green.rounded-circle.sx-32.text-white.mr-2
+                                    +sprite("check", "sx-16")
+                                h2.h5.font-weight-normal.text-green Zboží bylo přidáno do košíku
+
+                            .d-flex.bg-300.align-items-center.p-3.mb-3.rounded
+                                +placeholder(80, 80, "mr-4")
+                                | T64B - čtyřkanálový dálkový ovladač
+                    .col-lg-6
+                        form(action="" method="post")
+                            h5.text-uppercase.mb-4 Spočítejte si cenu Montáže
+                            .row
+                                .col-md-6
+                                    .form-group
+                                        input(type="text" placeholder="Zadejte název obce nebo PSČ").form-control
+                                .col-md-6
+                                    .form-group
+                                        button(type="submit" name="name1").btn.btn-secondary.btn-block.text-uppercase SPOČÍTAT MONTÁŽ
+                            .row
+                                .col-md-6
+                                    table.text-600.w-100
+                                        tr
+                                            td Doprava
+                                            td.text-right 690 Kč
+                                        tr
+                                            td Montáž
+                                            td.text-right 1 990 Kč
+                            .row
+                                .col-md-6
+                                    .form-group
+                                        table.text-black.w-100
+                                            tr
+                                                td.font-weight-bold.align-bottom Celkem
+                                                td.text-right.h4 2 990 Kč
+                                .col-md-6
+                                    button(type="submit" name="name2").btn.btn-secondary.btn-block.text-uppercase OBJEDNAT MONTÁŽ
+            .spacer.pt-5
+
+        section
             .container
                 .d-flex.justify-content-between.align-items-center.border-top.border-bottom.border-200.py-3
                     a(href="./product.html").btn.btn-lg.btn-link.primary
