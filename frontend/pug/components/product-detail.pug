@@ -18,22 +18,31 @@ include ../mixins/sprite
                 #fourth.product-gallery-preview-item
                     a(href="https://via.placeholder.com/1024x768.png?text=Product%20photo%20detail%20(1024%20x%20768)" data-fancybox="prod-detail")
                         +placeholder(444, 460, '', 'w-100', '/DDDDDD')
+            .product-gallery-thumblist
+                a(href='#first').product-gallery-thumblist-item.active
+                    +placeholder(68, 72, '', '', '/666666')
+                a(href='#second').product-gallery-thumblist-item
+                    +placeholder(68, 72, '', '', '/888888')
+                a(href='#third').product-gallery-thumblist-item
+                    +placeholder(68, 72, '', '', '/BBBBBB')
+                a(href='#third').product-gallery-thumblist-item
+                    +placeholder(68, 72, '', '', '/DDDDDD')
         .col-lg-6
             .product-info
                 table.w-100.mb-5
                     tr
-                        th Kód produktu
+                        th.py-2 Kód produktu
                         td KIT R20/502/1W
                     tr
-                        th Hmotnost
+                        th.py-2 Hmotnost
                         td 11 340 g
                     tr
-                        th Dostupnost
+                        th.py-2 Dostupnost
                         td.text-success Skladem
                     tr
-                        th Výrobce
+                        th.py-2 Výrobce
                         td Roger Industries
-                div
+                div.text-700
                     p Schlitz live-edge pinterest hell of migas. Food truck small batch actually, pork belly hammock pinterest paleo prism intelligentsia enamel pin pickled try-hard copper mug gluten-free… <a href="#!" class="text-secondary">Více informací</a>
                 .bg-secondary-alpha-10.rounded.p-4.mt-5
                     .text-micro.font-weight-bold.text-muted
@@ -43,13 +52,3 @@ include ../mixins/sprite
                     button.btn.btn-secondary.btn-lg.w-100
                         +sprite("shopping-cart", "sx-24 mr-2 align-text-bottom")
                         | VLOŽIT DO KOŠÍKU
-
-    .product-gallery-thumblist
-        a(href='#first').product-gallery-thumblist-item.active
-            +placeholder(68, 72, '', '', '/666666')
-        a(href='#second').product-gallery-thumblist-item
-            +placeholder(68, 72, '', '', '/888888')
-        a(href='#third').product-gallery-thumblist-item
-            +placeholder(68, 72, '', '', '/BBBBBB')
-        a(href='#third').product-gallery-thumblist-item
-            +placeholder(68, 72, '', '', '/DDDDDD')
