@@ -77,16 +77,16 @@ block main
                                     li.page-item
                                         a.page-link(href='#!')
                                             +sprite("chevron-right", "sx-16")
-
-        .spacer.pt-6
-
-        section.border-top
-            .spacer.pt-5
-            .container
-                h2.h3.text-uppercase Pohony<br>posuvných bran
+                        .spacer.pt-5
 
         section
-            .spacer.pt-5
+            .container
+                .border-top
+                .spacer.pt-5
+                h2.h3.mb-0.text-uppercase Pohony<br>posuvných bran
+                .spacer.pt-5
+
+        section
             .container
                 .row.gutters-sm
                     each $item in $Data.productCategorySubcategories
@@ -112,10 +112,9 @@ block main
                     each $item in $Data.productsInCatalogBottom[1]
                         .col-md-6.col-lg-3.mb-2
                             +card-product-big($item, $Data.productsInCatalogBottom[0])
+            .spacer.pt-5
 
         section
-            .spacer.pt-5
             .container
                 p Pohony bran, pohony vrat pro samonosné a pojezdové posuvné brány, šíny, vozíky, kladky a veškeré konstrukční prvky pro zhotovení posuvné brany. Kvalitní pohony bran pro všechny typy posuvných bran nabízené i v kompletních řešeních včetně konstrukčních prvků.  Pro pomoc s výběrem vhodného pohonu či řešení nás neváhejte kontaktovat na telefonní lince <a href="#">+420 511 440 278.</a>
-
-        .spacer.pt-7
+            .spacer.pt-5

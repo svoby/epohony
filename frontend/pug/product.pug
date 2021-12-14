@@ -44,9 +44,9 @@ block main
                                     .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 8, "dots": false, "nav": true, "items": 2, "responsive": { "960": { "items": 3 }} }')
                                         each $item in $Data.productsSales[1]
                                             +card-product-sale($item, $Data.productsSales[0])
+                        .spacer.pt-6
 
                     section
-                        .spacer.pt-6
                         .fancy-tab
                             .nav-bar.border.rounded.p-2
                                 .nav-bar-item.rounded.active Description
@@ -71,21 +71,20 @@ block main
                                     p ...
                                 .tab-content.py-4
                                     p ...
+                        .spacer.pt-6
 
         section
-            .spacer.pt-6
             .container
                 h3 Alternativní produkty
                 .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
                     each $item in $Data.productsAlternatives[1]
                         +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5
 
         section
-            .spacer.pt-6
             .container
                 h3 Příslušenství
                 .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
                     each $item in $Data.productsAlternatives[1]
                         +card-product-alt($item, $Data.productsAlternatives[0])
-
-        .spacer.pt-7
+            .spacer.pt-5
