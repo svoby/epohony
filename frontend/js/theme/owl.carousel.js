@@ -5,7 +5,7 @@ import spUtils from './Utils';
 /*-----------------------------------------------
 |   Owl Carousel
 -----------------------------------------------*/
-const $carousel = $('.owl-carousel');
+const $carousel = $('.js-owl-carousel');
 spUtils.$document.ready(() => {
   if ($carousel.length) {
     const Selector = {
@@ -34,7 +34,6 @@ spUtils.$document.ready(() => {
       const $this = $(value);
       const options = $this.data('options') || {};
       spUtils.isRTL() && (options.rtl = true);
-
       options.navText || (options.navText = ['<span class="fas fa-angle-left"></span>', '<span class="fas fa-angle-right"></span>']);
       options.touchDrag = true;
 

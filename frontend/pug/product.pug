@@ -28,7 +28,23 @@ block main
                         .spacer.pt-5
 
                         include ./components/product-detail
-                    
+
+                        .spacer.pt-6
+
+                        .bg-secondary-alpha-20.p-2.border-radius-lg
+                            .row.gutters-md
+                                .col-md-4.col-lg-3
+                                    .d-flex.h-100.p-3.justify-content-between.flex-column
+                                        div
+                                            h2.h4.mb-0.text-red.text-uppercase.line-h-115 Zvýhodněné produkty
+                                            p.small.font-weight-bold.text-uppercase K TOMUTO ZBOŽÍ
+                                        div.d-none.d-md-inline-block.sx-104.text-uppercase.text-white.text-micro.position-relative
+                                            .bg-holder.d-flex.align-items-center.justify-content-center(style="background-image: url(" + $imgDir + "/svg/bg-hedgehog.svg)") Výhodně
+                                .col-md-8.col-lg-9
+                                    .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 8, "dots": false, "nav": true, "items": 2, "responsive": { "960": { "items": 3 }} }')
+                                        each $item in $Data.productsSales[1]
+                                            +card-product-sale($item, $Data.productsSales[0])
+
                     section
                         .spacer.pt-6
                         .fancy-tab
