@@ -71,24 +71,21 @@ block main
                                     p ...
                                 .tab-content.py-4
                                     p ...
-                        .spacer.pt-6
 
         section
             .spacer.pt-6
             .container
                 h3 Alternativní produkty
-                .row
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
                     each $item in $Data.productsAlternatives[1]
-                        .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            +card-product-alt($item, $Data.productsAlternatives[0])
+                        +card-product-alt($item, $Data.productsAlternatives[0])
 
         section
             .spacer.pt-6
             .container
                 h3 Příslušenství
-                .row
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
                     each $item in $Data.productsAlternatives[1]
-                        .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            +card-product-alt($item, $Data.productsAlternatives[0])
+                        +card-product-alt($item, $Data.productsAlternatives[0])
 
         .spacer.pt-7

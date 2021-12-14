@@ -2,12 +2,12 @@
   .owl-stage {
     display: flex; // heights equalizer
   }
-  .owl-stage-outer {
+  //.owl-stage-outer {
   // Use for page edges overflow
   // @include media-breakpoint-up(xl) {
   //   overflow: visible;
   // }
-  }
+  //}
   .owl-nav {
     display: flex;
     position: absolute;
