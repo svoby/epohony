@@ -38,7 +38,7 @@ block main
                                                 th.text-uppercase(style="width: 1%") Action
                                         each $item, $index in [1, 2, 3, 4, 5, 6, 7]
                                             tr
-                                                td.align-middle: a(href="#!") #{2021041567 + $index}
+                                                td.align-middle: a(href="./user-order.html") #{2021041567 + $index}
                                                 td.align-middle 2021/07/12
                                                 td.align-middle: span.badge.badge-success Sent
                                                 td.align-middle: span.badge.badge-danger Not paid
@@ -46,7 +46,7 @@ block main
                                                 td.text-nowrap
                                                     a(href="#!" title="Refresh").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40
                                                         +sprite("refresh", "sx-24")
-                                                    a(href="#!" title="Edit item").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40.ml-2
+                                                    a(href="./user-order.html" title="Edit item").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40.ml-2
                                                         +sprite("pencil", "sx-24")
                                                     a(href="#!" title="Delete item").btn.btn-sm.text-danger.icon-box-inline.rounded-circle.p-0.sx-40.ml-2.hover-bg-red-alpha-10
                                                         +sprite("trash", "sx-24")
