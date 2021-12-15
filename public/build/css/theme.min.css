@@ -21388,6 +21388,10 @@ input:checked + .icon-box + .cart-checkbox-row__label + .bg-holder + .cart-check
   height: 100%;
 }
 
+.card.border-2 .card-footer {
+  margin: 0 -2px -2px;
+}
+
 .card-product.com {
   color: #000;
 }
@@ -21511,6 +21515,12 @@ input:checked + .icon-box + .cart-checkbox-row__label + .bg-holder + .cart-check
     margin-left: -12px;
     padding-top: 0.88888rem;
   }
+}
+
+select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  background: white url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='6' viewBox='0 0 11 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.59375 1L5.59375 5L1.59375 1' stroke='%2369788B' stroke-opacity='0.8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ") right 1rem center no-repeat;
 }
 
 .form-contact.com {

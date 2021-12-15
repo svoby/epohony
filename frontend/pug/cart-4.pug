@@ -14,8 +14,15 @@ block main
         section
             .spacer.pt-5
             .container
-                h1.h4.text-success.text-center Děkujeme!<br>Objednávka byla dokončena
-            .spacer.pt-4
+                .icon-box.bg-success.text-white.sx-64.rounded-circle.mx-auto.mb-3
+                    +sprite("check", "sx-48")
+                h1.h4.text-success.text-center.font-weight-normal Děkujeme!<br>Objednávka byla dokončena
+            .spacer.pt-7
+
+        section
+            .container
+                include ./partials/shipping-steps
+            .spacer.pt-7
 
         section
             .container

@@ -8,7 +8,7 @@ header.main.bg-gradient-primary.py-3.text-white
             img(src= $imgDir + "logo-site.svg" alt='ePohony' width='145')
         div.d-none.d-lg-block.h5.font-weight-normal.text-white.mb-0 Pohony bran, vrat a parkovací zábrany
         div
-            a(href="#!").d-inline-flex.align-items-center.text-white.text-micro.hover-secondary
+            a(href="./user-info.html").d-inline-flex.align-items-center.text-white.text-micro.hover-secondary
                 span.btn-primary.btn-circle.bg-gradient-secondary.border-0.sx-40.mr-2
                     +sprite("user", "sx-24")
                 span.d-none.d-md-block
@@ -38,6 +38,9 @@ section.bg-100.py-4
                         input(type="text" name="q" placeholder="Vyhledat zboží…").form-control
                         select(name="cat").form-control.border-right-0.text-500
                             option Kategorie
+                            option Vše
+                            each $item in $Data.productCategories
+                                option !{$item[0]}
                         .input-group-append
                             button.btn.btn-primary.px-3.py-0(type="submit")
                                 +sprite("search", "sx-24")

@@ -1,0 +1,16 @@
+.pr-md-4
+    .text-micro.text-uppercase.text-200.border-bottom.border-200.pb-3.mb-3 Uživatelský profil
+    nav
+        ul.nav.flex-column
+            each $item in $Data.userMenu
+                li.d-flex
+                    if ($item[1] == $sideMenuActualPage)
+                        a(href= $item[1]).d-flex.p-3.mb-1.flex-grow-1.align-items-center.rounded.text-none.bg-gradient-primary.text-white
+                            span.mr-2 !{$item[0]}
+                            span.ml-auto
+                                +sprite("chevron-right", "sx-16")
+                    else
+                        a(href= $item[1]).d-flex.p-3.mb-1.flex-grow-1.align-items-center.rounded.text-none.text-black.hover-primary.hover-bg-secondary-alpha-10
+                            span.mr-2 !{$item[0]}
+                            span.ml-auto
+                                +sprite("chevron-right", "sx-16")

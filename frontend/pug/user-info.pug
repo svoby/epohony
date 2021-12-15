@@ -1,0 +1,99 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'User info'
+    - var $sideMenuActualPage = "./user-info.html"
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        .container
+            .row
+                //-- Left column
+                .col-lg-3.mt-6.mt-lg-0.order-1.order-lg-0
+                    include ./partials/sidemenu-user
+
+                //-- Right column
+                .col-lg-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-4.pt-md-5
+                        +placeholder(984, 184, "", "rounded")
+                        .spacer.pt-5
+
+                    section
+                        form(action="#" method="post")
+                            .card.border.border-2.border-300
+                                .card-header.rounded-0.bg-300.p-4
+                                    h4 Osobní údaje
+                                .card-body
+                                    .row
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Jméno
+                                                input(id="" type="text" value="Jaroslav").form-control
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Příjmení
+                                                input(id="" type="text" value="Novák").form-control
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Ulice a číslo
+                                                input(id="" type="text" value="").form-control
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Město
+                                                input(id="" type="text" value="").form-control
+                                        .col-md-6
+                                            .form-group
+                                                .row
+                                                    .col-md-3
+                                                        label(for="").font-weight-semibold PSČ
+                                                        input(id="" type="text" value="").form-control
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Země
+                                                input(id="" type="text" value="").form-control
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Telefon
+                                                input(id="" type="text" value="").form-control
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold E-mail
+                                                input(id="" type="text" value="").form-control
+                                .card-header.rounded-0.bg-300.p-4
+                                    h4 Heslo
+                                .card-body
+                                    .row
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Původní heslo
+                                                input(id="" type="text" value="" placeholder="*******").form-control
+                                    .row
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Nové heslo
+                                                input(id="" type="text" value="" placeholder="*******").form-control
+                                    .row
+                                        .col-md-6
+                                            .form-group
+                                                label(for="").font-weight-semibold Potvrzení nového hesla
+                                                input(id="" type="text" value="" placeholder="*******").form-control
+                                .card-footer.py-4.bg-secondary-alpha-20.border-secondary
+                                    button.btn.btn-secondary.text-uppercase.d-inline-flex.align-items-center
+                                        | Potvrdit změny
+                                        +sprite("arrow-right", "sx-16 ml-2")
+            .spacer.pt-7
+
+        section
+            .container
+                h3 Mohlo by vás zajímat
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

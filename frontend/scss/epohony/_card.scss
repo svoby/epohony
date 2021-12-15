@@ -34,6 +34,10 @@
   }
 }
 
+.card.border-2 .card-footer {
+  margin: 0 -2px -2px;
+}
+
 .card-product.com {
   color: $body-color;
   &.--type-1 {

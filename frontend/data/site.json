@@ -126,6 +126,13 @@
       ["Převodem", ["Po zaplacení zboží odesíláme"], ["Zdarma"]],
       ["Kartou", ["V posledím kroku budete přesměrováni na platební bránu"], ["Zdarma"]],
       ["Na dobírku", ["Zaplatíte při doručení kurýrovi"], ["30 Kč"]]
+    ],
+    "userMenu": [
+      ["Osobní údaje", "./user-info.html", false],
+      ["Moje objednávky", "./user-orders.html", true],
+      ["Moje doklady", "./user-documents.html", false],
+      ["Moje adresy", "./user-addreses.html", false],
+      ["Vyhledat dokumenty", "./user-search.html", false]
     ]
   }
 }
