@@ -36,11 +36,11 @@
       }
     }
     button.owl-prev {
-        left: -10px;
+        left: -5px;
       }
     button.owl-next {
       margin-left: auto;
-      right: -10px;
+      right: -5px;
     }
     @include media-breakpoint-up(sm) {
       button.owl-prev {
@@ -60,8 +60,8 @@
     @include media-breakpoint-down(sm) {
         button.owl-prev,
         button.owl-next {
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
       }
     }
   }

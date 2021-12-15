@@ -116,6 +116,16 @@
       ["HN800 - Nylonový hřeben s ocelovým jádrem do hmotnosti 800kg"],
       ["T64B - čtyřkanálový dálkový ovladač"],
       ["HN800 - Nylonový hřeben s ocelovým jádrem do hmotnosti 800kg"]
+    ],
+    "shippings": [
+      ["DPD Parcel shop", ["T64B"], ["Zdarma"]],
+      ["DPD Kurýr", ["Rozvoz kurýrem po celé ČR"], ["190 Kč"]],
+      ["Top Trans", ["Rozvoz objemnějších zásilek po celé ČR"], ["270 Kč"]]
+    ],
+    "payments": [
+      ["Převodem", ["Po zaplacení zboží odesíláme"], ["Zdarma"]],
+      ["Kartou", ["V posledím kroku budete přesměrováni na platební bránu"], ["Zdarma"]],
+      ["Na dobírku", ["Zaplatíte při doručení kurýrovi"], ["30 Kč"]]
     ]
   }
 }

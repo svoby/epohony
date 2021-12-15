@@ -1,7 +1,7 @@
 extends ./layout/layout.pug
 
 block variables
-    - var title = 'Cart (Step 1)'
+    - var title = 'Cart (Step 2)'
 
 block main
 
@@ -23,14 +23,14 @@ block main
                 .bg-white.border.border-capsule.p-2.d-none.d-md-block
                     .row.gutters-md
                         .col-4
-                            .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.bg-gradient-primary.text-white
+                            a(href="./cart-1.html").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
                                 .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
                                     +sprite("shopping-cart", "sx-24")
                                 .line-h-100 1. Cart
                                 .d-inline-block.sx-32.ml-auto
                                     +sprite("chevron-right", "sx-32")
                         .col-4
-                            a(href="./cart-2.html").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
+                            .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.bg-gradient-primary.text-white
                                 .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
                                     +sprite("truck", "sx-24")
                                 .line-h-100 2. Shipping / Payment
@@ -45,12 +45,12 @@ block main
                 .d-md-none.bg-white.border.rounded.p-2.text-center
                     .row.gutters-sm
                         .col-4
-                            .d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
+                            a(href="./cart-1.html").d-block.h-100.py-4.px-3.text-none.rounded.hover-bg-primary-alpha-20
                                 .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
                                     +sprite("shopping-cart", "sx-24")
                                 .line-h-100 1. Cart
                         .col-4
-                            a(href="./cart-2.html").d-block.h-100.py-4.px-3.text-none.rounded.hover-bg-primary-alpha-20
+                            .d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
                                 .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
                                     +sprite("truck", "sx-24")
                                 .line-h-100 2. Shipping
@@ -63,34 +63,63 @@ block main
 
         section
             .container
-                .cart-table
-                    .cart-table__row.cart-table__row--header
-                        .cart-table__image
-                        .cart-table__name Produkt
-                        .cart-table__amount Množství
-                        .cart-table__price Cena bez DPH
-                        .cart-table__price.cart-table__price--vat Cena s DPH
-                        .cart-table__action
-                    each $item in $Data.cartContent
-                        +cart-row($item)
+                .row
+                    .col-lg-8.mb-4.mb-lg-0
+                        h2.h5 Výběr dopravy
+                        each $item in $Data.shippings
+                            .cart-checkbox-row
+                                label.d-flex.align-items-center.py-3.px-2.px-md-4.bg-100.border.border-100.rounded.hover-bg-primary-alpha-10.transition-primary
+                                    input(type="radio" name="shipping").ml-1.mr-2.mr-mb-3
+                                    .icon-box.sx-56.border.rounded-circle.bg-white.mr-3.d-none.d-md-flex
+                                        +placeholder(35, 35)
+                                    div.cart-checkbox-row__label.line-h-120
+                                        .font-weight-bold= $item[0]
+                                        .small= $item[1]
+                                    .bg-holder.rounded
+                                    div.cart-checkbox-row__price= $item[2]
 
-                    .spacer.pt-4
+                        .spacer.pt-5
 
-                    .cart-table__row.cart-table__row--footer
-                        .cart-table__cupon
-                            .input-group
-                                input(type="text" placeholder="Vložte slevový kód").form-control
-                                .input-group-append
-                                    button(type="submit" name="cupon").btn.btn-primary.w-100 Uplatnit
-                        .cart-table__price
-                            .text-micro.text-muted Celkem bez DPH
-                            .font-weight-bold 4 000 000 Kč
-                        .cart-table__price.cart-table__price--vat
-                            .text-micro.text-muted Celkem s DPH
-                            .h5.mb-0.font-weight-bold 4 848 000 Kč
-                        .cart-table__action
-
-                    .spacer.pt-4
+                        h2.h5 Výběr platby
+                        each $item in $Data.payments
+                            .cart-checkbox-row
+                                label.d-flex.align-items-center.py-3.px-2.px-md-4.bg-100.border.border-100.rounded.hover-bg-primary-alpha-10.transition-primary
+                                    input(type="radio" name="payment").ml-1.mr-2.mr-mb-3
+                                    .icon-box.sx-56.border.rounded-circle.bg-white.mr-3.d-none.d-md-flex
+                                        +placeholder(35, 35)
+                                    div.cart-checkbox-row__label.line-h-120
+                                        .font-weight-bold= $item[0]
+                                        .small= $item[1]
+                                    .bg-holder.rounded
+                                    div.cart-checkbox-row__price= $item[2]
+                    .col-lg-4
+                        .pl-lg-4
+                            h2.h5 Shrnutí objednávky
+                            .border.rounded.py-4.px-3
+                                each $item in $Data.cartContent
+                                    .d-flex.align-items-center.mb-3
+                                        +placeholder(48, 48, "mr-3")
+                                        .text-micro.pr-3
+                                            .line-clamp.line-clamp__1= $item[0]
+                                            | (12 Ks)
+                                        .ml-auto.text-nowrap.font-weight-bold.small 121 000 Kč
+                                .spacer.pt-3
+                                .border-top
+                                .spacer.pt-3
+                                table.w-100.small
+                                    tr
+                                        td DPD Kurýr
+                                        td.text-right.text-nowrap 190 Kč
+                                    tr
+                                        td Dobírka
+                                        td.text-right ZDARMA
+                                    tr
+                                        td Celkem bez DPH
+                                        td.text-right.text-nowrap 100 000 Kč
+                                    tr
+                                        td.align-bottom Celkem s DPH
+                                        td.h5.text-right.text-nowrap.align-bottom 121 000 Kč
+            .spacer.pt-5
 
         section
             .container

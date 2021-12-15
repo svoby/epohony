@@ -21158,6 +21158,39 @@ a.tag-action:focus, a.tag-action.focus {
   }
 }
 
+.cart-checkbox-row {
+  position: relative;
+}
+
+.cart-checkbox-row label {
+  cursor: pointer;
+}
+
+.cart-checkbox-row .bg-holder {
+  pointer-events: none;
+}
+
+.cart-checkbox-row input:checked + .icon-box {
+  border-color: rgba(16, 106, 182, 0.5) !important;
+}
+
+input:checked + .icon-box + .cart-checkbox-row__label {
+  color: #106ab6;
+}
+
+input:checked + .icon-box + .cart-checkbox-row__label + .bg-holder {
+  border: 1px solid #106ab6;
+}
+
+input:checked + .icon-box + .cart-checkbox-row__label + .bg-holder + .cart-checkbox-row__price {
+  color: #106ab6;
+}
+
+.cart-checkbox-row__price {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
 .has-topbar main.main {
   padding-top: 32px;
 }
@@ -21570,6 +21603,11 @@ a.tag-action:focus, a.tag-action.focus {
   flex-shrink: 0;
 }
 
+.icon-box img,
+.icon-box.com img {
+  max-width: 100%;
+}
+
 .icon-box.--abs-center,
 .icon-box.com.--abs-center {
   position: absolute;
@@ -21626,12 +21664,12 @@ a.tag-action:focus, a.tag-action.focus {
 }
 
 .owl-carousel .owl-nav button.owl-prev {
-  left: -10px;
+  left: -5px;
 }
 
 .owl-carousel .owl-nav button.owl-next {
   margin-left: auto;
-  right: -10px;
+  right: -5px;
 }
 
 @media (min-width: 576px) {
@@ -21654,8 +21692,8 @@ a.tag-action:focus, a.tag-action.focus {
 @media (max-width: 767.98px) {
   .owl-carousel .owl-nav button.owl-prev,
   .owl-carousel .owl-nav button.owl-next {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 }
 

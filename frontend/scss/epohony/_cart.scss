@@ -125,3 +125,29 @@
         }
     }
 }
+
+.cart-checkbox-row {
+    position: relative;
+    label {
+        cursor: pointer;
+    }
+    .bg-holder {
+        pointer-events: none;
+    }
+    input:checked + .icon-box {
+        border-color: rgba($primary, 0.5) !important;
+    }
+    input:checked + .icon-box + &__label {
+        color: $primary;
+    }
+    input:checked + .icon-box + &__label + .bg-holder {
+        border: 1px solid $primary;
+    }
+    input:checked + .icon-box + &__label + .bg-holder + &__price {
+        color: $primary;
+    }
+    &__price {
+        margin-left: auto;
+        white-space: nowrap;
+    }
+}
