@@ -4,11 +4,11 @@ mixin cart-row($product)
         .cart-table__image
             +placeholder(80, 80)
         .cart-table__name= $product[0]
-        .cart-table__amount
-            .btn.btn-outline-primary.p-0.icon-box-inline.sx-40.border.border-500.rounded-circle
+        .cart-table__amount(data-js="plusminus")
+            button.btn.btn-outline-primary.p-0.icon-box-inline.sx-40.border.border-500.rounded-circle
                 +sprite("minus", "sx-24")
-            input(type="text" value="55").cart-table__amount__input
-            .btn.btn-outline-primary.p-0.icon-box-inline.sx-40.border.border-500.rounded-circle
+            input(type="text" value="1").cart-table__amount__input
+            button.btn.btn-outline-primary.p-0.icon-box-inline.sx-40.border.border-500.rounded-circle.js-plus
                 +sprite("plus", "sx-24")
         .cart-table__price
             .text-micro.text-muted.d-md-none bez DPH
