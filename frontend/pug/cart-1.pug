@@ -105,22 +105,6 @@ block main
 
         section
             .container
-                include ./partials/slider-in-sale.pug
-            .spacer.pt-6
-
-        section
-            .container
-                .d-flex.justify-content-between.align-items-center.border-top.border-bottom.border-200.py-3
-                    a(href="./product.html").btn.btn-lg.btn-link.primary
-                        +sprite("arrow-narrow-left", "sx-24 mr-2")
-                        | Zpět k nákupu
-                    a(href="./cart-1.html").btn.btn-lg.flex-grow-0.btn-green.d-inline-flex.align-items-center.text-uppercase
-                        | Pokračovat
-                        +sprite("arrow-narrow-right", "sx-24 ml-2")
-            .spacer.pt-6
-
-        section
-            .container
                 h3 Alternativní produkty
                 .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
                     each $item in $Data.productsAlternatives[1]

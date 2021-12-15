@@ -81,38 +81,7 @@ block main
             .container
                 .spacer.pt-6
                     h2.h4 Shipping steps
-                    .d-flex.justify-content-center.flex-column.flex-md-row
-                        .d-inline-block.align-top
-                            .bg-success.text-white.sx-48.sx-md-80.icon-box.rounded-circle.mb-3.mx-auto
-                                +sprite("check", "sx-32 sx-md-48")
-                            h6.text-success.font-weight-normal.text-center Obj. přijata
-                        .d-none.d-md-inline-block.align-top.text-200.mx-4
-                            .sx-80.icon-box
-                                +sprite("arrow-narrow-right", "sx-48")
-                        .d-md-none.sx-48.icon-box.text-200.mx-auto
-                            +sprite("arrow-narrow-down", "sx-24")
-                        .d-inline-block.align-top.text-primary
-                            .sx-48.sx-md-80.icon-box.border.border-primary.border-2.rounded-circle.mb-3.mx-auto
-                                +sprite("gift", "sx-32 sx-md-48")
-                            h6.text-primary.font-weight-normal.text-center Zabalíme
-                        .d-none.d-md-inline-block.align-top.text-200.mx-4
-                            .sx-80.icon-box
-                                +sprite("arrow-narrow-right", "sx-48")
-                        .d-md-none.sx-48.icon-box.text-200.mx-auto
-                            +sprite("arrow-narrow-down", "sx-24")
-                        .d-inline-block.align-top.text-primary
-                            .sx-48.sx-md-80.icon-box.border.border-primary.border-2.rounded-circle.mb-3.mx-auto
-                                +sprite("truck", "sx-32 sx-md-48")
-                            h6.text-primary.font-weight-normal.text-center Doručujeme
-                        .d-none.d-md-inline-block.align-top.text-200.mx-4
-                            .sx-80.icon-box
-                                +sprite("arrow-narrow-right", "sx-48")
-                        .d-md-none.sx-48.icon-box.text-200.mx-auto
-                            +sprite("arrow-narrow-down", "sx-24")
-                        .d-inline-block.align-top.text-primary
-                            .sx-48.sx-md-80.icon-box.border.border-primary.border-2.rounded-circle.mb-3.mx-auto
-                                +sprite("home", "sx-32 sx-md-48")
-                            h6.text-primary.font-weight-normal.text-center Předáme
+                    include ./partials/shipping-steps
                 .spacer.pt-6
 
         section.border-top#form
@@ -280,9 +249,9 @@ block main
                 .spacer.pt-6
                 h2.h4 Product cards (big)
                 .row.gutters-md
-                    each $item in $Data.productsAlternatives[1]
+                    each $item in $Data.productsInCatalogBottom[1]
                         .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            +card-product-big($item, $Data.productsAlternatives[0])
+                            +card-product-big($item, $Data.productsInCatalogBottom[0])
                 .spacer.pt-6
 
         section.border-top#products-alt
@@ -290,9 +259,9 @@ block main
                 .spacer.pt-6
                 h2.h4 Product alternative cards
                 .row
-                    each $item in $Data.productsAlternatives[1]
+                    each $item in $Data.productsInCatalogBottom[1]
                         .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            +card-product-alt($item, $Data.productsAlternatives[0])
+                            +card-product-alt($item, $Data.productsInCatalogBottom[0])
                 .spacer.pt-6
 
         section.border-top#related-sales
