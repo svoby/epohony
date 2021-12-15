@@ -1,0 +1,103 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'User documents'
+    - var $sideMenuActualPage = "./user-documents.html"
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        .container
+            .row
+                //-- Left column
+                .col-lg-3.mt-6.mt-lg-0.order-1.order-lg-0
+                    include ./partials/sidemenu-user
+
+                //-- Right column
+                .col-lg-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-4.pt-md-5
+                        .card.border-2.border-300
+                            .card-header.rounded-0.p-4.bg-300
+                                h4 Obj. 2021041567
+                            .card-body.pt-5
+
+                                h5 Dokumenty ke stažení
+                                .row.gutters-md
+                                    each $item in ["Zál. faktura 20211041", "Dod. list 20211041", "Faktura 20211041", "Manuál KIT BE20/210"]
+                                        .col-md-6
+                                            a(href="#" target="_blank").d-flex.align-items-center.text-none.bg-100.rounded.py-3.px-4.mb-2.hover-bg-secondary-alpha-10.hover-bottom.transition-primary
+                                                .icon-box.sx-48.bg-white.rounded.mr-3
+                                                    +sprite("download", "sx-24")
+                                                = $item
+
+                                .spacer.pt-5
+
+                                h5 Zakoupené produkty
+
+                                .border-top
+                                .spacer.pt-3
+
+                                .table-responsive
+                                    table.table.table-striped.table-borderless.table-hover
+                                        thead
+                                            tr
+                                                th.text-nowrap.text-uppercase Produkt
+                                                th.text-nowrap.text-uppercase Množství
+                                                th.text-nowrap.text-uppercase Cena/ks
+                                                th.text-nowrap.text-uppercase Cena celkem
+                                            tbody
+                                                tr
+                                                    td.text-nowrap: a(href="#") KIT BE20/210 - Roger Brushless pohony…
+                                                    td.text-nowrap 2 ks
+                                                    td.text-nowrap 1 200 Kč
+                                                    td.text-nowrap 2 400 Kč
+                                                tr
+                                                    td.text-nowrap: a(href="#") KIT BE20/210 - Roger Brushless pohony…
+                                                    td.text-nowrap 2 ks
+                                                    td.text-nowrap 1 200 Kč
+                                                    td.text-nowrap 2 400 Kč
+                                                tr
+                                                    td.text-nowrap: a(href="#") KIT BE20/210 - Roger Brushless pohony…
+                                                    td.text-nowrap 2 ks
+                                                    td.text-nowrap 1 200 Kč
+                                                    td.text-nowrap 2 400 Kč
+
+                                .spacer.pt-5
+
+                                .row
+                                    .col-md-6
+                                        .card.p-4.border-2.border-200.mb-4
+                                            .card-header.border-2.border-200.pt-0.pb-3.px-0.bg-transparent
+                                                h5 Fakturační adresa
+                                            .card-body.px-0
+                                                | Orwin s.r.o.<br>
+                                                | IČ 08442258<br>
+                                                | DIČ CZ08442258<br>
+                                                | Moravské náměstí 754/13<br>
+                                                | 602 00 Brno
+                                    .col-md-6
+                                        .card.p-4.border-2.border-200.mb-4
+                                            .card-header.border-2.border-200.pt-0.pb-3.px-0.bg-transparent
+                                                h5 Doručovací adresa
+                                            .card-body.px-0
+                                                | John Doe.<br>
+                                                | Orwin s.r.o.<br>
+                                                | Moravské náměstí 754/13<br>
+                                                | +420 731 111 435<br>
+                                                | info@orwin.cz
+
+            .spacer.pt-7
+
+        section
+            .container
+                h3 Mohlo by vás zajímat
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

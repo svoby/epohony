@@ -131,7 +131,7 @@
       ["Osobní údaje", "./user-info.html", false],
       ["Moje objednávky", "./user-orders.html", true],
       ["Moje doklady", "./user-documents.html", false],
-      ["Moje adresy", "./user-addreses.html", false],
+      ["Moje adresy", "./user-addresses.html", false],
       ["Vyhledat dokumenty", "./user-search.html", false]
     ]
   }

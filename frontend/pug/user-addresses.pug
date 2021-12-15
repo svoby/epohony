@@ -1,0 +1,56 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'User adresses'
+    - var $sideMenuActualPage = "./user-addresses.html"
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        .container
+            .row
+                //-- Left column
+                .col-lg-3.mt-6.mt-lg-0.order-1.order-lg-0
+                    include ./partials/sidemenu-user
+
+                //-- Right column
+                .col-lg-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-4.pt-md-5
+                        .card.border-2.border-300
+                            .card-header.rounded-0.p-4.bg-300
+                                h4 Moje adresy
+                            .card-body
+                                .table-responsive
+                                    table.table.table-striped.table-borderless.table-hover
+                                        thead
+                                            tr
+                                                th.text-uppercase Adress
+                                                th.text-uppercase(style="width: 1%") Action
+                                        each $item in ['Merhautova 196, Brno, 613 00', 'Zimní 129, Praha 10,  123 00', 'Název ulice delší 14, Ústí nad Labem, 123 45', 'Merhautova 196, Brno 613 00', 'Zimní 129, Praha 10,  123 00']
+                                            tr
+                                                td.align-middle= $item
+                                                td.text-nowrap
+                                                    a(href="#!" title="Edit item").btn.btn-sm.btn-outline-primary.icon-box-inline.p-0.sx-40
+                                                        +sprite("pencil", "sx-24")
+                                                    a(href="#!" title="Delete item").btn.btn-sm.text-danger.icon-box-inline.p-0.sx-40.ml-2.hover-bg-red-alpha-10
+                                                        +sprite("trash", "sx-24")
+                            .card-footer.py-4.bg-secondary-alpha-20.border-secondary
+                                a(href="#!").btn.btn-secondary.text-uppercase.d-inline-flex.align-items-center
+                                    | Nová adresa
+                                    +sprite("arrow-right", "sx-16 ml-2")
+
+            .spacer.pt-7
+
+        section
+            .container
+                h3 Mohlo by vás zajímat
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

@@ -19114,6 +19114,10 @@ a.text-900:hover, a.text-900:focus {
   transform: translateY(-0.2rem);
 }
 
+.hover-bottom:hover {
+  transform: translateY(0.1rem);
+}
+
 .translate-y-middle {
   transform: translateY(-50%);
 }
@@ -21068,7 +21072,7 @@ a.tag-action:focus, a.tag-action.focus {
 }
 
 .cart-table__amount__input {
-  width: 2em;
+  width: 2.2em;
   margin: 0;
   text-align: center;
   border: 0;
