@@ -14,51 +14,83 @@ block main
         section
             .spacer.pt-5
             .container
-                h1.h2.text-uppercase Váš nákupní košík
+                h1.h2.text-uppercase Košík
+            .spacer.pt-4
 
         section
-            .spacer.pt-5
             .container
-                .row
-                    .col-lg-6.mb-4.mb-lg-0
-                        .p-0.pr-lg-4
-                            .d-flex.align-items-center.mb-4
-                                .icon-box-inline.bg-green.rounded-circle.sx-32.text-white.mr-2
-                                    +sprite("check", "sx-16")
-                                h2.h5.font-weight-normal.text-green Zboží bylo přidáno do košíku
-
-                            .d-flex.bg-300.align-items-center.p-3.mb-3.rounded
-                                +placeholder(80, 80, "mr-4")
-                                | T64B - čtyřkanálový dálkový ovladač
-                    .col-lg-6
-                        form(action="" method="post")
-                            h5.text-uppercase.mb-4 Spočítejte si cenu Montáže
-                            .row
-                                .col-md-6
-                                    .form-group
-                                        input(type="text" placeholder="Zadejte název obce nebo PSČ").form-control
-                                .col-md-6
-                                    .form-group
-                                        button(type="submit" name="name1").btn.btn-secondary.btn-block.text-uppercase SPOČÍTAT MONTÁŽ
-                            .row
-                                .col-md-6
-                                    table.text-600.w-100
-                                        tr
-                                            td Doprava
-                                            td.text-right 690 Kč
-                                        tr
-                                            td Montáž
-                                            td.text-right 1 990 Kč
-                            .row
-                                .col-md-6
-                                    .form-group
-                                        table.text-black.w-100
-                                            tr
-                                                td.font-weight-bold.align-bottom Celkem
-                                                td.text-right.h4 2 990 Kč
-                                .col-md-6
-                                    button(type="submit" name="name2").btn.btn-secondary.btn-block.text-uppercase OBJEDNAT MONTÁŽ
+                //- Cart steps - Desktop
+                .bg-white.border.border-capsule.p-2.d-none.d-md-block
+                    .row.gutters-md
+                        .col-4
+                            .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.bg-gradient-primary.text-white
+                                .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                    +sprite("shopping-cart", "sx-24")
+                                .line-h-100 1. Cart
+                                .d-inline-block.sx-32.ml-auto
+                                    +sprite("chevron-right", "sx-32")
+                        .col-4
+                            a(href="#!").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                    +sprite("truck", "sx-24")
+                                .line-h-100 2. Shipping / Payment
+                                .d-inline-block.sx-32.ml-auto
+                                    +sprite("chevron-right", "sx-32")
+                        .col-4
+                            .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.text-500
+                                .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                    +sprite("identification", "sx-24")
+                                .line-h-100 3. Delivery
+                //- Cart steps - Mobile
+                .d-md-none.bg-white.border.rounded.p-2.text-center
+                    .row.gutters-sm
+                        .col-4
+                            .d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                    +sprite("shopping-cart", "sx-24")
+                                .line-h-100 1. Cart
+                        .col-4
+                            a(href="#!").d-block.h-100.py-4.px-3.text-none.rounded.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                    +sprite("truck", "sx-24")
+                                .line-h-100 2. Shipping
+                        .col-4
+                            .d-block.h-100.py-4.px-3.text-none.rounded.border-capsule.text-500
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                    +sprite("identification", "sx-24")
+                                .line-h-100 3. Delivery
             .spacer.pt-5
+
+        section
+            .container
+                .cart-table
+                    .cart-table__row.cart-table__row--header
+                        .cart-table__image
+                        .cart-table__name Produkt
+                        .cart-table__amount Množství
+                        .cart-table__price Cena bez DPH
+                        .cart-table__price.cart-table__price--vat Cena s DPH
+                        .cart-table__action
+                    each $item in $Data.cartContent
+                        +cart-row($item)
+
+                    .spacer.pt-4
+
+                    .cart-table__row.cart-table__row--footer
+                        .cart-table__cupon
+                            .input-group
+                                input(type="text" placeholder="Vložte slevový kód").form-control
+                                .input-group-append
+                                    button(type="submit" name="cupon").btn.btn-primary.w-100 Uplatnit
+                        .cart-table__price
+                            .text-micro.text-muted Celkem bez DPH
+                            .font-weight-bold 4 000 000 Kč
+                        .cart-table__price.cart-table__price--vat
+                            .text-micro.text-muted Celkem s DPH
+                            .h5.mb-0.font-weight-bold 4 848 000 Kč
+                        .cart-table__action
+
+                    .spacer.pt-4
 
         section
             .container

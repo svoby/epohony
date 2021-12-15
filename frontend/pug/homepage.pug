@@ -27,10 +27,10 @@ block main
                                         while $i < 4
                                             li.w-100
                                                 if $i < 3
-                                                    a(href="#!").d-flex.justify-content-between.align-items-center.text-dark.py-2 Category item #{$i}
+                                                    a(href="./category.html").d-flex.justify-content-between.align-items-center.text-dark.py-2 Category item #{$i}
                                                         +sprite("chevron-right", "sx-8 ml-4")
                                                 else 
-                                                    a(href="#!").d-flex.justify-content-between.align-items-center.py-2.text-primary.text-uppercase.font-weight-bold All in category
+                                                    a(href="./catalog.html").d-flex.justify-content-between.align-items-center.py-2.text-primary.text-uppercase.font-weight-bold All in category
                                                         +sprite("chevron-right", "sx-8 ml-4")
                                             -$i++
             //.spacer.pt-6
@@ -39,9 +39,9 @@ block main
             .container
                 .spacer.pt-6
                 .row.gutters-md
-                    each $item in $Data.productsAlternatives[1]
-                        .col-md-6.col-lg-3.mb-4.mb-lg-0
-                            +card-product-big($item, $Data.productsAlternatives[0])
+                    each $item in $Data.productsHomepage[1]
+                        .col-md-6.col-lg-3.mb-2
+                            +card-product-big($item, $Data.productsHomepage[0])
                 .spacer.pt-6
 
         section.border-top#video-box
