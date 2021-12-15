@@ -1,0 +1,207 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Cart (Step 3)'
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        section
+            .container
+                include  ./partials/breadcrumbs
+
+        section
+            .spacer.pt-5
+            .container
+                h1.h2.text-uppercase Košík
+            .spacer.pt-4
+
+        section
+            .container
+                //- Cart steps - Desktop
+                .bg-white.border.border-capsule.p-2.d-none.d-md-block
+                    .row.gutters-md
+                        .col-4
+                            a(href="./cart-1.html").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.rounded-circle.border.bg-primary.text-white.border-current.mr-3
+                                    +sprite("check", "sx-24")
+                                .line-h-100 1. Cart
+                                .d-inline-block.sx-32.ml-auto
+                                    +sprite("chevron-right", "sx-32")
+                        .col-4
+                            a(href="./cart-2.html").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.rounded-circle.border.bg-primary.text-white.border-current.mr-3
+                                    +sprite("check", "sx-24")
+                                .line-h-100 2. Shipping / Payment
+                                .d-inline-block.sx-32.ml-auto
+                                    +sprite("chevron-right", "sx-32")
+                        .col-4
+                            .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.bg-gradient-primary.text-white
+                                .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                    +sprite("identification", "sx-24")
+                                .line-h-100 3. Delivery
+                //- Cart steps - Mobile
+                .d-md-none.bg-white.border.rounded.p-2.text-center
+                    .row.gutters-sm
+                        .col-4
+                            a(href="./cart-1.html").d-block.h-100.py-4.px-3.text-none.rounded.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.bg-primary.text-white.mb-3
+                                    +sprite("check", "sx-24")
+                                .line-h-100 1. Cart
+                        .col-4
+                            a(href="./cart-2.html").d-block.h-100.py-4.px-3.text-none.rounded.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.bg-primary.text-white.mb-3
+                                    +sprite("check", "sx-24")
+                                .line-h-100 2. Shipping
+                        .col-4
+                            .d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                    +sprite("identification", "sx-24")
+                                .line-h-100 3. Delivery
+            .spacer.pt-5
+
+        section
+            .container
+                .row
+                    .col-lg-8.mb-4.mb-lg-0
+                        h2.h5 Fakturační a dodací údaje
+                        .bg-100.p-4
+                            .row
+                                .col-lg-8
+                                    form(action="#" method="post" id="form")
+                                        .form-group
+                                            label(for="").font-weight-semibold Emailová adresa
+                                            input(id="" type="email" value="email@email.com").form-control.is-valid
+                                        .form-group
+                                            label(for="").font-weight-semibold Telefon
+                                            input(id="" type="text" value="+420 123 456 789").form-control.is-valid
+                                        .form-group
+                                            label(for="").font-weight-semibold Jméno
+                                            input(id="" type="text" value="").form-control
+                                        .form-group
+                                            label(for="").font-weight-semibold Příjmení
+                                            input(id="" type="text" value="").form-control
+                                        .form-group
+                                            .form-check-inline
+                                                input(class="form-check-input" type="checkbox" id="checkbox-collapseIco" data-toggle="collapse" href="#collapseIco" checked)
+                                                label(class="form-check-label" for="checkbox-collapseIco") Nakupuji na firmu
+                                        #collapseIco.collapse.show
+                                            .form-group
+                                                label(for="").font-weight-semibold IČO
+                                                .input-group
+                                                    input(id="" type="text" value="abcd").form-control.is-invalid
+                                                    .input-group-append
+                                                        button(type="submit" name="ares").btn.btn-primary.rounded-right Doplnit z ARES
+                                                    .invalid-feedback Validation error text
+                                            .form-group
+                                                label(for="").font-weight-semibold DIČ
+                                                input(id="" type="text" value="").form-control
+                                            .form-group
+                                                label(for="").font-weight-semibold Jméno firmy
+                                                input(id="" type="text" value="").form-control
+                                            .form-group
+                                                .row
+                                                    .col-md-3
+                                                        label(for="").font-weight-semibold PSČ
+                                                        input(id="" type="text" value="").form-control
+                                            .form-group
+                                                label(for="").font-weight-semibold Ulice a číslo
+                                                input(id="" type="text" value="").form-control
+                                            .form-group
+                                                label(for="").font-weight-semibold Město
+                                                input(id="" type="text" value="").form-control
+                                        .form-group
+                                            .form-check-inline
+                                                input(class="form-check-input" type="checkbox" id="checkbox-collapseAddress" data-toggle="collapse" href="#collapseAddress")
+                                                label(class="form-check-label" for="checkbox-collapseAddress") Zboží chci doručit na jinou adresu
+                                        #collapseAddress.collapse
+                                            .form-group
+                                                label(for="").font-weight-semibold Jméno
+                                                input(id="" type="text" value="").form-control
+                                            .form-group
+                                                label(for="").font-weight-semibold Příjmení
+                                                input(id="" type="text" value="").form-control
+                                            .form-group
+                                                .row
+                                                    .col-md-3
+                                                        label(for="").font-weight-semibold PSČ
+                                                        input(id="" type="text" value="").form-control
+                                            .form-group
+                                                label(for="").font-weight-semibold Ulice a číslo
+                                                input(id="" type="text" value="").form-control
+                                            .form-group
+                                                label(for="").font-weight-semibold Město
+                                                input(id="" type="text" value="").form-control
+
+                    .col-lg-4
+                        .pl-lg-4
+                            h2.h5 Shrnutí objednávky
+                            .border.rounded.py-4.px-3
+                                each $item in $Data.cartContent
+                                    .d-flex.align-items-center.mb-3
+                                        +placeholder(48, 48, "mr-3")
+                                        .text-micro.pr-3
+                                            .line-clamp.line-clamp__1= $item[0]
+                                            | (12 Ks)
+                                        .ml-auto.text-nowrap.font-weight-bold.small 121 000 Kč
+                                .spacer.pt-3
+                                .border-top
+                                .spacer.pt-3
+                                table.w-100.small
+                                    tr
+                                        td DPD Kurýr
+                                        td.text-right.text-nowrap 190 Kč
+                                    tr
+                                        td Dobírka
+                                        td.text-right ZDARMA
+                                    tr
+                                        td Celkem bez DPH
+                                        td.text-right.text-nowrap 100 000 Kč
+                                    tr
+                                        td.align-bottom Celkem s DPH
+                                        td.h5.text-right.text-nowrap.align-bottom 121 000 Kč
+            .spacer.pt-5
+
+        section
+            .container
+                .d-flex.justify-content-between.align-items-center.border-top.border-bottom.border-200.py-3
+                    a(href="./product.html").btn.btn-lg.btn-link.primary
+                        +sprite("arrow-narrow-left", "sx-24 mr-2")
+                        | Zpět k nákupu
+                    a(href="./cart-3.html").btn.btn-lg.flex-grow-0.btn-green.d-inline-flex.align-items-center.text-uppercase
+                        | Pokračovat
+                        +sprite("arrow-narrow-right", "sx-24 ml-2")
+            .spacer.pt-6
+
+        section
+            .container
+                include ./partials/slider-in-sale.pug
+            .spacer.pt-6
+
+        section
+            .container
+                .d-flex.justify-content-between.align-items-center.border-top.border-bottom.border-200.py-3
+                    a(href="./product.html").btn.btn-lg.btn-link.primary
+                        +sprite("arrow-narrow-left", "sx-24 mr-2")
+                        | Zpět k nákupu
+                    a(href="./cart-1.html").btn.btn-lg.flex-grow-0.btn-green.d-inline-flex.align-items-center.text-uppercase
+                        | Pokračovat
+                        +sprite("arrow-narrow-right", "sx-24 ml-2")
+            .spacer.pt-6
+
+        section
+            .container
+                h3 Alternativní produkty
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5
+
+        section
+            .container
+                h3 Příslušenství
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5
