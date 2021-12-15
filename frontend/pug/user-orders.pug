@@ -30,18 +30,18 @@ block main
                                     table.table.table-striped.table-borderless.table-hover
                                         thead
                                             tr
-                                                th.text-uppercase Order num.
-                                                th.text-uppercase Created
-                                                th.text-uppercase Status
-                                                th.text-uppercase Payment
-                                                th.text-uppercase Price
-                                                th.text-uppercase(style="width: 1%") Action
+                                                th.text-uppercase Číslo obj.
+                                                th.text-uppercase Vytvořena
+                                                th.text-uppercase Stav obj.
+                                                th.text-uppercase Platba
+                                                th.text-uppercase Ceba nbez DPH
+                                                th.text-uppercase(style="width: 1%") Akce
                                         each $item, $index in [1, 2, 3, 4, 5, 6, 7]
                                             tr
                                                 td.align-middle: a(href="./user-order.html") #{2021041567 + $index}
                                                 td.align-middle 2021/07/12
-                                                td.align-middle: span.badge.badge-success Sent
-                                                td.align-middle: span.badge.badge-danger Not paid
+                                                td.align-middle: span.badge.badge-success Doručena
+                                                td.align-middle: span.badge.badge-danger Nezaplacena
                                                 td.align-middle: span.text-nowrap 121 000 Kč
                                                 td.text-nowrap
                                                     a(href="#!" title="Refresh").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40
