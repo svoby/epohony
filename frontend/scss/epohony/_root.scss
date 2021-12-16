@@ -1,0 +1,9 @@
+// Custom CSS vars
+:root {
+    --header-height: 65px;
+    --header-subheader: 60px;
+    @include media-breakpoint-up(md) {
+        --header-height: 72px;
+        --header-subheader: 80px;
+    }
+}

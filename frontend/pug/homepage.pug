@@ -6,46 +6,32 @@ block variables
 block main
 
         section#teaser
-            .container
-                .spacer.pt-6
-                    include ./partials/teaser-1
-                .spacer.pt-6
-
-        section.bg-linear-down-light#category-list
             .spacer.pt-6
             .container
+                    include ./partials/teaser-1
+            .spacer.pt-6
+
+        section.bg-linear-down-light#category-list
+            .spacer.pt-5.pt-md-7
+            .container
+                h2.h3.text-uppercase Nabídka produktů přehledně
                 .row.gutters-md
                     each $item, $key in $Data.productCategories
-                        .col-md-4.col-lg-3.mb-4.mb-md-5
-                            .card
-                                .card-header.d-flex.justify-content-between.align-items-center.bg-gradient-primary.min-h-md-96
-                                    h3.h6.mb-0.text-uppercase.line-h-120.text-white !{$item[0]}
-                                    img(width="32" src= $imgDir + $item[1]).ml-4
-                                .card-body.bg-white.py-3.px-4
-                                    ul.nav.small
-                                        - var $i = 0
-                                        while $i < 4
-                                            li.w-100
-                                                if $i < 3
-                                                    a(href="./category.html").d-flex.justify-content-between.align-items-center.text-dark.py-2 Category item #{$i}
-                                                        +sprite("chevron-right", "sx-8 ml-4")
-                                                else 
-                                                    a(href="./catalog.html").d-flex.justify-content-between.align-items-center.py-2.text-primary.text-uppercase.font-weight-bold All in category
-                                                        +sprite("chevron-right", "sx-8 ml-4")
-                                            -$i++
-            //.spacer.pt-6
+                        .col-md-4.col-lg-3.mb-4
+                            +card-category-box($item)
+            .spacer.pt-6
 
-        section#products-cards-big
+        section
+            .spacer.pt-6
             .container
-                .spacer.pt-6
+                h2.h3.text-uppercase Produkty v akci
                 .row.gutters-md
                     each $item in $Data.productsHomepage[1]
                         .col-md-6.col-lg-3.mb-2
                             +card-product-big($item, $Data.productsHomepage[0])
-                .spacer.pt-6
-
-        section.border-top#video-box
             .spacer.pt-6
+
+        section
             .container
                 h2.h3.text-uppercase NAŠE VIDEA
                 .row
@@ -57,8 +43,7 @@ block main
                         +video-box("H70/104AC pohony H30/645 ROGER Technology")
             .spacer.pt-6
 
-        section.border-top#logos
-            .spacer.pt-6
+        section
             .container
                 h2.h3.text-uppercase ZNAČKY NAŠICH DODAVATELŮ
                 include partials/logo-partners

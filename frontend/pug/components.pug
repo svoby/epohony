@@ -343,23 +343,8 @@ block main
                 h2.h4.text-uppercase Category list
                 .row.gutters-md
                     each $item, $key in $Data.productCategories
-                        .col-md-4.col-lg-3.mb-4.mb-md-5
-                            .card
-                                .card-header.d-flex.justify-content-between.align-items-center.bg-gradient-primary.min-h-md-96
-                                    h3.h6.mb-0.text-uppercase.line-h-120.text-white !{$item[0]}
-                                    img(width="32" src= $imgDir + $item[1]).ml-4
-                                .card-body.bg-white.py-3.px-4
-                                    ul.nav.small
-                                        - var $i = 0
-                                        while $i < 4
-                                            li.w-100
-                                                if $i < 3
-                                                    a(href="#!").d-flex.justify-content-between.align-items-center.text-dark.py-2 Category item #{$i}
-                                                        +sprite("chevron-right", "sx-8 ml-4")
-                                                else 
-                                                    a(href="#!").d-flex.justify-content-between.align-items-center.py-2.text-primary.text-uppercase.font-weight-bold All in category
-                                                        +sprite("chevron-right", "sx-8 ml-4")
-                                            -$i++
+                        .col-md-4.col-lg-3.mb-2
+                            +card-category-box($item)
             .spacer.py-5
 
         .spacer.pt-5.border-top

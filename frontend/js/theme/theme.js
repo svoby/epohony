@@ -52,6 +52,8 @@ spUtils.$document.ready(() => {
                 overlay && overlay.addEventListener("click", HideAll);
                 document.body.classList.toggle("mobile-nav-open");
             }
+
+            e.preventDefault();
         });
 
     });

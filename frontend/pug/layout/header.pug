@@ -20,13 +20,13 @@ header.main.bg-gradient-primary.py-3.text-white
                 span.d-none.d-md-block
                     span.font-weight-bold.d-block 23 456 Kč
                     | Košík
-            button.d-md-none.btn-primary.btn-circle.bg-gradient-secondary.border-0.sx-40.js-offcanvas(data-target-id="#offcanvasRight")
+            button.d-md-none.btn-primary.btn-circle.bg-gradient-secondary.border-0.sx-40.js-offcanvas(data-target-id="#offcanvasEnd")
                     +sprite("menu", "sx-24")
 
-section.bg-100.py-4
+section.header-subhead.bg-100
     .container
         .d-flex
-            a(href="#!" style="min-width: 150px").d-none.d-md-inline-flex.align-items-center.justify-content-between.border.rounded.bg-white.shadow-secondary.text-decoration-none.text-dark.hover-bg-white.hover-primary.hover-border-primary
+            button(style="min-width: 150px" data-target-id="#offcanvasTop").d-none.d-md-inline-flex.align-items-center.justify-content-between.border.rounded.bg-white.shadow-secondary.text-decoration-none.text-dark.hover-bg-white.hover-primary.hover-border-primary.js-offcanvas
                 .d-inline-block.px-4 Produkty
                 .border-left.px-2
                     +sprite("chevron-down", "sx-16")

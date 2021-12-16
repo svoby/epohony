@@ -13,6 +13,7 @@ include ../components/card-product
 include ../components/card-product-big
 include ../components/card-product-alt
 include ../components/card-product-sale
+include ../components/card-category-box
 include ../components/cart-row
 include ../components/video-box
 
@@ -61,12 +62,22 @@ html(lang='cs')
             include ./footer
 
         //- Offcanvas
-        #offcanvasRight.offcanvas.offcanvas-end
+        #offcanvasEnd.offcanvas.offcanvas-end
             .offcanvas-header
-                button(data-target-id="#offcanvasRight").btn.btn-secondary.icon-box.sx-40.rounded-circle.js-offcanvas
+                button(data-target-id="#offcanvasEnd").btn.btn-secondary.icon-box.sx-40.rounded-circle.js-offcanvas
                     +sprite("plus", "sx-24 text-blue transform-rotate-45deg")
             .offcanvas-body
                 include ../partials/sidemenu-category
+
+        #offcanvasTop.offcanvas.offcanvas-top
+            .offcanvas-header
+                button(data-target-id="#offcanvasTop").btn.btn-secondary.icon-box.sx-40.rounded-circle.js-offcanvas
+                    +sprite("plus", "sx-24 text-blue transform-rotate-45deg")
+            .offcanvas-body
+                .row.gutters-md
+                    each $item, $key in $Data.productCategories
+                        .col-md-4.col-lg-3.mb-2
+                            +card-category-box($item)
 
         .mobile-nav-overlay
 
