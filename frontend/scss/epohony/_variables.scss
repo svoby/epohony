@@ -257,11 +257,30 @@ $fancynav-opacity: 1;
 $fancynav-side-stripe-bg1: $primary;
 $fancynav-side-stripe-bg2: rgba($primary, 0);
 
+// Offcanvas
+$offcanvas-padding-y:               1rem;
+$offcanvas-padding-x:               1rem;
+$offcanvas-horizontal-width:        75vw;
+$offcanvas-vertical-height:         30vh;
+$offcanvas-transition-duration:     .3s;
+$offcanvas-border-color:            rgba($black, .2);
+$offcanvas-border-width:            0;
+$offcanvas-title-line-height:       $line-height-base;
+$offcanvas-bg-color:                $white;
+$offcanvas-color:                   null;
+$offcanvas-box-shadow:              none;
+$offcanvas-backdrop-bg:             $black;
+$offcanvas-backdrop-opacity:        0.5;
+
 // Z indexes
+$zindex-offcanvas-backdrop: 1040;
+$zindex-offcanvas: 1045;
+$zindex-modal-backdrop: 1040;
+
+// Old z-indexes
 $z-index-fancybar-close: 104;
 $z-index-fancybar-collapse: 103;
 $z-index-fancybar: 102;
-
 $z-index-nav-overlay: 101;
 $z-index-box-list-overlay: 11;
 $z-index-gmapbox: 10;

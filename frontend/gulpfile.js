@@ -264,7 +264,8 @@ gulp.task('js:plugins', () => gulp.src(Paths.JS.PLUGINS)
   .pipe(gulp.dest(Paths.ASSETS.JS))
   .pipe(reload({ stream: true })));
 
-gulp.task('js', gulp.parallel('js:bootstrap', 'js:plugins', 'js:theme'));
+// gulp.task('js', gulp.parallel('js:bootstrap', 'js:plugins', 'js:theme'));
+gulp.task('js', gulp.parallel('js:theme'));
 
 
 /*-----------------------------------------------
@@ -392,7 +393,8 @@ function scssDart() {
 |   Starting everything
 -----------------------------------------------*/
 
-const ss_build = gulp.series(clean, sprites, copy_dependency, pugify, scss, 'js');
+// const ss_build = gulp.series(clean, sprites, copy_dependency, pugify, scss, 'js');
+const ss_build = gulp.series(sprites, copy_dependency, pugify, scss, 'js');
 const ss_start = gulp.series(ss_build, gulp.parallel(serve, watch));
 
 exports.start = ss_start;

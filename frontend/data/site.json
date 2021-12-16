@@ -13,6 +13,12 @@
       ["Kování pro brány, vrata", "svg/ico-brany-kovani.svg"],
       ["Konstrukce pro brány", "svg/ico-brany-konstrukce.svg"]
     ],
+    "productManufacturers": [
+      ["Pohony ROGER Technology"],
+      ["Pohony Telcoma-Cardin"],
+      ["Pohony bran FAAC"],
+      ["Pohony bran NICE"]
+    ],
     "productCategorySubcategories": [
       "Pohony bran do 400 kg",
       "Pohony bran do 600 kg",

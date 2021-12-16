@@ -60,18 +60,22 @@ html(lang='cs')
         block footer
             include ./footer
 
+        //- Offcanvas
+        #offcanvasRight.offcanvas.offcanvas-end
+            .offcanvas-header
+                button(data-target-id="#offcanvasRight").btn.btn-secondary.icon-box.sx-40.rounded-circle.js-offcanvas
+                    +sprite("plus", "sx-24 text-blue transform-rotate-45deg")
+            .offcanvas-body
+                include ../partials/sidemenu-category
+
         .mobile-nav-overlay
 
         script(src= $buildUrl + 'js/jquery.min.js')
-        //- script(src= $buildUrl + '/js/popper.min.js')
         script(src= $buildUrl + 'js/bootstrap.min.js')
         script(src= $buildUrl + 'js/plugins.min.js')
         script(src= $buildUrl + 'lib/is_js/is.min.js')
-        //- script(src= $buildUrl + 'lib/jtap/jquery.tap.js')
-        //- script(src= $buildUrl + 'js/rellax.min.js')
-        //- script(src= $buildUrl + 'lib/fancybox/jquery.fancybox.min.js')
+        script(src= $buildUrl + 'lib/fancybox/jquery.fancybox.min.js')
         script(src= $buildUrl + 'lib/owl.carousel/owl.carousel.js')
-        //- script(src= $buildUrl + 'lib/headroom/headroom.min.js')
         script(src= $buildUrl + 'js/theme.min.js')
 
         // Footer scripts
