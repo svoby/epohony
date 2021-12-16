@@ -2,25 +2,27 @@ include ../mixins/picture
 include ../mixins/sprite
 
 .teaser
-    .row
-        .col-md-6
-            .d-flex.flex-column.h-100
-                div
-                    h1.text-uppercase Pohon pro posuvnou bránu do 600kg
-                    .d-inline-block.align-center.bg-red.p-4.rounded.text-white.mb-4
-                        h4.d-inline.font-weight-semibold.text-current
-                            | 6&nbsp;416
-                        span.small.ml-2 Kč
-                    .d-inline-block.align-center.text-600.text-micro.line-h-120.ml-4
-                        | 9 686 Kč<br>Původní cena
-                a(href="./product.html").btn.btn-secondary.text-uppercase.d-inline-flex.align-items-center.align-self-start.mt-auto
-                    | Detail akce
-                    +sprite("arrow-right", "sx-16 ml-2")
-        .col-md-6.d-none.d-md-block
-            .d-flex.align-items-end.h-100.position-relative
-                +picture("1.jpg")
-                .teaser__decoration-1.teaser__decoration-1--orange
-                .teaser__decoration-1.teaser__decoration-1--blue
+    .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 0, "dots": false, "nav": false, "items": 1 }')
+        each $teaser in [1, 2, 3, 4]
+            .row
+                .col-md-6
+                    .d-flex.flex-column.h-100
+                        div
+                            h1.text-uppercase Pohon pro posuvnou bránu do 600kg
+                            .d-inline-block.align-center.bg-red.p-4.rounded.text-white.mb-4
+                                h4.d-inline.font-weight-semibold.text-current
+                                    | 6&nbsp;416
+                                span.small.ml-2 Kč
+                            .d-inline-block.align-center.text-600.text-micro.line-h-120.ml-4
+                                | 9 686 Kč<br>Původní cena
+                        a(href="./product.html").btn.btn-secondary.text-uppercase.d-inline-flex.align-items-center.align-self-start.mt-auto
+                            | Detail akce
+                            +sprite("arrow-right", "sx-16 ml-2")
+                .col-md-6.d-none.d-md-block
+                    .d-flex.align-items-end.h-100.position-relative
+                        +picture("1.jpg")
+                        .teaser__decoration-1.teaser__decoration-1--orange
+                        .teaser__decoration-1.teaser__decoration-1--blue
     .row.pt-5
         .col-md-3
             .teaser__indicator
