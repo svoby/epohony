@@ -1,49 +1,20 @@
-/*-----------------------------------------------
-|   Font Sizes
------------------------------------------------*/
-// @each $breakpoint in map_keys($grid-breakpoints) {
-//   @include media-breakpoint-up($breakpoint) {
-//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-//     @each $index, $value in $font-sizes {
-//       .fs#{$infix}-#{$index} {
-//         font-size: $value;
-//       }
-//     }
-//   }
-// }
-
-/*-----------------------------------------------
-|   Text style
------------------------------------------------*/
-
-/*   Font Weight */
-// .font-weight-thin {
-//   font-weight: $font-weight-thin !important;
-// }
-// .font-weight-extra-light {
-//   font-weight: $font-weight-extra-light !important;
-// }
-// .font-weight-medium {
-//   font-weight: $font-weight-medium !important;
-// }
-// .font-weight-semi-bold {
-//   font-weight: $font-weight-semi-bold !important;
-// }
-// .font-weight-extra-bold {
-//   font-weight: $font-weight-extra-bold !important;
-// }
-// .font-weight-black {
-//   font-weight: $font-weight-black !important;
-// }
-
 /* Decoration */
 .text-underline {
   text-decoration: underline;
   text-decoration-skip: ink;
 }
 
+.text-none,
+.text-none:hover {
+  text-decoration: none;
+}
+
 .text-smallcaps {
   font-variant: small-caps;
+}
+
+.font-weight-semibold {
+  font-weight: $font-weight-semibold;
 }
 
 /*-----------------------------------------------
@@ -63,21 +34,13 @@
   @include text-emphasis-variant('.text-#{$color}', $value, true);
 }
 
-/*-----------------------------------------------
-|   Colors for social icons
------------------------------------------------*/
-// .text-facebook {
-//   color: $facebook;
-// }
-// .text-google-plus {
-//   color: $google-plus;
-// }
-// .text-twitter {
-//   color: $twitter;
-// }
-// .text-linkedin {
-//   color: $linkedin;
-// }
-// .text-youtube {
-//   color: $youtube;
-// }
+// Line heights
+@each $line-height in $line-heights {
+  .line-h-#{$line-height} {
+    line-height: percentage($line-height / 100) !important;
+  }
+}
+
+.text-current {
+  color: currentColor !important;
+}

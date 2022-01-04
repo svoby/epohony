@@ -1,6 +1,6 @@
 .btn {
-  letter-spacing: 1px;
-  font-weight: $font-weight-bold;
+  letter-spacing: -0.035em;
+  font-weight: $font-weight-semibold;
 }
 
 .btn-circle {
@@ -8,7 +8,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: $white;
-  border: 1px solid $primary;
   flex-shrink: 0;
+  padding: 0;
+}
+
+[data-toggle] {
+  .toggleText::before {
+    content: attr(data-default)
+  }
+  &[aria-expanded=true] {
+    .toggleText::before {
+      content: attr(data-toggled)
+    }
+  }
 }

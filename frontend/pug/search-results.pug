@@ -1,0 +1,60 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Search results'
+    - var $sideMenuActualPage = "./user-search.html"
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        section
+            .container
+                .card.border-2.border-300
+                    .card-header.rounded-0.p-4.bg-300
+                        h1.h4 Výsledky vyhledávání
+                    .card-body
+                        form(action="#" method="post")
+                            .row
+                                .col-md-6
+                                    .input-group
+                                        input(type="text" placeholder="Zadejte název nebo kód produktu" value="TB64I").form-control.shadow-secondary
+                                        .input-group-append
+                                            button.btn.btn-primary.px-3.py-0(type="submit")
+                                                +sprite("search", "sx-24")
+            .spacer.pt-5
+
+        section
+            .container
+                .d-flex.align-items-end.mb-3
+                    h2.h5.mb-0.text-uppercase Zboží
+                    .small.ml-auto Celkem nalezeno 4314 produktů
+                each $item in [1, 2, 3, 4]
+                    .d-flex.align-items-center.bg-100.rounded.p-2.py-md-3.px-md-4.mb-2.hover-bg-primary-alpha-10.transition-primary
+                        a(href="./product.html" target="_blank").d-flex.align-items-center.text-none
+                            .bg-white.mr-2.mr-md-3
+                                +placeholder(48, 48)
+                            .line-h-120 T64B - čtyřkanálový dálkový ovladač
+                        .text-nowrap.ml-auto 121 000 Kč
+                        .d-none.d-md-block.ml-2.ml-md-4
+                            a(href="./cart.html").btn.btn-sm.btn-secondary.text-uppercase Koupit
+            .spacer.pt-5
+        section
+            .container
+                .row
+                    .col-md-6.mb-5.mb-md-0
+                        .d-flex.align-items-end.mb-3
+                            h2.h5.mb-0.text-uppercase Značky
+                            .small.text-muted.ml-auto Celkem nalezeny 2 značky
+                        each $item in ["Roger Technology", "CAIS"]
+                            a(href="#!").d-flex.align-items-center.bg-100.rounded.py-3.px-4.mb-2.border.border-100.hover-border-secondary.hover-bg-secondary-alpha-10.transition-primary
+                                = $item
+                    .col-md-6
+                        .d-flex.align-items-end.mb-3
+                            h2.h5.mb-0.text-uppercase Kategorie
+                            .small.text-muted.ml-auto Celkem nalezeny 2 kategorie
+                        each $item in ["Roger ovladače", "Allmatic ovladače", "Telcoma ovladače", "GSM ovladače", "Epohony ovladače"]
+                            a(href="#!").d-flex.align-items-center.bg-100.rounded.py-3.px-4.mb-2.border.border-100.hover-border-secondary.hover-bg-secondary-alpha-10.transition-primary
+                                +sprite("folder-open", "sx-32 mr-2 text-secondary")
+                                = $item
+            .spacer.pt-5

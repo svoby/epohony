@@ -1,5 +1,5 @@
 @each $color, $value in $theme-colors {
-  [class][class][class].hover-color-#{$color}:hover {
+  [class][class][class].hover-#{$color}:hover {
     color: $value !important;
   }
 
@@ -10,11 +10,28 @@
   [class][class][class].hover-bg-#{$color}:hover {
     background-color: $value !important;
   }
+
+  @each $level in $transparency-levels {
+    [class][class][class].hover-bg-#{$color}-alpha-#{$level}:hover {
+      background-color: rgba($value, $level / 100) !important;
+    }
+  }
 }
 
-.hover-zoom {
-  transition: all 0.1s;
-  &:hover {
-    transform: scale(1.02);
+@each $color, $value in $grays {
+  [class][class][class].hover-bg-#{$color}:hover {
+    background-color: $value !important;
   }
+}
+
+.hover-zoom:hover {
+  transform: scale(1.02);
+}
+
+.hover-up:hover {
+  transform: translateY(-0.2rem);
+}
+
+.hover-bottom:hover {
+  transform: translateY(0.1rem);
 }

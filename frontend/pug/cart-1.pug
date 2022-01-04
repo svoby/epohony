@@ -1,0 +1,120 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Cart (Step 1)'
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        section
+            .container
+                include  ./partials/breadcrumbs
+
+        section
+            .spacer.pt-5
+            .container
+                h1.h2.text-uppercase Košík
+            .spacer.pt-4
+
+        section
+            .container
+                //- Cart steps - Desktop
+                .bg-white.border.border-capsule.p-2.d-none.d-md-block
+                    .row.gutters-md
+                        .col-4
+                            .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.bg-gradient-primary.text-white
+                                .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                    +sprite("shopping-cart", "sx-24")
+                                .line-h-100 1. Cart
+                                .d-inline-block.sx-32.ml-auto
+                                    +sprite("chevron-right", "sx-32")
+                        .col-4
+                            a(href="./cart-2.html").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                    +sprite("truck", "sx-24")
+                                .line-h-100 2. Shipping / Payment
+                                .d-inline-block.sx-32.ml-auto
+                                    +sprite("chevron-right", "sx-32")
+                        .col-4
+                            .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.text-500
+                                .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                    +sprite("identification", "sx-24")
+                                .line-h-100 3. Delivery
+                //- Cart steps - Mobile
+                .d-md-none.bg-white.border.rounded.p-2.text-center
+                    .row.gutters-sm
+                        .col-4
+                            .d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                    +sprite("shopping-cart", "sx-24")
+                                .line-h-100 1. Cart
+                        .col-4
+                            a(href="./cart-2.html").d-block.h-100.py-4.px-3.text-none.rounded.hover-bg-primary-alpha-20
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                    +sprite("truck", "sx-24")
+                                .line-h-100 2. Shipping
+                        .col-4
+                            .d-block.h-100.py-4.px-3.text-none.rounded.border-capsule.text-500
+                                .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                    +sprite("identification", "sx-24")
+                                .line-h-100 3. Delivery
+            .spacer.pt-5
+
+        section
+            .container
+                .cart-table
+                    .cart-table__row.cart-table__row--header
+                        .cart-table__image
+                        .cart-table__name Produkt
+                        .cart-table__amount Množství
+                        .cart-table__price Cena bez DPH
+                        .cart-table__price.cart-table__price--vat Cena s DPH
+                        .cart-table__action
+                    each $item in $Data.cartContent
+                        +cart-row($item)
+
+                    .spacer.pt-4
+
+                    .cart-table__row.cart-table__row--footer
+                        .cart-table__cupon
+                            .input-group
+                                input(type="text" placeholder="Vložte slevový kód").form-control
+                                .input-group-append
+                                    button(type="submit" name="cupon").btn.btn-primary.w-100 Uplatnit
+                        .cart-table__price
+                            .text-micro.text-muted Celkem bez DPH
+                            .font-weight-bold 4 000 000 Kč
+                        .cart-table__price.cart-table__price--vat
+                            .text-micro.text-muted Celkem s DPH
+                            .h5.mb-0.font-weight-bold 4 848 000 Kč
+                        .cart-table__action
+
+                    .spacer.pt-4
+
+        section
+            .container
+                .d-flex.justify-content-between.align-items-center.border-top.border-bottom.border-200.py-3
+                    a(href="./product.html").btn.btn-lg.btn-link.primary
+                        +sprite("arrow-narrow-left", "sx-24 mr-2")
+                        | Zpět k nákupu
+                    a(href="./cart-2.html").btn.btn-lg.flex-grow-0.btn-green.d-inline-flex.align-items-center.text-uppercase
+                        | Pokračovat
+                        +sprite("arrow-narrow-right", "sx-24 ml-2")
+            .spacer.pt-6
+
+        section
+            .container
+                h3 Alternativní produkty
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5
+
+        section
+            .container
+                h3 Příslušenství
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

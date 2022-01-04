@@ -1,0 +1,78 @@
+{
+    "resultIsEmpty": false,
+    "urlMore": "./search-results.html",
+    "products":  {
+        "title": "Zboží",
+        "result": "Nalezeno: 4314",
+        "items": [
+            {
+                "imgsrc": "https://via.placeholder.com/48x48.png",
+                "name": "T64B - čtyřkanálový dálkový ovladač",
+                "price": "121 000 Kč",
+                "url": "./product.html",
+                "action": "./cart.html"
+            },
+            {
+                "imgsrc": "https://via.placeholder.com/48x48.png",
+                "name": "T64B - čtyřkanálový dálkový ovladač",
+                "price": "121 000 Kč",
+                "url": "./product.html",
+                "action": "./cart.html"
+            },
+            {
+                "imgsrc": "https://via.placeholder.com/48x48.png",
+                "name": "T64B - čtyřkanálový dálkový ovladač",
+                "price": "121 000 Kč",
+                "url": "./product.html",
+                "action": "./cart.html"
+            },
+            {
+                "imgsrc": "https://via.placeholder.com/48x48.png",
+                "name": "T64B - čtyřkanálový dálkový ovladač",
+                "price": "121 000 Kč",
+                "url": "./product.html",
+                "action": "./cart.html"
+            }
+        ]
+    },
+    "brands": {
+        "title": "Značky",
+        "result": "Nalezeno: 2",
+        "items": [
+            {
+                "name": "Roger Technology",
+                "url": "./catalog.html"
+            },
+            {
+                "name": "CAIS",
+                "url": "./catalog.html"
+            }
+        ]
+    },
+    "categories": {
+        "title": "Kategorie",
+        "result": "Nalezeno: 40",
+        "items": [
+            {
+                "name": "Roger ovladače",
+                "url": "./catalog.html"
+            },
+            {
+                "name": "Allmatic ovladače",
+                "url": "./catalog.html"
+            },
+            {
+                "name": "Telcoma ovladače",
+                "url": "./catalog.html"
+            },
+            {
+                "name": "GSM ovladače",
+                "url": "./catalog.html"
+            },
+            {
+                "name": "Epohony ovladače",
+                "url": "./catalog.html"
+            }
+        ]
+    }
+}

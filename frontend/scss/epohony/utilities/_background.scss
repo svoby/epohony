@@ -29,6 +29,10 @@
     right: 0;
   }
 
+  &.overlay-gradient:before {
+    background: linear-gradient(to bottom,#0000, #0007);
+  }
+
   &.overlay-primary:before {
     background: rgba($primary, 0.4);
   }
@@ -91,9 +95,28 @@
   background-color: rgba($white, 0.9);
 }
 
-/*-----------------------------------------------
-|   Background Colors [Grays]
------------------------------------------------*/
 @each $key, $value in $grays {
   @include bg-variant('.bg-#{$key}', $value, true);
+}
+
+.bg-gradient-primary {
+  background: $gradient-primary;
+}
+
+.bg-gradient-secondary {
+  background: $gradient-secondary;
+}
+
+.bg-linear-down-light {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%),
+    linear-gradient(0deg, #f2f3f7, #f2f3f7), #f2f3f7;
+  background-blend-mode: normal, multiply, normal;
+}
+
+@each $color, $value in $theme-colors {
+  @each $level in $transparency-levels {
+    .bg-#{$color}-alpha-#{$level} {
+      background-color: rgba($value, $level / 100) !important;
+    }
+  }
 }

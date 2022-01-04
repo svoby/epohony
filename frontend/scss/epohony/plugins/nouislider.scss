@@ -1,0 +1,72 @@
+//
+// range slider
+//
+.noUi-target {
+  border: 0;
+  border-radius: 0;
+  height: rem-calc(24);
+  box-shadow: none;
+  background: transparent;
+}
+
+.noUi-connects {
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: rem-calc(8);
+  height: rem-calc(3);
+  background: $gray-200;
+
+  .noUi-connect {
+    background: $gray-600;
+  }
+}
+
+.noUi-horizontal {
+  .noUi-handle {
+    top: - rem-calc(3);
+    right: -12px;
+    border: 0;
+    width: rem-calc(24);
+    height: rem-calc(24);
+    border-radius: 50%;
+    box-shadow: none;
+    background: $white;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: rem-calc(-12);
+      margin-left: rem-calc(-12);
+      content: "";
+      width: rem-calc(24);
+      height: rem-calc(24);
+      display: block;
+      background: $secondary;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      &::before {
+        background: $primary;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+// selection value
+.range-slider-selection {
+  margin-top: - rem-calc(5);
+}
+
+.range-slider-value {
+  &::after {
+    content: " Kč";
+  }
+}

@@ -1,0 +1,90 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Product'
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        .container
+            .row
+                //-- Left column
+                .col-lg-3.mt-6.mt-lg-0.order-1.order-lg-0
+                    include ./partials/sidemenu-category
+
+                //-- Right column
+                .col-lg-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-4.pt-md-5
+
+                        h1.mb-2 KIT R20/502/1W
+                        h2.h3.mb-0 Pohon pro jednokřídlové brány do 5m
+
+                        .spacer.pt-5
+
+                        include ./components/product-detail
+
+                        .spacer.pt-6
+
+                        .bg-secondary-alpha-20.p-2.border-radius-lg
+                            .row.gutters-md
+                                .col-md-4.col-lg-3
+                                    .d-flex.h-100.p-3.justify-content-between.flex-column
+                                        div
+                                            h2.h4.mb-0.text-red.text-uppercase.line-h-115 Zvýhodněné produkty
+                                            p.small.font-weight-bold.text-uppercase K TOMUTO ZBOŽÍ
+                                        div.d-none.d-md-inline-block.sx-104.text-uppercase.text-white.text-micro.position-relative
+                                            .bg-holder.d-flex.align-items-center.justify-content-center(style="background-image: url(" + $imgDir + "/svg/bg-hedgehog.svg)") Výhodně
+                                .col-md-8.col-lg-9
+                                    .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 8, "dots": false, "nav": true, "items": 2, "responsive": { "960": { "items": 3 }} }')
+                                        each $item in $Data.productsSales[1]
+                                            +card-product-sale($item, $Data.productsSales[0])
+                        .spacer.pt-6
+
+                    section
+                        .fancy-tab
+                            .nav-bar.border.rounded.p-2
+                                .nav-bar-item.rounded.active Description
+                                .nav-bar-item.rounded Parameters
+                                .nav-bar-item.rounded Accessories
+                                .nav-bar-item.rounded Ask question
+                            .tab-contents
+                                .tab-content.py-4.active
+                                    p Umami lo-fi bushwick swag. Microdosing health goth narwhal chicharrones cred occupy. Skateboard yuccie pok pok, cray selvage cred marfa shoreditch migas humblebrag. umblr hammock edison bulb portland fanny pack artisan air plant thundercats.
+                                    h4 Letterpress echo park street
+                                    ul
+                                        li Poke woke farm-to-table try-hard
+                                        li Yr cliche hell of vexillologist.
+                                        li Air plant tumblr 8-bit, authentic kombucha salvia vice blog shoreditch migas gentrify green juice.
+                                        li Four dollar toast banjo stumptown gochujang.
+                                        li Knausgaard franzen artisan beard sartorial mumblecore
+                                    h5 Letterpress echo park street
+                                    p Health goth butcher activated charcoal portland next level pitchfork mumblecore man braid iPhone plaid mlkshk. Prism intelligentsia forage poutine.
+                                .tab-content.py-4
+                                    p ...
+                                .tab-content.py-4
+                                    p ...
+                                .tab-content.py-4
+                                    p ...
+                        .spacer.pt-6
+
+        section
+            .container
+                h3 Alternativní produkty
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5
+
+        section
+            .container
+                h3 Příslušenství
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

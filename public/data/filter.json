@@ -1,0 +1,6 @@
+{
+    "snippets": {
+        "snippet--product-fitler": "<div class='alert alert-success'>Filter results refreshed! URL changed!</div>"
+    },
+    "url": "catalog.html?newFiterParameters"
+}

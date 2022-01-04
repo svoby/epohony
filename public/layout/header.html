@@ -1,133 +1,74 @@
 
-<header class="header com --sticky">
-  <div class="topbar com">
-    <div class="container">
-      <div class="left">
-        <ul>
-          <li><a href="#!">
-              <svg class="ico shopping-cart s-16">
-                <use xlink:href="undefined#shopping-cart"></use>
-              </svg>E-shop</a></li>
-          <li><a href="#!">
-              <svg class="ico lock-open s-16">
-                <use xlink:href="undefined#lock-open"></use>
-              </svg>Klientská zóna</a></li>
-          <li><a href="#!">
-              <svg class="ico briefcase s-16">
-                <use xlink:href="undefined#briefcase"></use>
-              </svg>Kariéra</a></li>
-        </ul>
-      </div>
-      <div class="right">
-        <ul>
-          <li><a href="#!">
-              <svg class="ico youtube s-16">
-                <use xlink:href="undefined#youtube"></use>
-              </svg>Youtube</a></li>
-          <li><a href="#!">
-              <svg class="ico facebook s-16">
-                <use xlink:href="undefined#facebook"></use>
-              </svg>Facebook</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" href="#!" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <svg class="ico globe s-16">
-                <use xlink:href="undefined#globe"></use>
-              </svg>CZ</a>
-            <div class="dropdown-menu dropdown-menu-right --slim"><a class="dropdown-item active" href="#">CZ</a><a class="dropdown-item" href="#">EN</a></div>
-          </li>
-        </ul>
-      </div>
+<header class="main bg-gradient-primary py-3 text-white">
+  <div class="container"><a href="./index.html"><img class="logo-main" src="undefinedlogo-site.svg" alt="ePohony" width="145"/></a>
+    <div class="d-none d-lg-block h5 font-weight-normal text-white mb-0">Pohony bran, vrat a parkovací zábrany</div>
+    <div><a class="d-inline-flex align-items-center text-white text-micro hover-secondary" href="./user-info.html"><span class="btn-primary btn-circle bg-gradient-secondary border-0 sx-40 mr-2">
+          <svg class="ico user sx-24">
+            <use xlink:href="undefined#user"></use>
+          </svg></span><span class="d-none d-md-block"><span class="fotn-weight-bold d-block">Přihlásit se</span>Můj účet</span></a><a class="d-inline-flex align-items-center text-white text-micro ml-1 ml-md-4 hover-secondary" href="./cart.html"><span class="btn-primary btn-circle bg-gradient-secondary border-0 sx-40 mr-2">
+          <svg class="ico shopping-cart sx-24">
+            <use xlink:href="undefined#shopping-cart"></use>
+          </svg></span><span class="d-none d-md-block"><span class="font-weight-bold d-block">23 456 Kč</span>Košík</span></a>
+      <button class="d-md-none btn-primary btn-circle bg-gradient-secondary border-0 sx-40 js-offcanvas" data-target-id="#offcanvasEnd">
+        <svg class="ico menu sx-24">
+          <use xlink:href="undefined#menu"></use>
+        </svg>
+      </button>
     </div>
   </div>
-  <nav class="navbar navbar-expand-lg fancynavbar fancynavbar-top" id="top">
-    <div class="container"><a class="navbar-brand" href="./" data-config-id="brand">
-        <picture>
-          <source srcset="undefinedlogo-tm@1x.png 1x, undefinedlogo-tm@2x.png 2x"/><img class="img-fluid" src="undefinedlogo-tm@1x.png"/>
-        </picture></a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Služby</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="./sluzba1.html">Služba 1</a>
-              <div class="dropdown-divider"></div><a class="dropdown-item" href="./sluzba2.html">Služba 2</a>
-              <div class="dropdown-divider"></div><a class="dropdown-item" href="./servis.html">Servis</a>
-            </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="./znacky.html">Značky výrobců</a></li>
-          <li class="nav-item"><a class="nav-link" href="./spolecnost1.html">O společnosti</a></li>
-          <li class="nav-item"><a class="nav-link" href="./team1.html">Náš tým</a></li>
-          <li class="nav-item"><a class="nav-link" href="./kontakt.html">Kontakt</a></li>
-        </ul>
-      </div>
-      <div class="search d-none d-lg-block">
-        <form action="#">
-          <input class="form-control" type="text" placeholder="Vyhledat"/>
-        </form>
-      </div>
-      <div class="fancynavbar-togglerbar fancynavbar-toggler d-flex d-lg-none">
-        <button class="btn btn-sm">
-          <svg width="48" height="24" viewbox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="48" height="4" fill="currentColor"></rect>
-            <rect y="10" width="48" height="4" fill="currentColor"></rect>
-            <rect y="20" width="48" height="4" fill="currentColor"></rect>
+</header>
+<section class="header-subhead bg-100">
+  <div class="container">
+    <div class="d-flex">
+      <button class="d-none d-md-inline-flex align-items-center justify-content-between border rounded bg-white shadow-secondary text-decoration-none text-dark hover-bg-white hover-primary hover-border-primary js-offcanvas" style="min-width: 150px" data-target-id="#offcanvasTop">
+        <div class="d-inline-block px-4">Produkty</div>
+        <div class="border-left px-2">
+          <svg class="ico chevron-down sx-16">
+            <use xlink:href="undefined#chevron-down"></use>
           </svg>
-        </button>
-        <button class="btn btn-sm">
-          <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="25.9507" width="36.0907" height="3.38356" transform="rotate(-45 0 25.9507)" fill="currentColor"></rect>
-            <rect x="25.5205" y="28.3433" width="36.0907" height="3.38356" transform="rotate(-135 25.5205 28.3433)" fill="currentColor"></rect>
-          </svg>
-        </button>
-      </div>
-      <div class="fancynavbar-collapse">
-        <div class="top">
-          <ul class="nav fancynavbar-languages">
-            <li><a class="btn btn-lg btn-secondary" href="#!">Česky</a></li>
-            <li><a class="btn btn-lg btn-outline-secondary" href="#!">English</a></li>
-          </ul>
-          <ul class="fancynavbar-nav">
-            <li class="fancynav-item fancy-dropdown"><a class="fancynav-link fancy-dropdown-toggle" href="javascript:void(0)">
-                <div class="fancynav-link-content">Služby</div></a>
-              <div class="fancy-dropdown-menu">
-                <div class="row py-2">
-                  <div class="col-auto"><a class="fancy-dropdown-item" href="#!">Třídění a kontrola kvality</a><a class="fancy-dropdown-item" href="#!">Montáže a drobné opracování dílů</a><a class="fancy-dropdown-item" href="#!">3D měření a programování</a><a class="fancy-dropdown-item" href="#!">Technická čistota</a><a class="fancy-dropdown-item" href="#!">Konzultace, školení audity</a></div>
-                </div>
-              </div>
-            </li>
-            <li class="fancynav-item"><a class="fancynav-link" href="./dilna.html">Chráněná dílna</a></li>
-            <li class="fancynav-item"><a class="fancynav-link" href="./o-nas.html">O společnosti</a></li>
-            <li class="fancynav-item"><a class="fancynav-link" href="./kontakt.html">Kontakt</a></li>
-          </ul>
-          <div class="fancynav-item my-2"><a class="fancynav-link" href="#!">
-              <svg class="ico lock-open s-24">
-                <use xlink:href="undefined#lock-open"></use>
-              </svg>Klientská zóna</a></div>
-          <div class="fancynav-item my-2"><a class="fancynav-link" href="#!">
-              <svg class="ico briefcase s-24">
-                <use xlink:href="undefined#briefcase"></use>
-              </svg>Kariéra</a></div>
         </div>
-        <div class="bottom">
-          <div class="fancy-socials">
-            <div class="row">
-              <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                  <svg class="ico youtube s-24">
-                    <use xlink:href="undefined#youtube"></use>
-                  </svg>Youtube</a></div>
-              <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                  <svg class="ico linkedin s-24">
-                    <use xlink:href="undefined#linkedin"></use>
-                  </svg>Linkedin</a></div>
-              <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                  <svg class="ico facebook s-24">
-                    <use xlink:href="undefined#facebook"></use>
-                  </svg>Facebook</a></div>
-              <div class="col-6"><a class="fancynav-link" href="#!" target="_blank">
-                  <svg class="ico twitter s-24">
-                    <use xlink:href="undefined#twitter"></use>
-                  </svg>Twitter</a></div>
+      </button>
+      <div class="flex-grow-1 ml-md-5 mr-lg-5">
+        <form action="#" method="get">
+          <div class="input-group">
+            <input class="form-control js-autocomplete-input" type="text" name="q" placeholder="Vyhledat zboží…" autocomplete="off" data-autocomplete-config="{&quot;url&quot;: &quot;data/autocomplete.json?&quot;, &quot;fetchDelay&quot;:&quot;200&quot;, &quot;minChars&quot;:&quot;3&quot;}"/>
+            <select class="form-control border-right-0 text-500 js-autocomplete-category-select" name="cat">
+              <option value="-1">Kategorie</option>
+              <option value="99">Vše</option>
+              <option value="0">Pohony bran a&nbsp;vrat</option>
+              <option value="1">Automatické závory</option>
+              <option value="2">Dálkové ovládání</option>
+              <option value="3">Přístupové systémy</option>
+              <option value="4">Příslušenství pohonů</option>
+              <option value="5">Náhradní díly</option>
+              <option value="6">Kování pro brány, vrata</option>
+              <option value="7">Konstrukce pro brány</option>
+            </select>
+            <div class="input-group-append">
+              <button class="btn btn-primary px-3 py-0" type="submit">
+                <svg class="ico search sx-24">
+                  <use xlink:href="undefined#search"></use>
+                </svg>
+              </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
+      <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block align-self-center">
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#!">Montáž</a></li>
+            <li class="nav-item"><a class="nav-link" href="#!">Garážová vrata</a></li>
+            <li class="nav-item"><a class="nav-link" href="#!">B2B spolupráce</a></li>
+            <li class="nav-item"><a class="nav-link" href="#!">Kontakt</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-  </nav>
-</header>
+  </div>
+</section>
+<!-- Autocomplete placeholder - start-->
+<div class="autocomplete js-autocomplete">
+  <div class="bg-white p-2 pt-3 p-md-4 pt-md-5 rounded-lg shadow-secondary border-top border-3 border-secondary" id="autocomplete-content"></div>
+</div>
+<!-- Autocomplete placeholder - end-->

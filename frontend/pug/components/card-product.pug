@@ -1,0 +1,29 @@
+mixin card-product($item = ['Product name'], $image = [300, 200, "#DDDDDD"])
+
+    .card.h-100.bg-100
+        a(href="./product.html")
+            +placeholder($image[0], $image[1], "d-flex align-items-end p-2 pt-md-5 w-100 hover-up transition-primary", "w-100", $image[2])
+        .d-flex.flex-column.justify-content-between.h-100.px-4.pt-3.pb-4
+            .card-title
+                .card__tags
+                    ul.card__tags__list
+                        li.tag.tag-success.small Skladem
+                        li.tag.tag-tip.small Tip
+                        li.tag.tag-action.small Akce
+                        li.tag.tag-new.small Novinka
+                    .card__tags__sale
+                        .d-flex.align-items-center.justify-content-center.rounded-circle.sx-64.bg-sale -25%
+                .card__rating.mb-3
+                    .card__rating__rate(style="width: 50%")
+                a(href="./product.html").hover-border-secondary.hover-up.transition-primary
+                    .font-weight-semibold.line-h-133.line-clamp.line-clamp__2= $item[0]
+            .letter-spacing-sm
+                .d-flex.justify-content-between
+                    div
+                        span.h5.mb-0 8&nbsp;990&nbsp;Kč 
+                        | s&nbsp;DPH
+                        .d-block.text-micro 2&nbsp;000 bez&nbsp;DPH
+                    s.text-muted.mt-1 1.780 Kč
+            a(href="./cart.html").btn.btn-secondary.d-inline-flex.justify-content-between.align-items-center.w-100.text-uppercase.mt-3
+                | Vložit do košíku
+                +sprite("arrow-right", "sx-24")

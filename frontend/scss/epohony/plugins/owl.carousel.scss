@@ -1,32 +1,72 @@
-.owl-carousel .owl-stage-outer {
-  @include media-breakpoint-up(xl) {
-    overflow: visible;
+.owl-carousel {
+  .owl-stage {
+    display: flex; // heights equalizer
+  }
+  //.owl-stage-outer {
+  // Use for page edges overflow
+  // @include media-breakpoint-up(xl) {
+  //   overflow: visible;
+  // }
+  //}
+  .owl-nav {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    button.owl-prev,
+    button.owl-next {
+      width: 72px;
+      height: 72px;
+      background: $primary;
+      border-radius: 50%;
+      color: white;
+      transition: $transition-primary;
+      position: relative;
+      opacity: 0.95;
+      pointer-events: all;
+      &:hover {
+        background: $secondary;
+        opacity: 1;
+      }
+      &.disabled {
+        display: none;
+      }
+    }
+    button.owl-prev {
+        left: -5px;
+      }
+    button.owl-next {
+      margin-left: auto;
+      right: -5px;
+    }
+    @include media-breakpoint-up(sm) {
+      button.owl-prev {
+        left: -20px;
+      }
+      button.owl-next {
+        right: -20px;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+        button.owl-prev,
+        button.owl-next {
+          width: 55px;
+          height: 55px;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+        button.owl-prev,
+        button.owl-next {
+          width: 50px;
+          height: 50px;
+      }
+    }
   }
 }
 
-.owl-prev,
-.owl-next {
-  width: 48px;
-  height: 48px;
-  background: #ffffff !important;
-  box-shadow: 0px 15.1376px 18.922px rgba(0, 0, 0, 0.05),
-    0px 7.56881px 7.56881px rgba(0, 0, 0, 0.04);
-  border-radius: 2px;
-  color: $primary !important;
-  &:hover {
-    color: $black !important;
-  }
-}
-
-.owl-next {
-  margin-left: 16px;
-}
-
-.owl-nav {
-  position: absolute;
-  top: -70px;
-  right: 0;
-}
 .owl-dots {
   text-align: center;
   margin-top: 2rem;

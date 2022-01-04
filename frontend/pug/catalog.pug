@@ -1,0 +1,168 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Catalog'
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        .container
+            .row
+                //-- Left column
+                .col-lg-3.mt-6.mt-lg-0.order-1.order-lg-0
+                    include ./partials/sidemenu-category
+
+                //-- Right column
+                .col-lg-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-4.pt-md-5
+
+                        h1.text-uppercase Category title
+                        h5.text-uppercase Headline h5
+                        .small.line-h-150
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare sed massa est orci bibendum magnis sagittis eget. Euismod ac ultrices vestibulum in sed volutpat ut. Fusce aenean eget condimentum bibendum faucibus sit. Purus varius velit massa diam. Tristique diam sed nunc nibh turpis id aliquet. Diam amet pretium urna, ante tristique. Odio varius interdum iaculis etiam mauris, velit amet elit.
+
+                    section
+                        .spacer.pt-5
+                        .row.gutters-sm
+                            each $item in $Data.productCategorySubcategories
+                                .col-6.col-lg-3.mb-1
+                                    a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
+                                        span.d-inline-flex.align-items-center.m-1
+                                            +placeholder(40, 40, "mr-2")
+                                            = $item
+                                        +sprite("chevron-right", "sx-16 ml-4")
+
+                    section#form-filter
+                        .spacer.pt-5
+                        .d-flex
+                            button.btn.btn-sm.btn-black.line-h-115 Nejprodávanější
+                            button.btn.btn-sm.hover-primary.line-h-115 Doprava zdarma
+                            button.btn.btn-sm.hover-primary.line-h-115 Novinky
+                            button.btn.btn-sm.btn-outline-primary.ml-auto(data-toggle="collapse" href="#collapseFilter")
+                                span.toggleText(data-default="Filtr" data-toggled="Zavřít")
+                                +sprite("adjustments", "sx-24 ml-3 d-none d-md-inline-block")
+
+                    section.collapse#collapseFilter
+                        .spacer.pt-4
+                        form(action="./data/filter.json" method="get").js-ajax-filter-form
+                            .bg-100.rounded.p-4
+                                .row.mb-4
+
+                                    // Filter checkbox mixin
+                                    mixin filter-checkbox($label, $name, $value, $checked = false)
+                                        .form-check-inline.line-h-100.letter-spacing-sm
+                                            input(class="form-check-input" type="checkbox" id=`checkbox-${$value}` name=`${$name}` value=`${$value}` checked= $checked)
+                                            label(class="form-check-label" for=`checkbox-${$value}`)= $label
+
+                                    .col-md-9.mb-4.mb-md-0
+                                        h6.text-uppercase Výrobci
+                                        .row.gutters-sm
+                                            .col-md-4
+                                                each $item, $index in ["Roger Brushless", "CAME", "Allmatic", "BENINCA"]
+                                                    .form-group.mb-2
+                                                        +filter-checkbox($item, "manuf[]", $index, true)
+                                            .col-md-4
+                                                each $item, $index in ["NICE", "ELDES", "CARDIN ELETTRONICA", "SOMMER"]
+                                                    .form-group.mb-2
+                                                        +filter-checkbox($item, "manuf[]",$index + 4)
+                                            .col-md-4
+                                                each $item, $index in ["Sebury Technolog", "ROGER Technology", "CAIS", "Telcoma"]
+                                                    .form-group.mb-2
+                                                        +filter-checkbox($item, "manuf", $index + 8)
+                                    .col-md-3
+                                        h6.text-uppercase Štítky
+                                        .row.gutters-sm
+                                            each $item, $index in ["Skladem (16)", "Tip (1)", "Akce (1)", "Novinky (0)"]
+                                                .col-12
+                                                    .form-group.mb-2
+                                                        .form-check-inline.line-h-100.letter-spacing-sm
+                                                            +filter-checkbox($item, "tag[]", $index + 12)
+                                .row
+                                    .col-md-9
+                                        .js-range-slider.range-slider(data-range='{"decimals": 1,"step": 1000,"connect": true, "start" : [0,100000], "range" : {"min": 0, "max" : 100000}}')
+                                            .range-slider-selection.d-flex.justify-content-between
+                                                span.range-min.range-slider-value.font-weight-semibold
+                                                span.range-max.range-slider-value.font-weight-semibold
+                                            input(type="hidden" name="priceMin").range-min-input
+                                            input(type="hidden" name="priceMax" value="100000").range-max-input
+                                    .col-md-3.pt-5.pt-md-0
+                                        button(type="submit").btn.btn.btn-block.btn-secondary FILTROVAT
+
+                    section
+                        .spacer.pt-4
+                        #snippet--product-fitler
+                            .row.gutters-md
+                                each $item in $Data.productsInCatalog[1]
+                                    .col-md-6.col-lg-4.mb-2
+                                        +card-product($item, $Data.productsInCatalog[0])
+                        .spacer.pt-4
+
+                    section
+                        #snippet--product-more
+                            .d-flex.justify-content-between
+                                a(href="./data/ajax-more.json").btn.btn-primary.d-flex.align-items-center.js-ajax-button
+                                    | Načíst další
+                                    +sprite("arrow-down", "sx-24 ml-2")
+                                nav.nav
+                                    ul.pagination.mb-0
+                                        li.page-item
+                                            a.page-link.js-ajax-button(href='./data/ajax-more.json')
+                                                +sprite("chevron-left", "sx-16")
+                                        li.page-item.active.js-ajax-button
+                                            a.page-link.js-ajax-button(href='./data/ajax-more.json') 1
+                                        li.page-item
+                                            a.page-link.js-ajax-button(href='./data/ajax-more.json') 2
+                                        li.page-item
+                                            a.page-link.js-ajax-button(href='./data/ajax-more.json') 3
+                                        li.page-item
+                                            a.page-link.js-ajax-button(href='./data/ajax-more.json') …
+                                        li.page-item
+                                            a.page-link.js-ajax-button(href='./data/ajax-more.json')
+                                                +sprite("chevron-right", "sx-16")
+                        .spacer.pt-5
+
+        section
+            .container
+                .border-top
+                .spacer.pt-5
+                h2.h3.mb-0.text-uppercase Pohony<br>posuvných bran
+                .spacer.pt-5
+
+        section
+            .container
+                .row.gutters-sm
+                    each $item in $Data.productCategorySubcategories
+                        .col-6.col-lg-3.mb-1
+                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
+                                span.d-inline-flex.align-items-center.m-1
+                                    +placeholder(40, 40, "mr-2")
+                                    = $item
+                                +sprite("chevron-right", "sx-16 ml-4")
+            .spacer.pt-5
+
+        section
+            .container
+                .d-flex
+                    button.btn.btn-sm.btn-black.line-h-115.border-capsule Akce
+                    button.btn.btn-sm.hover-primary.line-h-115 Doprava zdarma
+                    button.btn.btn-sm.hover-primary.line-h-115 Novinky
+            .spacer.pt-3
+
+        section
+            .container
+                .row.gutters-md
+                    each $item in $Data.productsInCatalogBottom[1]
+                        .col-md-6.col-lg-3.mb-2
+                            +card-product-big($item, $Data.productsInCatalogBottom[0])
+            .spacer.pt-5
+
+        section
+            .container
+                p Pohony bran, pohony vrat pro samonosné a pojezdové posuvné brány, šíny, vozíky, kladky a veškeré konstrukční prvky pro zhotovení posuvné brany. Kvalitní pohony bran pro všechny typy posuvných bran nabízené i v kompletních řešeních včetně konstrukčních prvků.  Pro pomoc s výběrem vhodného pohonu či řešení nás neváhejte kontaktovat na telefonní lince <a href="#">+420 511 440 278.</a>
+            .spacer.pt-5

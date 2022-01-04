@@ -1,49 +1,52 @@
 const del = require('del');
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
-const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
-const sassDart = require('sass');
-const cleanCSS = require('gulp-clean-css');
 const eslint = require('gulp-eslint');
-const concat = require('gulp-concat');
 const rename = require('gulp-rename');
-const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync');
 const svgSprite = require('gulp-svg-sprite');
 const pug = require('gulp-pug');
+const fs = require('fs');
+const prettier = require('gulp-prettier');
+const purgecss = require('gulp-purgecss')
+const browserify = require('browserify');
+const vinyl = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const babelify = require('babelify');
+const gulpif = require('gulp-if');
 
 const { reload } = browserSync;
 const Promise = require('promise');
 const { src, dest } = require('gulp');
 
+// Set default build stage for sourcemaps etc.
+let DEVELOPMENT_BUILD = false;
 
 /*-----------------------------------------------
 |   Paths
 -----------------------------------------------*/
+
 const JS = '../public/build/js';
 const lib = '../public/build/lib';
 const Paths = {
   HERE: './',
   PAGES: {
-    FOLDER: '../public/',
-    ALL: '../public/tpl/**/*.*', // Not used?
-    HTML: '../public/tpl/**/*.html', // Not used?
+    FOLDER: '../public/'
   },
   PUG: {
-    //FROM: [__dirname + '/pug/*.pug', __dirname + '/pug/layout/*.pug'],
-    FROM: [__dirname + '/pug/**/*.pug'],
-    TO: __dirname + '/../public/'
+    FROM: [__dirname + '/pug/**/*.pug', '!' + __dirname + '/pug/_old/**'],
+    TO: __dirname + '/../public/',
+    DATA: __dirname + "/data/site.json"
   },
   SVG: {
     FROM: './svg/*.svg',
     TO: '../public/build/svg/'
   },
   JS: {
-    ALL: 'js/**/*.js',
     BOOTSTRAP: [
       './js/bootstrap/util.js',
       './js/bootstrap/alert.js',
@@ -58,8 +61,9 @@ const Paths = {
       './js/bootstrap/tab.js',
       './js/bootstrap/toast.js',
     ],
-    THEME: ['js/theme/Utils.js', 'js/theme/!(Utils)*.js'],
-    PLUGINS: ['js/plugins/imagesloaded.pkgd.js', 'js/plugins/TweenMax.js', 'js/plugins/ScrollToPlugin.js', 'js/plugins/CustomEase.js', 'js/plugins/DrawSVGPlugin.js', 'js/plugins/fontawesome-all.js'],
+    APP: 'js/app.js',
+    THEME: 'js/theme/*.js',
+    PLUGINS: ['js/plugins/imagesloaded.pkgd.js']
   },
   SCSS: {
     ALL: __dirname + '/scss/**/*.scss',
@@ -82,40 +86,8 @@ const Paths = {
       FROM: 'node_modules/popper.js/dist/umd/popper.min.js',
       TO: JS,
     },
-    prismjs: {
-      FROM: ['node_modules/prismjs/prism.js', 'node_modules/prismjs/themes/prism.css'],
-      TO: lib,
-    },
-    plyr: {
-      FROM: ['node_modules/plyr/dist/plyr.min.js', 'node_modules/plyr/dist/plyr.css', 'node_modules/plyr/dist/plyr.polyfilled.min.js'],
-      TO: lib,
-    },
-    'typed.js': {
-      FROM: 'node_modules/typed.js/lib/typed.js',
-      TO: JS,
-    },
-    'jquery.mb.ytplayer': {
-      FROM: ['node_modules/jquery.mb.ytplayer/dist/css/jquery.mb.YTPlayer.min.css', 'node_modules/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.min.js'],
-      TO: lib,
-    },
-    'progressbar.js': {
-      FROM: 'node_modules/progressbar.js/dist/progressbar.min.js',
-      TO: JS,
-    },
-    'jquery-countdown': {
-      FROM: 'node_modules/jquery-countdown/dist/jquery.countdown.min.js',
-      TO: JS,
-    },
-    rellax: {
-      FROM: 'node_modules/rellax/rellax.min.js',
-      TO: JS,
-    },
     'owl.carousel': {
       FROM: ['node_modules/owl.carousel/dist/owl.carousel.js', 'node_modules/owl.carousel/dist/assets/owl.carousel.css'],
-      TO: lib,
-    },
-    lightbox2: {
-      FROM: ['node_modules/lightbox2/dist/?(css)/lightbox.min.css', 'node_modules/lightbox2/dist/?(images)/*.*', 'node_modules/lightbox2/dist/?(js)/lightbox.min.js'],
       TO: lib,
     },
     fancybox: {
@@ -138,9 +110,13 @@ const Paths = {
       FROM: 'node_modules/is_js/is.min.js',
       TO: lib,
     },
-    headroom: {
-      FROM: 'node_modules/headroom.js/dist/headroom.min.js',
-      TO: lib
+    handlebars: {
+      FROM: 'node_modules/handlebars/dist/handlebars.min.js',
+      TO: lib,
+    },
+    nouislider: {
+      FROM: ['node_modules/nouislider/dist/nouislider.min.js', 'node_modules/nouislider/dist/nouislider.min.css'],
+      TO: lib,
     }
   },
   GENERATED: [
@@ -148,153 +124,84 @@ const Paths = {
   ]
 };
 
-
 /*-----------------------------------------------
 |   Cleaning
 -----------------------------------------------*/
+
 function clean() {
   return del(Paths.GENERATED, { force: true })
 }
 
-
 /*-----------------------------------------------
 |   SCSS
 -----------------------------------------------*/
+
 function scss() {
   return gulp.src(Paths.SCSS.THEME)
     .pipe(plumber())
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(DEVELOPMENT_BUILD, sourcemaps.init()))
     .pipe(sass({
-      outputStyle: 'expanded',
+      outputStyle: 'compressed',
     }).on('error', sass.logError))
     .pipe(plumber.stop())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(sourcemaps.write('.'))
+    .pipe(gulpif(DEVELOPMENT_BUILD, sourcemaps.write('./')))
     .pipe(gulp.dest(Paths.CSS))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream())
 }
 
-// gulp.task('scss', () => gulp.src(Paths.SCSS.THEME)
-//   .pipe(plumber())
-//   .pipe(sourcemaps.init())
-//   .pipe(sass({
-//     outputStyle: 'expanded',
-//   }).on('error', sass.logError))
-//   .pipe(autoprefixer({
-//     browsers: ['last 5 versions'],
-//     cascade: false,
-//   }))
-//   .pipe(sourcemaps.write('.'))
-//   .pipe(plumber.stop())
-//   .pipe(gulp.dest(Paths.CSS))
-//   .pipe(browserSync.stream()));
-
-// gulp.task('scss:min', () => gulp.src(Paths.SCSS.THEME)
-//   .pipe(plumber())
-//   .pipe(sourcemaps.init())
-//   .pipe(sass({
-//     outputStyle: 'expanded',
-//   }).on('error', sass.logError))
-//   .pipe(autoprefixer({
-//     browsers: ['last 5 versions'],
-//     cascade: false,
-//   }))
-//   .pipe(cleanCSS({ compatibility: 'ie9' }))
-//   .pipe(rename({ suffix: '.min' }))
-//   .pipe(sourcemaps.write('.'))
-//   .pipe(plumber.stop())
-//   .pipe(gulp.dest(Paths.CSS))
-//   .pipe(browserSync.stream()));
-
-
 /*-----------------------------------------------
-|   JavaScript
+|   JS bundling
 -----------------------------------------------*/
-gulp.task('js:bootstrap', () => gulp.src(Paths.JS.BOOTSTRAP)
-  .pipe(concat('bootstrap.js'))
-  .pipe(replace(/^(export|import).*/gm, ''))
-  .pipe(babel({
-    compact: false,
-    presets: [
-      [
-        'env', {
-          modules: false,
-          loose: true,
-        },
-      ],
-    ],
-    plugins: [
-      process.env.PLUGINS && 'transform-es2015-modules-strip',
-      '@babel/plugin-proposal-object-rest-spread',
-    ].filter(Boolean),
-  }))
-  //.pipe(gulp.dest(Paths.ASSETS.JS))
-  .pipe(uglify())
-  .pipe(rename({
-    suffix: '.min',
-  }))
-  .pipe(gulp.dest(Paths.ASSETS.JS))
-  .pipe(reload({ stream: true })));
 
-gulp.task('js:theme', () => gulp.src(Paths.JS.THEME)
-  //.pipe(eslint({ fix: true }))
-  .pipe(eslint.format())
-  .pipe(eslint.failAfterError())
-  .pipe(concat('theme.js'))
-  .pipe(replace(/^(export|import).*/gm, ''))
-  .pipe(babel({
-    compact: false,
-    presets: [
-      [
-        'env',
-        {
-          modules: false,
-          loose: true,
-        },
-      ],
-    ],
-    plugins: [
-      process.env.PLUGINS && 'transform-es2015-modules-strip',
-      '@babel/plugin-proposal-object-rest-spread',
-      'transform-strict-mode',
-    ].filter(Boolean),
-  }))
-  //.pipe(gulp.dest(Paths.ASSETS.JS))
-  .pipe(uglify())
-  .pipe(rename({
-    suffix: '.min',
-  }))
-  .pipe(gulp.dest(Paths.ASSETS.JS))
-  .pipe(reload({ stream: true })));
+gulp.task('js:bootstrap', () => {
+  return browserify(Paths.JS.BOOTSTRAP)
+    .transform(babelify)
+    .bundle()
+    .pipe(vinyl(Paths.JS.APP))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(rename({
+      dirname: '',
+      basename: 'bootstrap',
+      suffix: '.min',
+    }))
+    .pipe(gulp.dest(Paths.ASSETS.JS))
+});
 
-gulp.task('js:plugins', () => gulp.src(Paths.JS.PLUGINS)
-  .pipe(concat('plugins.js'))
-  .pipe(replace(/^(export|import).*/gm, ''))
-  .pipe(babel({
-    compact: false,
-    presets: [
-      [
-        'env', {
-          modules: false,
-          loose: true,
-        },
-      ],
-    ],
-    plugins: [
-      process.env.PLUGINS && 'transform-es2015-modules-strip',
-      '@babel/plugin-proposal-object-rest-spread',
-    ].filter(Boolean),
-  }))
-  //.pipe(gulp.dest(Paths.ASSETS.JS))
-  .pipe(uglify())
-  .pipe(rename({
-    suffix: '.min',
-  }))
-  .pipe(gulp.dest(Paths.ASSETS.JS))
-  .pipe(reload({ stream: true })));
+gulp.task('js:plugins', () => {
+  return browserify(Paths.JS.PLUGINS)
+    .transform(babelify)
+    .bundle()
+    .pipe(vinyl(Paths.JS.APP))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(rename({
+      dirname: '',
+      basename: 'plugins',
+      suffix: '.min',
+    }))
+    .pipe(gulp.dest(Paths.ASSETS.JS))
+});
 
-gulp.task('js', gulp.parallel('js:bootstrap', 'js:plugins', 'js:theme'));
+gulp.task('js:app', () => {
+  return browserify(Paths.JS.APP)
+    .transform(babelify)
+    .bundle()
+    .pipe(vinyl(Paths.JS.APP))
+    .pipe(buffer())
+    .pipe(gulpif(DEVELOPMENT_BUILD, sourcemaps.init({ loadMaps: true })))
+    .pipe(gulpif(!DEVELOPMENT_BUILD, uglify()))
+    .pipe(rename({
+      dirname: '',
+      basename: 'theme',
+      suffix: '.min',
+    }))
+    .pipe(gulpif(DEVELOPMENT_BUILD, sourcemaps.write('./')))
+    .pipe(gulp.dest(Paths.ASSETS.JS))
+});
 
+gulp.task('js', gulp.parallel('js:bootstrap', 'js:plugins', 'js:app'));
 
 /*-----------------------------------------------
 |   Dependencies
@@ -319,11 +226,15 @@ function copy_dependency() {
 /*-----------------------------------------------
 |   Watching
 -----------------------------------------------*/
+
 function watch() {
+
+  // Set development flag
+  DEVELOPMENT_BUILD = true;
 
   gulp.watch(Paths.SCSS.ALL, gulp.series(scss));
 
-  gulp.watch(Paths.JS.THEME, gulp.series('js', (done) => {
+  gulp.watch([Paths.JS.THEME, Paths.JS.APP], gulp.series('js:app', (done) => {
     reload();
     done();
   }));
@@ -334,7 +245,6 @@ function watch() {
   }));
 
 }
-
 
 /*-----------------------------------------------
 |   Serve
@@ -347,15 +257,15 @@ function serve() {
     },
     port: 3000,
     open: true,
-    notify: false,
+    notify: true,
   });
 }
 
 /*-----------------------------------------------
-|   SVG sprites (pls execute manualy)
+|   SVG sprites
 -----------------------------------------------*/
+
 svgSpritesConfig = {
-  log: "verbose",
   dest: ".",
   mode: {
     defs: {
@@ -389,22 +299,31 @@ function sprites() {
 /*-----------------------------------------------
 |   PUG
 -----------------------------------------------*/
+
 function pugify() {
+
+  const data = JSON.parse(fs.readFileSync(Paths.PUG.DATA, 'utf8'));
+  console.log(`Pug external data file loaded: "${Paths.PUG.DATA}"`);
   return src(Paths.PUG.FROM)
     .pipe(plumber())
-    .pipe(pug({ pretty: true }))
+    .pipe(pug({
+      data: data,
+      pretty: !DEVELOPMENT_BUILD
+    }))
     .pipe(dest(Paths.PUG.TO))
 }
 
 /*-----------------------------------------------
-|   SASS (Dart)
+|   PurgeCSS
 -----------------------------------------------*/
-function scssDart() {
-  return sassDart.renderSync({
-    file: Paths.SCSS.THEME,
-    outFile: Paths.CSS,
-  });
-}
+
+gulp.task('purgecss', () => {
+  return gulp.src(Paths.CSS + "/*.css")
+    .pipe(purgecss({
+      content: [Paths.PUG.TO + "/*.html",]
+    }))
+    .pipe(gulp.dest(Paths.CSS + "/"))
+})
 
 /*-----------------------------------------------
 |   Starting everything
@@ -416,8 +335,9 @@ const ss_start = gulp.series(ss_build, gulp.parallel(serve, watch));
 exports.start = ss_start;
 exports.build = ss_build;
 exports.scss = scss;
-exports.scssDart = scssDart;
 exports.pugify = pugify;
 exports.clean = clean;
 exports.sprites = sprites;
+exports.watch = watch;
+exports.serve = serve;
 exports.default = ss_start;

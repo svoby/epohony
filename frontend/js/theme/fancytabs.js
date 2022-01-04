@@ -1,11 +1,4 @@
-'use strict';
-
-import spUtils from './Utils';
-
-/*-----------------------------------------------
-|   Tabs
------------------------------------------------*/
-spUtils.$document.ready(() => {
+export default function FancyTabs() {
   const $fancyTabs = $('.fancy-tab');
   if ($fancyTabs.length) {
     const Selector = {
@@ -18,6 +11,7 @@ spUtils.$document.ready(() => {
       TRANSITION_REVERSE: 'transition-reverse',
       TAB_INDICATOR: 'tab-indicator',
     };
+    const useIndicator = false;
     /*-----------------------------------------------
     |   Function for active tab indicator change
     -----------------------------------------------*/
@@ -37,7 +31,7 @@ spUtils.$document.ready(() => {
       `);
       const $indicator = $navBar.children(`.${ClassName.TAB_INDICATOR}`);
       let $preIndex = $tabnavCurrentItem.index();
-      updateIncicator($indicator, $tabs, $tabnavCurrentItem);
+      useIndicator && updateIncicator($indicator, $tabs, $tabnavCurrentItem);
 
       $navBar.children(Selector.TAB_BAR_ITEM).click((e) => {
         $tabnavCurrentItem = $(e.currentTarget);
@@ -53,7 +47,7 @@ spUtils.$document.ready(() => {
         /*-----------------------------------------------
         |   Indicator Transition
         -----------------------------------------------*/
-        updateIncicator($indicator, $tabs, $tabnavCurrentItem);
+        useIndicator && updateIncicator($indicator, $tabs, $tabnavCurrentItem);
         if (($currentIndex - $preIndex) <= 0) {
           $indicator.addClass(ClassName.TRANSITION_REVERSE);
         } else {
@@ -61,9 +55,11 @@ spUtils.$document.ready(() => {
         }
         $preIndex = $currentIndex;
       });
-      spUtils.$window.on('resize', () => {
-        updateIncicator($indicator, $tabs, $tabnavCurrentItem);
-      });
+      if (useIndicator) {
+        spUtils.$window.on('resize', () => {
+          updateIncicator($indicator, $tabs, $tabnavCurrentItem);
+        });
+      }
     });
   }
-});
+};

@@ -30,9 +30,9 @@
     position: relative;
     flex-flow: row wrap;
     position: relative;
-    border-bottom: ($border-width * 2) solid $gray-100;
 
     .tab-indicator {
+      display: none;
       content: '';
       position: absolute;
       display: block;
@@ -60,16 +60,22 @@
       line-height: $font-size-base;
       font-family: $font-family-sans-serif;
       display: inline-block;
-      //font-weight: $font-weight-bold;
+      font-weight: $font-weight-semibold;
       margin-bottom: 0;
       text-align: center;
       cursor: pointer;
-      border: $border-width solid transparent;
-      border-bottom: 0.125rem solid #ddd;
       &.active {
+        color: $white;
+        background: $gradient-primary;
+      }
+      &:hover:not(.active) {
         color: $primary;
-        border-bottom: 0;
-        background: $secondary;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .nav-bar-item {
+        width: 100%;
       }
     }
   }
@@ -82,7 +88,6 @@
   @include navigation-bar();
 
   .tab-contents {
-    margin-top: 1.875rem;
     position: relative;
 
     .tab-content {

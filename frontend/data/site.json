@@ -1,0 +1,144 @@
+{
+  "$Data": {
+    "site": {
+      "title": "ePohony"
+    },
+    "productCategories": [
+      ["Pohony bran a&nbsp;vrat", "svg/ico-kridlo.svg"],
+      ["Automatické závory", "svg/ico-zavora.svg"],
+      ["Dálkové ovládání", "svg/ico-ovladac.svg"],
+      ["Přístupové systémy", "svg/ico-gsm.svg"],
+      ["Příslušenství pohonů", "svg/ico-clog.svg"],
+      ["Náhradní díly", "svg/ico-dily.svg"],
+      ["Kování pro brány, vrata", "svg/ico-brany-kovani.svg"],
+      ["Konstrukce pro brány", "svg/ico-brany-konstrukce.svg"]
+    ],
+    "productManufacturers": [
+      ["Pohony ROGER Technology"],
+      ["Pohony Telcoma-Cardin"],
+      ["Pohony bran FAAC"],
+      ["Pohony bran NICE"]
+    ],
+    "productCategorySubcategories": [
+      "Pohony bran do 400 kg",
+      "Pohony bran do 600 kg",
+      "Pohony bran do 800 kg",
+      "Pohony bran nad 800 kg",
+      "Kompletní řešení",
+      "Sestavy posuvných bran",
+      "Konstrukční prvky bran",
+      "Ozubené hřebeny",
+      "Řídící jednotky pohonů",
+      "Sady pohonů",
+      "Sady pohonů s hřebeny",
+      "Nesené brány",
+      "Pohony samostatné",
+      "Šíny - C profily",
+      "Šíny pro závěsná vrata"
+    ],
+    "products": [
+      [296, 288, "/f2f3f7"],
+      [
+        [
+          "BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag"
+        ],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"]
+      ]
+    ],
+    "productsInCatalog": [
+      [308, 184, "/f2f3f7"],
+      [
+        [
+          "BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag"
+        ],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"]
+      ]
+    ],
+    "productsInCatalogBottom": [
+      [296, 288, "/f2f3f7"],
+      [
+        [
+          "BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag"
+        ],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"]
+      ]
+    ],
+    "productsAlternatives": [
+      [296, 288, "/f2f3f7"],
+      [
+        [
+          "BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag"
+        ],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"]
+      ]
+    ],
+    "productsHomepage": [
+      [296, 288, "/f2f3f7"],
+      [
+        [
+          "BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag"
+        ],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"]
+      ]
+    ],
+    "productsSales": [
+      [192, 132, "/f2f3f7"],
+      [
+        [
+          "BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag"
+        ],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"],
+        ["BH30/803 - ROGER Brushless"]
+      ]
+    ],
+    "cartContent": [
+      ["T64B - čtyřkanálový dálkový ovladač"],
+      ["HN800 - Nylonový hřeben s ocelovým jádrem do hmotnosti 800kg"],
+      ["T64B - čtyřkanálový dálkový ovladač"],
+      ["HN800 - Nylonový hřeben s ocelovým jádrem do hmotnosti 800kg"]
+    ],
+    "shippings": [
+      ["DPD Parcel shop", ["T64B"], ["Zdarma"]],
+      ["DPD Kurýr", ["Rozvoz kurýrem po celé ČR"], ["190 Kč"]],
+      ["Top Trans", ["Rozvoz objemnějších zásilek po celé ČR"], ["270 Kč"]]
+    ],
+    "payments": [
+      ["Převodem", ["Po zaplacení zboží odesíláme"], ["Zdarma"]],
+      ["Kartou", ["V posledím kroku budete přesměrováni na platební bránu"], ["Zdarma"]],
+      ["Na dobírku", ["Zaplatíte při doručení kurýrovi"], ["30 Kč"]]
+    ],
+    "userMenu": [
+      ["Osobní údaje", "./user-info.html", false],
+      ["Moje objednávky", "./user-orders.html", true],
+      ["Moje doklady", "./user-documents.html", false],
+      ["Moje adresy", "./user-addresses.html", false],
+      ["Vyhledat dokumenty", "./user-search.html", false]
+    ]
+  }
+}

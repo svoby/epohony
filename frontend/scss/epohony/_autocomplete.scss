@@ -1,0 +1,23 @@
+.autocomplete {
+    display: none;
+    padding: 0 10px;
+    position: absolute;
+    top: calc(var(--header-height) + var(--header-subheader) + 10px);
+    left: 0;
+    right: 0;
+    z-index: $zindex-autocomplete;
+    max-width: 1120px;
+    margin: 0 auto;
+    &:before {
+        content: " ";
+        position: absolute;
+        top: -20px;
+        left: 20%;
+        border-bottom: 20px solid $secondary;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+    }
+    &.show {
+        display: block;
+    }
+}

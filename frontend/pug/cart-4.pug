@@ -1,0 +1,33 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'Cart (Step 4)'
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        section
+            .container
+                include  ./partials/breadcrumbs
+
+        section
+            .spacer.pt-5
+            .container
+                .icon-box.bg-success.text-white.sx-64.rounded-circle.mx-auto.mb-3
+                    +sprite("check", "sx-48")
+                h1.h4.text-success.text-center.font-weight-normal Děkujeme!<br>Objednávka byla dokončena
+            .spacer.pt-7
+
+        section
+            .container
+                include ./partials/shipping-steps
+            .spacer.pt-7
+
+        section
+            .container
+                h3 Novinky na našem eshopu
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

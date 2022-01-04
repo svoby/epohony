@@ -1,40 +1,41 @@
-.teaser.com {
-  color: white;
-  margin-top: $navbar-height;
-  background: linear-gradient(90deg, $white, $orange);
-  position: relative;
-  &:before {
-    content: ' ';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    z-index: $z-index-teaser;
-    background: repeating-linear-gradient(
-      90deg,
-      $secondary,
-      $secondary 8px,
-      transparent 8px,
-      transparent 9px
-    );
+.teaser {
+  picture {
+    padding: 16px 16px 16px 0;
   }
-  .in {
+  img {
     position: relative;
-    z-index: $z-index-teaser-in;
+    z-index: 3;
   }
-  h1 {
-    letter-spacing: -0.02em;
-    text-shadow: 0 5px 10px white;
+
+  // Indicator
+  &__indicator {
+    background: $gray-400;
+    height: 2px;
+    &__in {
+      background: $primary;
+      height: 100%;
+    }
   }
-  .perex.com {
-    max-width: 600px;
-    color: #f0f0f0;
-    opacity: 0.8;
-    font-size: rem-calc(22);
-    margin-bottom: 0;
-  }
-  @include media-breakpoint-down($fancynav-breakpoint-down) {
-    margin-top: $navbar-height-mobile;
+
+  // Decorations
+  &__decoration-1 {
+    border-radius: $border-radius-lg;
+    position: absolute;
+    &--orange {
+      background: #FBC521;
+      top: 0;
+      right: 0;
+      left: 104px;
+      bottom: 0;
+      z-index: 2;
+    }
+    &--blue {
+      background: linear-gradient(55deg, #19ACDE 11%, #BCD7E1 80%);
+      top: 78px;
+      right: 0;
+      left: 32px;
+      bottom: 0;
+      z-index: 2;
+    }
   }
 }

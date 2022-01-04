@@ -1,0 +1,68 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'User search'
+    - var $sideMenuActualPage = "./user-search.html"
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        .container
+            .row
+                //-- Left column
+                .col-lg-3.mt-6.mt-lg-0.order-1.order-lg-0
+                    include ./partials/sidemenu-user
+
+                //-- Right column
+                .col-lg-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-4.pt-md-5
+                        .card.border-2.border-300
+                            .card-header.rounded-0.p-4.bg-300
+                                h4 Vyhledávač dokumentů
+                            .card-body
+                                form(action="#" method="post")
+                                    .row
+                                        .col-md-6
+                                            .input-group
+                                                input(type="text" placeholder="Zadejte název nebo kód produktu").form-control.shadow-secondary
+                                                .input-group-append
+                                                    button.btn.btn-primary.px-3.py-0(type="submit")
+                                                        +sprite("search", "sx-24")
+
+                                .spacer.pt-5
+
+                                h5 Návody na použití
+                                each $item in ["ESIM320 - GSM ovládání brány", "ON3EBD - 3 kanálový obousměrný", "ON3EBD - 3 kanálový obousměrný"]
+                                    a(href="#" target="_blank").d-flex.align-items-center.text-none.font-weight-semibold.bg-100.rounded.py-3.px-4.mb-2.hover-bg-secondary-alpha-10.hover-bottom.transition-primary
+                                        .icon-box.sx-48.bg-white.rounded.mr-3
+                                            +sprite("download", "sx-24")
+                                        .line-h-120
+                                            = $item
+                                            .small.text-muted 128 KB
+
+                                .spacer.pt-5
+
+                                h5 Návody na použití
+                                each $item in ["Nauceni klavesnice k dekoderu", "Univerzální ovladac VT4U", "Nauceni klavesnice k dekoderu", "Univerzální ovladac VT4U", "Nauceni klavesnice k dekoderu"]
+                                    a(href="#" target="_blank").d-flex.align-items-center.text-none.font-weight-semibold.bg-100.rounded.py-3.px-4.mb-2.hover-bg-secondary-alpha-10.hover-bottom.transition-primary
+                                        .bg-white.mr-3
+                                            +placeholder(48, 48)
+                                        .line-h-120
+                                            = $item
+                                            .small.text-muted Youtube video
+
+            .spacer.pt-7
+
+        section
+            .container
+                h3 Mohlo by vás zajímat
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

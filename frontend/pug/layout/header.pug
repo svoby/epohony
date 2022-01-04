@@ -2,144 +2,61 @@ include ../mixins/picture
 include ../mixins/sprite
 
 //- Header
-header.header.com.--sticky
+header.main.bg-gradient-primary.py-3.text-white
+    .container
+        a(href='./index.html')
+            img(src= $imgDir + "logo-site.svg" alt='ePohony' width='145').logo-main
+        div.d-none.d-lg-block.h5.font-weight-normal.text-white.mb-0 Pohony bran, vrat a parkovací zábrany
+        div
+            a(href="./user-info.html").d-inline-flex.align-items-center.text-white.text-micro.hover-secondary
+                span.btn-primary.btn-circle.bg-gradient-secondary.border-0.sx-40.mr-2
+                    +sprite("user", "sx-24")
+                span.d-none.d-md-block
+                    span.fotn-weight-bold.d-block Přihlásit se
+                    | Můj účet
+            a(href="./cart.html").d-inline-flex.align-items-center.text-white.text-micro.ml-1.ml-md-4.hover-secondary
+                span.btn-primary.btn-circle.bg-gradient-secondary.border-0.sx-40.mr-2
+                    +sprite("shopping-cart", "sx-24")
+                span.d-none.d-md-block
+                    span.font-weight-bold.d-block 23 456 Kč
+                    | Košík
+            button.d-md-none.btn-primary.btn-circle.bg-gradient-secondary.border-0.sx-40.js-offcanvas(data-target-id="#offcanvasEnd")
+                    +sprite("menu", "sx-24")
 
-    //-- Top bar
-    .topbar.com
-        .container
-            .left
-                ul
-                    li
-                        a(href="#!")
-                            +sprite("shopping-cart", "s-16")
-                            | E-shop
-                    li
-                        a(href="#!")
-                            +sprite("lock-open", "s-16")
-                            | Klientská zóna
-                    li
-                        a(href="#!")
-                            +sprite("briefcase", "s-16")
-                            | Kariéra
-            .right
-                ul
-                    li
-                        a(href="#!")
-                            +sprite("youtube", "s-16")
-                            | Youtube
-                    li
-                        a(href="#!")
-                            +sprite("facebook", "s-16")
-                            | Facebook
-                    li.dropdown
-                        a.dropdown-toggle(href="#!" type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                            +sprite("globe", "s-16")
-                            | CZ
-                        .dropdown-menu.dropdown-menu-right.--slim
-                            a.dropdown-item.active(href='#') CZ
-                            a.dropdown-item(href='#') EN
+section.header-subhead.bg-100
+    .container
+        .d-flex
+            button(style="min-width: 150px" data-target-id="#offcanvasTop").d-none.d-md-inline-flex.align-items-center.justify-content-between.border.rounded.bg-white.shadow-secondary.text-decoration-none.text-dark.hover-bg-white.hover-primary.hover-border-primary.js-offcanvas
+                .d-inline-block.px-4 Produkty
+                .border-left.px-2
+                    +sprite("chevron-down", "sx-16")
 
-    //- Navbar
-    nav#top.navbar.navbar-expand-lg.fancynavbar.fancynavbar-top
-        .container
+            .flex-grow-1.ml-md-5.mr-lg-5
+                form(action="#" method="get")
+                    .input-group
+                        input(type="text" name="q" placeholder="Vyhledat zboží…" autocomplete="off" data-autocomplete-config="{\"url\": \"data/autocomplete.json?\", \"fetchDelay\":\"200\", \"minChars\":\"3\"}").form-control.js-autocomplete-input
+                        select(name="cat").form-control.border-right-0.text-500.js-autocomplete-category-select
+                            option(value="-1") Kategorie
+                            option(value="99") Vše
+                            each $item, $index in $Data.productCategories
+                                option(value= $index) !{$item[0]}
+                        .input-group-append
+                            button.btn.btn-primary.px-3.py-0(type="submit")
+                                +sprite("search", "sx-24")
 
-            //- Logo
-            a.navbar-brand(href='./' data-config-id='brand')
-                +picture("logo-tm@1x.png", "logo-tm@2x.png")
+            nav.navbar.navbar-expand-lg.navbar-light.d-none.d-lg-block.align-self-center
+                .collapse.navbar-collapse
+                    ul.navbar-nav.ml-auto
+                        li.nav-item
+                            a.nav-link(href='#!') Montáž
+                        li.nav-item
+                            a.nav-link(href='#!') Garážová vrata
+                        li.nav-item
+                            a.nav-link(href='#!') B2B spolupráce
+                        li.nav-item
+                            a.nav-link(href='#!') Kontakt
 
-            //- Main nav
-            .collapse.navbar-collapse
-                ul.navbar-nav.mx-auto
-                    li.nav-item.dropdown
-                        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                            | Služby
-                        .dropdown-menu(aria-labelledby='navbarDropdown')
-                            a.dropdown-item(href='./sluzba1.html') Služba 1
-                            .dropdown-divider
-                            a.dropdown-item(href='./sluzba2.html') Služba 2
-                            .dropdown-divider
-                            a.dropdown-item(href='./servis.html') Servis
-                    li.nav-item
-                        a.nav-link(href='./znacky.html') Značky výrobců
-                    li.nav-item
-                        a.nav-link(href='./spolecnost1.html') O společnosti
-                    li.nav-item
-                        a.nav-link(href='./team1.html') Náš tým
-                    li.nav-item
-                        a.nav-link(href='./kontakt.html') Kontakt
-
-            //- Search
-            .search.d-none.d-lg-block
-                form(action="#")
-                    input.form-control(type="text" placeholder="Vyhledat")
-
-            //- Hamburger - toggler
-            .fancynavbar-togglerbar.fancynavbar-toggler.d-flex.d-lg-none
-                button.btn.btn-sm
-                    svg(width='48' height='24' viewbox='0 0 48 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                        rect(width='48' height='4' fill='currentColor')
-                        rect(y='10' width='48' height='4' fill='currentColor')
-                        rect(y='20' width='48' height='4' fill='currentColor')
-                button.btn.btn-sm
-                    svg(width='28' height='29' viewBox='0 0 28 29' fill='none' xmlns='http://www.w3.org/2000/svg')
-                        rect(y='25.9507' width='36.0907' height='3.38356' transform='rotate(-45 0 25.9507)' fill='currentColor')
-                        rect(x='25.5205' y='28.3433' width='36.0907' height='3.38356' transform='rotate(-135 25.5205 28.3433)' fill='currentColor')
-
-            //- Hamburger - menu
-            .fancynavbar-collapse
-                .top
-
-                    //- Languages
-                    ul.nav.fancynavbar-languages
-                        li: a(href="#!").btn.btn-lg.btn-secondary Česky
-                        li: a(href="#!").btn.btn-lg.btn-outline-secondary English
-
-                    //- Mobile nav
-                    ul.fancynavbar-nav
-                        li.fancynav-item.fancy-dropdown
-                            a(href="javascript:void(0)").fancynav-link.fancy-dropdown-toggle
-                                .fancynav-link-content Služby
-                            .fancy-dropdown-menu
-                                .row.py-2
-                                    .col-auto
-                                        a(href="#!").fancy-dropdown-item Třídění a kontrola kvality
-                                        a(href="#!").fancy-dropdown-item Montáže a drobné opracování dílů
-                                        a(href="#!").fancy-dropdown-item 3D měření a programování
-                                        a(href="#!").fancy-dropdown-item Technická čistota
-                                        a(href="#!").fancy-dropdown-item Konzultace, školení audity
-                        li.fancynav-item
-                            a(href="./dilna.html").fancynav-link Chráněná dílna
-                        li.fancynav-item
-                            a(href="./o-nas.html").fancynav-link O společnosti
-                        li.fancynav-item
-                            a(href="./kontakt.html").fancynav-link Kontakt
-
-                    //- Service links
-                    .fancynav-item.my-2
-                        a(href="#!").fancynav-link
-                            +sprite("lock-open", "s-24")
-                            | Klientská zóna
-                    .fancynav-item.my-2
-                        a(href="#!").fancynav-link
-                            +sprite("briefcase", "s-24")
-                            | Kariéra
-
-                .bottom
-                    .fancy-socials
-                        .row
-                            .col-6
-                                a(href="#!" target="_blank").fancynav-link
-                                    +sprite("youtube", "s-24")
-                                    | Youtube
-                            .col-6
-                                a(href="#!" target="_blank").fancynav-link
-                                    +sprite("linkedin", "s-24")
-                                    | Linkedin
-                            .col-6
-                                a(href="#!" target="_blank").fancynav-link
-                                    +sprite("facebook", "s-24")
-                                    | Facebook
-                            .col-6
-                                a(href="#!" target="_blank").fancynav-link
-                                    +sprite("twitter", "s-24")
-                                    | Twitter
+// Autocomplete placeholder - start
+.autocomplete.js-autocomplete
+    #autocomplete-content.bg-white.p-2.pt-3.p-md-4.pt-md-5.rounded-lg.shadow-secondary.border-top.border-3.border-secondary
+// Autocomplete placeholder - end

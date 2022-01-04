@@ -1,0 +1,22 @@
+.pr-md-4
+    .text-micro.text-uppercase.text-200.border-bottom.border-200.pb-3.mb-3 Kategorie
+    nav
+        ul.nav.flex-column
+            each $item in $Data.productCategories
+                li.d-flex
+                    a(href="./catalog.html").d-flex.px-2.py-2.mb-1.flex-grow-1.align-items-center.rounded.text-none.text-black.hover-primary.hover-bg-secondary-alpha-10
+                        .sx-24.sx-md-32.mr-3
+                            img(width="32" src= $imgDir + $item[1]).img-fluid
+                        span.mr-2.line-h-110 !{$item[0]}
+                        span.text-micro.text-none.text-200.ml-auto 99
+
+    .spacer.pt-4.pt-md-5
+
+    .text-micro.text-uppercase.text-200.border-bottom.border-200.pb-3.mb-3 Výrobci pohonů
+    nav
+        ul.nav.flex-column
+            each $item in $Data.productManufacturers
+                li.d-flex
+                    a(href="./catalog.html").d-flex.px-2.py-2.mb-1.flex-grow-1.align-items-center.rounded.text-none.text-black.hover-primary.hover-bg-secondary-alpha-10
+                        span.mr-2.line-h-110 !{$item[0]}
+                        span.text-micro.text-none.text-200.ml-auto 99

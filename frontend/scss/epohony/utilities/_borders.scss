@@ -121,7 +121,14 @@
   .border-#{$color} {
     border-color: $value !important;
   }
+
+  @each $level in $transparency-levels {
+    .border-#{$color}-alpha-#{$level} {
+      border-color: rgba($value, $level / 100) !important;
+    }
+  }
 }
+
 @each $color, $value in $grays {
   .border-#{$color} {
     border-color: $value !important;
@@ -134,4 +141,12 @@
 
 .border-3 {
   border-width: 3px !important;
+}
+
+.border-capsule {
+  border-radius: 500px;
+}
+
+.border-current {
+  border-color: currentColor !important;
 }

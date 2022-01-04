@@ -1,11 +1,9 @@
 include ../mixins/picture
 include ../mixins/sprite
 
-.logo-partners-wrapper.com(data-zanim-xs='{"animation": "blur-in", "delay": 0}' data-zanim-trigger="scroll")
-    .row.align-items-center
-        - var n = 0;
-        while n < 10
-            .col-2.col-md-3.col-lg-2
-                .logo-partners.com
-                    +placeholder(120, 60)
-            -n++;
+.js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 25, "dots": false, "nav": true, "items": 2, "responsive": { "960": { "items": 6 }} }')
+    - var n = 0;
+    while n < 8
+        a(href="#!").d-inline-block.p-1.p-md-4.bg-white.border.rounded.hover-bg-white.hover-border-secondary
+            +placeholder(176, 96, "", "w-100")
+        -n++;

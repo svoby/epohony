@@ -1,1 +1,73 @@
-footer Footer
+include ../mixins/sprite
+
+.spacer.pt-5
+
+section.bg-gradient-primary.h6.line-h-120.mb-0.pt-4.font-weight-normal.text-white#bar-1
+    .container
+        .row
+            .col-md-4.mb-4
+                .d-flex.align-items-center
+                    span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
+                        +sprite("thumb-up", "sx-32")
+                    | Prodloužená záruka při montáži od nás
+            .col-md-4.mb-4
+                .d-flex.align-items-center
+                    span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
+                        +sprite("chat-alt", "sx-32")
+                    | Nevíte si rady? Využijte náš zákaznický servis
+            .col-md-4.mb-4
+                .d-flex.align-items-center
+                    span.d-flex.justify-content-center.align-items-center.flex-shrink-0.border.border-white-alpha-25.sx-56.rounded.mr-4
+                        +sprite("cog", "sx-32")
+                    | V případě zájmu zajistíme<br>odbornou montáž
+
+footer
+    .container.py-6
+        .row
+            .col-12.col-md-3.col-lg-6
+                .d-flex.h-100.justify-content-between.flex-column
+                    .small.line-h-120.mb-4
+                        img(src= $imgDir + "logo-site.svg" alt='ePohony' width='165').img-fluid.mb-4
+                        p 2021 &copy; Epohony.cz<br>Všechna práva vyhrazena
+                    .mb-4.mb-md-0
+                        a(href="#!" title="Youtube" target="_blank").icon-box-inline.sx-40.text-500
+                            +sprite("youtube", "sx-24")
+                        a(href="#!" title="Facebook" target="_blank").icon-box-inline.sx-40.text-500
+                            +sprite("facebook", "sx-24")
+                        a(href="#!" title="Twitter" target="_blank").icon-box-inline.sx-40.text-500
+                            +sprite("twitter", "sx-24")
+                        a(href="#!" title="LinkedIn" target="_blank").icon-box-inline.sx-40.text-500
+                            +sprite("linkedin", "sx-24")
+            .col-12.col-md-3.col-lg-2
+                .foot-links
+                    label(for="foot-links-1") Footer links
+                    input(type="checkbox")#foot-links-1
+                    nav
+                        ul
+                            li: a(href="./") Rozcestník šablon
+                            li: a(href="./components.html") Components
+                            li: a(href="./homepage.html") Homepage
+                            li: a(href="./catalog.html") Catalog
+                            li: a(href="./product.html") Product
+            .col-12.col-md-3.col-lg-2
+                .foot-links
+                    label(for="foot-links-2") Footer links
+                    input(type="checkbox")#foot-links-2
+                    nav
+                        ul
+                            li: a(href="./cart.html") Cart
+                            li: a(href="./cart-1.html") Cart 1
+                            li: a(href="./cart-2.html") Cart 2
+                            li: a(href="./cart-3.html") Cart 3
+                            li: a(href="./cart-4.html") Cart 4
+            .col-12.col-md-3.col-lg-2
+                .foot-links
+                    label(for="foot-links-3") Footer links
+                    input(type="checkbox")#foot-links-3
+                    nav
+                        ul
+                            li: a(href="#!") Letterpress echo
+                            li: a(href="#!") Gochujang chillwave
+                            li: a(href="#!") Tumblr kitsch
+                            li: a(href="#!") Humblebrag
+                            li: a(href="#!") Knausgaard

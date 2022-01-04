@@ -1,0 +1,4 @@
+@function rem-calc($size) {
+  $remSize: $size / $rfs-rem-value;
+  @return #{$remSize}rem;
+}

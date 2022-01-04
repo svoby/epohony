@@ -3,90 +3,402 @@ extends ./layout/layout.pug
 block variables
     - var title = 'Components'
 
-block header
-
 block main
 
-        .spacer.pt-7
-
-        section
+        section#breadcrumbs.bg-white
+            .spacer.pt-5
             .container
-                h2.mb-4.text-muted Box list
+                include  ./partials/breadcrumbs
+            .spacer.pt-5
 
-        section
+        section.border-top#teaser
             .container
-                .box-list.com.--type-1
+                .spacer.pt-6
+                    h2.h4 Teaser
+                    include ./partials/teaser-1
+                .spacer.pt-6
+
+        section.border-top#video-box
+            .container
+                .spacer.pt-6
+                    h2.h4 Video box
                     .row
-                        each val, index in ['Title', 'Title']
+                        .col-md-4.mb-3
+                            +video-box("H70/104AC pohony H30/645 ROGER Technology")
+                        .col-md-4.mb-3
+                            +video-box("H70/104AC pohony H30/645 ROGER Technology")
+                        .col-md-4.mb-3
+                            +video-box("H70/104AC pohony H30/645 ROGER Technology")
+                .spacer.pt-6
+
+        section.border-top#card-step
+            .container
+                .spacer.pt-6
+                    h2.h4 Cart steps
+                    // Cart steps - Desktop
+                    .bg-white.border.border-capsule.p-2.d-none.d-md-block
+                        .row.gutters-md
+                            .col-4
+                                .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.bg-gradient-primary.text-white
+                                    .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                        +sprite("shopping-cart", "sx-24")
+                                    .line-h-100 1. Cart
+                                    .d-inline-block.sx-32.ml-auto
+                                        +sprite("chevron-right", "sx-32")
+                            .col-4
+                                a(href="#!").d-flex.h-100.align-items-center.p-3.text-none.border-capsule.hover-bg-primary-alpha-20
+                                    .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                        +sprite("truck", "sx-24")
+                                    .line-h-100 2. Shipping / Payment
+                                    .d-inline-block.sx-32.ml-auto
+                                        +sprite("chevron-right", "sx-32")
+                            .col-4
+                                .d-flex.h-100.align-items-center.p-3.text-none.border-capsule.text-500
+                                    .icon-box-inline.sx-40.rounded-circle.border.border-current.mr-3
+                                        +sprite("identification", "sx-24")
+                                    .line-h-100 3. Delivery
+                    // Cart steps - Mobile
+                    .d-md-none.bg-white.border.rounded.p-2.text-center
+                        .row.gutters-sm
+                            .col-4
+                                .d-block.h-100.py-4.px-3.text-none.rounded.bg-gradient-primary.text-white
+                                    .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                        +sprite("shopping-cart", "sx-24")
+                                    .line-h-100 1. Cart
+                            .col-4
+                                a(href="#!").d-block.h-100.py-4.px-3.text-none.rounded.hover-bg-primary-alpha-20
+                                    .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                        +sprite("truck", "sx-24")
+                                    .line-h-100 2. Shipping
+                            .col-4
+                                .d-block.h-100.py-4.px-3.text-none.rounded.border-capsule.text-500
+                                    .icon-box-inline.sx-40.border.border-current.rounded-circle.mb-3
+                                        +sprite("identification", "sx-24")
+                                    .line-h-100 3. Delivery
+                .spacer.pt-6
+
+        section.border-top#card-step
+            .container
+                .spacer.pt-6
+                    h2.h4 Shipping steps
+                    include ./partials/shipping-steps
+                .spacer.pt-6
+
+        section.border-top#form
+            .container
+                .spacer.pt-6
+                    h2.h4 Card
+                    .row
+                        .col-md-6
+                            .card.p-4.border-2.border-200.mb-4
+                                .card-header.border-2.border-200.pt-0.pb-3.px-0.bg-transparent
+                                    h5 Invocie address
+                                .card-body.px-0
+                                    | Orwin s.r.o.<br>
+                                    | IČ 08442258<br>
+                                    | DIČ CZ08442258<br>
+                                    | Moravské náměstí 754/13<br>
+                                    | 602 00 Brno
+                        .col-md-6
+                            .card.p-4.border-2.border-200.mb-4
+                                .card-header.border-2.border-200.pt-0.pb-3.px-0.bg-transparent
+                                    h5 Invocie address
+                                .card-body.px-0
+                                    | John Doe.<br>
+                                    | Orwin s.r.o.<br>
+                                    | Moravské náměstí 754/13<br>
+                                    | +420 731 111 435<br>
+                                    | info@orwin.cz
+                .spacer.pt-6
+
+        section.border-top#table-orders
+            .container
+                .spacer.pt-6
+                    .card.border-2.border-300
+                        .card-header.rounded-0.p-4.bg-300
+                            h4 Orders table
+                        .card-body
+                            .table-responsive
+                                table.table.table-striped.table-borderless.table-hover
+                                    thead
+                                        tr
+                                            th.text-uppercase Order num.
+                                            th.text-uppercase Created
+                                            th.text-uppercase Status
+                                            th.text-uppercase Payment
+                                            th.text-uppercase Price
+                                            th.text-uppercase(style="width: 1%") Action
+                                    each $item, $index in [1, 2, 3, 4, 5, 6, 7]
+                                        tr
+                                            td.align-middle: a(href="#!") #{2021041567 + $index}
+                                            td.align-middle 2021/07/12
+                                            td.align-middle: span.badge.badge-success Sent
+                                            td.align-middle: span.badge.badge-danger Not paid
+                                            td.align-middle: span.text-nowrap 121 000 Kč
+                                            td.text-nowrap
+                                                a(href="#!" title="Refresh").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40
+                                                    +sprite("refresh", "sx-24")
+                                                a(href="#!" title="Edit item").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40.ml-2
+                                                    +sprite("pencil", "sx-24")
+                                                a(href="#!" title="Delete item").btn.btn-sm.text-danger.icon-box-inline.rounded-circle.p-0.sx-40.ml-2.hover-bg-red-alpha-10
+                                                    +sprite("trash", "sx-24")
+                .spacer.pt-6
+
+        section.border-top#table-list
+            .container
+                .spacer.pt-6
+                .card.border-2.border-300
+                    .card-header.rounded-0.p-4.bg-300
+                        h4 Table list
+                    .card-body
+                        .table-responsive
+                            table.table.table-striped.table-borderless.table-hover
+                                thead
+                                    tr
+                                        th.text-uppercase Adress
+                                        th.text-uppercase(style="width: 1%") Action
+                                each $item in ['Merhautova 196, Brno, 613 00', 'Zimní 129, Praha 10,  123 00', 'Název ulice delší 14, Ústí nad Labem, 123 45', 'Merhautova 196, Brno 613 00', 'Zimní 129, Praha 10,  123 00']
+                                    tr
+                                        td.align-middle= $item
+                                        td.text-nowrap
+                                            a(href="#!" title="Edit item").btn.btn-sm.btn-outline-primary.icon-box-inline.p-0.sx-40
+                                                +sprite("pencil", "sx-24")
+                                            a(href="#!" title="Delete item").btn.btn-sm.text-danger.icon-box-inline.p-0.sx-40.ml-2.hover-bg-red-alpha-10
+                                                +sprite("trash", "sx-24")
+                    .card-footer.py-4.bg-secondary-alpha-20.border-secondary
+                        a(href="#!").btn.btn-secondary.text-uppercase.d-inline-flex.align-items-center
+                            | Add new item
+                            +sprite("arrow-right", "sx-16 ml-2")
+                .spacer.pt-6
+
+        section.border-top#form
+            .container
+                .spacer.pt-6
+                form.border.border-2.border-300
+                    .bg-300.p-4
+                        h4 Form header
+                    .p-4
+                        .row
                             .col-md-6
-                                a(href="#!").item.shadow-primary
-                                    .cell
-                                        h4.font-weight-light.title= val
-                                        span.btn-circle.s-40.shadow-secondary
-                                            +sprite('arrow-narrow-right', 's-18')
-                                    .cell
-                                        +placeholder(120, 200)
-                                    .overlay
+                                .form-group
+                                    label(for="").font-weight-semibold Input label
+                                    input(id="" type="text" placeholder="Input placeholder" value="Input default value").form-control
+                            .col-md-6
+                                .form-group
+                                    label(for="").font-weight-semibold Placeholder
+                                    input(id="" type="text" placeholder="Input placeholder").form-control
+                            .col-md-6
+                                .form-group
+                                    label(for="").font-weight-semibold Disabled input
+                                    input(id="" type="text" value="Value" disabled).form-control
+                            .col-md-6
+                                .form-group
+                                    label(for="").font-weight-semibold Select
+                                    select(name="").form-control
+                                        option Default value
+                                        option(value="1") Option 1
+                                        option(value="2") Option 2
+                                        option(value="3") Option 3
+                            .col-md-6
+                                .form-group
+                                    label(for="").font-weight-semibold Valid input
+                                    input(id="" type="text" placeholder="Input placeholder" value="John Doe").form-control.is-valid
+                            .col-md-6
+                                .form-group
+                                    label(for="").font-weight-semibold Invalid input
+                                    input(id="" type="text" placeholder="Input placeholder" value="John Doe").form-control.is-invalid
+                                    .invalid-feedback Validation error text
+                            .col-md-12
+                                .form-group
+                                    textarea(name="", cols="30", rows="5").form-control
+                            .col-md-6
+                                .form-group
+                                    .form-check-inline
+                                        input(class="form-check-input" type="checkbox" id="checkbox-1")
+                                        label(class="form-check-label" for="checkbox-1") Checkbox
+                                    .form-check-inline
+                                        input(class="form-check-input" type="radio" id="radio-1")
+                                        label(class="form-check-label" for="checkbox-1") Radio
+                                    .form-check-inline
+                                        input(class="form-check-input" type="checkbox" disabled)
+                                        label(class="form-check-label") Disabled checkbox
+                            .col-12
+                                button.btn.btn-primary Submit
 
-        .spacer.pt-8
+                .spacer.pt-6
 
-        section
+        section.border-top#logos
             .container
-                h2.mb-4.text-muted Numbers
-
-        section
-            .container
-                include partials/numbers
-
-        .spacer.pt-8
-
-        section
-            .container
-                h2.mb-4.text-muted Quote-list-box
-
-        section
-            .container
-                .quote-list-box.com
-                    .item.shadow-secondary
-                        .top
-                            p <span class="text-primary font-weight-bold">"</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque tincidunt scelerisque libero. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at dui.
-                        .bottom
-                            +placeholder(80, 80)
-                            .in
-                                p
-                                    strong John Doe
-                                    br
-                                    small Quality manager, Company s.r.o.
-
-
-        .spacer.pt-8
-
-        section
-            .container
+                .spacer.pt-6
+                h2.h4 Logos
                 include partials/logo-partners
+                .spacer.pt-6
 
-        .spacer.pt-7
+        section.border-top#products-cards-big
+            .container
+                .spacer.pt-6
+                h2.h4 Product cards
+                .row.gutters-md
+                    each $item in $Data.products[1]
+                        .col-md-6.col-lg-3.mb-2
+                            +card-product($item, $Data.products[0])
+                .spacer.pt-6
+
+        section.border-top#products-cards-big
+            .container
+                .spacer.pt-6
+                h2.h4 Product cards (big)
+                .row.gutters-md
+                    each $item in $Data.productsInCatalogBottom[1]
+                        .col-md-6.col-lg-3.mb-4.mb-lg-0
+                            +card-product-big($item, $Data.productsInCatalogBottom[0])
+                .spacer.pt-6
+
+        section.border-top#products-alt
+            .container
+                .spacer.pt-6
+                h2.h4 Product alternative cards
+                .row
+                    each $item in $Data.productsInCatalogBottom[1]
+                        .col-md-6.col-lg-3.mb-4.mb-lg-0
+                            +card-product-alt($item, $Data.productsInCatalogBottom[0])
+                .spacer.pt-6
+
+        section.border-top#related-sales
+            .container
+                .spacer.pt-6
+                h2.h4 In sale product cards
+                include ./partials/slider-in-sale.pug
+                .spacer.pt-6
+
+        section.border-top#product-detail
+            .spacer.pt-6
+            .container
+                h2.h4 Product detail
+                include ./components/product-detail
+            .spacer.pt-6
+
+        section.border-top#tabs
+            .spacer.pt-6
+            .container
+                h2.h4 Tabs
+                .fancy-tab
+                    .nav-bar.border.rounded.p-2
+                        .nav-bar-item.rounded.active Description
+                        .nav-bar-item.rounded Parameters
+                        .nav-bar-item.rounded Accessories
+                        .nav-bar-item.rounded Ask question
+                    .tab-contents
+                        .tab-content.py-4.active
+                            p Umami lo-fi bushwick swag. Microdosing health goth narwhal chicharrones cred occupy. Skateboard yuccie pok pok, cray selvage cred marfa shoreditch migas humblebrag. umblr hammock edison bulb portland fanny pack artisan air plant thundercats.
+                            h4 Letterpress echo park street
+                            ul
+                                li Poke woke farm-to-table try-hard
+                                li Yr cliche hell of vexillologist.
+                                li Air plant tumblr 8-bit, authentic kombucha salvia vice blog shoreditch migas gentrify green juice.
+                                li Four dollar toast banjo stumptown gochujang.
+                                li Knausgaard franzen artisan beard sartorial mumblecore
+                            h5 Letterpress echo park street
+                            p Health goth butcher activated charcoal portland next level pitchfork mumblecore man braid iPhone plaid mlkshk. Prism intelligentsia forage poutine.
+                        .tab-content.py-4
+                            p ...
+                        .tab-content.py-4
+                            p ...
+                        .tab-content.py-4
+                            p ...
+            .spacer.pt-6
+
+        section.border-top#catagory-top
+            .spacer.pt-6
+            .container
+                h2 Category top
+                h5 Headline h5
+                .small.line-h-150
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare sed massa est orci bibendum magnis sagittis eget. Euismod ac ultrices vestibulum in sed volutpat ut. Fusce aenean eget condimentum bibendum faucibus sit. Purus varius velit massa diam. Tristique diam sed nunc nibh turpis id aliquet. Diam amet pretium urna, ante tristique. Odio varius interdum iaculis etiam mauris, velit amet elit.
 
         section
+            .spacer.pt-5
             .container
-                h3 Klienti nás mají rádi
-
-        .spacer.pt-2
+                .row.gutters-sm
+                    each $item in $Data.productCategorySubcategories
+                        .col-6.col-lg-3.mb-1
+                            a(href="#!").d-flex.justify-content-between.align-items-center.text-micro.text-900.border.border-primary-alpha-25.hover-bg-primary-alpha-10.transition-primary.rounded-lg.pr-2
+                                span.d-inline-flex.align-items-center.m-1
+                                    +placeholder(40, 40, "mr-2")
+                                    = $item
+                                +sprite("chevron-right", "sx-16 ml-4")
 
         section
+            .spacer.pt-5
             .container
-                include ./partials/slider-quote-box
+                div
+                    button.btn.btn-sm.btn-black Nejprodávanější
+                    button.btn.btn-sm.hover-primary Doprava zdarma
+                    button.btn.btn-sm.hover-primary Novinky
+            .spacer.pt-5
 
-        .spacer.pt-7
-
-        section
+        section.bg-linear-down-light#category-list
+            .spacer.py-5
             .container
-                h3 Aktuality
+                h2.h4.text-uppercase Category list
+                .row.gutters-md
+                    each $item, $key in $Data.productCategories
+                        .col-md-4.col-lg-3.mb-2
+                            +card-category-box($item)
+            .spacer.py-5
 
-        .spacer.pt-4
+        .spacer.pt-5.border-top
 
-        section
+        section#spacers
             .container
+                h2.h4 Spacers
+                button.btn.btn-secondary.mb-5(data-toggle="collapse", data-target="#collapseSpacers") Show spacers
+                #collapseSpacers.collapse
+                    .row
+                        .col-6
+                            - var n = 0
+                            while n <= 10
+                                .border(class= "p-" + n) .p-#{n}
+                                -n++
+                        .col-6
+                            - var n = 0
+                            while n <= 10
+                                .border(class= "pt-" + n) .pt-#{n}
+                                -n++
+
+        .spacer.pt-5.border-top
+
+        section#stylesheet
+
+            .container
+                h1 Headline 1<br>The quick brown fox jumps over a lazy dog
+
+                h2 Headline 2<br>The quick brown fox jumps over a lazy dog
+
+                h3 Headline 3<br>The quick brown fox jumps over a lazy dog
+
+                h4 Headline 4<br>The quick brown fox jumps over a lazy dog
+
+                h5 Headline 5<br>The quick brown fox jumps over a lazy dog
+
+                h6 Headline 6<br>The quick brown fox jumps over a lazy dog
+
+                p.font-weight-rebular Body Text Normal<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
+                p.font-weight-bold Body Text Bold<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc convallis bibendum sit lacus sagittis. Donec faucibus pharetra lobortis eu sagittis, pellentesque congue sagittis. Sed fames a ullamcorper eleifend ut adipiscing eget. neque eget ac. Dolor sit amet, consectetur adipiscing elit. Vel curabitur vehicula vel condimentum vel tortor. 
+
+        .spacer.pt-6
+
+        section.border-top#numbers
+            .spacer.pt-6
+            .container
+                h2.h4  Numbers
+                include partials/numbers
+            .spacer.pt-6
+
+        section.border-top#news
+            .spacer.pt-6
+            .container
+                h2.h4 News
                 .row.justify-content-center
                     .col-12.col-sm-6.col-lg-4.mb-4
                         +news-box("Title na řádek")
@@ -95,6 +407,6 @@ block main
                     .col-12.col-sm-6.col-lg-4.mb-4
                         +news-box()
                 .text-center.my-4
-                    a(href="aktuality.html").btn.btn-primary Více aktualit
+                    a(href="#!").btn.btn-secondary More news
 
-        .spacer.pt-7
+            .spacer.pt-6

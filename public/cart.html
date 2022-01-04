@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <title>Cart | ePohony</title>
+    <link href="build/lib/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="build/lib/owl.carousel/owl.carousel.css" rel="stylesheet">
+    <link href="build/lib/nouislider/nouislider.min.css" rel="stylesheet">
+    <link href="build/css/theme.min.css" rel="stylesheet">
+    <script>
+      window.baseUrl = "../"
+      
+    </script>
+  </head>
+  <body>
+    <!-- Header-->
+    <header class="main bg-gradient-primary py-3 text-white">
+      <div class="container"><a href="./index.html"><img class="logo-main" src="assets/images/logo-site.svg" alt="ePohony" width="145"></a>
+        <div class="d-none d-lg-block h5 font-weight-normal text-white mb-0">Pohony bran, vrat a parkovací zábrany</div>
+        <div><a class="d-inline-flex align-items-center text-white text-micro hover-secondary" href="./user-info.html"><span class="btn-primary btn-circle bg-gradient-secondary border-0 sx-40 mr-2">
+                  <svg class="ico user sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#user"></use>
+                  </svg></span><span class="d-none d-md-block"><span class="fotn-weight-bold d-block">Přihlásit se</span>Můj účet</span></a><a class="d-inline-flex align-items-center text-white text-micro ml-1 ml-md-4 hover-secondary" href="./cart.html"><span class="btn-primary btn-circle bg-gradient-secondary border-0 sx-40 mr-2">
+                  <svg class="ico shopping-cart sx-24">
+                    <use xlink:href="build/svg/sprite.defs.svg#shopping-cart"></use>
+                  </svg></span><span class="d-none d-md-block"><span class="font-weight-bold d-block">23 456 Kč</span>Košík</span></a>
+          <button class="d-md-none btn-primary btn-circle bg-gradient-secondary border-0 sx-40 js-offcanvas" data-target-id="#offcanvasEnd">
+                <svg class="ico menu sx-24">
+                  <use xlink:href="build/svg/sprite.defs.svg#menu"></use>
+                </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <section class="header-subhead bg-100">
+      <div class="container">
+        <div class="d-flex">
+          <button class="d-none d-md-inline-flex align-items-center justify-content-between border rounded bg-white shadow-secondary text-decoration-none text-dark hover-bg-white hover-primary hover-border-primary js-offcanvas" style="min-width: 150px" data-target-id="#offcanvasTop">
+            <div class="d-inline-block px-4">Produkty</div>
+            <div class="border-left px-2">
+                  <svg class="ico chevron-down sx-16">
+                    <use xlink:href="build/svg/sprite.defs.svg#chevron-down"></use>
+                  </svg>
+            </div>
+          </button>
+          <div class="flex-grow-1 ml-md-5 mr-lg-5">
+            <form action="#" method="get">
+              <div class="input-group">
+                <input class="form-control js-autocomplete-input" type="text" name="q" placeholder="Vyhledat zboží…" autocomplete="off" data-autocomplete-config="{&quot;url&quot;: &quot;data/autocomplete.json?&quot;, &quot;fetchDelay&quot;:&quot;200&quot;, &quot;minChars&quot;:&quot;3&quot;}">
+                <select class="form-control border-right-0 text-500 js-autocomplete-category-select" name="cat">
+                  <option value="-1">Kategorie</option>
+                  <option value="99">Vše</option>
+                  <option value="0">Pohony bran a&nbsp;vrat</option>
+                  <option value="1">Automatické závory</option>
+                  <option value="2">Dálkové ovládání</option>
+                  <option value="3">Přístupové systémy</option>
+                  <option value="4">Příslušenství pohonů</option>
+                  <option value="5">Náhradní díly</option>
+                  <option value="6">Kování pro brány, vrata</option>
+                  <option value="7">Konstrukce pro brány</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary px-3 py-0" type="submit">
+                        <svg class="ico search sx-24">
+                          <use xlink:href="build/svg/sprite.defs.svg#search"></use>
+                        </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block align-self-center">
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#!">Montáž</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Garážová vrata</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">B2B spolupráce</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Kontakt</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <!-- Autocomplete placeholder - start-->
+    <div class="autocomplete js-autocomplete">
+      <div class="bg-white p-2 pt-3 p-md-4 pt-md-5 rounded-lg shadow-secondary border-top border-3 border-secondary" id="autocomplete-content"></div>
+    </div>
+    <!-- Autocomplete placeholder - end-->
+    <!-- Main-->
+    <main class="main">
+      <div class="spacer pt-4 pt-md-5"></div>
+      <section>
+        <div class="container">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="text-dark font-weight-bold" href="./homepage.html">Home</a></li>
+              <li class="breadcrumb-item"><a class="text-dark font-weight-bold" href="./catalog.html">Page</a></li>
+              <li class="breadcrumb-item active">Subpage</li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+      <section>
+        <div class="spacer pt-5"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="p-0 pr-lg-4">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="icon-box-inline bg-green rounded-circle sx-32 text-white mr-2">
+                        <svg class="ico check sx-16">
+                          <use xlink:href="build/svg/sprite.defs.svg#check"></use>
+                        </svg>
+                  </div>
+                  <h2 class="h5 font-weight-normal text-green">Zboží bylo přidáno do košíku</h2>
+                </div>
+                <div class="d-flex bg-300 align-items-center p-3 mb-3 rounded">
+                      <picture class="mr-4"><img src="https://via.placeholder.com/80x80.png"></picture>T64B - čtyřkanálový dálkový ovladač
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <form action="" method="post">
+                <h5 class="text-uppercase mb-4">Spočítejte si cenu Montáže</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input class="form-control" type="text" placeholder="Zadejte název obce nebo PSČ">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <button class="btn btn-secondary btn-block text-uppercase" type="submit" name="name1">SPOČÍTAT MONTÁŽ</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <table class="text-600 w-100">
+                      <tr>
+                        <td>Doprava</td>
+                        <td class="text-right">690 Kč</td>
+                      </tr>
+                      <tr>
+                        <td>Montáž</td>
+                        <td class="text-right">1 990 Kč</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <table class="text-black w-100">
+                        <tr>
+                          <td class="font-weight-bold align-bottom">Celkem</td>
+                          <td class="text-right h4">2 990 Kč</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <button class="btn btn-secondary btn-block text-uppercase" type="submit" name="name2">OBJEDNAT MONTÁŽ</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="spacer pt-5"></div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center border-top border-bottom border-200 py-3"><a class="btn btn-lg btn-link primary" href="./product.html">
+                  <svg class="ico arrow-narrow-left sx-24 mr-2">
+                    <use xlink:href="build/svg/sprite.defs.svg#arrow-narrow-left"></use>
+                  </svg>Zpět k nákupu</a><a class="btn btn-lg flex-grow-0 btn-green d-inline-flex align-items-center text-uppercase" href="./cart-1.html">Pokračovat
+                  <svg class="ico arrow-narrow-right sx-24 ml-2">
+                    <use xlink:href="build/svg/sprite.defs.svg#arrow-narrow-right"></use>
+                  </svg></a></div>
+        </div>
+        <div class="spacer pt-6"></div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="bg-secondary-alpha-20 p-2 border-radius-lg">
+            <div class="row gutters-md">
+              <div class="col-md-4 col-lg-3">
+                <div class="d-flex h-100 p-3 justify-content-between flex-column">
+                  <div>
+                    <h2 class="h4 mb-0 text-red text-uppercase line-h-115">Zvýhodněné produkty</h2>
+                    <p class="small font-weight-bold text-uppercase">K TOMUTO ZBOŽÍ</p>
+                  </div>
+                  <div class="d-none d-md-inline-block sx-104 text-uppercase text-white text-micro position-relative">
+                    <div class="bg-holder d-flex align-items-center justify-content-center" style="background-image: url(assets/images//svg/bg-hedgehog.svg)">Výhodně</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8 col-lg-9">
+                <div class="js-owl-carousel owl-carousel owl-theme" data-options="{ &quot;margin&quot;: 8, &quot;dots&quot;: false, &quot;nav&quot;: true, &quot;items&quot;: 2, &quot;responsive&quot;: { &quot;960&quot;: { &quot;items&quot;: 4 }} }"><a class="card h-100 bg-white text-black border border-white text-none hover-bg-white hover-border-secondary transition-primary" href="./product.html">
+                                        <picture class="d-flex align-items-end p-2 pt-5 w-100"><img class="w-100" src="https://via.placeholder.com/192x132.png/f2f3f7"></picture>
+                              <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                                <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__3">BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag</div>
+                                <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                              </div></a><a class="card h-100 bg-white text-black border border-white text-none hover-bg-white hover-border-secondary transition-primary" href="./product.html">
+                                        <picture class="d-flex align-items-end p-2 pt-5 w-100"><img class="w-100" src="https://via.placeholder.com/192x132.png/f2f3f7"></picture>
+                              <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                                <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__3">BH30/803 - ROGER Brushless</div>
+                                <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                              </div></a><a class="card h-100 bg-white text-black border border-white text-none hover-bg-white hover-border-secondary transition-primary" href="./product.html">
+                                        <picture class="d-flex align-items-end p-2 pt-5 w-100"><img class="w-100" src="https://via.placeholder.com/192x132.png/f2f3f7"></picture>
+                              <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                                <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__3">BH30/803 - ROGER Brushless</div>
+                                <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                              </div></a><a class="card h-100 bg-white text-black border border-white text-none hover-bg-white hover-border-secondary transition-primary" href="./product.html">
+                                        <picture class="d-flex align-items-end p-2 pt-5 w-100"><img class="w-100" src="https://via.placeholder.com/192x132.png/f2f3f7"></picture>
+                              <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                                <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__3">BH30/803 - ROGER Brushless</div>
+                                <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                              </div></a><a class="card h-100 bg-white text-black border border-white text-none hover-bg-white hover-border-secondary transition-primary" href="./product.html">
+                                        <picture class="d-flex align-items-end p-2 pt-5 w-100"><img class="w-100" src="https://via.placeholder.com/192x132.png/f2f3f7"></picture>
+                              <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                                <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__3">BH30/803 - ROGER Brushless</div>
+                                <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                              </div></a><a class="card h-100 bg-white text-black border border-white text-none hover-bg-white hover-border-secondary transition-primary" href="./product.html">
+                                        <picture class="d-flex align-items-end p-2 pt-5 w-100"><img class="w-100" src="https://via.placeholder.com/192x132.png/f2f3f7"></picture>
+                              <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                                <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__3">BH30/803 - ROGER Brushless</div>
+                                <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                              </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer pt-6"></div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center border-top border-bottom border-200 py-3"><a class="btn btn-lg btn-link primary" href="./product.html">
+                  <svg class="ico arrow-narrow-left sx-24 mr-2">
+                    <use xlink:href="build/svg/sprite.defs.svg#arrow-narrow-left"></use>
+                  </svg>Zpět k nákupu</a><a class="btn btn-lg flex-grow-0 btn-green d-inline-flex align-items-center text-uppercase" href="./cart-1.html">Pokračovat
+                  <svg class="ico arrow-narrow-right sx-24 ml-2">
+                    <use xlink:href="build/svg/sprite.defs.svg#arrow-narrow-right"></use>
+                  </svg></a></div>
+        </div>
+        <div class="spacer pt-6"></div>
+      </section>
+      <section>
+        <div class="container">
+          <h3>Alternativní produkty</h3>
+          <div class="js-owl-carousel owl-carousel owl-theme" data-options="{ &quot;margin&quot;: 10, &quot;dots&quot;: false, &quot;nav&quot;: true, &quot;items&quot;: 2, &quot;responsive&quot;: { &quot;720&quot;: { &quot;items&quot;: 3 }, &quot;960&quot;: { &quot;items&quot;: 4, &quot;margin&quot;: 24 }} }">
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+          </div>
+        </div>
+        <div class="spacer pt-5"></div>
+      </section>
+      <section>
+        <div class="container">
+          <h3>Příslušenství</h3>
+          <div class="js-owl-carousel owl-carousel owl-theme" data-options="{ &quot;margin&quot;: 10, &quot;dots&quot;: false, &quot;nav&quot;: true, &quot;items&quot;: 2, &quot;responsive&quot;: { &quot;720&quot;: { &quot;items&quot;: 3 }, &quot;960&quot;: { &quot;items&quot;: 4, &quot;margin&quot;: 24 }} }">
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless pohony posuvných bran do Umami lo-fi bushwick swag</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+            <div class="card h-100 bg-100"><a class="card h-100 bg-100 border border-white text-black text-none hover-bg-100 hover-border-secondary transition-primary" href="./product.html">
+                          <picture class="d-flex align-items-end p-2 pt-md-5 w-100"><img class="w-100" src="https://via.placeholder.com/296x288.png/f2f3f7"></picture>
+                <div class="d-flex flex-column justify-content-between h-100 px-4 pt-3 pb-4">
+                  <div class="card-title font-weight-semibold line-h-133 line-clamp line-clamp__2">BH30/803 - ROGER Brushless</div>
+                  <div class="letter-spacing-sm"><span class="h5">8&nbsp;990&nbsp;Kč </span>s&nbsp;DPH</div>
+                </div></a></div>
+          </div>
+        </div>
+        <div class="spacer pt-5"></div>
+      </section>
+      <!-- Footer-->
+      <div class="spacer pt-5"></div>
+      <section class="bg-gradient-primary h6 line-h-120 mb-0 pt-4 font-weight-normal text-white" id="bar-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center"><span class="d-flex justify-content-center align-items-center flex-shrink-0 border border-white-alpha-25 sx-56 rounded mr-4">
+                        <svg class="ico thumb-up sx-32">
+                          <use xlink:href="build/svg/sprite.defs.svg#thumb-up"></use>
+                        </svg></span>Prodloužená záruka při montáži od nás</div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center"><span class="d-flex justify-content-center align-items-center flex-shrink-0 border border-white-alpha-25 sx-56 rounded mr-4">
+                        <svg class="ico chat-alt sx-32">
+                          <use xlink:href="build/svg/sprite.defs.svg#chat-alt"></use>
+                        </svg></span>Nevíte si rady? Využijte náš zákaznický servis</div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="d-flex align-items-center"><span class="d-flex justify-content-center align-items-center flex-shrink-0 border border-white-alpha-25 sx-56 rounded mr-4">
+                        <svg class="ico cog sx-32">
+                          <use xlink:href="build/svg/sprite.defs.svg#cog"></use>
+                        </svg></span>V případě zájmu zajistíme<br>odbornou montáž</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container py-6">
+          <div class="row">
+            <div class="col-12 col-md-3 col-lg-6">
+              <div class="d-flex h-100 justify-content-between flex-column">
+                <div class="small line-h-120 mb-4"><img class="img-fluid mb-4" src="assets/images/logo-site.svg" alt="ePohony" width="165">
+                  <p>2021 &copy; Epohony.cz<br>Všechna práva vyhrazena</p>
+                </div>
+                <div class="mb-4 mb-md-0"><a class="icon-box-inline sx-40 text-500" href="#!" title="Youtube" target="_blank">
+                          <svg class="ico youtube sx-24">
+                            <use xlink:href="build/svg/sprite.defs.svg#youtube"></use>
+                          </svg></a><a class="icon-box-inline sx-40 text-500" href="#!" title="Facebook" target="_blank">
+                          <svg class="ico facebook sx-24">
+                            <use xlink:href="build/svg/sprite.defs.svg#facebook"></use>
+                          </svg></a><a class="icon-box-inline sx-40 text-500" href="#!" title="Twitter" target="_blank">
+                          <svg class="ico twitter sx-24">
+                            <use xlink:href="build/svg/sprite.defs.svg#twitter"></use>
+                          </svg></a><a class="icon-box-inline sx-40 text-500" href="#!" title="LinkedIn" target="_blank">
+                          <svg class="ico linkedin sx-24">
+                            <use xlink:href="build/svg/sprite.defs.svg#linkedin"></use>
+                          </svg></a></div>
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-lg-2">
+              <div class="foot-links">
+                <label for="foot-links-1">Footer links</label>
+                <input type="checkbox" id="foot-links-1">
+                <nav>
+                  <ul>
+                    <li><a href="./">Rozcestník šablon</a></li>
+                    <li><a href="./components.html">Components</a></li>
+                    <li><a href="./homepage.html">Homepage</a></li>
+                    <li><a href="./catalog.html">Catalog</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-lg-2">
+              <div class="foot-links">
+                <label for="foot-links-2">Footer links</label>
+                <input type="checkbox" id="foot-links-2">
+                <nav>
+                  <ul>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./cart-1.html">Cart 1</a></li>
+                    <li><a href="./cart-2.html">Cart 2</a></li>
+                    <li><a href="./cart-3.html">Cart 3</a></li>
+                    <li><a href="./cart-4.html">Cart 4</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-12 col-md-3 col-lg-2">
+              <div class="foot-links">
+                <label for="foot-links-3">Footer links</label>
+                <input type="checkbox" id="foot-links-3">
+                <nav>
+                  <ul>
+                    <li><a href="#!">Letterpress echo</a></li>
+                    <li><a href="#!">Gochujang chillwave</a></li>
+                    <li><a href="#!">Tumblr kitsch</a></li>
+                    <li><a href="#!">Humblebrag</a></li>
+                    <li><a href="#!">Knausgaard</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <div class="offcanvas offcanvas-end" id="offcanvasEnd">
+      <div class="offcanvas-header">
+        <button class="btn btn-secondary icon-box sx-40 rounded-circle js-offcanvas" data-target-id="#offcanvasEnd">
+                <svg class="ico plus sx-24 text-blue transform-rotate-45deg">
+                  <use xlink:href="build/svg/sprite.defs.svg#plus"></use>
+                </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="pr-md-4">
+          <div class="text-micro text-uppercase text-200 border-bottom border-200 pb-3 mb-3">Kategorie</div>
+          <nav>
+            <ul class="nav flex-column">
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-kridlo.svg"></div><span class="mr-2 line-h-110">Pohony bran a&nbsp;vrat</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-zavora.svg"></div><span class="mr-2 line-h-110">Automatické závory</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-ovladac.svg"></div><span class="mr-2 line-h-110">Dálkové ovládání</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-gsm.svg"></div><span class="mr-2 line-h-110">Přístupové systémy</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-clog.svg"></div><span class="mr-2 line-h-110">Příslušenství pohonů</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-dily.svg"></div><span class="mr-2 line-h-110">Náhradní díly</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-brany-kovani.svg"></div><span class="mr-2 line-h-110">Kování pro brány, vrata</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html">
+                  <div class="sx-24 sx-md-32 mr-3"><img class="img-fluid" width="32" src="assets/images/svg/ico-brany-konstrukce.svg"></div><span class="mr-2 line-h-110">Konstrukce pro brány</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+            </ul>
+          </nav>
+          <div class="spacer pt-4 pt-md-5"></div>
+          <div class="text-micro text-uppercase text-200 border-bottom border-200 pb-3 mb-3">Výrobci pohonů</div>
+          <nav>
+            <ul class="nav flex-column">
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html"><span class="mr-2 line-h-110">Pohony ROGER Technology</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html"><span class="mr-2 line-h-110">Pohony Telcoma-Cardin</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html"><span class="mr-2 line-h-110">Pohony bran FAAC</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+              <li class="d-flex"><a class="d-flex px-2 py-2 mb-1 flex-grow-1 align-items-center rounded text-none text-black hover-primary hover-bg-secondary-alpha-10" href="./catalog.html"><span class="mr-2 line-h-110">Pohony bran NICE</span><span class="text-micro text-none text-200 ml-auto">99</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas offcanvas-top" id="offcanvasTop">
+      <div class="offcanvas-header">
+        <button class="btn btn-secondary icon-box sx-40 rounded-circle js-offcanvas" data-target-id="#offcanvasTop">
+                <svg class="ico plus sx-24 text-blue transform-rotate-45deg">
+                  <use xlink:href="build/svg/sprite.defs.svg#plus"></use>
+                </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="row gutters-md">
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Pohony bran a&nbsp;vrat</h3><img class="ml-4" width="32" src="assets/images/svg/ico-kridlo.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Automatické závory</h3><img class="ml-4" width="32" src="assets/images/svg/ico-zavora.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Dálkové ovládání</h3><img class="ml-4" width="32" src="assets/images/svg/ico-ovladac.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Přístupové systémy</h3><img class="ml-4" width="32" src="assets/images/svg/ico-gsm.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Příslušenství pohonů</h3><img class="ml-4" width="32" src="assets/images/svg/ico-clog.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Náhradní díly</h3><img class="ml-4" width="32" src="assets/images/svg/ico-dily.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Kování pro brány, vrata</h3><img class="ml-4" width="32" src="assets/images/svg/ico-brany-kovani.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 mb-2">
+            <div class="card"><a class="card-header d-flex justify-content-between align-items-center bg-gradient-primary text-white text-none hover-secondary transition-primary min-h-md-96" href="./catalog.html">
+                <h3 class="h6 mb-0 text-uppercase line-h-120 text-white text-current hover-secondary">Konstrukce pro brány</h3><img class="ml-4" width="32" src="assets/images/svg/ico-brany-konstrukce.svg"/></a>
+              <div class="card-body bg-white py-3 px-4">
+                <ul class="nav small">
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 0
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 1
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center text-dark py-2" href="./catalog.html">Category item 2
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                  <li class="w-100"><a class="d-flex justify-content-between align-items-center py-2 text-primary text-uppercase font-weight-bold" href="./catalog.html">All in category
+                            <svg class="ico chevron-right sx-8 ml-4">
+                              <use xlink:href="build/svg/sprite.defs.svg#chevron-right"></use>
+                            </svg></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile nav overlay-->
+    <div class="mobile-nav-overlay js-backdrop"></div>
+    <!-- Autocomplete template - start-->
+    <script id="autocomplete-template" type="text/x-handlebars-template">
+      {{#unless resultIsEmpty}}
+          <div class="row">
+              <div class="col-lg-6 mb-3 mb-lg-0">
+                  {{#with products}}
+                      <div class="d-flex align-items-end mb-1 mb-md-3">
+                          <h2 class="h5 mb-0 text-uppercase">{{title}}</h2>
+                          <div class="small ml-auto">{{result}}</div>
+                      </div>
+                      {{#each items}}
+                          <div class="d-flex align-items-center bg-100 rounded p-2 p-md-3 mb-2 hover-bg-primary-alpha-10 transition-primary"><a class="d-flex align-items-center text-none" href="./product.html">
+                              <div class="bg-white mr-2 mr-md-3">
+                                  <picture><img src="{{imgsrc}}"></picture>
+                              </div>
+                              <div class="line-h-100">{{name}}</div></a>
+                              <div class="text-nowrap font-weight-semibold ml-auto">{{price}}</div>
+                              <div class="d-none d-md-block ml-2 ml-md-3"><a class="btn btn-sm btn-secondary" href="{{action}}">Koupit</a></div>
+                          </div>
+                      {{else}}
+                          <div class="alert alert-danger" role="alert">
+                              Šablona pro prázdný výsledek.
+                          </div>
+                      {{/each}}
+                  {{/with}}
+              </div>
+              <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                  {{#with brands}}
+                      <div class="d-flex align-items-end mb-1 mb-md-3">
+                          <h2 class="h5 mb-0 text-uppercase">{{title}}</h2>
+                          <div class="small ml-auto">{{result}}</div>
+                      </div>
+                      {{#each items}}
+                          <a class="d-flex align-items-center bg-100 rounded p-2 p-md-3 mb-2 border border-100 hover-border-secondary hover-bg-secondary-alpha-10 transition-primary" href="{{url}}">{{name}}</a>
+                      {{else}}
+                          <div class="alert alert-danger" role="alert">
+                              Šablona pro prázdný výsledek.
+                          </div>
+                      {{/each}}
+                  {{/with}}
+              </div>
+              <div class="col-md-6 col-lg-3">
+                  {{#with categories}}
+                      <div class="d-flex align-items-end mb-1 mb-md-3">
+                          <h2 class="h5 mb-0 text-uppercase">{{title}}</h2>
+                          <div class="small ml-auto">{{result}}</div>
+                      </div>
+                      {{#each items}}
+                          <a class="d-flex align-items-center bg-100 rounded p-2 p-md-3 mb-2 border border-100 hover-border-secondary hover-bg-secondary-alpha-10 transition-primary" href="{{url}}">
+                              <svg class="ico folder-open sx-32 mr-2 text-secondary">
+                                  <use xlink:href="build/svg/sprite.defs.svg#folder-open"></use>
+                              </svg>
+                              {{name}}
+                          </a>
+                      {{else}}
+                          <div class="alert alert-danger" role="alert">
+                              Šablona pro prázdný výsledek.
+                          </div>
+                      {{/each}}
+                  {{/with}}
+              </div>
+          </div>
+          {{#if urlMore}}
+              <a href="{{urlMore}}" class="small font-weight-bold text-black">Zobrazit všechny výsledky</a>
+          {{/if}}
+      {{else}}
+          <div class="alert alert-danger" role="alert">
+              Šablona pro prázdný výsledek.
+          </div>
+      {{/unless}}
+    </script>
+    <!-- Autocomplete template - end-->
+    <script src="build/js/jquery.min.js"></script>
+    <script src="build/js/bootstrap.min.js"></script>
+    <script src="build/js/plugins.min.js"></script>
+    <script src="build/lib/fancybox/jquery.fancybox.min.js"></script>
+    <script src="build/lib/owl.carousel/owl.carousel.js"></script>
+    <script src="build/lib/handlebars/handlebars.min.js"></script>
+    <script src="build/js/theme.min.js"></script>
+    <!-- Footer scripts-->
+  </body>
+</html>

@@ -7,37 +7,37 @@ block header
     include ./layout/header
 
 block main
-    main.main
 
-        .teaser.com
+        .bg-primary-alpha-20.py-5.py-6
             .container
-                .in.d-flex.align-items-center.py-6
-                    h1 ePohony <i>šablony</i>
+                .row.justify-content-center
+                    .col-md-8
+                        h1.text-primary.line-h-100 ePohony šablony
 
-        .container.py-3.py-md-7
-
-            .row
-                .col-md-6
-                    ul.pt-3.pb-6
-                        li: a(href="./components.html"): h5 00. Komponenty
+        .container.py-3.py-md-5
+            .row.justify-content-center
+                .col-md-6.py-3
+                    ul
+                        li: a(href="./components.html"): h5 00. Components
                         li: a(href="./homepage.html"): h5 01. Homepage
-                        li: a(href="./prodej.html"): h5 02. Prodej měřících strojů
-                        li: a(href="./prodej2.html"): h5 03. Prodej komunálních měřidel
-                        li: a(href="./katalog.html"): h5 04. Katalog
-                        li: a(href="./detail.html"): h5 05. Detail produktu
-                        li: a(href="./znacky.html"): h5 06. Značky měřidel
-                        li: a(href="./sluzba1.html"): h5 07. Služba 1 Zakázkové měření
-                        li: a(href="./sluzba2.html"): h5 08. Služba 2 Kalibrační laboratoř
-                        li: a(href="./servis.html"): h5 09. Instalace a servis strojů
-                        li: a(href="./spolecnost1.html"): h5 10. Společnost A
-                        li: a(href="./spolecnost2.html"): h5 11. Společnost B
-                        li: a(href="./team1.html"): h5 12. Team 1
-                        li: a(href="./team2.html"): h5 13. Team 2
-                        li: a(href="./kontakt.html"): h5 14. Kontakt
-                        li: a(href="./aktuality.html"): h5 15. Aktuality
-                        li: a(href="./aktualita.html"): h5 16. Detail aktuality
-                        li: a(href="./download.html"): h5 17. Ke stažení
-                        li: a(href= $buildUrl + "svg/sprite.defs.html"): h5 Ikonky
-                .col-md-6
+                        li: a(href="./catalog.html"): h5 02. Catalog
+                        li: a(href="./product.html"): h5 03. Product
+                        li: a(href="./cart.html"): h5 04. Cart
+                        li: a(href="./cart-1.html"): h5 05. Cart - Step 1
+                        li: a(href="./cart-2.html"): h5 06. Cart - Step 2
+                        li: a(href="./cart-3.html"): h5 07. Cart - Step 3
+                        li: a(href="./cart-4.html"): h5 08. Cart - Step 4
+                        li: a(href="./user-info.html"): h5 09. User - Info
+                        li: a(href="./user-orders.html"): h5 10. User - Orders
+                        li: a(href="./user-order.html"): h5 11. User - Order detail
+                        li: a(href="./user-documents.html"): h5 12. User - Documents
+                        li: a(href="./user-addresses.html"): h5 13. User - Adresses
+                        li: a(href="./user-search.html"): h5 14. User - Search
+                        li: a(href="./search-results.html"): h5 15. Search results
+                        li: a(href= $buildUrl + "svg/sprite.defs.html").text-secondary: h5.text-primary Icons sprite sheet
+                .col-md-2
                     .d-none.d-md-block
-                        img(src= $imgDir + "qr-tm.png")
+                        .rounded.bg-white.shadow-primary
+                            img(src= $imgDir + "qr-code.png").img-fluid
+                            .px-2.pb-2.pt-0
+                                .text-muted.text-micro Scan with your camera

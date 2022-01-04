@@ -1,0 +1,62 @@
+extends ./layout/layout.pug
+
+block variables
+    - var title = 'User orders'
+    - var $sideMenuActualPage = "./user-orders.html"
+
+block main
+
+        .spacer.pt-4.pt-md-5
+
+        .container
+            .row
+                //-- Left column
+                .col-lg-3.mt-6.mt-lg-0.order-1.order-lg-0
+                    include ./partials/sidemenu-user
+
+                //-- Right column
+                .col-lg-9
+
+                    section
+                        include  ./partials/breadcrumbs
+
+                    section
+                        .spacer.pt-4.pt-md-5
+                        .card.border-2.border-300
+                            .card-header.rounded-0.p-4.bg-300
+                                h4 Moje objednávky
+                            .card-body
+                                .table-responsive
+                                    table.table.table-striped.table-borderless.table-hover
+                                        thead
+                                            tr
+                                                th.text-uppercase Číslo obj.
+                                                th.text-uppercase Vytvořena
+                                                th.text-uppercase Stav obj.
+                                                th.text-uppercase Platba
+                                                th.text-uppercase Ceba nbez DPH
+                                                th.text-uppercase(style="width: 1%") Akce
+                                        each $item, $index in [1, 2, 3, 4, 5, 6, 7]
+                                            tr
+                                                td.align-middle: a(href="./user-order.html") #{2021041567 + $index}
+                                                td.align-middle 2021/07/12
+                                                td.align-middle: span.badge.badge-success Doručena
+                                                td.align-middle: span.badge.badge-danger Nezaplacena
+                                                td.align-middle: span.text-nowrap 121 000 Kč
+                                                td.text-nowrap
+                                                    a(href="#!" title="Refresh").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40
+                                                        +sprite("refresh", "sx-24")
+                                                    a(href="./user-order.html" title="Edit item").btn.btn-sm.btn-outline-primary.rounded-circle.icon-box-inline.p-0.sx-40.ml-2
+                                                        +sprite("pencil", "sx-24")
+                                                    a(href="#!" title="Delete item").btn.btn-sm.text-danger.icon-box-inline.rounded-circle.p-0.sx-40.ml-2.hover-bg-red-alpha-10
+                                                        +sprite("trash", "sx-24")
+
+            .spacer.pt-7
+
+        section
+            .container
+                h3 Mohlo by vás zajímat
+                .js-owl-carousel.owl-carousel.owl-theme(data-options='{ "margin": 10, "dots": false, "nav": true, "items": 2, "responsive": { "720": { "items": 3 }, "960": { "items": 4, "margin": 24 }} }')
+                    each $item in $Data.productsAlternatives[1]
+                        +card-product-alt($item, $Data.productsAlternatives[0])
+            .spacer.pt-5

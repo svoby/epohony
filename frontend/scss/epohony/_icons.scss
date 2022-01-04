@@ -2,20 +2,35 @@
   display: inline-block;
   vertical-align: middle;
   flex-shrink: 0;
+  pointer-events: none;
   &svg {
     background: none;
   }
 }
 
+.icon-box,
 .icon-box.com {
   display: flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+  flex-shrink: 0;
+  img {
+    max-width: 100%;
+  }
   &.--abs-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+.icon-box-inline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+  flex-grow: 0;
 }

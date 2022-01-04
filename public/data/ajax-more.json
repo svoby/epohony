@@ -1,0 +1,7 @@
+{
+    "snippets": {
+        "snippet--product-more": "<div class='alert alert-success'>Showing more results (with scroll)</div><div><a class='btn btn-secondary d-flex align-items-center js-ajax-button' href='./data/ajax-more.json'>With new more button</a></div>"
+    },
+    "url": "catalog.html?page=2",
+    "scrollTo": "#snippet--product-more"
+}

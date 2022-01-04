@@ -1,8 +1,13 @@
 html {
-  font-size: 18px;
+  font-size: $rfs-rem-value + px;
   @include media-breakpoint-down(lg) {
     font-size: 14px;
   }
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
 }
 
 h1,
@@ -30,9 +35,39 @@ h4,
 .h4,
 h5,
 .h5,
+.h6,
+.h6 {
+  letter-spacing: $headings-letter-spacing;
+}
+
+h1,
+.h1 {
+  line-height: $h1-line-height;
+}
+
+h2,
+.h2 {
+  line-height: $h2-line-height;
+}
+
+h3,
+.h3 {
+  line-height: $h1-line-height;
+}
+
+h4,
+.h4 {
+  line-height: $h4-line-height;
+}
+
+h5,
+.h5 {
+  line-height: $h5-line-height;
+}
+
 h6,
 .h6 {
-  font-weight: $font-weight-semibold;
+  line-height: $h6-line-height;
 }
 
 h1 i {
@@ -75,15 +110,23 @@ p {
   letter-spacing: -0.035em;
 }
 
-label {
-  font-size: $small-font-size;
-  line-height: 24px;
-}
-
 picture {
   display: block;
 }
 
 a {
   transition: color 0.5s;
+}
+
+main.main {
+  background-color: $main-bg;
+}
+
+.text-micro {
+  font-size: $micro-font-size;
+  line-height: $micro-font-line-height;
+}
+
+.letter-spacing-sm {
+  letter-spacing: $letter-spacing-sm !important;
 }

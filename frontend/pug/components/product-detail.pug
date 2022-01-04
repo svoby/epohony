@@ -1,0 +1,54 @@
+//- Mixins
+include ../mixins/picture
+include ../mixins/sprite
+
+.product-detail
+    .row
+        .col-lg-6.mb-5.mb-lg-0
+            .product-gallery-preview
+                #first.product-gallery-preview-item.active
+                    a(href="https://via.placeholder.com/1024x768.png?text=Product%20photo%20detail%20(1024%20x%20768)" data-fancybox="prod-detail")
+                        +placeholder(444, 460, '', 'w-100', '/666666')
+                #second.product-gallery-preview-item
+                    a(href="https://via.placeholder.com/1024x768.png?text=Product%20photo%20detail%20(1024%20x%20768)" data-fancybox="prod-detail")
+                        +placeholder(444, 460, '', 'w-100', '/888888')
+                #third.product-gallery-preview-item
+                    a(href="https://via.placeholder.com/1024x768.png?text=Product%20photo%20detail%20(1024%20x%20768)" data-fancybox="prod-detail")
+                        +placeholder(444, 460, '', 'w-100', '/BBBBBB')
+                #fourth.product-gallery-preview-item
+                    a(href="https://via.placeholder.com/1024x768.png?text=Product%20photo%20detail%20(1024%20x%20768)" data-fancybox="prod-detail")
+                        +placeholder(444, 460, '', 'w-100', '/DDDDDD')
+            .product-gallery-thumblist
+                a(href='#first').product-gallery-thumblist-item.active
+                    +placeholder(68, 72, '', '', '/666666')
+                a(href='#second').product-gallery-thumblist-item
+                    +placeholder(68, 72, '', '', '/888888')
+                a(href='#third').product-gallery-thumblist-item
+                    +placeholder(68, 72, '', '', '/BBBBBB')
+                a(href='#third').product-gallery-thumblist-item
+                    +placeholder(68, 72, '', '', '/DDDDDD')
+        .col-lg-6
+            .product-info
+                table.w-100.mb-5
+                    tr
+                        th.py-2 Kód produktu
+                        td KIT R20/502/1W
+                    tr
+                        th.py-2 Hmotnost
+                        td 11 340 g
+                    tr
+                        th.py-2 Dostupnost
+                        td.text-success Skladem
+                    tr
+                        th.py-2 Výrobce
+                        td Roger Industries
+                div.text-700
+                    p Schlitz live-edge pinterest hell of migas. Food truck small batch actually, pork belly hammock pinterest paleo prism intelligentsia enamel pin pickled try-hard copper mug gluten-free… <a href="#!" class="text-secondary">Více informací</a>
+                .bg-secondary-alpha-10.rounded.p-4.mt-5
+                    .text-micro.font-weight-bold.text-muted
+                        s 2&nbsp;600&nbsp;Kč
+                    .h3.mb-0 1&nbsp;990&nbsp;Kč
+                    .text-micro.font-weight-bold.mb-4 1&nbsp;470 Kč s DPH
+                    button.btn.btn-secondary.btn-lg.w-100
+                        +sprite("shopping-cart", "sx-24 mr-2 align-text-bottom")
+                        | VLOŽIT DO KOŠÍKU
